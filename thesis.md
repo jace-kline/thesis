@@ -57,13 +57,19 @@ The conversion of binary code to assembly code through disassembly is a desirabl
 
 With these compounding challenges affecting the decompilation process, it is clear that decompiler tools operate under a great degree of nondeterminism and speculation. This fact highlights the need for a common evaluation framework for decompiler tools.
 
-### Function, Variable, and Type Inference
+<!-- ### Function, Variable, and Type Inference
+
+Pertinent to both disassembly and decompilation, the inference of functions, variables, and data types are the key to insightful software reverse engineering. A vast amount of literature exists relating to algorithms for accurately inferring these source-level constructs from binary code. -->
 
 ### DWARF Debugging Standard
 
 *DWARF* is a debugging file format used by many compilers and debuggers to support source-level debugging for compiled binary programs []. When specified flags (usually '-g') are present at compilation, DWARF-supporting compilers such as GCC and Clang will write DWARF debugging information to an output binary program or object file. A resulting binary executable can then be loaded into a DWARF-supporting debugger such as GDB to debug the target binary program with references to line numbers, functions, variables, and types in the source-level program. The DWARF standard is source language agnostic, but generally supports equivalent representations for constructs present in common procedural languages such as C, C++, and Fortran. In addition, DWARF is decoupled from any architecture, processor, or operating system. The generalizability of DWARF debugging information makes it a prime candidate for extracting "ground-truth" information about a particular binary program, regardless of the specifics of the source language, architecture, processor, or operating system. DWARF is leveraged in this work to scrape ground-truth information about target binary programs. This information is subsequently used to evaluate the accuracy of the output produced by a target decompiler.
 
 ### Ghidra Reverse Engineering Framework
+
+*Ghidra*, created and maintained by the National Security Agency Research Directorate, is an extensible software reverse engineering framework that features a disassembler, decompiler, and integrated scripting in both Python and Java []. The Ghidra decompiler is used to demonstrate the decompiler evaluation framework we have developed.
+
+#### Ghidra Decompilation
 
 ### Related Work
 
@@ -80,4 +86,3 @@ With these compounding challenges affecting the decompilation process, it is cle
 ### Future Work
 
 ## References
-
