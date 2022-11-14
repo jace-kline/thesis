@@ -1,0 +1,5 @@
+,Ground truth varnodes w/ metatype=ARRAY,Missed varnodes w/ metatype=ARRAY,Decompiler varnodes w/ metatype=ARRAY matched @ level=OVERLAP,Decompiler varnodes w/ metatype=ARRAY matched @ level=SUBSET,Decompiler varnodes w/ metatype=ARRAY matched @ level=ALIGNED,Decompiler varnodes w/ metatype=ARRAY matched @ level=MATCH,"Varnode average compare score [0,1] w/ metatype=ARRAY"
+ndarray,3,0,2,0,0,1,0.5
+typecases,2,0,2,0,0,0,0.25
+p0,1,0,0,0,0,1,1.0
+structcases,0,0,0,0,0,0,

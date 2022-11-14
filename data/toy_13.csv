@@ -1,0 +1,5 @@
+,Ground truth decomposed (primitive) varnodes w/ metatype=POINTER,Missed decomposed (primitive) varnodes w/ metatype=POINTER,Decompiler decomposed (primitive) varnodes w/ metatype=POINTER matched @ level=OVERLAP,Decompiler decomposed (primitive) varnodes w/ metatype=POINTER matched @ level=SUBSET,Decompiler decomposed (primitive) varnodes w/ metatype=POINTER matched @ level=ALIGNED,Decompiler decomposed (primitive) varnodes w/ metatype=POINTER matched @ level=MATCH,"Decomposed (primitive) varnode average compare score [0,1] w/ metatype=POINTER"
+ndarray,0,0,0,0,0,0,
+typecases,4,0,0,0,2,2,0.875
+p0,0,0,0,0,0,0,
+structcases,4,0,0,0,0,4,1.0

@@ -1,0 +1,5 @@
+.venv
+*.class
+progs
+**__pycache__
+**.vscode
