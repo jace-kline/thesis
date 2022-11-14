@@ -3,3 +3,4 @@
 progs
 **__pycache__
 **.vscode
+*.pickle
