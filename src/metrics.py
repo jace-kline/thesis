@@ -177,7 +177,7 @@ def make_metrics() -> List[MetricsGroup]:
 
     bytes_group.mk_add_metric(
         "bytes_found",
-        "Overlapped data bytes",
+        "Bytes found",
         bytes_found,
         description="Data bytes present in ground truth that are found by decompiler",
         tags=["bytes"]
@@ -185,11 +185,17 @@ def make_metrics() -> List[MetricsGroup]:
 
     bytes_group.mk_add_metric(
         "bytes_missed",
-        "Missed data bytes",
+        "Bytes missed",
         bytes_missed,
         description="Data bytes present in ground truth that are not found by decompiler",
         tags=["bytes"]
     )
+
+    # bytes_group.mk_add_metric(
+    #     "bytes_found_fraction",
+    #     "Bytes found fraction",
+        
+    # )
 
     # bytes_group.mk_add_metric(
     #     "bytes_extraneous",
@@ -220,7 +226,7 @@ def make_metrics() -> List[MetricsGroup]:
 
     functions_group.mk_add_metric(
         "functions_found",
-        "Found functions",
+        "Functions found",
         lambda cmp: len(functions_found(cmp)),
         description="Functions present in ground truth that are found by decompiler, based on function entry point address",
         tags=["functions"]
@@ -228,7 +234,7 @@ def make_metrics() -> List[MetricsGroup]:
 
     functions_group.mk_add_metric(
         "functions_missed",
-        "Missed functions",
+        "Functions missed",
         lambda cmp: len(functions_missed(cmp)),
         description="Functions present in ground truth that are not found by decompiler",
         tags=["functions"]

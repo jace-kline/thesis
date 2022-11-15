@@ -149,7 +149,7 @@ We define the *metatype* of a data type to be general "class" of the given data 
 
 [Figure: Ariste type lattice]
 
-A *primitive type lattice* [] is used to hierarchially relate primitive data types based on their metatype, size, and signedness (if applicable). More general types are located higher in the lattice while more specific types are closer to the leaves. A type lattice may be used to determine whether two primitive data types are equivalent or share a common parent type.
+A *primitive type lattice* [] is used to hierarchially relate primitive data types based on their metatype, size, and signedness (if applicable). More general types are located higher in the lattice while more specific types are located closer to the leaves. A type lattice may be used to determine whether two primitive data types are equivalent or share a common parent type.
 
 [Figure: Subset relationship example(s)]
 
@@ -182,7 +182,17 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
 * *OVERLAP*: X overlaps with one or more varnodes from the other space, but the data type comparisons are level *NO_MATCH*.
 * *SUBSET*: X overlaps with one or more varnodes and each of its compared varnodes has data type comparison level equal to *SUBSET*. In other words, the compared varnode(s) make up a portion of X.
 * *ALIGNED*: For some varnode Y from the other source, X and Y share the same location and size in memory; however, the data types of X and Y do not match. The data types comparison could have any compare level less than *MATCH*.
-* *MATCH*: For some varnode Y from the other source, X and Y share the same location and size in memory, and their data types match.
+* *MATCH*: For some varnode Y from the other source, X and Y share the same location and size in memory, and their data types match exactly.
+
+##### Primitive (Decomposed) Variable Comparison
+
+The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of the synthesis of complex variables from its constituent parts.
+
+[Figure: Example of "decomposing" complex varnode]
+
+We first implement an approach to recursively strip away the "complex layers" of a varnode to its most primitive decomposition. This primitive decomposition produces a set of one or more primitive varnodes. For example, an array of elements is broken down into a set of its elements (decomposed recursively). A struct is broken down into a set of varnodes associated with each of its members (decomposed recursively).
+
+We apply this primitive decomposition to each varnode in the sets of ground truth and decompiler varnodes. With the two sets of decomposed varnodes, we leverage the same variable comparison approach described previously to compare the varnodes in these sets. The resulting comparison information is treated as a separate analysis from the unaltered varnode sets.
 
 #### Function Comparison
 
@@ -192,9 +202,39 @@ For each "matched" function based on start PC address, we compute and store info
 
 ### Quantitative Evaluation Metrics
 
+In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in our evaluation results section.
+
+#### Data Bytes
+
+These metrics look at the total number of data bytes from all variables recovered by the decompiler when compared to the ground-truth source.
+
+* *Ground truth data bytes*: The total number of data bytes captured from the ground truth source, derived from all global and local variables.
+* *Bytes found*: The total number of data bytes recovered by the decompiler that overlap with data bytes found in the ground truth.
+* *Bytes missed*: The number of data bytes present in the ground truth that were not recovered by the decompiler.
+* *Bytes recovery fraction*: The fraction of ground truth data bytes found by the decompiler divided by the total number of ground truth bytes.
+
+#### Functions
+
+This set of metrics outlines the function identification performance of the decompiler.
+
+* *Ground truth functions*: The number of functions present in the ground truth program representation.
+* *Functions found*: The number of functions from the ground truth set that are identified by the decompiler.
+* *Functions missed*: The number of functions from the ground truth set that are not identified by the decompiler.
+* *Function recovery fraction*: The fraction of ground truth functions found by the decompiler divided by the number of ground truth functions.
+
+#### Varnodes
+
+Recall that a *Varnode* is defined to be a source-level *Variable* tied to a single storage location for a range of PC addresses. In analyses of unoptimized binaries, the mapping of variables to varnodes is one-to-one. This set of metrics illustrates the decompiler's accuracy in recovering varnodes.
+
+* *Ground truth varnodes*: The total number of varnodes present in the ground truth source. This includes varnodes associated with global and local variables from all functions.
+* *Varnodes matched @ level=LEVEL*: Each ground truth varnode is associated with a *varnode comparison level* (*NO_MATCH*, *OVERLAP*, *SUBSET*, *ALIGNED*, *MATCH*) during the comparison with the set of decompiler varnodes. This metric specifies the number of ground truth varnodes that are matched at the specified level.
+* *Varnodes average comparison score*: For each *varnode comparison level*, we first linearly assign an integer representing the strength of the varnode comparison (*NO_MATCH* = 0, *OVERLAP* = 1, *SUBSET* = 2, *ALIGNED* = 3, *MATCH* = 4). We then normalize these scores to fall within the range zero to one. Then, for each ground truth varnode, we compute this normalized score. We take the average score over all ground truth varnodes to obtain the resulting metric. This metric approximates how well, on average, the decompiler infers the ground truth varnodes.
+
+We repeat this analysis for ...
+
 ## Evaluation
 
-To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2) with the GNU Coreutils (version 9.1) as the set of benchmark programs. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are Intel x86-64 and Ubuntu Linux (version 20.04), respectively.
+To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2) with the GNU Coreutils (version 9.1) as the set of benchmark programs. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
 ### Setup
 
