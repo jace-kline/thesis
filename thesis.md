@@ -2,6 +2,8 @@
 
 ## Abstract
 
+
+
 ## Introduction
 
 ### Context and Background
@@ -220,7 +222,7 @@ This set of metrics outlines the function identification performance of the deco
 * *Ground truth functions*: The number of functions present in the ground truth program representation.
 * *Functions found*: The number of functions from the ground truth set that are identified by the decompiler.
 * *Functions missed*: The number of functions from the ground truth set that are not identified by the decompiler.
-* *Function recovery fraction*: The fraction of ground truth functions found by the decompiler divided by the number of ground truth functions.
+* *Functions recovery fraction*: The fraction of ground truth functions found by the decompiler divided by the number of ground truth functions.
 
 #### Varnodes
 
@@ -246,7 +248,7 @@ In this set of metrics, we aim to evaluate the accuracy of the array inference p
 
 ## Evaluation
 
-To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
+To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
 ### Setup
 
@@ -258,7 +260,27 @@ With the comparisons computed for each program and compilation configuration, we
 
 ### Results
 
-To aid in the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] and include 2 programs in which the Ghidra decompiler produces interesting and anomalous results. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
+For the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] (*stat*, *nohup*, *pinky*, *csplit*, *ginstall*, *fmt*, *df*, *join*, *expr*, *seq*, *unexpand*, *tsort*, *tee*, *base64*, *sum*) and include 2 programs, *cksum* and *wc*, in which the Ghidra decompiler produces interesting and anomalous results. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
+
+#### Functions Recovery
+
+[Table: FUNCTIONS (debug)]
+[Table: FUNCTIONS (standard)]
+[Table: FUNCTIONS (stripped)]
+
+#### Variable (Varnode) Recovery
+
+##### High-Level Varnode Recovery
+
+##### Decomposed Varnode Recovery
+
+#### Data Bytes Recovery
+
+[Table: BYTES (debug)]
+[Table: BYTES (standard)]
+[Table: BYTES (stripped)]
+
+#### Array Comparison Accuracy
 
 ### Discussion
 

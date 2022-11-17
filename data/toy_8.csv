@@ -1,5 +1,0 @@
-,Ground truth varnodes (metatype=UNION),Decompiler varnodes matched @ level=NO_MATCH (metatype=UNION),Decompiler varnodes matched @ level=OVERLAP (metatype=UNION),Decompiler varnodes matched @ level=SUBSET (metatype=UNION),Decompiler varnodes matched @ level=ALIGNED (metatype=UNION),Decompiler varnodes matched @ level=MATCH (metatype=UNION),"Varnode average compare score [0,1] (metatype=UNION)"
-ndarray,0,0,0,0,0,0,
-typecases,1,0,0,0,1,0,0.75
-p0,0,0,0,0,0,0,
-structcases,2,0,0,0,2,0,0.75

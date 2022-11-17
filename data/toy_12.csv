@@ -1,5 +1,0 @@
-,Ground truth varnodes (decomposed) (metatype=POINTER),Varnodes matched @ level=OVERLAP (decomposed) (metatype=POINTER),Varnodes matched @ level=SUBSET (decomposed) (metatype=POINTER),Varnodes matched @ level=ALIGNED (decomposed) (metatype=POINTER),Varnodes matched @ level=MATCH (decomposed) (metatype=POINTER),"Varnode average compare score [0,1] (decomposed) (metatype=POINTER)"
-ndarray,0,0,0,0,0,
-typecases,4,0,0,2,2,0.875
-p0,0,0,0,0,0,
-structcases,4,0,0,0,4,1.0

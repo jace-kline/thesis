@@ -107,6 +107,11 @@ def make_metrics() -> List[MetricsGroup]:
         "Bytes missed",
         bytes_missed
     )
+
+    bytes_group.mk_add_metric(
+        "Bytes recovery fraction",
+        lambda cmp: bytes_found(cmp) / bytes_truth(cmp)
+    )
     metrics_groups.append(bytes_group)
 
     # Function metrics
@@ -125,6 +130,11 @@ def make_metrics() -> List[MetricsGroup]:
         "Functions missed",
         lambda cmp: len(functions_missed(cmp))
     )
+
+    functions_group.mk_add_metric(
+        "Functions recovery fraction",
+        lambda cmp: len(functions_found(cmp)) / len(functions_truth(cmp))
+    )
     metrics_groups.append(functions_group)
 
     # High-level Varnode metrics
@@ -134,7 +144,7 @@ def make_metrics() -> List[MetricsGroup]:
         lambda cmp: len(varnodes_truth(cmp))
     )
 
-    for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
+    for compare_level in VarnodeCompareLevel.range():
         compare_level_str = VarnodeCompareLevel.to_string(compare_level)
         varnodes_group.mk_add_metric(
             "Varnodes matched @ level={}".format(compare_level_str),
@@ -296,11 +306,11 @@ def variable_base_filter(var: Variable) -> bool:
         and var.is_single_loc()
 
 # Varnode base filter
-# varnode lives in a rangeable address region (stack, global, or register offset)
+# varnode lives in stack or global region
 # & its parent variable matches the variable base filter
 def varnode_base_filter(varnode: Varnode) -> bool:
     parent_var = varnode.get_var()
-    return varnode.get_addr().get_region().is_range() \
+    return varnode.get_addr().get_addrtype() in ( AddressType.ABSOLUTE, AddressType.STACK ) \
         and (variable_base_filter(parent_var) if parent_var is not None else True)
 
 # VarnodeCompareRecord base filter
@@ -348,11 +358,12 @@ def bytes_decomp(cmp: UnoptimizedProgramInfoCompare2) -> int:
 
 # Found bytes (in ground-truth & decompiler)
 def bytes_found(cmp: UnoptimizedProgramInfoCompare2) -> int:
-    return sum([ record.bytes_overlapped() for record in select_comparable_varnode_compare_records(cmp) ])
+    found = sum([ record.bytes_overlapped() for record in select_comparable_varnode_compare_records(cmp) ])
+    return min((found, bytes_truth(cmp)))
 
 # Missed bytes (in ground-truth, not in decompiler)
 def bytes_missed(cmp: UnoptimizedProgramInfoCompare2) -> int:
-    return bytes_truth(cmp) - bytes_found(cmp)
+    return max((bytes_truth(cmp) - bytes_found(cmp), 0))
 
 # Extraneous bytes (in decompiler, not in ground-truth)
 def bytes_extraneous(cmp: UnoptimizedProgramInfoCompare2) -> int:

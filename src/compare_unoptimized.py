@@ -158,11 +158,11 @@ class UnoptimizedProgramInfoCompare2(object):
     def get_global_compare_record_map(self) -> 'dict[Varnode, VarnodeCompareRecord]':
         return self.globals_comparison.get_varnode_compare_record_map()
 
-    def get_bytes(self) -> int:
-        return sum([ varnode_record.get_varnode().get_size() for varnode_record in self.get_varnode_compare_records() ])
+    def get_bytes(self, varnode_filter=None) -> int:
+        return sum([ varnode_record.get_varnode().get_size() for varnode_record in self.get_varnode_compare_records() if varnode_filter is None or varnode_filter(varnode_record.get_varnode())])
 
-    def bytes_overlapped(self) -> int:
-        return self.globals_comparison.bytes_overlapped() + sum([ cmp.varnode_bytes_overlapped() for cmp in self.get_function_compare_records() ])
+    def bytes_overlapped(self, varnode_filter=None) -> int:
+        return self.globals_comparison.bytes_overlapped(varnode_filter=varnode_filter) + sum([ cmp.varnode_bytes_overlapped(varnode_filter=varnode_filter) for cmp in self.get_function_compare_records() ])
 
     def get_varnode_records_matched_level(self, level: int) -> List[VarnodeCompareRecord]:
         return [ record for record in self.get_varnode_compare_records() if record.get_compare_level() >= level ]
@@ -330,11 +330,11 @@ class UnoptimizedFunctionCompare2(object):
     def pc_range_bytes_overlapped(self) -> int:
         return self.pc_range_overlap.bytes_overlapped()
 
-    def get_varnode_bytes_overlapped(self) -> int:
-        return self.get_primitive_variable_varnode_set_comparison().bytes_overlapped()
+    def get_varnode_bytes_overlapped(self, varnode_filter=None) -> int:
+        return self.get_primitive_variable_varnode_set_comparison().bytes_overlapped(varnode_filter=varnode_filter)
 
-    def get_varnode_bytes(self) -> int:
-        return self.get_primitive_variable_varnode_set_comparison().get_bytes()
+    def get_varnode_bytes(self, varnode_filter=None) -> int:
+        return self.get_primitive_variable_varnode_set_comparison().get_bytes(varnode_filter=varnode_filter)
 
     def get_varnode_compare_records(self) -> List[VarnodeCompareRecord]:
         return self.varnode_set_compare2.get_varnode_compare_records()

@@ -1,5 +1,0 @@
-,Ground truth varnodes (decomposed) (metatype=INT),Varnodes matched @ level=OVERLAP (decomposed) (metatype=INT),Varnodes matched @ level=SUBSET (decomposed) (metatype=INT),Varnodes matched @ level=ALIGNED (decomposed) (metatype=INT),Varnodes matched @ level=MATCH (decomposed) (metatype=INT),"Varnode average compare score [0,1] (decomposed) (metatype=INT)"
-ndarray,1110,1110,0,0,0,0.25
-typecases,127,0,0,12,115,0.9763779527559056
-p0,16,0,0,2,14,0.96875
-structcases,7,0,0,7,0,0.75

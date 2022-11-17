@@ -258,7 +258,8 @@ class VarnodeCompareRecord(object):
         return self.varnode_comparison_map
 
     def bytes_overlapped(self) -> int:
-        return sum([ cmp.bytes_overlapped() for cmp in self.varnode_comparison_map.values() ])
+        overlapped = sum([ cmp.bytes_overlapped() for cmp in self.varnode_comparison_map.values() ])
+        return min((overlapped, self.varnode.get_size()))
 
     def show_summary(self, indent=0) -> str:
         s = str(self)

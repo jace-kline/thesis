@@ -1,5 +1,0 @@
-,Ground truth varnodes (decomposed),Varnodes matched @ level=NO_MATCH (decomposed),Varnodes matched @ level=OVERLAP (decomposed),Varnodes matched @ level=SUBSET (decomposed),Varnodes matched @ level=ALIGNED (decomposed),Varnodes matched @ level=MATCH (decomposed),"Varnode average comparison score [0,1] (decomposed)"
-ndarray,1110,0,1110,0,0,0,0.25
-typecases,132,0,1,0,14,117,0.9678030303030303
-p0,16,0,0,0,2,14,0.96875
-structcases,13,0,1,0,8,4,0.7884615384615384
