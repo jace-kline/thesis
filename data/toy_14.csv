@@ -1,5 +1,5 @@
-,Ground truth decomposed (primitive) varnodes w/ metatype=UNDEFINED,Missed decomposed (primitive) varnodes w/ metatype=UNDEFINED,Decompiler decomposed (primitive) varnodes w/ metatype=UNDEFINED matched @ level=OVERLAP,Decompiler decomposed (primitive) varnodes w/ metatype=UNDEFINED matched @ level=SUBSET,Decompiler decomposed (primitive) varnodes w/ metatype=UNDEFINED matched @ level=ALIGNED,Decompiler decomposed (primitive) varnodes w/ metatype=UNDEFINED matched @ level=MATCH,"Decomposed (primitive) varnode average compare score [0,1] w/ metatype=UNDEFINED"
-ndarray,0,0,0,0,0,0,
-typecases,1,0,1,0,0,0,0.25
-p0,0,0,0,0,0,0,
-structcases,2,0,1,0,1,0,0.5
+,Array comparisons,Array length average difference (ground truth length - decompiler length),Array length average absolute error ratio (length error / ground truth length),Array size average difference (ground truth size - decompiler size),Array size average absolute error ratio (size error / ground truth size),"Dimension match ratio [0,1]","Array comparison average element type comparison score [0,1]"
+ndarray,2,274.5,0.4995,-4.0,0.001,0.0,0.6666666666666666
+typecases,2,-2.0,0.11,-8.0,0.11,0.5,1.0
+p0,1,0.0,0.0,0.0,0.0,1.0,1.0
+structcases,0,,,,,,

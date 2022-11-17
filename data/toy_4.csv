@@ -1,4 +1,4 @@
-,Ground truth varnodes w/ metatype=FLOAT,Missed varnodes w/ metatype=FLOAT,Decompiler varnodes w/ metatype=FLOAT matched @ level=OVERLAP,Decompiler varnodes w/ metatype=FLOAT matched @ level=SUBSET,Decompiler varnodes w/ metatype=FLOAT matched @ level=ALIGNED,Decompiler varnodes w/ metatype=FLOAT matched @ level=MATCH,"Varnode average compare score [0,1] w/ metatype=FLOAT"
+,Ground truth varnodes (metatype=FLOAT),Decompiler varnodes matched @ level=NO_MATCH (metatype=FLOAT),Decompiler varnodes matched @ level=OVERLAP (metatype=FLOAT),Decompiler varnodes matched @ level=SUBSET (metatype=FLOAT),Decompiler varnodes matched @ level=ALIGNED (metatype=FLOAT),Decompiler varnodes matched @ level=MATCH (metatype=FLOAT),"Varnode average compare score [0,1] (metatype=FLOAT)"
 ndarray,0,0,0,0,0,0,
 typecases,0,0,0,0,0,0,
 p0,0,0,0,0,0,0,

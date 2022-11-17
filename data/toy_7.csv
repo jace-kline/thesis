@@ -1,4 +1,4 @@
-,Ground truth varnodes w/ metatype=STRUCT,Missed varnodes w/ metatype=STRUCT,Decompiler varnodes w/ metatype=STRUCT matched @ level=OVERLAP,Decompiler varnodes w/ metatype=STRUCT matched @ level=SUBSET,Decompiler varnodes w/ metatype=STRUCT matched @ level=ALIGNED,Decompiler varnodes w/ metatype=STRUCT matched @ level=MATCH,"Varnode average compare score [0,1] w/ metatype=STRUCT"
+,Ground truth varnodes (metatype=STRUCT),Decompiler varnodes matched @ level=NO_MATCH (metatype=STRUCT),Decompiler varnodes matched @ level=OVERLAP (metatype=STRUCT),Decompiler varnodes matched @ level=SUBSET (metatype=STRUCT),Decompiler varnodes matched @ level=ALIGNED (metatype=STRUCT),Decompiler varnodes matched @ level=MATCH (metatype=STRUCT),"Varnode average compare score [0,1] (metatype=STRUCT)"
 ndarray,0,0,0,0,0,0,
 typecases,3,0,1,2,0,0,0.4166666666666667
 p0,0,0,0,0,0,0,

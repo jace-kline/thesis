@@ -10,34 +10,14 @@ class Metric(object):
     def __init__(
         self,
 
-        # a string id name used to uniquely identify the metric
-        id_name: str,
-
         # a more detailed string that can be used to display the metric
         display_name: str,
 
         # the function/callable that actually computes the value of the metric, given an UnoptimizedProgramCompare2 object
         compute: Callable, # UnoptimizedProgramInfoCompare2 -> Any
-
-        # a more detailed description of the metric
-        description: str = "",
-
-        # a map of "contextual" key-value pairs that could be used for additional
-        # filtration/processing
-        context: 'dict[str, Any]' = None,
-
-        # a list of string tags to help identify/group the metric
-        tags: List[str] = None
     ):
-        self.id_name = id_name
         self.display_name = display_name
         self.compute = compute
-        self.description = description
-        self.context = context if context is not None else {}
-        self.tags = tags + list(self.context.keys()) if tags is not None else []
-
-    def get_id_name(self) -> str:
-        return self.id_name
 
     def get_display_name(self) -> str:
         return self.display_name
@@ -45,57 +25,15 @@ class Metric(object):
     def get_compute_function(self) -> Callable:
         return self.compute
 
-    def get_description(self) -> str:
-        return self.description
-
-    def get_tags(self) -> str:
-        return self.tags
-
-    def has_tag(self, tag: str) -> bool:
-        return tag in self.tags
-
     def __call__(self, cmp: UnoptimizedProgramInfoCompare2) -> Any:
         return self.compute(cmp)
 
+    # the metric should be uniquely identified by its computer function
     def __hash__(self) -> int:
-        return hash(self.id_name)
+        return hash(self.compute)
 
     def __str__(self) -> str:
-        return "<Metric id_name={}>".format(self.id_name)
-
-    def __repr__(self) -> str:
-        return self.__str__()
-
-class MetricResult(object):
-    @staticmethod
-    def compute_result(metric: Metric, cmp: UnoptimizedProgramInfoCompare2) -> 'MetricResult':
-        return __class__(metric, cmp, metric(cmp))
-
-    def __init__(
-        self,
-        metric: Metric,
-        cmp: UnoptimizedProgramInfoCompare2,
-        result: Union[float, int]
-    ):
-        self.metric = metric
-        self.cmp = cmp
-        self.result = result
-
-    def get_metric(self) -> Metric:
-        return self.metric
-
-    def get_cmp(self) -> UnoptimizedProgramInfoCompare2:
-        return self.cmp
-
-    def get_result(self) -> Union[float, int]:
-        return self.result
-
-    def __str__(self) -> str:
-        return "<MetricResult metric={} cmp={} result={}>".format(
-            self.metric,
-            self.cmp,
-            self.result
-        )
+        return "<Metric '{}'>".format(self.display_name)
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -104,13 +42,18 @@ class MetricsGroup(object):
     def __init__(
         self,
         name: str,
+        display_name: str,
         metrics: List[Metric] = None
     ):
         self.name = name
+        self.display_name = display_name
         self.metrics = metrics if metrics is not None else []
 
     def get_name(self) -> str:
         return self.name
+
+    def get_display_name(self) -> str:
+        return self.display_name
 
     def get_metrics(self) -> List[Metric]:
         return self.metrics
@@ -119,27 +62,18 @@ class MetricsGroup(object):
         self.metrics.append(metric)
 
     def mk_add_metric(self,
-        id_name: str,
         display_name: str,
-        compute: Callable, # UnoptimizedProgramInfoCompare2 -> Any
-        description: str = None,
-        tags: List[str] = None,
-        context: 'dict[str, Any]' = None
+        compute: Callable # UnoptimizedProgramInfoCompare2 -> Any
     ):
         self.metrics.append(
             Metric(
-                id_name,
                 display_name,
-                compute,
-                description=description,
-                tags=tags,
-                context=context
+                compute
             )
         )
 
-
-    def compute_results(self, cmp: UnoptimizedProgramInfoCompare2) -> List[MetricResult]:
-        return [ MetricResult.compute_result(metric, cmp) for metric in self.metrics ]
+    def compute_results(self, cmp: UnoptimizedProgramInfoCompare2) -> List[Any]:
+        return [ metric(cmp) for metric in self.metrics ]
 
     def __iter__(self) -> Iterator[Metric]:
         return iter(self.metrics)
@@ -158,386 +92,177 @@ def make_metrics() -> List[MetricsGroup]:
     metrics_groups: List[MetricsGroup] = []
 
     # Data bytes metrics
-    bytes_group = MetricsGroup("DATA BYTES")
+    bytes_group = MetricsGroup("bytes", "DATA BYTES")
     bytes_group.mk_add_metric(
-        "bytes_truth",
         "Ground truth data bytes",
-        bytes_truth,
-        description="Data bytes captured in ground truth",
-        tags=["bytes"]
+        bytes_truth
     )
 
-    # bytes_group.mk_add_metric(
-    #     "bytes_decomp",
-    #     "Decompiler data bytes",
-    #     bytes_decomp,
-    #     description="Data bytes inferred by the decompiler",
-    #     tags=["bytes"]
-    # )
-
     bytes_group.mk_add_metric(
-        "bytes_found",
         "Bytes found",
-        bytes_found,
-        description="Data bytes present in ground truth that are found by decompiler",
-        tags=["bytes"]
+        bytes_found
     )
 
     bytes_group.mk_add_metric(
-        "bytes_missed",
         "Bytes missed",
-        bytes_missed,
-        description="Data bytes present in ground truth that are not found by decompiler",
-        tags=["bytes"]
+        bytes_missed
     )
-
-    # bytes_group.mk_add_metric(
-    #     "bytes_found_fraction",
-    #     "Bytes found fraction",
-        
-    # )
-
-    # bytes_group.mk_add_metric(
-    #     "bytes_extraneous",
-    #     "Extraneous decompiler data bytes",
-    #     bytes_extraneous,
-    #     description="Data bytes inferred by decompiler that are not present in ground truth",
-    #     tags=["bytes"]
-    # )
     metrics_groups.append(bytes_group)
 
     # Function metrics
-    functions_group = MetricsGroup("FUNCTIONS")
+    functions_group = MetricsGroup("functions", "FUNCTIONS")
     functions_group.mk_add_metric(
-        "functions_truth",
         "Ground truth functions",
-        lambda cmp: len(functions_truth(cmp)),
-        description="Functions captured in ground truth",
-        tags=["functions"]
+        lambda cmp: len(functions_truth(cmp))
     )
 
-    # functions_group.mk_add_metric(
-    #     "functions_decomp",
-    #     "Decompiler functions",
-    #     lambda cmp: len(functions_decomp(cmp)),
-    #     description="Functions inferred by the decompiler",
-    #     tags=["functions"]
-    # )
-
     functions_group.mk_add_metric(
-        "functions_found",
         "Functions found",
-        lambda cmp: len(functions_found(cmp)),
-        description="Functions present in ground truth that are found by decompiler, based on function entry point address",
-        tags=["functions"]
+        lambda cmp: len(functions_found(cmp))
     )
 
     functions_group.mk_add_metric(
-        "functions_missed",
         "Functions missed",
-        lambda cmp: len(functions_missed(cmp)),
-        description="Functions present in ground truth that are not found by decompiler",
-        tags=["functions"]
+        lambda cmp: len(functions_missed(cmp))
     )
-
-    # functions_group.mk_add_metric(
-    #     "functions_extraneous",
-    #     "Extraneous decompiler functions",
-    #     lambda cmp: len(functions_extraneous(cmp)),
-    #     description="Functions inferred by decompiler that are not present in ground truth",
-    #     tags=["functions"]
-    # )
     metrics_groups.append(functions_group)
 
     # High-level Varnode metrics
-    varnodes_group = MetricsGroup("VARNODES")
+    varnodes_group = MetricsGroup("varnodes", "VARNODES")
     varnodes_group.mk_add_metric(
-        "varnodes_truth",
         "Ground truth varnodes",
-        lambda cmp: len(varnodes_truth(cmp)),
-        description="High-level variable instances (varnodes) present in ground truth",
-        tags=["varnodes"]
+        lambda cmp: len(varnodes_truth(cmp))
     )
-
-    # varnodes_group.mk_add_metric(
-    #     "varnodes_decomp",
-    #     "Decompiler varnodes",
-    #     lambda cmp: len(varnodes_decomp(cmp)),
-    #     description="High-level variable instances (varnodes) inferred by decompiler",
-    #     tags=["varnodes"]
-    # )
 
     for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
         compare_level_str = VarnodeCompareLevel.to_string(compare_level)
         varnodes_group.mk_add_metric(
-            "varnodes_matched_at_{}".format(compare_level_str),
             "Varnodes matched @ level={}".format(compare_level_str),
-            lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level)),
-            context={
-                "varnode_compare_level": compare_level
-            },
-            tags=["varnodes"]
+            lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level))
         )
 
     varnodes_group.mk_add_metric(
-        "varnodes_missed",
-        "Missed varnodes",
-        lambda cmp: len(varnodes_missed(cmp)),
-        description="High-level variable instances (varnodes) present in ground truth that are not overlapped by decompiler",
-        tags=["varnodes"]
-    )
-
-    # varnodes_group.mk_add_metric(
-    #     "varnodes_extraneous",
-    #     "Extraneous decompiler varnodes",
-    #     lambda cmp: len(varnodes_extraneous(cmp)),
-    #     description="High-level variable instances (varnodes) inferred by decompiler but not present in ground truth",
-    #     tags=["varnodes"]
-    # )
-
-    varnodes_group.mk_add_metric(
-        "varnodes_avg_compare_score",
         "Varnode average comparison score [0,1]",
-        varnodes_avg_compare_score,
-        description="Average high-level varnode comparison score [0,1] for comparisons of each ground truth varnode",
-        tags=["varnodes"]
+        varnodes_avg_compare_score
     )
     metrics_groups.append(varnodes_group)
 
     # MetaType-specific Varnode metrics
-    for metatype in [MetaType.INT, MetaType.FLOAT, MetaType.POINTER, MetaType.ARRAY, MetaType.STRUCT, MetaType.UNION, MetaType.UNDEFINED]:
+    for metatype in [MetaType.INT, MetaType.FLOAT, MetaType.POINTER, MetaType.ARRAY, MetaType.STRUCT, MetaType.UNION]:
         metatype_str = MetaType.repr(metatype)
-        group = MetricsGroup("VARNODES (metatype = {})".format(metatype_str))
-
-        # the metatype should be placed in the context
-        context = {
-            "metatype": metatype
-        }
-
-        group.mk_add_metric(
-            "varnodes_truth_metatype_{}".format(metatype_str),
-            "Ground truth varnodes w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype)),
-            context=context,
-            tags=["varnodes"]
+        group = MetricsGroup(
+            "varnodes_metatype_{}".format(metatype_str),
+            "VARNODES (metatype = {})".format(metatype_str)
         )
 
-        # group.mk_add_metric(
-        #     "varnodes_decomp_metatype_{}".format(metatype_str),
-        #     "Decompiler varnodes w/ metatype={}".format(metatype_str),
-        #     lambda cmp, metatype=metatype: len(varnodes_decomp_metatype(cmp, metatype)),
-        #     context=context,
-        #     tags=["varnodes"]
-        # )
-
         group.mk_add_metric(
-            "varnodes_missed_metatype_{}".format(metatype_str),
-            "Missed varnodes w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: len(varnodes_missed_metatype(cmp, metatype)),
-            context=context,
-            tags=["varnodes"]
+            "Ground truth varnodes (metatype={})".format(metatype_str),
+            lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype))
         )
 
-        for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
+        for compare_level in VarnodeCompareLevel.range():
             compare_level_str = VarnodeCompareLevel.to_string(compare_level)
             group.mk_add_metric(
-                "varnodes_matched_at_{}_metatype_{}".format(compare_level_str, metatype_str),
-                "Decompiler varnodes w/ metatype={} matched @ level={}".format(metatype_str, compare_level_str),
+                "Decompiler varnodes matched @ level={} (metatype={})".format(compare_level_str, metatype_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([
                     record for record in
                     varnode_compare_records_matched_at_level(cmp, compare_level)
                     if record.get_varnode().get_datatype().get_metatype() == metatype
-                ]),
-                context={ **context, "varnode_compare_level": compare_level },
-                tags=["varnodes"]
+                ])
             )
 
         group.mk_add_metric(
-            "varnodes_avg_compare_score_metatype_{}".format(metatype_str),
-            "Varnode average compare score [0,1] w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype),
-            tags=["varnodes"]
+            "Varnode average compare score [0,1] (metatype={})".format(metatype_str),
+            lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype)
         )
         metrics_groups.append(group)
 
     # Primitive Varnode metrics
-    primitive_varnodes_group = MetricsGroup("PRIMITIVE VARNODES")
-    primitive_context = {
-        "primitive": True
-    }
+    primitive_varnodes_group = MetricsGroup("varnodes_decomposed", "VARNODES (decomposed)")
 
     primitive_varnodes_group.mk_add_metric(
-        "primitive_varnodes_truth",
-        "Ground truth decomposed (primitive) varnodes",
-        lambda cmp: len(varnodes_truth(cmp, primitive=True)),
-        description="Decomposed primitive variable instances (varnodes) present in ground truth",
-        context=primitive_context,
-        tags=["varnodes"]
+        "Ground truth varnodes (decomposed)",
+        lambda cmp: len(varnodes_truth(cmp, primitive=True))
     )
 
-    # primitive_varnodes_group.mk_add_metric(
-    #     "primitive_varnodes_decomp",
-    #     "Decompiler decomposed (primitive) varnodes",
-    #     lambda cmp: len(varnodes_decomp(cmp, primitive=True)),
-    #     description="Decomposed (primitive) variable instances (varnodes) inferred by decompiler",
-    #     context=primitive_context,
-    #     tags=["varnodes"]
-    # )
-
-    for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
+    for compare_level in VarnodeCompareLevel.range():
         compare_level_str = VarnodeCompareLevel.to_string(compare_level)
         primitive_varnodes_group.mk_add_metric(
-            "primitive_varnodes_matched_at_{}".format(compare_level_str),
-            "Decomposed (primitive) varnodes matched @ level={}".format(compare_level_str),
-            lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True)),
-            context={ **primitive_context, "varnode_compare_level": compare_level },
-            tags=["varnodes"]
+            "Varnodes matched @ level={} (decomposed)".format(compare_level_str),
+            lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True))
         )
 
     primitive_varnodes_group.mk_add_metric(
-        "primitive_varnodes_missed",
-        "Missed decomposed (primitive) varnodes",
-        lambda cmp: len(varnodes_missed(cmp, primitive=True)),
-        description="Decomposed (primitive) variable instances (varnodes) present in ground truth that are not overlapped by decompiler",
-        context=primitive_context,
-        tags=["varnodes"]
-    )
-
-    # primitive_varnodes_group.mk_add_metric(
-    #     "primitive_varnodes_extraneous",
-    #     "Extraneous decomposed (primitive) decompiler varnodes",
-    #     lambda cmp: len(varnodes_extraneous(cmp, primitive=True)),
-    #     description="Decomposed (primitive) variable instances (varnodes) inferred by decompiler but not present in ground truth",
-    #     context=primitive_context,
-    #     tags=["varnodes"]
-    # )
-
-    primitive_varnodes_group.mk_add_metric(
-        "primitive_varnodes_avg_compare_score",
-        "Decomposed (primitive) varnode average comparison score [0,1]",
-        lambda cmp: varnodes_avg_compare_score(cmp, primitive=True),
-        description="Average decomposed (primitive) varnode comparison score [0,1] for comparisons of each ground truth varnode",
-        context=primitive_context,
-        tags=["varnodes"]
+        "Varnode average comparison score [0,1] (decomposed)",
+        lambda cmp: varnodes_avg_compare_score(cmp, primitive=True)
     )
     metrics_groups.append(primitive_varnodes_group)
 
     # MetaType-specific primitive Varnode metrics
-    for metatype in [MetaType.INT, MetaType.FLOAT, MetaType.POINTER, MetaType.UNDEFINED]:
+    for metatype in [MetaType.INT, MetaType.FLOAT, MetaType.POINTER]:
         metatype_str = MetaType.repr(metatype)
-        group = MetricsGroup("PRIMITIVE VARNODES (metatype = {})".format(metatype_str))
-        context = { **primitive_context, "metatype": metatype }
-
-        group.mk_add_metric(
-            "primitive_varnodes_truth_metatype_{}".format(metatype_str),
-            "Ground truth decomposed (primitive) varnodes w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype, primitive=True)),
-            context=context,
-            tags=["varnodes"]
+        group = MetricsGroup(
+            "varnodes_decomposed_metatype_{}".format(metatype_str),
+            "VARNODES (decomposed) (metatype = {})".format(metatype_str)
         )
 
-        # group.mk_add_metric(
-        #     "primitive_varnodes_decomp_metatype_{}".format(metatype_str),
-        #     "Decompiler decomposed (primitive) varnodes w/ metatype={}".format(metatype_str),
-        #     lambda cmp, metatype=metatype: len(varnodes_decomp_metatype(cmp, metatype, primitive=True)),
-        #     context=context,
-        #     tags=["varnodes"]
-        # )
-
         group.mk_add_metric(
-            "primitive_varnodes_missed_metatype_{}".format(metatype_str),
-            "Missed decomposed (primitive) varnodes w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: len(varnodes_missed_metatype(cmp, metatype, primitive=True)),
-            context=context,
-            tags=["varnodes"]
+            "Ground truth varnodes (decomposed) (metatype={})".format(metatype_str),
+            lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype, primitive=True))
         )
 
         for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
             compare_level_str = VarnodeCompareLevel.to_string(compare_level)
             group.mk_add_metric(
-                "primitive_varnodes_matched_at_{}_metatype_{}".format(compare_level_str, metatype_str),
-                "Decompiler decomposed (primitive) varnodes w/ metatype={} matched @ level={}".format(metatype_str, compare_level_str),
+                "Varnodes matched @ level={} (decomposed) (metatype={})".format(compare_level_str, metatype_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([
                     record for record in
                     varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True)
                     if record.get_varnode().get_datatype().get_metatype() == metatype
-                ]),
-                context={ **context, "varnode_compare_level": compare_level },
-                tags=["varnodes"]
+                ])
             )
 
         group.mk_add_metric(
-            "primitive_varnodes_avg_compare_score_metatype_{}".format(metatype_str),
-            "Decomposed (primitive) varnode average compare score [0,1] w/ metatype={}".format(metatype_str),
-            lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype, primitive=True),
-            context=primitive_context,
-            tags=["varnodes"]
+            "Varnode average compare score [0,1] (decomposed) (metatype={})".format(metatype_str),
+            lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype, primitive=True)
         )
         metrics_groups.append(group)
 
     # Array comparison metrics
-    array_group = MetricsGroup("ARRAY COMPARISONS")
+    array_group = MetricsGroup("array_comparisons", "ARRAY COMPARISONS")
     array_group.mk_add_metric(
-        "array_comparisons",
         "Array comparisons",
-        lambda cmp: len(array_comparisons(cmp)),
-        tags=["array"]
+        lambda cmp: len(array_comparisons(cmp))
     )
 
     array_group.mk_add_metric(
-        "array_length_avg_diff",
-        "Array length average difference (ground truth length - decompiler length)",
-        lambda cmp: mean_over_array_comparisons(cmp, array_elements_diff),
-        tags=["array"]
-    )
-
-    # array_group.mk_add_metric(
-    #     "array_length_avg_error",
-    #     "Array length average absolute error",
-    #     lambda cmp: mean_over_array_comparisons(cmp, array_elements_error),
-    #     tags=["array"]
-    # )
-
-    array_group.mk_add_metric(
-        "array_length_avg_error_ratio",
-        "Array length average absolute error ratio (length error / ground truth length)",
-        lambda cmp: mean_over_array_comparisons(cmp, array_elements_error_ratio),
-        tags=["array"]
+        "Array length (elements) average error",
+        lambda cmp: mean_over_array_comparisons(cmp, array_elements_error)
     )
 
     array_group.mk_add_metric(
-        "array_size_avg_diff",
-        "Array size average difference (ground truth size - decompiler size)",
-        lambda cmp: mean_over_array_comparisons(cmp, array_size_diff),
-        tags=["array"]
-    )
-
-    # array_group.mk_add_metric(
-    #     "array_size_avg_error",
-    #     "Array size average absolute error",
-    #     lambda cmp: mean_over_array_comparisons(cmp, array_size_error),
-    #     tags=["array"]
-    # )
-
-    array_group.mk_add_metric(
-        "array_size_avg_error_ratio",
-        "Array size average absolute error ratio (size error / ground truth size)",
-        lambda cmp: mean_over_array_comparisons(cmp, array_size_error_ratio),
-        tags=["array"]
+        "Array length (elements) average error ratio",
+        lambda cmp: mean_over_array_comparisons(cmp, array_elements_error_ratio)
     )
 
     array_group.mk_add_metric(
-        "array_dimensions_match_ratio",
-        "Dimension match ratio [0,1]",
-        array_dimension_match_ratio,
-        tags=["array"]
+        "Array size (bytes) average error",
+        lambda cmp: mean_over_array_comparisons(cmp, array_size_error)
     )
 
     array_group.mk_add_metric(
-        "array_subtype_avg_compare_score",
-        "Array comparison average element type comparison score [0,1]",
-        array_subtype_avg_compare_score,
-        tags=["array"]
+        "Array size (bytes) average error ratio",
+        lambda cmp: mean_over_array_comparisons(cmp, array_size_error_ratio)
+    )
+
+    array_group.mk_add_metric(
+        "Array dimension match score [0,1]",
+        array_dimension_match_ratio
+    )
+
+    array_group.mk_add_metric(
+        "Array average element type comparison score [0,1]",
+        array_subtype_avg_compare_score
     )
     metrics_groups.append(array_group)
 

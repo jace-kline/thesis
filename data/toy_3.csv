@@ -1,4 +1,4 @@
-,Ground truth varnodes w/ metatype=INT,Missed varnodes w/ metatype=INT,Decompiler varnodes w/ metatype=INT matched @ level=OVERLAP,Decompiler varnodes w/ metatype=INT matched @ level=SUBSET,Decompiler varnodes w/ metatype=INT matched @ level=ALIGNED,Decompiler varnodes w/ metatype=INT matched @ level=MATCH,"Varnode average compare score [0,1] w/ metatype=INT"
+,Ground truth varnodes (metatype=INT),Decompiler varnodes matched @ level=NO_MATCH (metatype=INT),Decompiler varnodes matched @ level=OVERLAP (metatype=INT),Decompiler varnodes matched @ level=SUBSET (metatype=INT),Decompiler varnodes matched @ level=ALIGNED (metatype=INT),Decompiler varnodes matched @ level=MATCH (metatype=INT),"Varnode average compare score [0,1] (metatype=INT)"
 ndarray,0,0,0,0,0,0,
 typecases,8,0,0,0,6,2,0.8125
 p0,6,0,0,0,2,4,0.9166666666666666

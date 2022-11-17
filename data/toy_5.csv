@@ -1,4 +1,4 @@
-,Ground truth varnodes w/ metatype=POINTER,Missed varnodes w/ metatype=POINTER,Decompiler varnodes w/ metatype=POINTER matched @ level=OVERLAP,Decompiler varnodes w/ metatype=POINTER matched @ level=SUBSET,Decompiler varnodes w/ metatype=POINTER matched @ level=ALIGNED,Decompiler varnodes w/ metatype=POINTER matched @ level=MATCH,"Varnode average compare score [0,1] w/ metatype=POINTER"
+,Ground truth varnodes (metatype=POINTER),Decompiler varnodes matched @ level=NO_MATCH (metatype=POINTER),Decompiler varnodes matched @ level=OVERLAP (metatype=POINTER),Decompiler varnodes matched @ level=SUBSET (metatype=POINTER),Decompiler varnodes matched @ level=ALIGNED (metatype=POINTER),Decompiler varnodes matched @ level=MATCH (metatype=POINTER),"Varnode average compare score [0,1] (metatype=POINTER)"
 ndarray,0,0,0,0,0,0,
 typecases,1,0,0,0,1,0,0.75
 p0,0,0,0,0,0,0,

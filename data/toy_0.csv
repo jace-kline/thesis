@@ -1,4 +1,4 @@
-,Ground truth data bytes,Overlapped data bytes,Missed data bytes
+,Ground truth data bytes,Bytes found,Bytes missed
 ndarray,4440,4440,0
 typecases,584,572,12
 p0,61,61,0
