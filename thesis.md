@@ -1,10 +1,10 @@
-# An Evaluation Framework for Measuring the Accuracy of Decompilers
+# A Framework for Assessing Decompiler Inference Accuracy of Source-Level Program Constructs
 
 ## Abstract
 
-Decompilation is the process of reverse engineering a binary program into an equivalent source code representation with the intent to capture high-level program constructs such as functions, variables, data types, and control flow mechanisms employed by the original developer. Decompilation is applicable in many contexts, particularly for security analysts attempting to decipher the behavior of malware samples. However, due to the loss of information during compilation, this process is naturally speculative and thus is prone to inaccuracy. This inherent speculation motivates the idea of an evaluation framework for decompilers.
+Decompilation is the process of reverse engineering a binary program into an equivalent source code representation with the objective to recover high-level program constructs such as functions, variables, data types, and control flow mechanisms. Decompilation is applicable in many contexts, particularly for security analysts attempting to decipher the construction and behavior of malware samples. However, due to the loss of information during compilation, this process is naturally speculative and thus is prone to inaccuracy. This inherent speculation motivates the idea of an evaluation framework for decompilers.
 
-In this work, we present a novel framework to quantitatively evaluate the inference accuracy of decompilers with respect to high-level program constructs such as functions, variables, and data types. Within our framework, we develop a domain-specific language (DSL) for representing program information from any "ground truth" or decompiler source. Using our DSL, we implement a strategy for comparing ground truth and decompiler representations of the same program. From our comparisons, we extract and present insightful metrics illustrating the accuracy of decompiler inference. We leverage our framework to assess the inference performance of the Ghidra decompiler over a subset of the GNU Core Utilities (Coreutils) programs.
+In this work, we present a novel framework to quantitatively evaluate the inference accuracy of decompilers, regarding functions, variables, and data types. Within our framework, we develop a domain-specific language (DSL) for representing such program information from any "ground truth" or decompiler source. Using our DSL, we implement a strategy for comparing ground truth and decompiler representations of the same program. Subsequently, we extract and present insightful metrics illustrating the accuracy of decompiler inference regarding functions, variables, and data types, over a given set of benchmark programs. We leverage our framework to assess the correctness of the Ghidra decompiler when compared to ground truth information scraped from DWARF debugging information. We perform this assessment over a subset of the GNU Core Utilities (Coreutils) programs and discuss our findings.
 
 ## Introduction
 
@@ -39,7 +39,7 @@ Targeting the current gap in the literature outlined in the previous section, th
 
 The remainder of this paper is outlined as follows: In section 2, we discuss related research and background concepts useful for the understanding of this work. Next, in section 3, we detail our methodology for developing our evaluation framework. In section 4, we present and discuss our results of applying our evaluation framework to the Ghidra decompiler. We conclude in section 5 with a summary of our results, implications of our work, limitations, and future research directions.
 
-## Background
+## Background & Related Work
 
 ### Software Reverse Engineering, Dissassembly, and Decompilation
 
@@ -79,7 +79,7 @@ Pertinent to both disassembly and decompilation, the inference of functions, var
 
 In the 2020 paper *How Far We Have Come: Testing Decompilation Correctness of C Decompilers* by Liu and Wang [], the authors present an approach to determine the correctness of decompilers outputting C source code. They aim to find decompilation errors, recompilation errors, and behavior discrepancies exhibited by decompilers. To evaluate behavioral correctness, they attempt to recompile decompiled binaries (after potential syntax modifications) and use existing dynamic analysis techniques such as fuzzing to find differences in behavior between the recompiled and original programs. The objective of our work differs as we aim to evaluate decompiler inference of high-level structures such as functions, variables, and data types. Accurate inference of high-level structures enables easier understanding of decompiled programs by analysts; however, accurate behavior is also necessary to ensure that the decompiled representation is consistent with the original program. Hence, both of these works evaluate important aspects of decompiler correctness.
 
-The review *Type Inference on Executables* by Caballero and Lin (2016) provides a comprehensive summary of recent literature on techniques used for variable discovery and type inference. In addition, the authors present various software reverse engineering (SRE) tools and frameworks in terms of their inputs, analysis types, output formats, and use cases.
+The review *Type Inference on Executables* by Caballero and Lin (2016) provides a comprehensive summary of recent literature on techniques used for variable discovery and type inference. In addition, the authors present various software reverse engineering (SRE) tools and frameworks in terms of their inputs, analysis types, output formats, and use cases. In essence, this work surveys the a set of decompiler tools and characterizes them based on their purported capabilities. The purpose of our work, on the contrary, is to objectively determine the correctness of decompiler tools based on their inference accuracy of high-level program constructs.
 
 ## Methodology
 
@@ -194,9 +194,9 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
 * *ALIGNED*: For some varnode Y from the other source, X and Y share the same location and size in memory; however, the data types of X and Y do not match. The data types comparison could have any compare level less than *MATCH*.
 * *MATCH*: For some varnode Y from the other source, X and Y share the same location and size in memory, and their data types match exactly.
 
-##### Primitive (Decomposed) Variable Comparison
+##### Decomposed Variable Comparison
 
-The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of the synthesis of complex variables from its constituent parts.
+The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of complex variable synthesis from more primitive components.
 
 [Figure: Example of "decomposing" complex varnode]
 
@@ -279,8 +279,6 @@ For the clarity of our presentation and discussion, we select a subset of 13 Cor
 #### Variable (Varnode) Recovery
 
 ##### High-Level Varnode Recovery
-
-
 
 ##### Decomposed Varnode Recovery
 
