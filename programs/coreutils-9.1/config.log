@@ -27,10 +27,11 @@ uname -v = #1 SMP Mon Sep 19 19:14:52 UTC 2022
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /home/jacekline/dev/research/ghidra-fork/fork/evaluate/venv/bin
+PATH: /home/jacekline/dev/research/thesis/.venv/bin
 PATH: /home/jacekline/.local/bin
 PATH: /home/jacekline/bin
 PATH: /home/jacekline/.vscode-server/bin/8fa188b2b301d36553cbc9ce1b0a146ccb93351f/bin/remote-cli
+PATH: /home/jacekline/dev/research/thesis/.venv/bin
 PATH: /home/jacekline/.local/bin
 PATH: /home/jacekline/bin
 PATH: /home/jacekline/installs/anaconda3/condabin
@@ -183,8 +184,8 @@ configure:6370: checking for compiler option needed when checking for declaratio
 configure:6401: result: none
 configure:6413: checking whether make supports the include directive
 configure:6428: make -f confmf.GNU && cat confinc.out
-make[1]: Entering directory '/home/jacekline/dev/research/programs/coreutils-9.1'
-make[1]: Leaving directory '/home/jacekline/dev/research/programs/coreutils-9.1'
+make[1]: Entering directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1'
+make[1]: Leaving directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1'
 this is the am__doit target
 configure:6431: $? = 0
 configure:6450: result: yes (GNU style)
@@ -1427,7 +1428,7 @@ configure:8216: result: none needed
 configure:8344: autobuild project... GNU coreutils
 configure:8350: autobuild revision... 9.1
 configure:8355: autobuild hostname... Jace-PC
-configure:8366: autobuild timestamp... 20221111T151409Z
+configure:8366: autobuild timestamp... 20221118T015214Z
 configure:9307: checking for fchmod
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
 configure:9307: $? = 0
@@ -1481,8 +1482,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for _set_invalid_parameter_handler
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc0PcyYJ.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:132: undefined reference to `_set_invalid_parameter_handler'
+/usr/bin/ld: /tmp/cc0AdiG7.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:132: undefined reference to `_set_invalid_parameter_handler'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -1636,8 +1637,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for memset_s
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccwOpUuC.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:135: undefined reference to `memset_s'
+/usr/bin/ld: /tmp/ccpRfD5R.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:135: undefined reference to `memset_s'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -1968,8 +1969,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for fpurge
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccV86P5H.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:142: undefined reference to `fpurge'
+/usr/bin/ld: /tmp/cc0IBXjE.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:142: undefined reference to `fpurge'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2125,8 +2126,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for __freadahead
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccm5FUHv.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:143: undefined reference to `__freadahead'
+/usr/bin/ld: /tmp/ccaFkUlo.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:143: undefined reference to `__freadahead'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2283,8 +2284,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for __freadptr
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccreQYYg.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:144: undefined reference to `__freadptr'
+/usr/bin/ld: /tmp/ccuBT2Cd.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:144: undefined reference to `__freadptr'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2438,8 +2439,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for __freadptrinc
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc53oneD.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:144: undefined reference to `__freadptrinc'
+/usr/bin/ld: /tmp/ccAR1aJx.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:144: undefined reference to `__freadptrinc'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2593,8 +2594,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for __fseterr
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cczqQTOZ.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:144: undefined reference to `__fseterr'
+/usr/bin/ld: /tmp/ccjlreTV.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:144: undefined reference to `__fseterr'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2784,8 +2785,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for microuptime
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc4VHUrp.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:153: undefined reference to `microuptime'
+/usr/bin/ld: /tmp/ccbyWIbq.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:153: undefined reference to `microuptime'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -2948,8 +2949,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for nanouptime
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccrDdTfM.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:153: undefined reference to `nanouptime'
+/usr/bin/ld: /tmp/cc7RCTZT.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:153: undefined reference to `nanouptime'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -3132,8 +3133,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for getprogname
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc1ssAWz.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:158: undefined reference to `getprogname'
+/usr/bin/ld: /tmp/ccQk62bq.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:158: undefined reference to `getprogname'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -3301,8 +3302,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for getexecname
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cczCdPSU.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:158: undefined reference to `getexecname'
+/usr/bin/ld: /tmp/ccSMMbfM.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:158: undefined reference to `getexecname'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -3478,8 +3479,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for timespec_getres
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccDcbU68.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:160: undefined reference to `timespec_getres'
+/usr/bin/ld: /tmp/ccWa7o1Y.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:160: undefined reference to `timespec_getres'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -3711,8 +3712,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for mbslen
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cch7C1Ff.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:171: undefined reference to `mbslen'
+/usr/bin/ld: /tmp/ccYNGvT3.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:171: undefined reference to `mbslen'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -3948,8 +3949,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for pthread_sigmask
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc1e2Tl2.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:184: undefined reference to `pthread_sigmask'
+/usr/bin/ld: /tmp/ccCEKgQz.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:184: undefined reference to `pthread_sigmask'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -4175,8 +4176,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for stime
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccg3rNe2.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:192: undefined reference to `stime'
+/usr/bin/ld: /tmp/cci2O6tq.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:192: undefined reference to `stime'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -4459,8 +4460,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for vasnprintf
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccVOkMHe.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:210: undefined reference to `vasnprintf'
+/usr/bin/ld: /tmp/ccgFmMlq.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:210: undefined reference to `vasnprintf'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -4752,8 +4753,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for mquery
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cct6ne8N.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:228: undefined reference to `mquery'
+/usr/bin/ld: /tmp/cc0lv3i6.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:228: undefined reference to `mquery'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -4991,8 +4992,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for pstat_getprocvm
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cchkqMX6.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:228: undefined reference to `pstat_getprocvm'
+/usr/bin/ld: /tmp/cc1WX3Vv.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:228: undefined reference to `pstat_getprocvm'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -5234,8 +5235,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for directio
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccWm31VX.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:229: undefined reference to `directio'
+/usr/bin/ld: /tmp/ccpHhtjh.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:229: undefined reference to `directio'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -5540,8 +5541,8 @@ configure:9307: $? = 0
 configure:9307: result: yes
 configure:9307: checking for getgrgid_nomembers
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccCgnzvm.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrgid_nomembers'
+/usr/bin/ld: /tmp/ccFk5aTr.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrgid_nomembers'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -5795,8 +5796,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for getgrnam_nomembers
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccHee5KT.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrnam_nomembers'
+/usr/bin/ld: /tmp/ccS42mLN.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrnam_nomembers'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -6050,8 +6051,8 @@ configure: failed program was:
 configure:9307: result: no
 configure:9307: checking for getgrent_nomembers
 configure:9307: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccnZageh.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrent_nomembers'
+/usr/bin/ld: /tmp/ccfrESg6.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:244: undefined reference to `getgrent_nomembers'
 collect2: error: ld returned 1 exit status
 configure:9307: $? = 1
 configure: failed program was:
@@ -10678,8 +10679,8 @@ configure:17973: result: yes
 configure:18004: checking for pthread.h
 configure:18004: result: yes
 configure:18041: gcc -o conftest -g -O2   conftest.c   >&5
-/usr/bin/ld: /tmp/ccI2Icbs.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:270: undefined reference to `pthread_mutexattr_init'
+/usr/bin/ld: /tmp/ccAfcGvX.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:270: undefined reference to `pthread_mutexattr_init'
 collect2: error: ld returned 1 exit status
 configure:18041: $? = 1
 configure: failed program was:
@@ -15258,8 +15259,8 @@ configure:27835: $? = 0
 configure:27916: result: none needed
 configure:27947: checking for library containing setfilecon
 configure:27978: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc9lAICj.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:304: undefined reference to `setfilecon'
+/usr/bin/ld: /tmp/ccCYWZnT.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:304: undefined reference to `setfilecon'
 collect2: error: ld returned 1 exit status
 configure:27978: $? = 1
 configure: failed program was:
@@ -18197,7 +18198,7 @@ configure:32040: gcc -o conftest -g -O2   conftest.c  >&5
 configure:32040: $? = 0
 configure:32040: ./conftest
 *** %n in writable segment detected ***
-./configure: line 3731: 23517 Aborted                 ./conftest$ac_exeext
+./configure: line 3731: 22323 Aborted                 ./conftest$ac_exeext
 configure:32040: $? = 134
 configure: program exited with status 134
 configure: failed program was:
@@ -19026,8 +19027,8 @@ configure:33253: checking for Solaris 11.4 locale system
 configure:33286: result: no
 configure:33301: checking for getlocalename_l
 configure:33301: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccjJCmNq.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:374: undefined reference to `getlocalename_l'
+/usr/bin/ld: /tmp/ccNubnS3.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:374: undefined reference to `getlocalename_l'
 collect2: error: ld returned 1 exit status
 configure:33301: $? = 1
 configure: failed program was:
@@ -23350,8 +23351,8 @@ configure:40196: checking whether fflush works on input streams
 configure:40279: result: no
 configure:40318: checking for _fseeki64
 configure:40318: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccE9odFR.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:460: undefined reference to `_fseeki64'
+/usr/bin/ld: /tmp/ccGvk3qf.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:460: undefined reference to `_fseeki64'
 collect2: error: ld returned 1 exit status
 configure:40318: $? = 1
 configure: failed program was:
@@ -30236,8 +30237,8 @@ configure:45857: $? = 0
 configure:45866: result: yes
 configure:45896: checking for isapipe
 configure:45896: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccOwwnic.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:520: undefined reference to `isapipe'
+/usr/bin/ld: /tmp/ccIJY7By.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:520: undefined reference to `isapipe'
 collect2: error: ld returned 1 exit status
 configure:45896: $? = 1
 configure: failed program was:
@@ -30839,8 +30840,8 @@ configure:48183: $? = 0
 configure:48194: result: yes
 configure:48240: checking for __xpg4
 configure:48256: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccMDTaKl.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:511: undefined reference to `__xpg4'
+/usr/bin/ld: /tmp/ccER19sL.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:511: undefined reference to `__xpg4'
 collect2: error: ld returned 1 exit status
 configure:48256: $? = 1
 configure: failed program was:
@@ -33162,8 +33163,8 @@ configure:52174: $? = 0
 configure:52186: result: yes
 configure:52294: checking for __mktime_internal
 configure:52294: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccFkvThk.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:578: undefined reference to `__mktime_internal'
+/usr/bin/ld: /tmp/ccD8Zkkf.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:578: undefined reference to `__mktime_internal'
 collect2: error: ld returned 1 exit status
 configure:52294: $? = 1
 configure: failed program was:
@@ -33751,8 +33752,8 @@ configure: failed program was:
 configure:52294: result: no
 configure:52329: checking for listmntent
 configure:52329: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccGBvYBq.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:579: undefined reference to `listmntent'
+/usr/bin/ld: /tmp/cct4naAj.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:579: undefined reference to `listmntent'
 collect2: error: ld returned 1 exit status
 configure:52329: $? = 1
 configure: failed program was:
@@ -42035,8 +42036,8 @@ configure:53720: $? = 0
 configure:53720: result: yes
 configure:53720: checking for sched_getaffinity_np
 configure:53720: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccISUz2n.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:596: undefined reference to `sched_getaffinity_np'
+/usr/bin/ld: /tmp/cch2wVGf.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:596: undefined reference to `sched_getaffinity_np'
 collect2: error: ld returned 1 exit status
 configure:53720: $? = 1
 configure: failed program was:
@@ -42642,8 +42643,8 @@ configure: failed program was:
 configure:53720: result: no
 configure:53720: checking for pstat_getdynamic
 configure:53720: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccYj1ODI.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:596: undefined reference to `pstat_getdynamic'
+/usr/bin/ld: /tmp/cciu3HaE.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:596: undefined reference to `pstat_getdynamic'
 collect2: error: ld returned 1 exit status
 configure:53720: $? = 1
 configure: failed program was:
@@ -43249,8 +43250,8 @@ configure: failed program was:
 configure:53720: result: no
 configure:53720: checking for sysmp
 configure:53720: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cci6kWb7.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:596: undefined reference to `sysmp'
+/usr/bin/ld: /tmp/cct8Sd70.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:596: undefined reference to `sysmp'
 collect2: error: ld returned 1 exit status
 configure:53720: $? = 1
 configure: failed program was:
@@ -46340,8 +46341,8 @@ configure:54346: checking for sys/sysctl.h
 configure:54346: result: yes
 configure:54365: checking for pstat_getstatic
 configure:54365: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc8cVtHT.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:611: undefined reference to `pstat_getstatic'
+/usr/bin/ld: /tmp/cc7DNS3S.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:611: undefined reference to `pstat_getstatic'
 collect2: error: ld returned 1 exit status
 configure:54365: $? = 1
 configure: failed program was:
@@ -46966,8 +46967,8 @@ configure:54365: checking for sysmp
 configure:54365: result: no
 configure:54365: checking for getsysinfo
 configure:54365: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccveUD9N.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:611: undefined reference to `getsysinfo'
+/usr/bin/ld: /tmp/ccLSEyEN.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:611: undefined reference to `getsysinfo'
 collect2: error: ld returned 1 exit status
 configure:54365: $? = 1
 configure: failed program was:
@@ -47590,8 +47591,8 @@ configure:54365: checking for sysctl
 configure:54365: result: yes
 configure:54365: checking for table
 configure:54365: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccKuDkgR.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:612: undefined reference to `table'
+/usr/bin/ld: /tmp/ccpipNtQ.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:612: undefined reference to `table'
 collect2: error: ld returned 1 exit status
 configure:54365: $? = 1
 configure: failed program was:
@@ -48251,8 +48252,8 @@ configure:55058: $? = 0
 configure:55058: result: yes
 configure:55074: checking for getppriv
 configure:55074: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc115ZnN.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:621: undefined reference to `getppriv'
+/usr/bin/ld: /tmp/cc6Pg35E.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:621: undefined reference to `getppriv'
 collect2: error: ld returned 1 exit status
 configure:55074: $? = 1
 configure: failed program was:
@@ -55860,7 +55861,7 @@ configure:57062: checking for working re_compile_pattern
 configure:57375: gcc -o conftest -g -O2   conftest.c  >&5
 configure:57375: $? = 0
 configure:57375: ./conftest
-./configure: line 3731: 26876 Segmentation fault      ./conftest$ac_exeext
+./configure: line 3731: 25626 Segmentation fault      ./conftest$ac_exeext
 configure:57375: $? = 139
 configure: program exited with status 139
 configure: failed program was:
@@ -58240,8 +58241,8 @@ configure:59014: checking whether setlocale (category, NULL) is multithread-safe
 configure:59032: result: yes
 configure:59310: checking for sig2str
 configure:59310: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc2NLuna.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:697: undefined reference to `sig2str'
+/usr/bin/ld: /tmp/ccaV2cOF.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:697: undefined reference to `sig2str'
 collect2: error: ld returned 1 exit status
 configure:59310: $? = 1
 configure: failed program was:
@@ -65412,8 +65413,8 @@ configure:64204: $? = 0
 configure:64204: result: yes
 configure:64216: checking for library containing timer_settime
 configure:64247: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/cc0zpM2M.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:729: undefined reference to `timer_settime'
+/usr/bin/ld: /tmp/cczLYY6F.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:729: undefined reference to `timer_settime'
 collect2: error: ld returned 1 exit status
 configure:64247: $? = 1
 configure: failed program was:
@@ -79596,8 +79597,8 @@ configure: failed program was:
 configure:76722: result: no
 configure:76765: checking for mode_to_security_class
 configure:76765: gcc -o conftest -g -O2   conftest.c   >&5
-/usr/bin/ld: /tmp/cc8MkNdj.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:841: undefined reference to `mode_to_security_class'
+/usr/bin/ld: /tmp/ccVIzlSV.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:841: undefined reference to `mode_to_security_class'
 collect2: error: ld returned 1 exit status
 configure:76765: $? = 1
 configure: failed program was:
@@ -93317,8 +93318,8 @@ configure:78507: checking whether localtime caches TZ
 configure:78566: result: no
 configure:78577: checking for fclonefileat
 configure:78577: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccjbSPPP.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:854: undefined reference to `fclonefileat'
+/usr/bin/ld: /tmp/ccN0TBEp.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:854: undefined reference to `fclonefileat'
 collect2: error: ld returned 1 exit status
 configure:78577: $? = 1
 configure: failed program was:
@@ -94182,8 +94183,8 @@ configure: failed program was:
 configure:78577: result: no
 configure:78590: checking for getattrat
 configure:78590: gcc -o conftest -g -O2   conftest.c  >&5
-/usr/bin/ld: /tmp/ccZ4Xi8R.o: in function `main':
-/home/jacekline/dev/research/programs/coreutils-9.1/conftest.c:854: undefined reference to `getattrat'
+/usr/bin/ld: /tmp/cc0BSjZG.o: in function `main':
+/home/jacekline/dev/research/thesis/programs/coreutils-9.1/conftest.c:854: undefined reference to `getattrat'
 collect2: error: ld returned 1 exit status
 configure:78590: $? = 1
 configure: failed program was:
@@ -97832,7 +97833,7 @@ utils_cv_localtime_cache=no
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing aclocal-1.16'
+ACLOCAL='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing aclocal-1.16'
 ALLOCA=''
 ALLOCA_H='$(top_build_prefix)lib/alloca.h'
 AMDEPBACKSLASH='\'
@@ -97846,9 +97847,9 @@ AM_V='$(V)'
 APPLE_UNIVERSAL_BUILD='0'
 AR='ar'
 ARFLAGS='cr'
-AUTOCONF='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing autoconf'
-AUTOHEADER='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing automake-1.16'
+AUTOCONF='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing autoconf'
+AUTOHEADER='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing autoheader'
+AUTOMAKE='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing automake-1.16'
 AWK='gawk'
 BITSIZEOF_PTRDIFF_T=''
 BITSIZEOF_SIG_ATOMIC_T=''
@@ -99290,7 +99291,7 @@ HAVE_WS2TCPIP_H='0'
 HAVE_XLOCALE_H='0'
 HAVE__BOOL='1'
 HAVE__EXIT='1'
-HELP2MAN='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing help2man'
+HELP2MAN='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing help2man'
 HOSTENT_LIB=''
 ICONV_CONST=''
 ICONV_H='$(top_build_prefix)lib/iconv.h'
@@ -99373,7 +99374,7 @@ LTLIBINTL=''
 LTLIBMULTITHREAD='-pthread'
 LTLIBOBJS=''
 LTLIBTHREAD=''
-MAKEINFO='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/missing makeinfo'
+MAKEINFO='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/missing makeinfo'
 MAN=''
 MKDIR_P='/usr/bin/mkdir -p'
 MSGFMT=':'
@@ -99868,7 +99869,7 @@ XGETTEXT_EXTRA_OPTIONS=' --flag=error:3:c-format --flag=error_at_line:5:c-format
 YACC='bison -o y.tab.c'
 YFLAGS=''
 YIELD_LIB=''
-abs_aux_dir='/home/jacekline/dev/research/programs/coreutils-9.1/build-aux'
+abs_aux_dir='/home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux'
 ac_ct_CC='gcc'
 am__EXEEXT_FALSE=''
 am__EXEEXT_TRUE='#'
@@ -99909,7 +99910,7 @@ host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /home/jacekline/dev/research/programs/coreutils-9.1/build-aux/install-sh'
+install_sh='${SHELL} /home/jacekline/dev/research/thesis/programs/coreutils-9.1/build-aux/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 lispdir='${datarootdir}/emacs/site-lisp'
@@ -100802,13 +100803,13 @@ config.status:3730: creating lib/config.h
 config.status:3911: lib/config.h is unchanged
 config.status:3990: executing depfiles commands
 config.status:4067: cd .       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
-make[1]: Entering directory '/home/jacekline/dev/research/programs/coreutils-9.1'
+make[1]: Entering directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1'
 make[1]: Nothing to be done for 'am--depfiles'.
-make[1]: Leaving directory '/home/jacekline/dev/research/programs/coreutils-9.1'
+make[1]: Leaving directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1'
 config.status:4072: $? = 0
 config.status:4067: cd gnulib-tests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
-make[1]: Entering directory '/home/jacekline/dev/research/programs/coreutils-9.1/gnulib-tests'
+make[1]: Entering directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1/gnulib-tests'
 make[1]: Nothing to be done for 'am--depfiles'.
-make[1]: Leaving directory '/home/jacekline/dev/research/programs/coreutils-9.1/gnulib-tests'
+make[1]: Leaving directory '/home/jacekline/dev/research/thesis/programs/coreutils-9.1/gnulib-tests'
 config.status:4072: $? = 0
 config.status:3990: executing po-directories commands

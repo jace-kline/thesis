@@ -2,7 +2,9 @@
 
 ## Abstract
 
+Decompilation is the process of reverse engineering a binary program into an equivalent source code representation with the intent to capture high-level program constructs such as functions, variables, data types, and control flow mechanisms employed by the original developer. Decompilation is applicable in many contexts, particularly for security analysts attempting to decipher the behavior of malware samples. However, due to the loss of information during compilation, this process is naturally speculative and thus is prone to inaccuracy. This inherent speculation motivates the idea of an evaluation framework for decompiler tools.
 
+In this work, we first present a novel framework to quantitatively evaluate the accuracy of a decompiler over target benchmark programs. We develop a domain-specific language (DSL) for representing program information from any source, specifically a "ground truth" or decompiler. Using our DSL, we implement a strategy for comparing ground truth and decompiler representations of the same program and subsequently extract and present insightful metrics regarding the accuracy of the decompiler inference. To demonstrate our framework, we assess the inference performance of the Ghidra decompiler over a subset of the GNU Core Utilities (Coreutils) programs.
 
 ## Introduction
 
@@ -75,6 +77,10 @@ Pertinent to both disassembly and decompilation, the inference of functions, var
 
 ### Related Work
 
+In the 2020 paper *How Far We Have Come: Testing Decompilation Correctness of C Decompilers* by Liu and Wang [], the authors present an approach to determine the correctness of decompilers outputting C source code. They aim to find decompilation errors, recompilation errors, and behavior discrepancies exhibited by decompilers. To evaluate behavioral correctness, they attempt to recompile decompiled binaries (after potential syntax modifications) and use existing dynamic analysis techniques such as fuzzing to find differences in behavior between the recompiled and original programs. The objective of our work differs as we aim to evaluate decompiler inference of high-level structures such as functions, variables, and data types. Accurate inference of high-level structures enables easier understanding of decompiled programs by analysts; however, accurate behavior is also necessary to ensure that the decompiled representation is consistent with the original program. Hence, both of these works evaluate important aspects of decompiler correctness.
+
+The review *Type Inference on Executables* by Caballero and Lin (2016) provides a comprehensive summary of recent literature on techniques used for variable discovery and type inference. In addition, the authors present various software reverse engineering (SRE) tools and frameworks in terms of their inputs, analysis types, output formats, and use cases.
+
 ## Methodology
 
 In this section, we discuss the design, construction, and evolution of our decompiler evaluation framework. To achieve this, we identify key objectives that we subsequently address in more detail in the following subsections. These objectives are as follows:
@@ -135,7 +141,9 @@ In addition to capturing a ground-truth program representation in our DSL, we mu
 
 For our analysis of the Ghidra decompiler, we utilize the Ghidra scripting API to programmatically scrape and process information about the decompilation of target binary programs. The Ghidra scripting environment exposes its own collection of data structures and functions from which we obtain our information. Since the Ghidra scripting environment supports Python, we directly import and leverage our "flattened" IR (described in the previous section) and our DSL constructs to carry out the translation.
 
-The strategy employed for the Ghidra translation is similar to that of our DWARF translation algorithm described in the previous section. We utilize functions exposed by the Ghidra API to obtain particular information about functions, variables, data types, and associated addresses gathered during the decompilation. We use the same IR defined for the DWARF translation to accumulate flattened records corresponding to these program constructs in a database. From here, we run the same resolution algorithm on the IR constructs database to generate the root *ProgramInfo* object in our DSL. The Ghidra-specific translation logic is implemented in roughly 900 lines of Python code.
+The strategy employed for the Ghidra translation is similar to that of our DWARF translation algorithm described in the previous section. We utilize the Ghidra API to obtain particular information about functions, variables, data types, and associated addresses gathered during the decompilation. Of particular use to our translation logic is the *DecompInterface* object exposed by the Ghidra API. This interface supports decompiling functions one at a time. Information inferred by each function's decompilation is used to update Ghidra's internal representation of the program information. By decompiling each of the functions extracted from Ghidra's disassembly analysis, we attempt to form a complete decompiled interpretation of the entire input program.
+
+We use the same IR defined for the DWARF translation to accumulate flattened records corresponding to these program constructs in a database. From here, we run the same resolution algorithm on the IR constructs database to generate the root *ProgramInfo* object in our DSL. The Ghidra-specific translation logic is implemented in roughly 900 lines of Python code.
 
 ### Comparison of "Ground Truth" and Decompiler Program Information
 
@@ -262,7 +270,7 @@ With the comparisons computed for each program and compilation configuration, we
 
 For the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] (*stat*, *nohup*, *pinky*, *csplit*, *ginstall*, *fmt*, *df*, *join*, *expr*, *seq*, *unexpand*, *tsort*, *tee*, *base64*, *sum*) and include 2 programs, *cksum* and *wc*, in which the Ghidra decompiler produces interesting and anomalous results. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
 
-#### Functions Recovery
+#### Function Recovery
 
 [Table: FUNCTIONS (debug)]
 [Table: FUNCTIONS (standard)]
@@ -271,6 +279,8 @@ For the clarity of our presentation and discussion, we select a subset of 13 Cor
 #### Variable (Varnode) Recovery
 
 ##### High-Level Varnode Recovery
+
+
 
 ##### Decomposed Varnode Recovery
 
