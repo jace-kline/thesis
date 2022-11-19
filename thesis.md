@@ -239,6 +239,8 @@ Recall that a *Varnode* is defined to be a source-level *Variable* tied to a sin
 * *Ground truth varnodes*: The total number of varnodes present in the ground truth source. This includes varnodes associated with global and local variables from all functions.
 * *Varnodes matched @ level=LEVEL*: Each ground truth varnode is associated with a *varnode comparison level* (*NO_MATCH*, *OVERLAP*, *SUBSET*, *ALIGNED*, *MATCH*) during the comparison with the set of decompiler varnodes. This metric specifies the number of ground truth varnodes that are matched at the specified level.
 * *Varnodes average comparison score*: For each *varnode comparison level*, we first linearly assign an integer representing the strength of the varnode comparison (*NO_MATCH* = 0, *OVERLAP* = 1, *SUBSET* = 2, *ALIGNED* = 3, *MATCH* = 4). We then normalize these scores to fall within the range zero to one. Then, for each ground truth varnode, we compute this normalized score. We take the average score over all ground truth varnodes to obtain the resulting metric. This metric approximates how well, on average, the decompiler infers the ground truth varnodes.
+* *Varnodes fraction partially recovered*: The fraction of ground truth varnodes with a match level greater than *NO_MATCH*.
+* *Varnodes fraction exactly recovered*: The fraction of ground truth varnodes with a match level equal to *MATCH*.
 
 We repeat this varnode analysis for the decomposed (primitive) set of varnodes resulting from recursively decomposing each of the high-level varnodes into its most primitive set of varnodes. We also repeat our analysis of the original set of varnodes filtered by metatype. The metatypes considered are *INT*, *FLOAT*, *POINTER*, *ARRAY*, *STRUCT*, and *UNION*. Lastly, we repeat the analysis of the decomposed varnodes when filtered by metatype. For this metatype analysis over the decomposed varnodes, we only consider the primitive metatypes *INT*, *FLOAT*, and *POINTER* since the varnodes are guaranteed to be primitive.
 
@@ -296,8 +298,12 @@ For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
 
 Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 80.8%, the average fraction of varnodes partially recovered is 98.5%, and the average fraction of varnodes exactly recovered is 37.7%.
 
-In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
-In table ZZ, we summarize this information by showing the breakdown of varnode comparison levels by metatype across all 15 benchmarks. This shows us that metatype X is most accurately inferred relative to the number of ground truth varnodes with this metatype. We see that metatype Y is the most relatively missed.
+In table XX-YY, we show the same data for varnodes grouped by metatype. In table ZZ, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.9%, *ALIGNED* % = 57.2%). We see that metatype *ARRAY* is the most relatively missed with 22.2% of all arrays from the benchmarks not being recovered in any capacity.
+
+We notice that the program *cksum* is an outlier with respect to varnodes missed (115) and average comparison score (69%) when compared to the other benchmark programs. Of the 115 varnodes not recovered in *cksum*, we see that 70 (60.9%) are of metatype *ARRAY*., 30 (26.1%) are of metatype *INT*, and the remaining 15 (13%) are of metatype *POINTER*. After further investigation, we find that all varnodes missed in this program are derived from local variables of a single function, *cksum_pclmul*. Upon examination of the source code of this function, we see that ...
+
+[Source snippet: cksum_pclmul function]
+[Source snippet: cksum_pclmul Ghidra decompilation]
 
 ###### Debugged
 
@@ -308,7 +314,10 @@ For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
 
 [Table: Fraction of metatype with match level (debug)] - for each metatype, sum varnodes (across all programs) that match each match level & divide by the number of varnodes with that metatype
 
-We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols. Overall, we observe a drastic improvement in inference performance when debugging symbols are included.
+We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols. Overall, we observe a drastic improvement in inference performance when debugging symbols are included. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
+
+In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
+Table ZZ shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery on the stripped benchmarks.
 
 ##### Decomposed Varnode Recovery
 
