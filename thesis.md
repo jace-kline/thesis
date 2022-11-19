@@ -256,36 +256,65 @@ In this set of metrics, we aim to evaluate the accuracy of the array inference p
 
 ## Evaluation
 
-To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
+To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in two ways: (1) stripped and (2) DWARF debug symbols included. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
 ### Setup
 
-Prior to evaluation, we compile the 105 Coreutils benchmark programs under three separate compilation configurations: (1) DWARF debug symbols included, (2) standard (no DWARF symbols but not stripped), and (3) stripped. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from each of the binaries compiled under each of the compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
+Prior to evaluation, we compile the 105 Coreutils benchmark programs with two compilation configurations: (1) stripped and (2) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under the two compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
 
-Next, for each program, we perform a comparison of the program information scraped from DWARF (from the binary including DWARF symbols) with the information obtained from the Ghidra decompilation of the programs under each of the compilation configurations. The information from these comparisons are expressed in the form of objects which contain comparison information about functions, variables, and data types compared between the DWARF and Ghidra sources.
+Next, for each program, we perform a comparison of the program information scraped from DWARF (from the binary including DWARF symbols) with the information obtained from the Ghidra decompilation of the programs under both of the compilation configurations. The information from these comparisons are expressed in the form of objects which contain comparison information about functions, variables, and data types compared between the DWARF and Ghidra sources.
 
-With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler under each of the compilation configurations.
+With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler with respect to both stripped and debug-enabled binaries.
 
 ### Results
 
-For the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] (*stat*, *nohup*, *pinky*, *csplit*, *ginstall*, *fmt*, *df*, *join*, *expr*, *seq*, *unexpand*, *tsort*, *tee*, *base64*, *sum*) and include 2 programs, *cksum* and *wc*, in which the Ghidra decompiler produces interesting and anomalous results. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
+For the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] (*stat*, *nohup*, *pinky*, *csplit*, *ginstall*, *fmt*, *df*, *join*, *expr*, *seq*, *unexpand*, *tsort*, *tee*, *base64*, *sum*) and include 2 programs, *cksum* and *wc*, in which the Ghidra decompiler produces interesting and anomalous results in terms of variable and data bytes recovery. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
 
 #### Function Recovery
 
-[Table: FUNCTIONS (debug)]
-[Table: FUNCTIONS (standard)]
+We first evaluate the Ghidra decompiler in terms of its ability to recover functions present in the ground truth.
+
 [Table: FUNCTIONS (stripped)]
+[Table: FUNCTIONS (debug)]
+
+Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all of our 15 evaluated programs as well as the entire set of 105 Coreutils benchmark programs. This finding holds true in both the debug and stripped compilation cases. This is a promising result for the Ghidra decompiler.
 
 #### Variable (Varnode) Recovery
 
 ##### High-Level Varnode Recovery
 
+To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under both compilation configurations (stripped and debugged).
+
+###### Stripped
+
+[Table: VARNODES (stripped)]
+
+Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. We note that *NO_MATCH* indicates that no part of the ground truth varnode was recovered by the decompiler and thus refers to a miss.
+
+avg comparison score = 80.8%
+add column : fraction of varnodes partially recovered
+average fraction of varnodes partially recovered = 98.5%
+add column : fraction of varnodes exactly recovered
+average fraction of varnodes exactly recovered = 37.7%
+
+[Table: Metatype vs match level] - for each metatype, sum varnodes (across all programs) that match each match level
+
+###### Debugged
+
+[Table: VARNODES (debug)]
+
 ##### Decomposed Varnode Recovery
+
+In this section, we repeat a similar varnode recovery analysis over all varnodes while first decomposing each varnode into its most primitive set of constituent varnodes (see section ...).
+
+[Table: VARNODES (decomposed) (stripped)]
+[Table: VARNODES (decomposed) (debug)]
 
 #### Data Bytes Recovery
 
+Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler in regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery, as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes (e.g., a 1000-byte array versus a single character).
+
 [Table: BYTES (debug)]
-[Table: BYTES (standard)]
 [Table: BYTES (stripped)]
 
 #### Array Comparison Accuracy
