@@ -214,15 +214,6 @@ For each "matched" function based on start PC address, we compute and store info
 
 In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in our evaluation results section.
 
-#### Data Bytes
-
-These metrics look at the total number of data bytes from all variables recovered by the decompiler when compared to the ground-truth source.
-
-* *Ground truth data bytes*: The total number of data bytes captured from the ground truth source, derived from all global and local variables.
-* *Bytes found*: The total number of data bytes recovered by the decompiler that overlap with data bytes found in the ground truth.
-* *Bytes missed*: The number of data bytes present in the ground truth that were not recovered by the decompiler.
-* *Bytes recovery fraction*: The fraction of ground truth data bytes found by the decompiler divided by the total number of ground truth bytes.
-
 #### Functions
 
 This set of metrics outlines the function identification performance of the decompiler.
@@ -243,6 +234,15 @@ Recall that a *Varnode* is defined to be a source-level *Variable* tied to a sin
 * *Varnodes fraction exactly recovered*: The fraction of ground truth varnodes with a match level equal to *MATCH*.
 
 We repeat this varnode analysis for the decomposed (primitive) set of varnodes resulting from recursively decomposing each of the high-level varnodes into its most primitive set of varnodes. We also repeat our analysis of the original set of varnodes filtered by metatype. The metatypes considered are *INT*, *FLOAT*, *POINTER*, *ARRAY*, *STRUCT*, and *UNION*. Lastly, we repeat the analysis of the decomposed varnodes when filtered by metatype. For this metatype analysis over the decomposed varnodes, we only consider the primitive metatypes *INT*, *FLOAT*, and *POINTER* since the varnodes are guaranteed to be primitive.
+
+#### Data Bytes
+
+These metrics look at the total number of data bytes from all variables recovered by the decompiler when compared to the ground truth source.
+
+* *Ground truth data bytes*: The total number of data bytes captured from the ground truth source, derived from all global and local variables.
+* *Bytes found*: The total number of data bytes recovered by the decompiler that overlap with data bytes found in the ground truth.
+* *Bytes missed*: The number of data bytes present in the ground truth that were not recovered by the decompiler.
+* *Bytes recovery fraction*: The fraction of ground truth data bytes found by the decompiler divided by the total number of ground truth bytes.
 
 #### Array Comparisons
 
@@ -276,8 +276,8 @@ For the clarity of our presentation and discussion, we select a subset of 13 Cor
 
 We first evaluate the Ghidra decompiler in terms of its ability to recover functions present in the ground truth.
 
-[Table: FUNCTIONS (stripped)]
-[Table: FUNCTIONS (debug)]
+[Table 1: FUNCTIONS (stripped)]
+[Table 2: FUNCTIONS (debug)]
 
 Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all of our 15 evaluated programs as well as the entire set of 105 Coreutils benchmark programs. This finding holds true in both the debug and stripped compilation cases. This is a promising result for the Ghidra decompiler.
 
@@ -289,51 +289,73 @@ To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, w
 
 ###### Stripped
 
-[Table: VARNODES (stripped)]
+[Table 3: VARNODES (stripped)]
 
 For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Table: VARNODES (metatype=X) (stripped)]
+[Tables 4-9: VARNODES (metatype=X) (stripped)]
 
-[Table: Fraction of metatype with match level (stripped)] - for each metatype, sum varnodes (across all programs) that match each match level & divide by the number of varnodes with that metatype
+[Table 10: Fraction of metatype with match level (stripped)]
 
-Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 80.8%, the average fraction of varnodes partially recovered is 98.5%, and the average fraction of varnodes exactly recovered is 37.7%.
+Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 77.8%, the average fraction of varnodes partially recovered is 96.1%, and the average fraction of varnodes exactly recovered is 35.1%.
 
-In table XX-YY, we show the same data for varnodes grouped by metatype. In table ZZ, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.9%, *ALIGNED* % = 57.2%). We see that metatype *ARRAY* is the most relatively missed with 22.2% of all arrays from the benchmarks not being recovered in any capacity.
+In tables 4-9, we show the same data for varnodes grouped by metatype. In table 10, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.4%, *ALIGNED* % = 58%). We see that metatype *ARRAY* is the most relatively missed with 35.9% of all arrays from the benchmarks not being recovered in any capacity.
 
-We notice that the program *cksum* is an outlier with respect to varnodes missed (115) and average comparison score (69%) when compared to the other benchmark programs. Of the 115 varnodes not recovered in *cksum*, we see that 70 (60.9%) are of metatype *ARRAY*., 30 (26.1%) are of metatype *INT*, and the remaining 15 (13%) are of metatype *POINTER*. After further investigation, we find that all varnodes missed in this program are derived from local variables of a single function, *cksum_pclmul*. Upon examination of the source code of this function, we see that ...
+We notice that the program *cksum* is an outlier with respect to varnodes missed (133) and average comparison score (66.6%) when compared to the other benchmark programs. Of the 133 varnodes not recovered in *cksum*, we find that 87 are of metatype *ARRAY*., 30 are of metatype *INT*, and 15 are of metatype *POINTER*, and 1 is of metatype *STRUCT*. After further investigation, we find that all varnodes missed in this program are derived from local variables of a single function, *cksum_pclmul*. Upon examination of the source code of this function, we see that ...
 
 [Source snippet: cksum_pclmul function]
 [Source snippet: cksum_pclmul Ghidra decompilation]
 
 ###### Debugged
 
-[Table: VARNODES (debug)]
+[Table 11: VARNODES (debug)]
 
 For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Table: VARNODES (metatype=X) (debug)]
+[Tables 12-17: VARNODES (metatype=X) (debug)]
 
-[Table: Fraction of metatype with match level (debug)] - for each metatype, sum varnodes (across all programs) that match each match level & divide by the number of varnodes with that metatype
+[Table 18: Fraction of metatype with match level (debug)]
 
-We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols. Overall, we observe a drastic improvement in inference performance when debugging symbols are included. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
+We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols included. Overall, we observe a drastic improvement in inference performance when debugging symbols are included. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
 
-In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
-Table ZZ shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery on the stripped benchmarks.
+In table 12-17, we show the same data for varnodes grouped by metatype. We derive that ...
+Table 18 shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery on the stripped benchmarks.
 
 ##### Decomposed Varnode Recovery
 
-In this section, we repeat a similar varnode recovery analysis over all varnodes while first decomposing each varnode into its most primitive set of constituent varnodes (see section ...).
+In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis for both compilation cases of the benchmark programs.
 
-[Table: VARNODES (decomposed) (stripped)]
-[Table: VARNODES (decomposed) (debug)]
+###### Stripped
+
+[Table 19: VARNODES (decomposed) (stripped)]
+
+For X in INT, FLOAT, POINTER...
+[Tables 20-22: VARNODES (metatype=X) (decomposed) (stripped)]
+
+[Table 23: Fraction of metatype with match level (decomposed) (stripped)]
+
+From table 19, we derive that the average decomposed varnode comparison score is 69.3%, the average percentage of decomposed varnodes partially recovered is 94.5%, and the average percentage of varnodes exactly recovered is just under 27%. We observe that these metrics show lower performance than the equivalent metrics over the high-level varnodes. This is because high-level varnodes with complex types (arrays, structs, unions) are treated as single varnodes in the high-level analysis, while these same varnodes may be decomposed into many primitive varnodes for this analysis. For example, a single missed array varnode in the original analysis may result in multiple missed varnodes in this analysis, leading to lower recovery measures.
+
+In table 23 we observe that varnodes of each of the primitive metatypes shows a similar distribution across the varnode match levels.
+
+###### Debugged
+
+[Table 24: VARNODES (decomposed) (debug)]
+
+For X in INT, FLOAT, POINTER...
+[Tables 25-27: VARNODES (metatype=X) (decomposed) (debug)]
+
+[Table 28: Fraction of metatype with match level (decomposed) (debug)]
 
 #### Data Bytes Recovery
 
-Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler in regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery, as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes (e.g., a 1000-byte array versus a single character).
+Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler with regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery, as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes (e.g., a 1000-byte array versus a single character).
 
-[Table: BYTES (debug)]
-[Table: BYTES (stripped)]
+[Table 29: BYTES (stripped)]
+[Table 30: BYTES (debug)]
 
 #### Array Comparison Accuracy
+
+[Table 31: ARRAY COMPARISONS (stripped)]
+[Table 32: ARRAY COMPARISONS (debug)]
 
 ### Discussion
 
@@ -343,6 +365,18 @@ Following from our varnode inference analysis, we next assess the accuracy of th
 
 ### Limitations
 
+Unoptimized analysis only
+
+Requires source code
+
+Only Ghidra analyzed
+
+No evaluation of behavioral correctness
+
 ### Future Work
+
+Extend framework to support optimized binaries
+
+Use framework to compare different decompilers
 
 ## References
