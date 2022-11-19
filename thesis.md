@@ -289,19 +289,26 @@ To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, w
 
 [Table: VARNODES (stripped)]
 
-Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. We note that *NO_MATCH* indicates that no part of the ground truth varnode was recovered by the decompiler and thus refers to a miss.
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Table: VARNODES (metatype=X) (stripped)]
 
-avg comparison score = 80.8%
-add column : fraction of varnodes partially recovered
-average fraction of varnodes partially recovered = 98.5%
-add column : fraction of varnodes exactly recovered
-average fraction of varnodes exactly recovered = 37.7%
+[Table: Fraction of metatype with match level (stripped)] - for each metatype, sum varnodes (across all programs) that match each match level & divide by the number of varnodes with that metatype
 
-[Table: Metatype vs match level] - for each metatype, sum varnodes (across all programs) that match each match level
+Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 80.8%, the average fraction of varnodes partially recovered is 98.5%, and the average fraction of varnodes exactly recovered is 37.7%.
+
+In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
+In table ZZ, we summarize this information by showing the breakdown of varnode comparison levels by metatype across all 15 benchmarks. This shows us that metatype X is most accurately inferred relative to the number of ground truth varnodes with this metatype. We see that metatype Y is the most relatively missed.
 
 ###### Debugged
 
 [Table: VARNODES (debug)]
+
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Table: VARNODES (metatype=X) (debug)]
+
+[Table: Fraction of metatype with match level (debug)] - for each metatype, sum varnodes (across all programs) that match each match level & divide by the number of varnodes with that metatype
+
+We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols. Overall, we observe a drastic improvement in inference performance when debugging symbols are included.
 
 ##### Decomposed Varnode Recovery
 

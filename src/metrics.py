@@ -221,7 +221,7 @@ def make_metrics() -> List[MetricsGroup]:
             lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype, primitive=True))
         )
 
-        for compare_level in VarnodeCompareLevel.range()[VarnodeCompareLevel.OVERLAP:]:
+        for compare_level in VarnodeCompareLevel.range():
             compare_level_str = VarnodeCompareLevel.to_string(compare_level)
             group.mk_add_metric(
                 "Varnodes matched @ level={} (decomposed) (metatype={})".format(compare_level_str, metatype_str),
