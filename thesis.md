@@ -258,15 +258,15 @@ In this set of metrics, we aim to evaluate the accuracy of the array inference p
 
 ## Evaluation
 
-To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in two ways: (1) stripped and (2) DWARF debug symbols included. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
+To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use a subset of the GNU Coreutils (version 9.1) programs as our benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
 ### Setup
 
-Prior to evaluation, we compile the 105 Coreutils benchmark programs with two compilation configurations: (1) stripped and (2) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under the two compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
+Prior to evaluation, we compile the 105 Coreutils benchmark programs with two compilation configurations: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under each of the compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
 
 Next, for each program, we perform a comparison of the program information scraped from DWARF (from the binary including DWARF symbols) with the information obtained from the Ghidra decompilation of the programs under both of the compilation configurations. The information from these comparisons are expressed in the form of objects which contain comparison information about functions, variables, and data types compared between the DWARF and Ghidra sources.
 
-With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler with respect to both stripped and debug-enabled binaries.
+With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler with respect to the given benchmarks and compilation configurations.
 
 ### Results
 
@@ -274,50 +274,62 @@ For the clarity of our presentation and discussion, we select a subset of 13 Cor
 
 #### Function Recovery
 
-We first evaluate the Ghidra decompiler in terms of its ability to recover functions present in the ground truth.
-
 [Table 1: FUNCTIONS (stripped)]
-[Table 2: FUNCTIONS (debug)]
+[Table 2: FUNCTIONS (standard)]
+[Table 3: FUNCTIONS (debug)]
 
-Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all of our 15 evaluated programs as well as the entire set of 105 Coreutils benchmark programs. This finding holds true in both the debug and stripped compilation cases. This is a promising result for the Ghidra decompiler.
+We first evaluate the Ghidra decompiler in terms of its ability to recover functions present in the ground truth. Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all of our 15 evaluated programs as well as the entire set of 105 Coreutils benchmark programs. This finding holds true for all compilation cases. This is a promising result for the Ghidra decompiler.
 
 #### Variable (Varnode) Recovery
 
 ##### High-Level Varnode Recovery
 
-To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under both compilation configurations (stripped and debugged).
+To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under each compilation configuration (stripped, standard, and debugged).
 
-###### Stripped
+###### Compilation: Stripped
 
-[Table 3: VARNODES (stripped)]
+[Table AA: VARNODES (stripped)]
 
 For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables 4-9: VARNODES (metatype=X) (stripped)]
+[Tables XX-YY: VARNODES (metatype=X) (stripped)]
 
-[Table 10: Fraction of metatype with match level (stripped)]
+[Table ZZ: Fraction of metatype with match level (stripped)]
 
-Table XX shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 77.8%, the average fraction of varnodes partially recovered is 96.1%, and the average fraction of varnodes exactly recovered is 35.1%.
+Table AA shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 77.8%, the fraction of varnodes partially recovered is 96.1%, and the fraction of varnodes exactly recovered is 35.1%.
 
-In tables 4-9, we show the same data for varnodes grouped by metatype. In table 10, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.4%, *ALIGNED* % = 58%). We see that metatype *ARRAY* is the most relatively missed with 35.9% of all arrays from the benchmarks not being recovered in any capacity.
+In tables XX-YY, we show the same data for varnodes grouped by metatype. We derive from this data that the metatype with the highest average varnode comparison score is *INT* at In table ZZ, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.4%, *ALIGNED* % = 58%). We see that metatype *ARRAY* is the most relatively missed with 35.9% of all arrays from the benchmarks not being recovered in any capacity.
 
 We notice that the program *cksum* is an outlier with respect to varnodes missed (133) and average comparison score (66.6%) when compared to the other benchmark programs. Of the 133 varnodes not recovered in *cksum*, we find that 87 are of metatype *ARRAY*., 30 are of metatype *INT*, and 15 are of metatype *POINTER*, and 1 is of metatype *STRUCT*. After further investigation, we find that all varnodes missed in this program are derived from local variables of a single function, *cksum_pclmul*. Upon examination of the source code of this function, we see that ...
 
 [Source snippet: cksum_pclmul function]
 [Source snippet: cksum_pclmul Ghidra decompilation]
 
-###### Debugged
+###### Compilation: Standard
 
-[Table 11: VARNODES (debug)]
+[Table AA: VARNODES (standard)]
 
 For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables 12-17: VARNODES (metatype=X) (debug)]
+[Tables XX-YY: VARNODES (metatype=X) (standard)]
 
-[Table 18: Fraction of metatype with match level (debug)]
+[Table ZZ: Fraction of metatype with match level (standard)]
 
-We repeat our previous evaluation over the 15 benchmarks compiled with DWARF debug symbols included. Overall, we observe a drastic improvement in inference performance when debugging symbols are included. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
+In this section, we repeat the varnode analysis for the standard compilation condition (not stripped, no debugging symbols). From table AA, we see that the inference performance metrics are slightly better than the stripped compilation case, with an average varnode comparison score of 80.8%, an average fraction of varnodes partially recovered of 98.5%, and an average fraction of varnodes exactly recovered of 37.7%.
 
-In table 12-17, we show the same data for varnodes grouped by metatype. We derive that ...
-Table 18 shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery on the stripped benchmarks.
+From tables XX-YY as well as ZZ, we find that
+
+###### Compilation: Debugging Symbols Included
+
+[Table AA: VARNODES (debug)]
+
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (metatype=X) (debug)]
+
+[Table ZZ: Fraction of metatype with match level (debug)]
+
+We repeat our varnode evaluation again over the 15 benchmarks compiled with DWARF debug symbols included. Overall, we observe a drastic improvement in inference performance when debugging symbols are included compared to the previous compilation conditions. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
+
+In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
+Table ZZ shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery of the benchmarks in the stripped and standard compilation scenarios.
 
 ##### Decomposed Varnode Recovery
 
