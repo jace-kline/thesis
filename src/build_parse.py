@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import pandas as pd
 from pathlib import Path
-from typing import Any, List, Union
+from typing import Any, List, Union, Callable
 
 from consts import *
 from cache import *
