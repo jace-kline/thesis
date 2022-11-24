@@ -337,7 +337,7 @@ def select_base_varnode_compare_records(cmp: UnoptimizedProgramInfoCompare2, pri
 def select_comparable_varnode_compare_records(cmp: UnoptimizedProgramInfoCompare2, primitive: bool = False) -> List[VarnodeCompareRecord]:
     method = cmp.select_primitive_varnode_compare_records if primitive else cmp.select_varnode_compare_records
     return method(
-        function_cmp_record_cond=function_compare_record_compared_filter,
+        # function_cmp_record_cond=function_compare_record_compared_filter,
         varnode_cmp_record_cond=varnode_compare_record_base_filter
     )
 

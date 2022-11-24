@@ -170,6 +170,20 @@ class UnoptimizedProgramInfoCompare2(object):
     def get_primitive_varnode_records_matched_level(self, level: int) -> List[VarnodeCompareRecord]:
         return [ record for record in self.get_primitive_varnode_compare_records() if record.get_compare_level() >= level ]
 
+    def get_unmatched_unoptimized_functions(self) -> List['UnoptimizedFunction']:
+        return [ k for k, v in self.unoptimized_function_compare_map.items() if not v.is_comparison() ]
+
+    def get_varnode_compare_records_from_unmatched_functions(self, primitive: bool = False) -> List[VarnodeCompareRecord]:
+        varnode_compare_records = []
+        for unopt in self.get_unmatched_unoptimized_functions():
+            fn = unopt.get_function()
+            for var in fn.get_vars() + fn.get_params():
+                varnodes = var.get_varnodes()
+                if primitive:
+                    varnodes = sum([ varnode.flatten() for varnode in varnodes ], [])
+                varnode_compare_records += [ VarnodeCompareRecord(varnode) for varnode in varnodes ]
+        return varnode_compare_records
+
     def select_function_compare_records(self, function_cmp_record_cond=None) -> List['UnoptimizedFunctionCompareRecord']:
         return [ record for record in self.unoptimized_function_compare_map.values() if record is not None and (function_cmp_record_cond is None or function_cmp_record_cond(record)) ]
 
@@ -178,11 +192,13 @@ class UnoptimizedProgramInfoCompare2(object):
 
     def select_varnode_compare_records(self, function_cmp_record_cond=None, function_cmp2_cond=None, varnode_cmp_record_cond=None) -> List['VarnodeCompareRecord']:
         return self.globals_comparison.select_varnode_compare_records(varnode_cmp_record_cond=varnode_cmp_record_cond) \
-            + sum([ record.select_varnode_compare_records(function_cmp2_cond=function_cmp2_cond, varnode_cmp_record_cond=varnode_cmp_record_cond) for record in self.select_function_compare_records(function_cmp_record_cond=function_cmp_record_cond) ], [])
+            + sum([ record.select_varnode_compare_records(function_cmp2_cond=function_cmp2_cond, varnode_cmp_record_cond=varnode_cmp_record_cond) for record in self.select_function_compare_records(function_cmp_record_cond=function_cmp_record_cond) ], []) \
+            + [ record for record in self.get_varnode_compare_records_from_unmatched_functions(primitive=False) if varnode_cmp_record_cond is None or varnode_cmp_record_cond(record) ]
 
     def select_primitive_varnode_compare_records(self, function_cmp_record_cond=None, function_cmp2_cond=None, varnode_cmp_record_cond=None) -> List['VarnodeCompareRecord']:
         return self.globals_comparison.select_primitive_varnode_compare_records(varnode_cmp_record_cond=varnode_cmp_record_cond) \
-            + sum([ record.select_primitive_varnode_compare_records(function_cmp2_cond=function_cmp2_cond, varnode_cmp_record_cond=varnode_cmp_record_cond) for record in self.select_function_compare_records(function_cmp_record_cond=function_cmp_record_cond) ], [])
+            + sum([ record.select_primitive_varnode_compare_records(function_cmp2_cond=function_cmp2_cond, varnode_cmp_record_cond=varnode_cmp_record_cond) for record in self.select_function_compare_records(function_cmp_record_cond=function_cmp_record_cond) ], []) \
+            + [ record for record in self.get_varnode_compare_records_from_unmatched_functions(primitive=True) if varnode_cmp_record_cond is None or varnode_cmp_record_cond(record) ]
 
     def select_varnode_comparisons(self, function_cmp_record_cond=None, function_cmp2_cond=None, varnode_cmp_record_cond=None, varnode_cmp2_cond=None) -> List['VarnodeCompare2']:
         return self.globals_comparison.select_varnode_comparisons(varnode_cmp_record_cond=varnode_cmp_record_cond, varnode_cmp2_cond=varnode_cmp2_cond) \

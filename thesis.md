@@ -270,104 +270,29 @@ With the comparisons computed for each program and compilation configuration, we
 
 ### Results
 
-For the clarity of our presentation and discussion, we select a subset of 13 Coreutils programs used in the KLEE paper [] (*stat*, *nohup*, *pinky*, *csplit*, *ginstall*, *fmt*, *df*, *join*, *expr*, *seq*, *unexpand*, *tsort*, *tee*, *base64*, *sum*) and include 2 programs, *cksum* and *wc*, in which the Ghidra decompiler produces interesting and anomalous results in terms of variable and data bytes recovery. Although the evaluation of only 15 benchmarks are discussed in this section, we have included the results for all 105 Coreutils benchmarks in the appendix.
+In this section, we evaluate the Ghidra decompiler's function, variable, and data type recovery performance with respect to the compilation configuration (stripped, standard, or debugged) over the 105 Coreutils benchmark programs. For clarity and brevity, we place several tables in our appendix.
 
 #### Function Recovery
 
-[Table 1: FUNCTIONS (stripped)]
-[Table 2: FUNCTIONS (standard)]
-[Table 3: FUNCTIONS (debug)]
+We first evaluate the Ghidra decompiler in terms of its ability to recover functions derived from the DWARF ground truth information. Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all 105 Coreutils benchmarks. This finding holds true for all compilation cases. Refer to tables XX, XX, and XX in the appendix for the function recovery information for each benchmark program.
 
-We first evaluate the Ghidra decompiler in terms of its ability to recover functions present in the ground truth. Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all of our 15 evaluated programs as well as the entire set of 105 Coreutils benchmark programs. This finding holds true for all compilation cases. This is a promising result for the Ghidra decompiler.
-
-#### Variable (Varnode) Recovery
-
-##### High-Level Varnode Recovery
+#### High-Level Variable (Varnode) Recovery
 
 To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under each compilation configuration (stripped, standard, and debugged).
 
-###### Compilation: Stripped
+Table XX shows the 
 
-[Table AA: VARNODES (stripped)]
-
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (stripped)]
-
-[Table ZZ: Fraction of metatype with match level (stripped)]
-
-Table AA shows the a breakdown of the match level of each high-level varnode present in the ground truth when compared to varnodes inferred by the decompiler. In addition, we show the average comparison score, the fraction of varnodes partially recovered (recovered at any level above *NO_MATCH*), and the fraction of varnodes exactly recovered (recovered at level *MATCH*). We observe that, across the 15 benchmarks, the average varnode comparison score is 77.8%, the fraction of varnodes partially recovered is 96.1%, and the fraction of varnodes exactly recovered is 35.1%.
-
-In tables XX-YY, we show the same data for varnodes grouped by metatype. We derive from this data that the metatype with the highest average varnode comparison score is *INT* at In table ZZ, we summarize this information by showing, for each metatype, the fraction of the varnodes within that metatype that are matched at each comparison level. This shows us that metatype *INT* is most accurately inferred relative to the number of ground truth varnodes with this metatype (*MATCH* % = 41.4%, *ALIGNED* % = 58%). We see that metatype *ARRAY* is the most relatively missed with 35.9% of all arrays from the benchmarks not being recovered in any capacity.
-
-We notice that the program *cksum* is an outlier with respect to varnodes missed (133) and average comparison score (66.6%) when compared to the other benchmark programs. Of the 133 varnodes not recovered in *cksum*, we find that 87 are of metatype *ARRAY*., 30 are of metatype *INT*, and 15 are of metatype *POINTER*, and 1 is of metatype *STRUCT*. After further investigation, we find that all varnodes missed in this program are derived from local variables of a single function, *cksum_pclmul*. Upon examination of the source code of this function, we see that ...
-
-[Source snippet: cksum_pclmul function]
-[Source snippet: cksum_pclmul Ghidra decompilation]
-
-###### Compilation: Standard
-
-[Table AA: VARNODES (standard)]
-
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (standard)]
-
-[Table ZZ: Fraction of metatype with match level (standard)]
-
-In this section, we repeat the varnode analysis for the standard compilation condition (not stripped, no debugging symbols). From table AA, we see that the inference performance metrics are slightly better than the stripped compilation case, with an average varnode comparison score of 80.8%, an average fraction of varnodes partially recovered of 98.5%, and an average fraction of varnodes exactly recovered of 37.7%.
-
-From tables XX-YY as well as ZZ, we find that
-
-###### Compilation: Debugging Symbols Included
-
-[Table AA: VARNODES (debug)]
-
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (debug)]
-
-[Table ZZ: Fraction of metatype with match level (debug)]
-
-We repeat our varnode evaluation again over the 15 benchmarks compiled with DWARF debug symbols included. Overall, we observe a drastic improvement in inference performance when debugging symbols are included compared to the previous compilation conditions. We see that the average varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered all exceed 99%.
-
-In table XX-YY, we show the same data for varnodes grouped by metatype. We derive that ...
-Table ZZ shows us that, when debug information is available, metatype *FLOAT* is most accurately inferred with a 100% exact match rate. We see that metatypes *INT*, *POINTER*, *FLOAT*, and *STRUCT* all show exact match rates of greater than 98.8%. Similar to the analysis of stripped binaries, we see that metatype *ARRAY* is the most relatively missed with 14.3% of all arrays from the benchmarks not recovered. However, even the recovery of *ARRAY* varnodes yields an 84.5% exact match rate, a significant improvement over the recovery of the benchmarks in the stripped and standard compilation scenarios.
-
-##### Decomposed Varnode Recovery
+#### Decomposed Variable (Varnode) Recovery
 
 In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis for both compilation cases of the benchmark programs.
-
-###### Stripped
-
-[Table 19: VARNODES (decomposed) (stripped)]
-
-For X in INT, FLOAT, POINTER...
-[Tables 20-22: VARNODES (metatype=X) (decomposed) (stripped)]
-
-[Table 23: Fraction of metatype with match level (decomposed) (stripped)]
-
-From table 19, we derive that the average decomposed varnode comparison score is 69.3%, the average percentage of decomposed varnodes partially recovered is 94.5%, and the average percentage of varnodes exactly recovered is just under 27%. We observe that these metrics show lower performance than the equivalent metrics over the high-level varnodes. This is because high-level varnodes with complex types (arrays, structs, unions) are treated as single varnodes in the high-level analysis, while these same varnodes may be decomposed into many primitive varnodes for this analysis. For example, a single missed array varnode in the original analysis may result in multiple missed varnodes in this analysis, leading to lower recovery measures.
-
-In table 23 we observe that varnodes of each of the primitive metatypes shows a similar distribution across the varnode match levels.
-
-###### Debugged
-
-[Table 24: VARNODES (decomposed) (debug)]
-
-For X in INT, FLOAT, POINTER...
-[Tables 25-27: VARNODES (metatype=X) (decomposed) (debug)]
-
-[Table 28: Fraction of metatype with match level (decomposed) (debug)]
 
 #### Data Bytes Recovery
 
 Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler with regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery, as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes (e.g., a 1000-byte array versus a single character).
 
-[Table 29: BYTES (stripped)]
-[Table 30: BYTES (debug)]
-
 #### Array Comparison Accuracy
 
-[Table 31: ARRAY COMPARISONS (stripped)]
-[Table 32: ARRAY COMPARISONS (debug)]
+#### Recovery Summary
 
 ### Discussion
 
@@ -392,3 +317,41 @@ Extend framework to support optimized binaries
 Use framework to compare different decompilers
 
 ## References
+
+## Appendix
+
+[Table 1: FUNCTIONS (strip)]
+[Table 2: FUNCTIONS (standard)]
+[Table 3: FUNCTIONS (debug)]
+
+[Table AA: VARNODES (strip)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (metatype=X) (strip)]
+
+[Table AA: VARNODES (standard)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (metatype=X) (standard)]
+
+[Table AA: VARNODES (debug)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (metatype=X) (debug)]
+
+[Table AA: VARNODES (decomposed) (strip)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (decomposed) (metatype=X) (strip)]
+
+[Table AA: VARNODES (decomposed) (standard)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (decomposed) (metatype=X) (standard)]
+
+[Table AA: VARNODES (decomposed) (debug)]
+For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
+[Tables XX-YY: VARNODES (decomposed) (metatype=X) (debug)]
+
+[Table YY: BYTES (strip)]
+[Table YY: BYTES (standard)]
+[Table YY: BYTES (debug)]
+
+[Table ZZ: ARRAY COMPARISONS (strip)]
+[Table ZZ: ARRAY COMPARISONS (standard)]
+[Table ZZ: ARRAY COMPARISONS (debug)]

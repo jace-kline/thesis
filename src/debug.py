@@ -2,9 +2,9 @@ from parse_dwarf import *
 from build_parse import *
 from metrics import *
 
-prognames = [ "ndarray", "typecases", "p0", "structcases" ]
-progs = [ ToyProgram(progname) for progname in prognames ]
-metrics_groups = make_metrics()
+# prognames = [ "ndarray", "typecases", "p0", "structcases" ]
+# progs = [ ToyProgram(progname) for progname in prognames ]
+# metrics_groups = make_metrics()
 
 def find_erroneous_overlaps(proginfo: ProgramInfo) -> List[Tuple[Varnode, Varnode]]:
     unopt_proginfo = UnoptimizedProgramInfo(proginfo)
@@ -157,46 +157,26 @@ def test_progs_parse_compare(progs: List[Program]):
 
 # dwarf.print_summary()
 
-import time
-from cache import cache
+debug_opts = BuildOptions(debug=True, strip=False, optimization=0)
+strip_opts = BuildOptions(debug=False, strip=True, optimization=0)
 
-class CallableClass(object):
-    def __init__(
-        self,
-        fn: Callable
-    ):
-        self.fn = fn
+dwarf_parser = get_parser("dwarf")
+ghidra_parser = get_parser("ghidra")
+prog = CoreutilsProgram("factor")
 
-    @cache
-    def __call__(self, x: int) -> int:
-        return self.fn(x)
+dwarf = dwarf_parser(prog.get_binary_path(debug_opts))
+ghidra_debug = ghidra_parser(prog.get_binary_path(debug_opts))
+ghidra_strip = ghidra_parser(prog.get_binary_path(strip_opts))
 
-def fn(x: int) -> int:
-    time.sleep(x)
-    return x
+cmp_debug = compare2_uncached(dwarf, ghidra_debug)
+cmp_strip = compare2_uncached(dwarf, ghidra_strip)
 
-mylambda = lambda x: x
+fns_missed_debug = functions_missed(cmp_debug)
+varnode_compare_records_debug = select_comparable_varnode_compare_records(cmp_debug)
+varnode_compare_records_strip = select_comparable_varnode_compare_records(cmp_strip)
 
-# inst = CallableClass(fn)
+for fn in fns_missed_debug:
+    print(fn)
 
-# t0 = time.time()
-# inst(5)
-# t0 = time.time() - t0
-
-# t1 = time.time()
-# inst(5)
-# t1 = time.time() - t1
-
-# inst2 = CallableClass(fn)
-# t2 = time.time()
-# inst2(5)
-# t2 = time.time() - t2
-
-
-# print(t0)
-# print(t1)
-# print(t2)
-
-print(hash(mylambda) == hash(mylambda))
-
-
+print(len(varnode_compare_records_debug))
+print(len(varnode_compare_records_strip))

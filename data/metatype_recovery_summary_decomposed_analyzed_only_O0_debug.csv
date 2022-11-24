@@ -1,4 +1,4 @@
-,Ground truth varnodes,"Varnode comparison score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
-INT,112926,0.955836122770664,0.9559357455324726,0.9557320723305528
-FLOAT,43,1.0,1.0,1.0
-POINTER,7228,0.9979247371333703,0.9979247371333703,0.9979247371333703
+,"Varnode comparison score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
+INT,0.955836122770664,0.9559357455324726,0.9557320723305528
+FLOAT,1.0,1.0,1.0
+POINTER,0.9979247371333703,0.9979247371333703,0.9979247371333703

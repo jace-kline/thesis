@@ -1,4 +1,4 @@
-,NO_MATCH,OVERLAP,SUBSET,ALIGNED,MATCH
+,Varnodes matched @ level=NO_MATCH,Varnodes matched @ level=OVERLAP,Varnodes matched @ level=SUBSET,Varnodes matched @ level=ALIGNED,Varnodes matched @ level=MATCH
 INT,94,48,0,12240,8730
 FLOAT,0,56,0,113,22
 POINTER,68,4,0,5840,3590
