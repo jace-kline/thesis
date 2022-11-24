@@ -4,7 +4,7 @@ from resolve import *
 from resolve_stubs import *
 from lang import *
 from parse_ghidra_util import *
-from ghidra.program.model.data import Array, Structure, Enum, Pointer, TypeDef, FunctionDefinition, DefaultDataType, BuiltInDataType, BooleanDataType, CharDataType, AbstractIntegerDataType, AbstractFloatDataType, AbstractComplexDataType, AbstractStringDataType, Undefined, VoidDataType as _VoidDataType
+from ghidra.program.model.data import Array, Structure, Union, Enum, Pointer, TypeDef, FunctionDefinition, DefaultDataType, BuiltInDataType, BooleanDataType, CharDataType, AbstractIntegerDataType, AbstractFloatDataType, AbstractComplexDataType, AbstractStringDataType, Undefined, VoidDataType as _VoidDataType
 
 def parse():
     parser = ParseGhidra()
@@ -300,7 +300,7 @@ class ParseGhidra(object):
                     key = self.register_obj(_dtype)
                     subtyperefs.append(key)
                 
-                membertyperefs.append((offset, key))
+                membertyperefs.append(key)
 
             stub = DataTypeUnionStub(
                 name=name,
@@ -456,6 +456,8 @@ class ParseGhidra(object):
             return MetaType.ARRAY
         elif isinstance(dtype, Structure):
             return MetaType.STRUCT
+        elif isinstance(dtype, Union):
+            return MetaType.UNION
         elif isinstance(dtype, Enum):
             return MetaType.ENUM
         elif isinstance(dtype, Pointer):

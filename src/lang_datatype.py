@@ -687,8 +687,16 @@ class DataTypeStruct(DataType):
                 )
         return None
 
+    def members_equal(self, other):
+        assert(other.metatype == self.metatype)
+        return len(self.membertype_offsets) == len(other.membertype_offsets) \
+            and all([
+            (offset, memtype) == (_offset, _memtype) for
+            (offset, memtype), (_offset, _memtype) in zip(self.membertype_offsets, other.membertype_offsets)
+        ])
+
     def __eq__(self, other):
-        return self.rough_match(other) and self.membertype_offsets == other.membertype_offsets
+        return self.rough_match(other) and self.members_equal(other)
 
     def __str__(self):
         s = "<STRUCT "
@@ -770,8 +778,16 @@ class DataTypeUnion(DataType):
 
         return None
 
+    def members_equal(self, other):
+        assert(other.metatype == self.metatype)
+        return len(self.membertypes) == len(other.membertypes) \
+            and all([
+            memtype == _memtype for memtype, _memtype 
+            in zip(self.membertypes, other.membertypes)
+        ])
+
     def __eq__(self, other):
-        return self.rough_match(other) and self.membertypes == other.membertypes
+        return self.rough_match(other) and self.members_equal(other)
 
     def __str__(self):
         s = "<UNION "

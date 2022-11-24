@@ -200,7 +200,7 @@ The inference of variables with complex data types including structs, arrays, an
 
 [Figure: Example of "decomposing" complex varnode]
 
-We first implement an approach to recursively strip away the "complex layers" of a varnode to its most primitive decomposition. This primitive decomposition produces a set of one or more primitive varnodes. For example, an array of elements is broken down into a set of its elements (decomposed recursively). A struct is broken down into a set of varnodes associated with each of its members (decomposed recursively).
+We first implement an approach to recursively strip away the "complex layers" of a varnode to its most primitive decomposition. This primitive decomposition produces a set of one or more primitive varnodes. For example, an array of elements is broken down into a set of its elements (decomposed recursively). A struct is broken down into a set of varnodes associated with each of its members (decomposed recursively). Unions present a special case since the members share a common, overlapping region of memory. Hence, to decompose a union, we transform it into an *UNDEFINED* primitive type with the same size as the union.
 
 We apply this primitive decomposition to each varnode in the sets of ground truth and decompiler varnodes. With the two sets of decomposed varnodes, we leverage the same variable comparison approach described previously to compare the varnodes in these sets. The resulting comparison information is treated as a separate analysis from the unaltered varnode sets.
 
@@ -248,7 +248,10 @@ These metrics look at the total number of data bytes from all variables recovere
 
 In this set of metrics, we aim to evaluate the accuracy of the array inference performed by the decompiler. We examine each array comparison made during the comparison of the ground truth with the decompiler and observe the discrepancies in length, size (bytes), dimensions, and element type. The following metrics are presented:
 
-* *Array comparisons*: The number of total array comparisons made when comparing the ground truth with the decompiler.
+* *Ground truth varnodes (metatype=ARRAY)*: The number of ground truth varnodes with metatype of ARRAY.
+* *Array comparisons*: The number of array comparisons made when comparing the ground truth with the decompiler. The decompiler may infer 0 or more array varnodes for each given ground truth array varnode.
+* *Array varnodes inferred as array*: This measures how many ground truth array varnodes are compared to at least 1 decompiler-inferred array varnode.
+* *Array varnodes inferred as array fraction*: Equivalent to *Array varnodes inferred as array* divided by *Ground truth varnodes (metatype=ARRAY)*. This expresses the fraction of ground truth array varnodes that are associated with at least one decompiler array inference.
 * *Array length (elements) average error*: For each array comparison, we find the absolute difference in the number of elements inferred by the decompiler as compared to the ground truth. We then average these differences over all array comparisons to arrive at this metric.
 * *Array length (elements) average error ratio*: For each array comparison, we first find the absolute difference in the number of elements inferred by the decompiler as compared to the ground truth. We then divide this error by the length of the ground truth array to get the error as a ratio of the array size. The average of these ratios over all array comparisons produces this metric.
 * *Array size (bytes) average error*: This metric is similar to *Array length (elements) average error* but measures the error in bytes instead of number of elements.
@@ -262,37 +265,47 @@ To demonstrate our evaluation framework, we target the Ghidra decompiler (versio
 
 ### Setup
 
-Prior to evaluation, we compile the 105 Coreutils benchmark programs with two compilation configurations: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under each of the compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
+Prior to evaluation, we compile the 105 Coreutils benchmark programs with three compilation configurations: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under each of the compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as *ProgramInfo* objects in our DSL.
 
 Next, for each program, we perform a comparison of the program information scraped from DWARF (from the binary including DWARF symbols) with the information obtained from the Ghidra decompilation of the programs under both of the compilation configurations. The information from these comparisons are expressed in the form of objects which contain comparison information about functions, variables, and data types compared between the DWARF and Ghidra sources.
 
-With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler with respect to the given benchmarks and compilation configurations.
+With the comparisons computed for each program and compilation configuration, we use these comparisons to compute high-level metrics that summarize the performance of the Ghidra decompiler with respect to the given benchmarks and compilation configurations (strip, standard, and debug).
 
-### Results
+### Function Recovery
 
-In this section, we evaluate the Ghidra decompiler's function, variable, and data type recovery performance with respect to the compilation configuration (stripped, standard, or debugged) over the 105 Coreutils benchmark programs. For clarity and brevity, we place several tables in our appendix.
+Tables XX, YY, and ZZ in the appendix present function recovery metrics of each benchmark program under the three compilation configurations. Table AA shows the summarization of the recovery statistics accumulated over all benchmark programs. We find that over the 18139 functions present in the ground truth, the "strip" and "standard" compilation cases produce 100% function recovery while the "debug" case fails to recover four functions total, resulting in a 99.9% recovery rate. Upon examination of table ZZ in the appendix, we find that all four functions missed are from the *factor* program.
 
-#### Function Recovery
+To determine the cause of the missed functions, we further investigate the Ghidra decompilation of *factor* and find that each of the missed functions results in a decompilation error, "Low-level Error: Unsupported data-type for ResolveUnion". This indicates that an error occurred when attempting to resolve a union data type within the decompilation of these functions. Since this error only occurs in the "debug" compilation case, it is clear that Ghidra's parsing and interpretation of DWARF information contributes to this error. This same union data type causing the error is successfully captured and represented in our ground truth program information and, thus, this is likely a bug within Ghidra's resolution logic.
 
-We first evaluate the Ghidra decompiler in terms of its ability to recover functions derived from the DWARF ground truth information. Upon performing our function recovery evaluations, we find that Ghidra recovers 100% functions across all 105 Coreutils benchmarks. This finding holds true for all compilation cases. Refer to tables XX, XX, and XX in the appendix for the function recovery information for each benchmark program.
+In summary, we see that Ghidra successfully finds all functions for all compilation configurations. However, in the "debug" case, Ghidra's attempt to interpret and utilize DWARF information to resolve a union data type in the *factor* program results in a decompiler error for four functions. This error indicates a bug in Ghidra's DWARF parsing or union resolution logic.
 
-#### High-Level Variable (Varnode) Recovery
+### High-Level Variable (Varnode) Recovery
 
-To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under each compilation configuration (stripped, standard, and debugged).
+To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under each compilation configuration (strip, standard, and debug).
 
-Table XX shows the 
+Tables XX, YY, and ZZ in the appendix show the inference of high-level varnodes for each benchmark compiled with each of the compilation configurations. This data is summarized in table AA.
 
-#### Decomposed Variable (Varnode) Recovery
+In tables XX-XX, YY-YY, and ZZ-ZZ, we show the inference performance of high-level varnodes for each benchmark, broken down by the metatype of the ground truth varnodes, and for all compilation configurations. We summarize this information in table BB.
 
-In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis for both compilation cases of the benchmark programs.
+### Decomposed Variable (Varnode) Recovery
 
-#### Data Bytes Recovery
+In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis over all benchmarks for each of the three compilation cases.
 
-Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler with regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery, as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes (e.g., a 1000-byte array versus a single character).
+Similar to the high-level varnode analysis, we show the inference of the decomposed varnodes for each benchmark and for each compilation configuration in appendix tables XX, YY, and ZZ. Table AA summarizes this information.
 
-#### Array Comparison Accuracy
+We split the decomposed varnodes by metatype and show these results in tables XX-XX, YY-YY, and ZZ-ZZ. We present the summary of these results over each compilation case in table BB.
 
-#### Recovery Summary
+### Data Bytes Recovery
+
+Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler with regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes. For example, a large array and a single character are each represented by a varnode, but the quantity of data present in the array is much greater than that of a character. Hence, it is important to capture this nuanced view of data recovery.
+
+In tables XX, YY, and ZZ, we show the data bytes recovery metrics for each of the benchmark programs under each compilation case. We summarize the data bytes recovery for each of the compilation cases in table AA.
+
+### Array Inference Accuracy
+
+The last major analysis we perform targets the array inference accuracy of the Ghidra decompiler. We aim to measure metrics regarding the total number of arrays inferred, the length and size discrepancies of compared arrays, and the similarity of element types of compared arrays. We perform this analysis across each benchmark and for each compilation configuration, producing tables XX, YY, and ZZ located in the appendix. This information is summarized in table AA, broken down by compilation configuration.
+
+### Summary
 
 ### Discussion
 
@@ -315,6 +328,8 @@ No evaluation of behavioral correctness
 Extend framework to support optimized binaries
 
 Use framework to compare different decompilers
+
+Misleading DWARF information could distract / crash decompiler
 
 ## References
 

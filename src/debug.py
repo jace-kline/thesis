@@ -162,21 +162,23 @@ strip_opts = BuildOptions(debug=False, strip=True, optimization=0)
 
 dwarf_parser = get_parser("dwarf")
 ghidra_parser = get_parser("ghidra")
-prog = CoreutilsProgram("factor")
+prog = ToyProgram("typecases")
 
 dwarf = dwarf_parser(prog.get_binary_path(debug_opts))
 ghidra_debug = ghidra_parser(prog.get_binary_path(debug_opts))
-ghidra_strip = ghidra_parser(prog.get_binary_path(strip_opts))
+# ghidra_strip = ghidra_parser(prog.get_binary_path(strip_opts))
 
 cmp_debug = compare2_uncached(dwarf, ghidra_debug)
-cmp_strip = compare2_uncached(dwarf, ghidra_strip)
+# cmp_strip = compare2_uncached(dwarf, ghidra_strip)
 
 fns_missed_debug = functions_missed(cmp_debug)
 varnode_compare_records_debug = select_comparable_varnode_compare_records(cmp_debug)
-varnode_compare_records_strip = select_comparable_varnode_compare_records(cmp_strip)
+# varnode_compare_records_strip = select_comparable_varnode_compare_records(cmp_strip)
 
-for fn in fns_missed_debug:
-    print(fn)
+union_varnode_compare_records = [
+    record for record in varnode_compare_records_debug
+    if record.get_varnode().get_datatype().get_metatype() == MetaType.UNION
+]
 
-print(len(varnode_compare_records_debug))
-print(len(varnode_compare_records_strip))
+u_record = union_varnode_compare_records[0]
+print(u_record)
