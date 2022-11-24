@@ -1,4 +1,4 @@
-,Varnodes matched @ level=NO_MATCH,Varnodes matched @ level=OVERLAP,Varnodes matched @ level=SUBSET,Varnodes matched @ level=ALIGNED,Varnodes matched @ level=MATCH,"Varnode comparison score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
-strip,1102,1662,1001,18612,12676,0.7859812284255271,0.9685618919921262,0.36162382677659544
-standard,351,1450,613,19071,13568,0.8142027786494737,0.9899865917325193,0.3870710067611902
-debug,125,52,24,57,34795,0.994572504493196,0.9964339714147149,0.9926397169999714
+,Varnodes matched @ level=NO_MATCH (decomposed),Varnodes matched @ level=OVERLAP (decomposed),Varnodes matched @ level=SUBSET (decomposed),Varnodes matched @ level=ALIGNED (decomposed),Varnodes matched @ level=MATCH (decomposed),"Varnode comparison score [0,1] (decomposed)",Varnodes fraction partially recovered (decomposed),Varnodes fraction exactly recovered (decomposed)
+strip,139937,31280,0,231309,131719,0.5859123623056838,0.7380658686557665,0.24655167572930023
+standard,40348,56605,0,303569,133723,0.7029565087179103,0.924476597815609,0.25030276371327764
+debug,10708,128,0,41,523368,0.9797578826193974,0.9799567614109631,0.9796404271448492

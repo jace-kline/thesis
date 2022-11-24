@@ -241,8 +241,23 @@ def make_metrics() -> List[MetricsGroup]:
     # Array comparison metrics
     array_group = MetricsGroup("array_comparisons", "ARRAY COMPARISONS")
     array_group.mk_add_metric(
+        "Ground truth varnodes (metatype=ARRAY)",
+        lambda cmp: len(array_varnode_compare_records_truth(cmp))
+    )
+
+    array_group.mk_add_metric(
         "Array comparisons",
         lambda cmp: len(array_comparisons(cmp))
+    )
+
+    array_group.mk_add_metric(
+        "Array varnodes inferred as array",
+        lambda cmp: len(array_varnode_compare_records_inferred(cmp))
+    )
+
+    array_group.mk_add_metric(
+        "Array varnodes inferred as array fraction",
+        lambda cmp: len(array_varnode_compare_records_inferred(cmp)) / len(array_varnode_compare_records_truth(cmp))
     )
 
     array_group.mk_add_metric(
@@ -487,6 +502,20 @@ def _summarize_array_comparisons(cmps: List[VarnodeCompare2], f: Callable, stat:
 # UnoptimizedProgramInfoCompare2, (VarnodeCompare2 -> int|float) -> float
 def mean_over_array_comparisons(cmp: UnoptimizedProgramInfoCompare2, f: Callable) -> Callable:
     return _summarize_array_comparisons(array_comparisons(cmp), f, stat=mean)
+
+def array_varnode_compare_records_truth(cmp: UnoptimizedProgramInfoCompare2) -> List[VarnodeCompareRecord]:
+    return [
+        record for record in select_comparable_varnode_compare_records(cmp)
+        if record.get_varnode().get_datatype().get_metatype() == MetaType.ARRAY
+    ]
+
+# get all array varnodes from the ground truth that are compared with
+# 1+ array varnodes inferred by decompiler
+def array_varnode_compare_records_inferred(cmp: UnoptimizedProgramInfoCompare2) -> List[VarnodeCompareRecord]:
+    return [ 
+        record for record in array_varnode_compare_records_truth(cmp)
+        if any([ cmp2.get_right().get_datatype().get_metatype() == MetaType.ARRAY for cmp2 in record.get_comparisons() ])
+    ]
 
 ## length inaccuracy (elements) of an array comparison
 def array_elements_diff(cmp: VarnodeCompare2) -> int:
