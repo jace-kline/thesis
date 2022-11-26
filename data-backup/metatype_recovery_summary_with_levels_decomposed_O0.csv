@@ -1,0 +1,4 @@
+,Varnodes matched @ level=NO_MATCH,Varnodes matched @ level=OVERLAP,Varnodes matched @ level=SUBSET,Varnodes matched @ level=ALIGNED,Varnodes matched @ level=MATCH,"Varnode comparison score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
+INT,40163,46846,0,290472,127554,0.7071183185323789,0.9204748185769304,0.2525646737354837
+FLOAT,0,145,0,103,22,0.5018518518518519,1.0,0.0814814814814814
+POINTER,147,9245,0,12961,6067,0.6368402533427164,0.9948275862068966,0.2134764250527797
