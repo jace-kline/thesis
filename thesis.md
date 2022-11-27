@@ -375,21 +375,19 @@ The function, variable, data bytes, and data type recovery analyses show clear r
 
 ### Limitations
 
-Unoptimized analysis only
+The primary limitation of our framework in its current state is the lack of support for comparing and evaluating program information gathered from optimized binary programs. Our DSL supports the expression of program information from optimized binaries, but the comparison logic assumes certain properties about the program information to reduce the complexity of the analysis. Namely, we assume that each high-level variable to be associated with a single storage location in memory for the purposes of comparison. In addition, we assume that the program counter (PC) "live range" of the variable is the entire PC range of the parent function for local variables and the entire program for global variables. In optimized binaries, these assumptions do not always hold. For example, optimizations may result in a single high-level variable being stored across a combination of stack locations and registers depending on the current instruction. In essence, optimizations introduce an additional temporal dimension that drastically increases the complexity of the analysis. Each live range of each variable would need to be considered, then a set of comparison "snapshots" would need to be performed based on the overlaps of the variable live ranges. An aggregation of these "snapshot" comparisons shall then be performed in such a way to evaluate the recovery of each of the high-level variables. Our current framework is built with this type of analysis in mind, but the scope of this work only considers the case of unoptimized binaries. Future work shall include the extension of the framework to support the evaluation of optimized binaries.
 
-Only stack and global variables analyzed (no parameters, heap variables treated as pointers)
+Another assumption in our analysis is that only non-parameter variables with stack and absolute (global) addresses are considered for comparison. This includes heap-allocated data which must be referenced by a pointer accessible from the current function. Our language and framework support the ability to represent register and register offset locations which shall be useful in future optimized analysis.
 
-Requires source code
+Another limitation in this work is our exclusive support for the DWARF debugging standard for extracting ground truth program information. However, as discussed previously, our framework can easily be extended to support the implementation of parsers for other debugging formats.
 
-Only Ghidra analyzed
+Regarding decompiler evaluation, our framework excels at assessing the recovery and inference of high-level program constructs. However, our framework lacks any form of behavioral analysis. Existing work by Liu and Wang [] showcases an approach to evaluating the behavioral correctness of decompiler outputs. A full decompiler analysis shall combine our structural analysis with the behavioral analysis demonstrated by this existing work.
 
-No evaluation of behavioral correctness
+The final noteworthy limitation in our work is that we use our framework to assess only the Ghidra decompiler. We consider our framework to be the primary contribution of this research and therefore leave the analysis and comparison of other decompilers for future work.
 
 ### Future Work
 
-Extend framework to support optimized binaries
-
-Use framework to compare different decompilers
+As discussed, a major future work objective shall be to extend our framework to support optimized binaries. In addition, we shall use our framework to assess and compare the recovery performance of decompilers beyond Ghidra.
 
 Misleading DWARF information could distract / crash decompiler
 
