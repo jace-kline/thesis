@@ -313,6 +313,8 @@ def get_DIE_name(die):
 # get the children variable-like DIEs of a given function (or lexical scope) DIE
 # called recursively on sub-scopes
 # returns (parameter DIEs, variable DIEs)
+# varsonly: indicates that this was called from top level of resolving function params & vars
+# if not top level (varsonly=True), do not include formal parameters (probably from inlined function)
 def get_param_var_DIEs(scopedie, varsonly=False):
 
     if not scopedie.has_children:
@@ -321,8 +323,8 @@ def get_param_var_DIEs(scopedie, varsonly=False):
     paramdies = []
     vardies = []
     for die in scopedie.iter_children():
-        if die.tag == "DW_TAG_formal_parameter":
-            (paramdies if not varsonly else vardies).append(die)
+        if not varsonly and die.tag == "DW_TAG_formal_parameter":
+            paramdies.append(die)
 
         elif die.tag == "DW_TAG_variable":
             vardies.append(die)

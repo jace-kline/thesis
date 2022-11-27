@@ -157,28 +157,45 @@ def test_progs_parse_compare(progs: List[Program]):
 
 # dwarf.print_summary()
 
+def varnode_compare_records_missed(cmp: UnoptimizedProgramInfoCompare2, primitive: bool = False) -> List[VarnodeCompareRecord]:
+    return varnode_compare_records_match_levels(cmp, [VarnodeCompareLevel.NO_MATCH], primitive=primitive)
+
+def mangle_proginfo_save_name(parsername: str, prog: Program, opts: BuildOptions) -> str:
+    return "{}.{}.pickle".format(prog.get_binary_name(opts), parsername)
+
+def get_proginfo_save_path(parsername: str, prog: Program, opts: BuildOptions) -> Path:
+    return PICKLE_CACHE_DIR.joinpath(mangle_proginfo_save_name(parsername, prog, opts))
+
+def save_proginfo(proginfo: ProgramInfo, parsername: str, prog: Program, opts: BuildOptions):
+    save_pickle(proginfo, get_proginfo_save_path(parsername, prog, opts))
+
+def load_proginfo(parsername: str, prog: Program, opts: BuildOptions) -> ProgramInfo:
+    return load_pickle(get_proginfo_save_path(parsername, prog, opts))
+
 debug_opts = BuildOptions(debug=True, strip=False, optimization=0)
 strip_opts = BuildOptions(debug=False, strip=True, optimization=0)
 
 dwarf_parser = get_parser("dwarf")
-ghidra_parser = get_parser("ghidra")
-prog = ToyProgram("typecases")
-
-dwarf = dwarf_parser(prog.get_binary_path(debug_opts))
-ghidra_debug = ghidra_parser(prog.get_binary_path(debug_opts))
+# coreutils_progs = [ CoreutilsProgram(progname) for progname in COREUTILS_PROG_NAMES ]
+# # ghidra_parser = get_parser("ghidra")
+# fix_progs = []
+# for prog in coreutils_progs:
+#     try:
+#         dwarf = dwarf_parser(prog.get_binary_path(debug_opts))
+#     except:
+#         fix_progs.append(prog)
+# ghidra_debug = load_proginfo("ghidra", prog, debug_opts) # ghidra_parser(prog.get_binary_path(debug_opts))
 # ghidra_strip = ghidra_parser(prog.get_binary_path(strip_opts))
 
-cmp_debug = compare2_uncached(dwarf, ghidra_debug)
+# cmp_debug = compare2_uncached(dwarf, ghidra_debug)
 # cmp_strip = compare2_uncached(dwarf, ghidra_strip)
 
-fns_missed_debug = functions_missed(cmp_debug)
-varnode_compare_records_debug = select_comparable_varnode_compare_records(cmp_debug)
-# varnode_compare_records_strip = select_comparable_varnode_compare_records(cmp_strip)
+# records_missed = varnode_compare_records_missed(cmp_debug)
 
-union_varnode_compare_records = [
-    record for record in varnode_compare_records_debug
-    if record.get_varnode().get_datatype().get_metatype() == MetaType.UNION
-]
+fix_prognames = ['cksum', 'csplit', 'df', 'dir', 'du', 'expr', 'ln', 'ls', 'nl', 'ptx', 'readlink', 'realpath', 'tac', 'vdir', 'wc']
+fix_progs = [ CoreutilsProgram(progname) for progname in fix_prognames ]
 
-u_record = union_varnode_compare_records[0]
-print(u_record)
+for prog in fix_progs:
+    proginfo = dwarf_parser(prog.get_binary_path(debug_opts))
+    save_proginfo(proginfo, "dwarf", prog, debug_opts)
+    print(prog.get_name())

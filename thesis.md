@@ -315,13 +315,15 @@ In this analysis, we also capture a measure of the array dimension match score f
 
 The last portion of our array recovery analysis focuses on the element type inference accuracy of the decompiler-inferred arrays when compared to the element types of the ground truth arrays. We compute a data type comparison score between the element types from each array comparison and average these across all array comparisons derived from our benchmark programs. This data type comparison score is similar in concept to the varnode comparison score and is described in section XX. We find that decompiler-inferred arrays in the stripped, standard, and debug compilation cases show 0.78, 0.67, and 0.999 average element type comparison scores, respectively. The better performance demonstrated in the stripped case compared to the standard case appears to be a data artifact resulting from fewer array comparisons present in the stripped analysis.
 
-### Benchmark Case Study: cksum
+### Case Study: cksum
 
-In our tables located in the appendix, we observe that the benchmark program *cksum* is an outlier, showing significantly lower varnode recovery, decomposed varnode recovery, data bytes recovery, and array recovery metrics than most other benchmarks across all compilation conditions. In this section, we investigate and diagnose the reasons for the poor recovery performance of the *cksum* program.
+In our tables located in the appendix, we observe that the benchmark program *cksum* is an outlier, showing significantly lower varnode recovery, decomposed varnode recovery, data bytes recovery, and array recovery metrics than most other benchmarks across all compilation conditions. Besides the *factor* program which entirely misses 13 varnodes present in the four missed functions disussed in our function recovery analysis, *cksum* is the only program to "miss" (varnode match level = *NO_MATCH*) any varnodes (102) in the debug compilation case. In this section, we investigate and diagnose the reasons for the poor recovery performance of the *cksum* program.
 
-### Benchmark Case Study: wc
+We first find each missed varnode in the *cksum* program under the debug compilation scenario. We find that every missed varnode comes from the function named "cksum_pclmul". Additionally, we gather that 28 of the missed varnodes are of metatype *INT*, 15 are of metatype *POINTER*, and 59 are of metatype *ARRAY*.
 
-In tables XX and ZZ showing data bytes recovery across all benchmarks under the stripped and standard compilation conditions, we find that the program *wc* is an extreme outlier, displaying data bytes recovery percentages of only 9.6% in both the stripped and standard compilation cases. In this section, we further explore the causes of this poor recovery by the Ghidra decompiler with respect to the *wc* program.
+### Case Study: wc
+
+In tables XX and ZZ showing data bytes recovery across all benchmarks under the stripped and standard compilation conditions, we find that the program *wc* is an extreme outlier, displaying data bytes recovery percentages of only 9.6% in both the stripped and standard compilation cases. Interestingly, Ghidra recovers 100% of data bytes in the debug compilation case for this program. In this section, we explore the causes of the poor data bytes recovery of the *wc* program under the stripped and standard compilation cases.
 
 ### Summary
 
