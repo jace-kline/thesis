@@ -16,7 +16,7 @@ Although simple in concept, the act of reverse engineering and reasoning about m
 
 Despite the challenge of binary code analysis, there exist many tools that attempt to glean high-level semantic information from binary code samples. A *disassembler* takes binary code as input and produces architecture-specific assembly code as output. Many challenges and considerations exist in the disassembly process - particularly for stripped binary code - such as discerning code from data and locating function boundaries []. One invariant in the disassembly process, however, is that the mapping from assembly instructions to binary instructions and vice-versa is always one-to-one. A *decompiler* takes this reverse mapping process one step further by translating binary code into an equivalent high-level source code representation. The decompilation process is inherently speculative since high-level information such as function boundaries, variables, data types, and high-level control flow mechanisms are lost when a program is compiled. With this, the decompiler must infer enough high-level structure for useful analysis without being overly aggressive and consequently blurring the program's intent. Many decompiler tools are currently in use by the reverse engineering community. Commercial decompiler tools include IDA Pro [] and JEB3 []. Popular open-source decompiler frameworks include Ghidra [], RetDec [], and Radare2 [].
 
-### Problem
+### Research Problem
 
 Due to the number of decompiler tools as well as the imprecise nature of decompilation, a generalized and extensible quantitative evaluation framework for decompilers is critical. Existing work by Liu and Wang [] proposes an evaluation technique to determine whether recompiled decompiled programs are consistent in behavior to their original binaries. This technique, although useful, does not offer any insight into the inference accuracy of decompilers with respect to high-level program constructs such as functions, variables, and data types. The inference accuracy of the these high-level constructs are important for analysts to gain an understanding of the analyzed program.
 
@@ -55,7 +55,7 @@ The three key contributions of this work are as follows:
 
 2. We leverage our framework to perform an in-depth evaluation of the Ghidra decompiler with respect to high-level function, variable, and data type recovery. This evaluation is performed over the GNU Core Utilities programs under three compilation conditions.
 
-3. From our evalution of Ghidra, we discover and discuss two key issues present in the Ghidra decompiler.
+3. From our evalution of Ghidra, we discover and discuss the implications of two key issues present in the Ghidra decompiler.
 
 ### Outline
 
