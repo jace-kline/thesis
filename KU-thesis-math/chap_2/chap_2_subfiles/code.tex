@@ -1,0 +1,8 @@
+\inputencoding{latin9}\begin{lstlisting}[breaklines=true]
+    library(car)
+    
+    pdf(file="car.inc.ed.pdf", height=5,width=5, onefile=F, paper="special")
+    plot(income~education, xlab="Education", ylab="Income", main="", data=Prestige)
+    dev.off()
+\end{lstlisting}
+\inputencoding{utf8}

@@ -1,592 +1,665 @@
 \relax 
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}\protected@file@percent }
-\newlabel{sec:introduction}{{I}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-A}}Context and Background}{1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-B}}Research Problem}{1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-C}}Research Objectives}{2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-D}}Evaluation Summary}{2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-E}}Contributions}{3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {I-F}}Outline}{3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {II}Background and Related Work}{3}\protected@file@percent }
-\newlabel{sec:background-related-work}{{II}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Software Reverse Engineering, Dissassembly, and Decompilation}{3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}DWARF Debugging Standard}{4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Ghidra Reverse Engineering Framework}{4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Related Work}{4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {III}Methodology}{4}\protected@file@percent }
-\newlabel{sec:methodology}{{III}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Domain-Specific Language (DSL) for Program Information}{4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-A}1}DSL Definitions}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Capturing Ground Truth Program Information}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}1}Translating DWARF to the DSL}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Capturing Decompiler Program Information}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-C}1}Translating Ghidra Decompiler Output to the DSL}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Comparison of "Ground Truth" and Decompiler Program Information}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-D}1}Data Type Comparison}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-D}1a}Definitions}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-D}1b}Comparison Logic}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-D}2}Variable Comparison}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {III-D}2a}Decomposed Variable Comparison}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-D}3}Function Comparison}{7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Quantitative Evaluation Metrics}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-E}1}Functions}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-E}2}Varnodes}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-E}3}Data Bytes}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-E}4}Array Comparisons}{8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Evaluation}{9}\protected@file@percent }
-\newlabel{sec:evaluation}{{IV}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Setup}{9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Summary of function recovery by compilation case}}{9}\protected@file@percent }
-\newlabel{table:opts-functions-summary}{{I}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Function Recovery}{9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}High-Level Variable (Varnode) Recovery}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Decomposed Variable (Varnode) Recovery}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Data Bytes Recovery}{10}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Summary of high-level varnode recovery by compilation case}}{11}\protected@file@percent }
-\newlabel{table*:opts-varnodes-summary}{{II}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Summary of high-level varnode recovery by compilation case and metatype}}{11}\protected@file@percent }
-\newlabel{table*:opts-varnodes-summary-metatypes}{{III}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Summary of decomposed varnode recovery by compilation case}}{11}\protected@file@percent }
-\newlabel{table*:opts-varnodes-summary-decomposed}{{IV}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Array Inference Accuracy}{11}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Summary of decomposed varnode recovery by compilation case and primitive metatype}}{12}\protected@file@percent }
-\newlabel{table*:opts-varnodes-summary-metatypes-decomposed}{{V}{12}}
-\@writefile{lot}{\contentsline {table}{\numberline {VI}{\ignorespaces Summary of data bytes recovery by compilation case}}{12}\protected@file@percent }
-\newlabel{table:opts-bytes-summary}{{VI}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-G}}Debug Compilation Case Discussion}{12}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {VII}{\ignorespaces Summary of array recovery by compilation case}}{13}\protected@file@percent }
-\newlabel{table*:opts-array-comparisons-summary}{{VII}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{13}\protected@file@percent }
-\newlabel{sec:conclusion}{{V}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Summary of Methodology}{13}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Summary of Results}{13}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Limitations}{14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Future Work}{14}\protected@file@percent }
-\bibcite{b1}{1}
-\bibcite{b2}{2}
-\bibcite{b3}{3}
-\bibcite{b4}{4}
-\bibcite{b5}{5}
-\bibcite{b6}{6}
-\bibcite{b7}{7}
-\@writefile{toc}{\contentsline {section}{References}{15}\protected@file@percent }
-\newlabel{sec:appendix}{{\mbox  {V-D}}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {VIII}{Function recovery (compilation = stripped)}}{16}\protected@file@percent }
-\newlabel{table:functions-O0-strip}{{VIII}{16}}
+\providecommand\hyper@newdestlabel[2]{}
+\@nameuse{bbl@beforestart}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:introduction}{{1}{1}{Introduction}{chapter.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Context and Background}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Research Problem}{2}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Research Objectives}{3}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Evaluation Summary}{4}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Contributions}{6}{section.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Outline}{6}{section.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Background and Related Work}{7}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:background-related-work}{{2}{7}{Background and Related Work}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Software Reverse Engineering, Dissassembly, and Decompilation}{7}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}DWARF Debugging Standard}{8}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Ghidra Reverse Engineering Framework}{9}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Related Work}{9}{section.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:methodology}{{3}{11}{Methodology}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Domain-Specific Language (DSL) for Program Information}{11}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}DSL Definitions}{12}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Capturing Ground Truth Program Information}{13}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Translating DWARF to the DSL}{14}{subsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Capturing Decompiler Program Information}{16}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Translating Ghidra Decompiler Output to the DSL}{16}{subsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Comparison of "Ground Truth" and Decompiler Program Information}{17}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Data Type Comparison}{17}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1.1}Definitions}{17}{subsubsection.3.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1.2}Comparison Logic}{18}{subsubsection.3.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Variable Comparison}{19}{subsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{20}{subsubsection.3.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Function Comparison}{21}{subsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{21}{section.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Functions}{21}{subsection.3.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Varnodes}{22}{subsection.3.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Data Bytes}{23}{subsection.3.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{24}{subsection.3.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Evaluation}{26}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:evaluation}{{4}{26}{Evaluation}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Setup}{26}{section.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of function recovery by compilation case\relax }}{27}{table.caption.4}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{table*:opts-functions-summary}{{4.1}{27}{Summary of function recovery by compilation case\relax }{table.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Function Recovery}{27}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{28}{section.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of high-level varnode recovery by compilation case\relax }}{29}{table.caption.5}\protected@file@percent }
+\newlabel{table*:opts-varnodes-summary}{{4.2}{29}{Summary of high-level varnode recovery by compilation case\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of high-level varnode recovery by compilation case and metatype\relax }}{30}{table.caption.6}\protected@file@percent }
+\newlabel{table*:opts-varnodes-summary-metatypes}{{4.3}{30}{Summary of high-level varnode recovery by compilation case and metatype\relax }{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Summary of decomposed varnode recovery by compilation case\relax }}{31}{table.caption.7}\protected@file@percent }
+\newlabel{table*:opts-varnodes-summary-decomposed}{{4.4}{31}{Summary of decomposed varnode recovery by compilation case\relax }{table.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{31}{section.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Summary of decomposed varnode recovery by compilation case and primitive metatype\relax }}{32}{table.caption.8}\protected@file@percent }
+\newlabel{table*:opts-varnodes-summary-metatypes-decomposed}{{4.5}{32}{Summary of decomposed varnode recovery by compilation case and primitive metatype\relax }{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.6}{\ignorespaces Summary of data bytes recovery by compilation case\relax }}{33}{table.caption.9}\protected@file@percent }
+\newlabel{table*:opts-bytes-summary}{{4.6}{33}{Summary of data bytes recovery by compilation case\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{33}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{33}{section.4.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.7}{\ignorespaces Summary of array recovery by compilation case\relax }}{34}{table.caption.10}\protected@file@percent }
+\newlabel{table*:opts-array-comparisons-summary}{{4.7}{34}{Summary of array recovery by compilation case\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{35}{section.4.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{sec:conclusion}{{5}{37}{Conclusion}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Summary of Methodology}{37}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Summary of Results}{38}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Limitations}{39}{section.5.3}\protected@file@percent }
+\bibstyle{ieee}
+\bibdata{thesis-bibliography}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Future Work}{41}{section.5.4}\protected@file@percent }
+\bibcite{b1}{{1}{}{{}}{{}}}
+\bibcite{b2}{{2}{}{{}}{{}}}
+\bibcite{b3}{{3}{}{{}}{{}}}
+\bibcite{b4}{{4}{}{{}}{{}}}
+\bibcite{b5}{{5}{}{{}}{{}}}
+\bibcite{b6}{{6}{}{{}}{{}}}
+\bibcite{b7}{{7}{}{{}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Function recovery (compilation = stripped)\relax }}{44}{table.Alph0.1}\protected@file@percent }
+\newlabel{table:functions-O0-strip}{{1}{44}{Function recovery (compilation = stripped)\relax }{table.Alph0.1}{}}
 \gdef \LT@i {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {IX}{Function recovery (compilation = standard)}}{17}\protected@file@percent }
-\newlabel{table:functions-O0}{{IX}{17}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Function recovery (compilation = standard)\relax }}{49}{table.Alph0.2}\protected@file@percent }
+\newlabel{table:functions-O0}{{2}{49}{Function recovery (compilation = standard)\relax }{table.Alph0.2}{}}
 \gdef \LT@ii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {X}{Function recovery (compilation = debug)}}{19}\protected@file@percent }
-\newlabel{table:functions-O0-debug}{{X}{19}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Function recovery (compilation = debug)\relax }}{54}{table.Alph0.3}\protected@file@percent }
+\newlabel{table:functions-O0-debug}{{3}{54}{Function recovery (compilation = debug)\relax }{table.Alph0.3}{}}
 \gdef \LT@iii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XI}{Varnode recovery (compilation = stripped)}}{21}\protected@file@percent }
-\newlabel{table:varnodes-O0-strip}{{XI}{21}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Varnode recovery (compilation = stripped)\relax }}{60}{table.Alph0.4}\protected@file@percent }
+\newlabel{table:varnodes-O0-strip}{{4}{60}{Varnode recovery (compilation = stripped)\relax }{table.Alph0.4}{}}
 \gdef \LT@iv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XII}{Varnode recovery (metatype = INT) (compilation = stripped)}}{23}\protected@file@percent }
-\newlabel{table:varnodes-metatype-INT-O0-strip}{{XII}{23}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Varnode recovery (metatype = INT) (compilation = stripped)\relax }}{66}{table.Alph0.5}\protected@file@percent }
+\newlabel{table:varnodes-metatype-INT-O0-strip}{{5}{66}{Varnode recovery (metatype = INT) (compilation = stripped)\relax }{table.Alph0.5}{}}
 \gdef \LT@v {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XIII}{Varnode recovery (metatype = FLOAT) (compilation = stripped)}}{25}\protected@file@percent }
-\newlabel{table:varnodes-metatype-FLOAT-O0-strip}{{XIII}{25}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = stripped)\relax }}{72}{table.Alph0.6}\protected@file@percent }
+\newlabel{table:varnodes-metatype-FLOAT-O0-strip}{{6}{72}{Varnode recovery (metatype = FLOAT) (compilation = stripped)\relax }{table.Alph0.6}{}}
 \gdef \LT@vi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XIV}{Varnode recovery (metatype = POINTER) (compilation = stripped)}}{27}\protected@file@percent }
-\newlabel{table:varnodes-metatype-POINTER-O0-strip}{{XIV}{27}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = stripped)\relax }}{78}{table.Alph0.7}\protected@file@percent }
+\newlabel{table:varnodes-metatype-POINTER-O0-strip}{{7}{78}{Varnode recovery (metatype = POINTER) (compilation = stripped)\relax }{table.Alph0.7}{}}
 \gdef \LT@vii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XV}{Varnode recovery (metatype = ARRAY) (compilation = stripped)}}{29}\protected@file@percent }
-\newlabel{table:varnodes-metatype-ARRAY-O0-strip}{{XV}{29}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = stripped)\relax }}{84}{table.Alph0.8}\protected@file@percent }
+\newlabel{table:varnodes-metatype-ARRAY-O0-strip}{{8}{84}{Varnode recovery (metatype = ARRAY) (compilation = stripped)\relax }{table.Alph0.8}{}}
 \gdef \LT@viii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XVI}{Varnode recovery (metatype = STRUCT) (compilation = stripped)}}{32}\protected@file@percent }
-\newlabel{table:varnodes-metatype-STRUCT-O0-strip}{{XVI}{32}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = stripped)\relax }}{90}{table.Alph0.9}\protected@file@percent }
+\newlabel{table:varnodes-metatype-STRUCT-O0-strip}{{9}{90}{Varnode recovery (metatype = STRUCT) (compilation = stripped)\relax }{table.Alph0.9}{}}
 \gdef \LT@ix {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XVII}{Varnode recovery (metatype = UNION) (compilation = stripped)}}{34}\protected@file@percent }
-\newlabel{table:varnodes-metatype-UNION-O0-strip}{{XVII}{34}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = stripped)\relax }}{96}{table.Alph0.10}\protected@file@percent }
+\newlabel{table:varnodes-metatype-UNION-O0-strip}{{10}{96}{Varnode recovery (metatype = UNION) (compilation = stripped)\relax }{table.Alph0.10}{}}
 \gdef \LT@x {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XVIII}{Varnode recovery (compilation = standard)}}{36}\protected@file@percent }
-\newlabel{table:varnodes-O0}{{XVIII}{36}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Varnode recovery (compilation = standard)\relax }}{102}{table.Alph0.11}\protected@file@percent }
+\newlabel{table:varnodes-O0}{{11}{102}{Varnode recovery (compilation = standard)\relax }{table.Alph0.11}{}}
 \gdef \LT@xi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XIX}{Varnode recovery (metatype = INT) (compilation = standard)}}{38}\protected@file@percent }
-\newlabel{table:varnodes-metatype-INT-O0}{{XIX}{38}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Varnode recovery (metatype = INT) (compilation = standard)\relax }}{108}{table.Alph0.12}\protected@file@percent }
+\newlabel{table:varnodes-metatype-INT-O0}{{12}{108}{Varnode recovery (metatype = INT) (compilation = standard)\relax }{table.Alph0.12}{}}
 \gdef \LT@xii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XX}{Varnode recovery (metatype = FLOAT) (compilation = standard)}}{40}\protected@file@percent }
-\newlabel{table:varnodes-metatype-FLOAT-O0}{{XX}{40}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = standard)\relax }}{114}{table.Alph0.13}\protected@file@percent }
+\newlabel{table:varnodes-metatype-FLOAT-O0}{{13}{114}{Varnode recovery (metatype = FLOAT) (compilation = standard)\relax }{table.Alph0.13}{}}
 \gdef \LT@xiii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXI}{Varnode recovery (metatype = POINTER) (compilation = standard)}}{42}\protected@file@percent }
-\newlabel{table:varnodes-metatype-POINTER-O0}{{XXI}{42}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = standard)\relax }}{120}{table.Alph0.14}\protected@file@percent }
+\newlabel{table:varnodes-metatype-POINTER-O0}{{14}{120}{Varnode recovery (metatype = POINTER) (compilation = standard)\relax }{table.Alph0.14}{}}
 \gdef \LT@xiv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXII}{Varnode recovery (metatype = ARRAY) (compilation = standard)}}{44}\protected@file@percent }
-\newlabel{table:varnodes-metatype-ARRAY-O0}{{XXII}{44}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = standard)\relax }}{126}{table.Alph0.15}\protected@file@percent }
+\newlabel{table:varnodes-metatype-ARRAY-O0}{{15}{126}{Varnode recovery (metatype = ARRAY) (compilation = standard)\relax }{table.Alph0.15}{}}
 \gdef \LT@xv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXIII}{Varnode recovery (metatype = STRUCT) (compilation = standard)}}{46}\protected@file@percent }
-\newlabel{table:varnodes-metatype-STRUCT-O0}{{XXIII}{46}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = standard)\relax }}{132}{table.Alph0.16}\protected@file@percent }
+\newlabel{table:varnodes-metatype-STRUCT-O0}{{16}{132}{Varnode recovery (metatype = STRUCT) (compilation = standard)\relax }{table.Alph0.16}{}}
 \gdef \LT@xvi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXIV}{Varnode recovery (metatype = UNION) (compilation = standard)}}{48}\protected@file@percent }
-\newlabel{table:varnodes-metatype-UNION-O0}{{XXIV}{48}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = standard)\relax }}{138}{table.Alph0.17}\protected@file@percent }
+\newlabel{table:varnodes-metatype-UNION-O0}{{17}{138}{Varnode recovery (metatype = UNION) (compilation = standard)\relax }{table.Alph0.17}{}}
 \gdef \LT@xvii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXV}{Varnode recovery (compilation = debug)}}{50}\protected@file@percent }
-\newlabel{table:varnodes-O0-debug}{{XXV}{50}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Varnode recovery (compilation = debug)\relax }}{144}{table.Alph0.18}\protected@file@percent }
+\newlabel{table:varnodes-O0-debug}{{18}{144}{Varnode recovery (compilation = debug)\relax }{table.Alph0.18}{}}
 \gdef \LT@xviii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXVI}{Varnode recovery (metatype = INT) (compilation = debug)}}{52}\protected@file@percent }
-\newlabel{table:varnodes-metatype-INT-O0-debug}{{XXVI}{52}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Varnode recovery (metatype = INT) (compilation = debug)\relax }}{150}{table.Alph0.19}\protected@file@percent }
+\newlabel{table:varnodes-metatype-INT-O0-debug}{{19}{150}{Varnode recovery (metatype = INT) (compilation = debug)\relax }{table.Alph0.19}{}}
 \gdef \LT@xix {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXVII}{Varnode recovery (metatype = FLOAT) (compilation = debug)}}{54}\protected@file@percent }
-\newlabel{table:varnodes-metatype-FLOAT-O0-debug}{{XXVII}{54}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = debug)\relax }}{156}{table.Alph0.20}\protected@file@percent }
+\newlabel{table:varnodes-metatype-FLOAT-O0-debug}{{20}{156}{Varnode recovery (metatype = FLOAT) (compilation = debug)\relax }{table.Alph0.20}{}}
 \gdef \LT@xx {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXVIII}{Varnode recovery (metatype = POINTER) (compilation = debug)}}{56}\protected@file@percent }
-\newlabel{table:varnodes-metatype-POINTER-O0-debug}{{XXVIII}{56}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = debug)\relax }}{162}{table.Alph0.21}\protected@file@percent }
+\newlabel{table:varnodes-metatype-POINTER-O0-debug}{{21}{162}{Varnode recovery (metatype = POINTER) (compilation = debug)\relax }{table.Alph0.21}{}}
 \gdef \LT@xxi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXIX}{Varnode recovery (metatype = ARRAY) (compilation = debug)}}{58}\protected@file@percent }
-\newlabel{table:varnodes-metatype-ARRAY-O0-debug}{{XXIX}{58}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = debug)\relax }}{168}{table.Alph0.22}\protected@file@percent }
+\newlabel{table:varnodes-metatype-ARRAY-O0-debug}{{22}{168}{Varnode recovery (metatype = ARRAY) (compilation = debug)\relax }{table.Alph0.22}{}}
 \gdef \LT@xxii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXX}{Varnode recovery (metatype = STRUCT) (compilation = debug)}}{60}\protected@file@percent }
-\newlabel{table:varnodes-metatype-STRUCT-O0-debug}{{XXX}{60}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = debug)\relax }}{174}{table.Alph0.23}\protected@file@percent }
+\newlabel{table:varnodes-metatype-STRUCT-O0-debug}{{23}{174}{Varnode recovery (metatype = STRUCT) (compilation = debug)\relax }{table.Alph0.23}{}}
 \gdef \LT@xxiii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXI}{Varnode recovery (metatype = UNION) (compilation = debug)}}{62}\protected@file@percent }
-\newlabel{table:varnodes-metatype-UNION-O0-debug}{{XXXI}{62}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = debug)\relax }}{180}{table.Alph0.24}\protected@file@percent }
+\newlabel{table:varnodes-metatype-UNION-O0-debug}{{24}{180}{Varnode recovery (metatype = UNION) (compilation = debug)\relax }{table.Alph0.24}{}}
 \gdef \LT@xxiv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXII}{Decomposed varnode recovery (compilation = stripped)}}{64}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-O0-strip}{{XXXII}{64}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{186}{table.Alph0.25}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-O0-strip}{{25}{186}{Decomposed varnode recovery (compilation = stripped)\relax }{table.Alph0.25}{}}
 \gdef \LT@xxv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXIII}{Decomposed varnode recovery (compilation = stripped)}}{66}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-INT-O0-strip}{{XXXIII}{66}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {26}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{192}{table.Alph0.26}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-INT-O0-strip}{{26}{192}{Decomposed varnode recovery (compilation = stripped)\relax }{table.Alph0.26}{}}
 \gdef \LT@xxvi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXIV}{Decomposed varnode recovery (compilation = stripped)}}{68}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0-strip}{{XXXIV}{68}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {27}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{198}{table.Alph0.27}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0-strip}{{27}{198}{Decomposed varnode recovery (compilation = stripped)\relax }{table.Alph0.27}{}}
 \gdef \LT@xxvii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXV}{Decomposed varnode recovery (compilation = stripped)}}{70}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-POINTER-O0-strip}{{XXXV}{70}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {28}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{204}{table.Alph0.28}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-POINTER-O0-strip}{{28}{204}{Decomposed varnode recovery (compilation = stripped)\relax }{table.Alph0.28}{}}
 \gdef \LT@xxviii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXVI}{Decomposed varnode recovery (compilation = standard)}}{72}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-O0}{{XXXVI}{72}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {29}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{210}{table.Alph0.29}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-O0}{{29}{210}{Decomposed varnode recovery (compilation = standard)\relax }{table.Alph0.29}{}}
 \gdef \LT@xxix {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXVII}{Decomposed varnode recovery (compilation = standard)}}{74}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-INT-O0}{{XXXVII}{74}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {30}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{216}{table.Alph0.30}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-INT-O0}{{30}{216}{Decomposed varnode recovery (compilation = standard)\relax }{table.Alph0.30}{}}
 \gdef \LT@xxx {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXVIII}{Decomposed varnode recovery (compilation = standard)}}{76}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0}{{XXXVIII}{76}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {31}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{222}{table.Alph0.31}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0}{{31}{222}{Decomposed varnode recovery (compilation = standard)\relax }{table.Alph0.31}{}}
 \gdef \LT@xxxi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XXXIX}{Decomposed varnode recovery (compilation = standard)}}{78}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-POINTER-O0}{{XXXIX}{78}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {32}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{228}{table.Alph0.32}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-POINTER-O0}{{32}{228}{Decomposed varnode recovery (compilation = standard)\relax }{table.Alph0.32}{}}
 \gdef \LT@xxxii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XL}{Decomposed varnode recovery (compilation = debug)}}{80}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-O0-debug}{{XL}{80}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {33}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{234}{table.Alph0.33}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-O0-debug}{{33}{234}{Decomposed varnode recovery (compilation = debug)\relax }{table.Alph0.33}{}}
 \gdef \LT@xxxiii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLI}{Decomposed varnode recovery (compilation = debug)}}{82}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-INT-O0-debug}{{XLI}{82}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {34}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{240}{table.Alph0.34}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-INT-O0-debug}{{34}{240}{Decomposed varnode recovery (compilation = debug)\relax }{table.Alph0.34}{}}
 \gdef \LT@xxxiv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLII}{Decomposed varnode recovery (compilation = debug)}}{84}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0-debug}{{XLII}{84}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {35}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{246}{table.Alph0.35}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-FLOAT-O0-debug}{{35}{246}{Decomposed varnode recovery (compilation = debug)\relax }{table.Alph0.35}{}}
 \gdef \LT@xxxv {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLIII}{Decomposed varnode recovery (compilation = debug)}}{86}\protected@file@percent }
-\newlabel{table:varnodes-decomposed-metatype-POINTER-O0-debug}{{XLIII}{86}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {36}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{252}{table.Alph0.36}\protected@file@percent }
+\newlabel{table:varnodes-decomposed-metatype-POINTER-O0-debug}{{36}{252}{Decomposed varnode recovery (compilation = debug)\relax }{table.Alph0.36}{}}
 \gdef \LT@xxxvi {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}\LT@entry 
-    {1}{48.98866pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLIV}{Data bytes recovery (compilation = stripped)}}{87}\protected@file@percent }
-\newlabel{table:bytes-O0-strip}{{XLIV}{87}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{46.14322pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {37}{\ignorespaces Data bytes recovery (compilation = stripped)\relax }}{257}{table.Alph0.37}\protected@file@percent }
+\newlabel{table:bytes-O0-strip}{{37}{257}{Data bytes recovery (compilation = stripped)\relax }{table.Alph0.37}{}}
 \gdef \LT@xxxvii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLV}{Data bytes recovery (compilation = standard)}}{89}\protected@file@percent }
-\newlabel{table:bytes-O0}{{XLV}{89}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {38}{\ignorespaces Data bytes recovery (compilation = standard)\relax }}{263}{table.Alph0.38}\protected@file@percent }
+\newlabel{table:bytes-O0}{{38}{263}{Data bytes recovery (compilation = standard)\relax }{table.Alph0.38}{}}
 \gdef \LT@xxxviii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLVI}{Data bytes recovery (compilation = debug)}}{91}\protected@file@percent }
-\newlabel{table:bytes-O0-debug}{{XLVI}{91}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {39}{\ignorespaces Data bytes recovery (compilation = debug)\relax }}{268}{table.Alph0.39}\protected@file@percent }
+\newlabel{table:bytes-O0-debug}{{39}{268}{Data bytes recovery (compilation = debug)\relax }{table.Alph0.39}{}}
 \gdef \LT@xxxix {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}\LT@entry 
-    {1}{97.35826pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLVII}{Array recovery (compilation = stripped)}}{93}\protected@file@percent }
-\newlabel{table:array-comparisons-O0-strip}{{XLVII}{93}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{80.28644pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {40}{\ignorespaces Array recovery (compilation = stripped)\relax }}{273}{table.Alph0.40}\protected@file@percent }
+\newlabel{table:array-comparisons-O0-strip}{{40}{273}{Array recovery (compilation = stripped)\relax }{table.Alph0.40}{}}
 \gdef \LT@xl {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLVIII}{Array recovery (compilation = standard)}}{95}\protected@file@percent }
-\newlabel{table:array-comparisons-O0}{{XLVIII}{95}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {41}{\ignorespaces Array recovery (compilation = standard)\relax }}{279}{table.Alph0.41}\protected@file@percent }
+\newlabel{table:array-comparisons-O0}{{41}{279}{Array recovery (compilation = standard)\relax }{table.Alph0.41}{}}
 \gdef \LT@xli {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}}
-\@writefile{lot}{\contentsline {table}{\numberline {XLIX}{Array recovery (compilation = debug)}}{97}\protected@file@percent }
-\newlabel{table:array-comparisons-O0-debug}{{XLIX}{97}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{0.0pt}}
+\@writefile{lot}{\contentsline {table}{\numberline {42}{\ignorespaces Array recovery (compilation = debug)\relax }}{285}{table.Alph0.42}\protected@file@percent }
+\newlabel{table:array-comparisons-O0-debug}{{42}{285}{Array recovery (compilation = debug)\relax }{table.Alph0.42}{}}
 \gdef \LT@xlii {\LT@entry 
-    {8}{52.49966pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}\LT@entry 
-    {1}{46.14322pt}}
+    {8}{61.27454pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{43.2982pt}\LT@entry 
+    {1}{0.0pt}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers

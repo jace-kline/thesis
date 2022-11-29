@@ -1,14 +1,14 @@
-\begin{table}
+\begin{table*}[t]
 \centering
 \caption{Summary of data bytes recovery by compilation case}
-\label{table:opts-bytes-summary}
-\begin{tabular}{lp{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}}
+\label{table*:opts-bytes-summary}
+\begin{tabular}{lp{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}p{2.4cm}}
 \toprule
-{} &  Ground truth data bytes &  Bytes found &  Bytes missed &  Bytes recovery fraction \\
+{} & \rotatebox{45}{Ground truth data bytes} & \rotatebox{45}{Bytes found} & \rotatebox{45}{Bytes missed} & \rotatebox{45}{Bytes recovery fraction} \\
 \midrule
-strip    &                  1183691 &       725144 &        458547 &                    0.613 \\
-standard &                  1183691 &       954105 &        229586 &                    0.806 \\
-debug    &                  1183691 &      1177221 &          6470 &                    0.995 \\
+strip    &                                 1183691 &                      725144 &                       458547 &                                   0.613 \\
+standard &                                 1183691 &                      954105 &                       229586 &                                   0.806 \\
+debug    &                                 1183691 &                     1177221 &                         6470 &                                   0.995 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}

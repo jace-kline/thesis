@@ -1,0 +1,55 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of function recovery by compilation case\relax }}{27}{table.caption.4}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of high-level varnode recovery by compilation case\relax }}{29}{table.caption.5}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of high-level varnode recovery by compilation case and metatype\relax }}{30}{table.caption.6}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Summary of decomposed varnode recovery by compilation case\relax }}{31}{table.caption.7}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Summary of decomposed varnode recovery by compilation case and primitive metatype\relax }}{32}{table.caption.8}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Summary of data bytes recovery by compilation case\relax }}{33}{table.caption.9}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Summary of array recovery by compilation case\relax }}{34}{table.caption.10}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Function recovery (compilation = stripped)\relax }}{44}{table.Alph0.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Function recovery (compilation = standard)\relax }}{49}{table.Alph0.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Function recovery (compilation = debug)\relax }}{54}{table.Alph0.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Varnode recovery (compilation = stripped)\relax }}{60}{table.Alph0.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Varnode recovery (metatype = INT) (compilation = stripped)\relax }}{66}{table.Alph0.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = stripped)\relax }}{72}{table.Alph0.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = stripped)\relax }}{78}{table.Alph0.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = stripped)\relax }}{84}{table.Alph0.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = stripped)\relax }}{90}{table.Alph0.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = stripped)\relax }}{96}{table.Alph0.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Varnode recovery (compilation = standard)\relax }}{102}{table.Alph0.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Varnode recovery (metatype = INT) (compilation = standard)\relax }}{108}{table.Alph0.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = standard)\relax }}{114}{table.Alph0.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = standard)\relax }}{120}{table.Alph0.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = standard)\relax }}{126}{table.Alph0.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = standard)\relax }}{132}{table.Alph0.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = standard)\relax }}{138}{table.Alph0.17}%
+\contentsline {table}{\numberline {18}{\ignorespaces Varnode recovery (compilation = debug)\relax }}{144}{table.Alph0.18}%
+\contentsline {table}{\numberline {19}{\ignorespaces Varnode recovery (metatype = INT) (compilation = debug)\relax }}{150}{table.Alph0.19}%
+\contentsline {table}{\numberline {20}{\ignorespaces Varnode recovery (metatype = FLOAT) (compilation = debug)\relax }}{156}{table.Alph0.20}%
+\contentsline {table}{\numberline {21}{\ignorespaces Varnode recovery (metatype = POINTER) (compilation = debug)\relax }}{162}{table.Alph0.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Varnode recovery (metatype = ARRAY) (compilation = debug)\relax }}{168}{table.Alph0.22}%
+\contentsline {table}{\numberline {23}{\ignorespaces Varnode recovery (metatype = STRUCT) (compilation = debug)\relax }}{174}{table.Alph0.23}%
+\contentsline {table}{\numberline {24}{\ignorespaces Varnode recovery (metatype = UNION) (compilation = debug)\relax }}{180}{table.Alph0.24}%
+\contentsline {table}{\numberline {25}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{186}{table.Alph0.25}%
+\contentsline {table}{\numberline {26}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{192}{table.Alph0.26}%
+\contentsline {table}{\numberline {27}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{198}{table.Alph0.27}%
+\contentsline {table}{\numberline {28}{\ignorespaces Decomposed varnode recovery (compilation = stripped)\relax }}{204}{table.Alph0.28}%
+\contentsline {table}{\numberline {29}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{210}{table.Alph0.29}%
+\contentsline {table}{\numberline {30}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{216}{table.Alph0.30}%
+\contentsline {table}{\numberline {31}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{222}{table.Alph0.31}%
+\contentsline {table}{\numberline {32}{\ignorespaces Decomposed varnode recovery (compilation = standard)\relax }}{228}{table.Alph0.32}%
+\contentsline {table}{\numberline {33}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{234}{table.Alph0.33}%
+\contentsline {table}{\numberline {34}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{240}{table.Alph0.34}%
+\contentsline {table}{\numberline {35}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{246}{table.Alph0.35}%
+\contentsline {table}{\numberline {36}{\ignorespaces Decomposed varnode recovery (compilation = debug)\relax }}{252}{table.Alph0.36}%
+\contentsline {table}{\numberline {37}{\ignorespaces Data bytes recovery (compilation = stripped)\relax }}{257}{table.Alph0.37}%
+\contentsline {table}{\numberline {38}{\ignorespaces Data bytes recovery (compilation = standard)\relax }}{263}{table.Alph0.38}%
+\contentsline {table}{\numberline {39}{\ignorespaces Data bytes recovery (compilation = debug)\relax }}{268}{table.Alph0.39}%
+\contentsline {table}{\numberline {40}{\ignorespaces Array recovery (compilation = stripped)\relax }}{273}{table.Alph0.40}%
+\contentsline {table}{\numberline {41}{\ignorespaces Array recovery (compilation = standard)\relax }}{279}{table.Alph0.41}%
+\contentsline {table}{\numberline {42}{\ignorespaces Array recovery (compilation = debug)\relax }}{285}{table.Alph0.42}%

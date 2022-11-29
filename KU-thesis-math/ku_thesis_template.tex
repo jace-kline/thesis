@@ -1,0 +1,35 @@
+% Updated by Aaron Barrett 5/18/2022.
+
+\input{thesis_header.tex}
+
+\begin{document}
+
+% This is the table of contents, list of figures, list of tables, formatted correctly.
+% romanpages ~ pages numbered by roman numerals
+\begin{romanpages}
+  \maketitle
+  \import{intro/}{introduction}
+  \tableofcontents{}
+  \listoffigures
+  \listoftables
+\end{romanpages}
+
+% These are the chapters loaded using import instead of include.
+% For larger projects, import allows for nested files, which may be useful for figures organized in subfolders.
+\import{chap_1/}{chap_1}
+\import{chap_2/}{chap_2}
+
+% Bibliography, default style from former template.
+\global\long\def\bibname{References}
+% Bibliography style should be changed to whatever format is acceptable for the field given.
+% Here's two such styles.
+\bibliographystyle{apalike2}
+% \bibliographystyle{alpha}
+\bibliography{thesis_bibliography}
+
+% Appendix, if needed.
+\appendix
+\import{appendix/}{appendix_1}
+\import{appendix/}{appendix_2}
+
+\end{document}
