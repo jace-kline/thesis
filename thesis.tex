@@ -292,7 +292,7 @@ Recall that a \emph{Varnode} is defined to be a source-level \emph{Variable} tie
 
 \begin{itemize}
     \item \emph{Ground truth varnodes}: The total number of varnodes present in the ground truth source. This includes varnodes associated with global and local variables from all functions.
-    \item \emph{Varnodes matched @ level=LEVEL}: Each ground truth varnode is associated with a \emph{varnode comparison level} (\emph{NO\_MATCH}, \emph{OVERLAP}, \emph{SUBSET}, \emph{ALIGNED}, \emph{MATCH}) during the comparison with the set of decompiler varnodes. This metric specifies the number of ground truth varnodes that are matched at the specified level.
+    \item \emph{Varnodes matched @ level LEVEL}: Each ground truth varnode is associated with a \emph{varnode comparison level} (\emph{NO\_MATCH}, \emph{OVERLAP}, \emph{SUBSET}, \emph{ALIGNED}, \emph{MATCH}) during the comparison with the set of decompiler varnodes. This metric specifies the number of ground truth varnodes that are matched at the specified level.
     \item \emph{Varnodes average comparison score}: For each \emph{varnode comparison level}, we first linearly assign an integer representing the strength of the varnode comparison (\emph{NO\_MATCH} = 0, \emph{OVERLAP} = 1, \emph{SUBSET} = 2, \emph{ALIGNED} = 3, \emph{MATCH} = 4). We then normalize these scores to fall within the range zero to one. Then, for each ground truth varnode, we compute this normalized score. We take the average score over all ground truth varnodes to obtain the resulting metric. This metric approximates how well, on average, the decompiler infers the ground truth varnodes.
     \item \emph{Varnodes fraction partially recovered}: The fraction of ground truth varnodes with a match level greater than \emph{NO\_MATCH}.
     \item \emph{Varnodes fraction exactly recovered}: The fraction of ground truth varnodes with a match level equal to \emph{MATCH}.
@@ -342,6 +342,8 @@ With the comparisons computed for each program and compilation configuration, we
 
 \subsection{Function Recovery}
 
+\input{data/tables/opts-functions-summary.tex}
+
 Tables XX, YY, and ZZ in the appendix present function recovery metrics of each benchmark program under the three compilation configurations. Table AA shows the summarization of the recovery statistics accumulated over all benchmark programs. We find that over the 18139 functions present in the ground truth, the stripped and standard compilation cases produce 100\% function recovery while the debug case fails to recover four functions, resulting in a 99.9\% recovery rate. Upon examination of table ZZ in the appendix, we find that all four functions missed are from the \emph{factor} program.
 
 To determine the cause of the missed functions, we further investigate the Ghidra decompilation of \emph{factor} and find that each of the missed functions results in a decompilation error, "Low-level Error: Unsupported data-type for ResolveUnion". This indicates that an error occurred when attempting to resolve a union data type within the decompilation of these functions. Since this error only occurs in the debug compilation case, it is clear that Ghidra's parsing and interpretation of DWARF information contributes to this error. This same union data type causing the error is successfully captured and represented in our ground truth program information and, thus, this is likely a bug within Ghidra's resolution logic.
@@ -352,7 +354,11 @@ In summary, we see that Ghidra successfully finds all functions for all compilat
 
 To evaluate the variable (varnode) recovery accuracy of the Ghidra decompiler, we first measure the inference performance of high-level varnodes, including varnodes with complex and aggregate types such as arrays, structs, and unions. We further measure the varnode inference accuracy by metatype to decipher which of the metatypes are most and least accurately inferred by the decompiler. This analysis is performed under each compilation configuration (stripped, standard, and debug).
 
+\input{data/tables/opts-varnodes-summary.tex}
+
 Tables XX, YY, and ZZ in the appendix show the inference of high-level varnodes for each benchmark compiled with each of the compilation configurations. This data is summarized in table AA. We find that Ghidra at least partially infers 97.2\%, 99.3\%, and 99.6\% and precisely infers 36.1\%, 38.6\%, and 99.7\% of high-level varnodes for each for the stripped, standard, and debug compilation cases, respectively. In addition, the varnode comparison scores for each compilation case are 0.788, 0.816, and 0.998, respectively. These metrics indicate that the standard compilation case slightly outperforms the stripped case in varnode inference while the debug compilation case results in significant improvements over both the stripped and standard cases, particularly in exact varnode recovery.
+
+\input{data/tables/opts-varnodes-summary-metatypes.tex}
 
 In tables XX-XX, YY-YY, and ZZ-ZZ, we show the inference performance of high-level varnodes for each benchmark, broken down by the metatype of the ground truth varnodes, and for all compilation configurations. We summarize this information in table BB. From the stripped and standard compilation cases, we observe that varnodes with metatype \emph{INT} are most accurately recovered when considering varnode comparison score, fraction partially recovered, and fraction exactly recovered. In the stripped case, the inference of \emph{ARRAY} varnodes shows the worst performance with a varnode comparison score of 0.315. In the standard case, varnodes with metatype \emph{STRUCT} are least accurately recovered with a varnode comparison score of 0.560, followed closely by \emph{ARRAY} and \emph{UNION}. We see that, for both the stripped and standard compilation cases, the complex (aggregate) metatypes, \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION}, show the lowest recovery accuracy with respect to varnode comparison score. Among the primitive metatypes, \emph{FLOAT} shows the worst recovery metrics for these two compilation cases.
 
@@ -362,13 +368,19 @@ The debug compilation case demonstrates high relative recovery accuracy across v
 
 In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis over all benchmarks for each of the three compilation cases.
 
+\input{data/tables/opts-varnodes-summary-decomposed.tex}
+
 Similar to the high-level varnode analysis, we show the inference of the decomposed varnodes for each benchmark and for each compilation configuration in appendix tables XX, YY, and ZZ. Table AA summarizes this information. Naturally, we expect to see lower recovery metrics compared to the high-level varnode analysis since each complex varnode is now analyzed as a set of its constituent parts. Hence, a single "missed" high-level varnode is translated into a set of primitive varnodes, each "missed" in this analysis. We find this hypothesis to hold true across all compilation cases as each the varnode comparison score, varnodes fraction partially recovered, and varnodes fraction exactly recovered show lower values than in the high-level analysis. We see that the decomposed varnode comparison scores for the strip, standard, and debug compilation cases are 0.586, 0.703, and 0.980, respectively. The varnodes fraction partially recovered are 73.8\%, 92.5\%, and 98.0\% while the varnodes fraction exactly recovered are 24.7\%, 25.0\%, and 98.0\% across the compilation cases, respectively. Interestingly, in the stripped compilation case, we find that the number of "missed" decomposed varnodes (139937) exceeds the number of "exactly matched" decomposed varnodes (131719). This is largely due to the quantity of high-level \emph{ARRAY} and \emph{STRUCT} varnodes that are missed in the stripped case.
+
+\input{data/tables/opts-varnodes-summary-metatypes-decomposed.tex}
 
 We split the decomposed varnodes by metatype and show these results in tables XX-XX, YY-YY, and ZZ-ZZ. We present the summary of these results over each compilation case in table BB. The table shows that the stripped and standard compilation cases demostrate the poorest inference performance in terms of varnode comparison score for varnodes of metatype \emph{FLOAT}. However, we find that the percentage of "missed" \emph{INT} varnodes is worse than that of \emph{FLOAT} in the standard and debug compilation cases, and is nearly the same in the stripped case. This may be explained by the prevalence of integer (or character) arrays in the Coreutils benchmark programs when compared to other array types. Recovery accuracy of the \emph{POINTER} metatype is comparable to the \emph{INT} metatype across the three compilation cases.
 
 \subsection{Data Bytes Recovery}
 
 Following from our varnode inference analysis, we next assess the accuracy of the Ghidra decompiler with regards to the total number of data bytes recovered across all varnodes. This analysis provides an important perspective on data recovery as the size of an improperly inferred varnode may result in a wide range in the number of misinferred bytes. For example, a large array and a single character are each represented by a varnode, but the quantity of data present in the array is much greater than that of a character. Hence, it is important to capture this nuanced view of data recovery.
+
+
 
 In tables XX, YY, and ZZ, we show the data bytes recovery metrics for each of the benchmark programs under each compilation case. We summarize the data bytes recovery for each of the compilation cases in table AA. We see that Ghidra recovers 61.3\%, 80.6\%, and 99.5\% of data bytes in the stripped, standard, and debug compilation cases, respectively.
 
@@ -452,9 +464,9 @@ In our assessment of the Ghidra decompiler, we observe that Ghidra does not succ
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
 
-\section*{Appendix}
-
 \onecolumn
+
+\section*{Appendix}
 \small
 
 % functions - stripped
