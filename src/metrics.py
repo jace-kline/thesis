@@ -92,7 +92,7 @@ def make_metrics() -> List[MetricsGroup]:
     metrics_groups: List[MetricsGroup] = []
 
     # Data bytes metrics
-    bytes_group = MetricsGroup("bytes", "DATA BYTES")
+    bytes_group = MetricsGroup("bytes", "Data bytes recovery")
     bytes_group.mk_add_metric(
         "Ground truth data bytes",
         bytes_truth
@@ -115,7 +115,7 @@ def make_metrics() -> List[MetricsGroup]:
     metrics_groups.append(bytes_group)
 
     # Function metrics
-    functions_group = MetricsGroup("functions", "FUNCTIONS")
+    functions_group = MetricsGroup("functions", "Function recovery")
     functions_group.mk_add_metric(
         "Ground truth functions",
         lambda cmp: len(functions_truth(cmp))
@@ -138,7 +138,7 @@ def make_metrics() -> List[MetricsGroup]:
     metrics_groups.append(functions_group)
 
     # High-level Varnode metrics
-    varnodes_group = MetricsGroup("varnodes", "VARNODES")
+    varnodes_group = MetricsGroup("varnodes", "Varnode recovery")
     varnodes_group.mk_add_metric(
         "Ground truth varnodes",
         lambda cmp: len(varnodes_truth(cmp))
@@ -147,7 +147,7 @@ def make_metrics() -> List[MetricsGroup]:
     for compare_level in VarnodeCompareLevel.range():
         compare_level_str = VarnodeCompareLevel.to_string(compare_level)
         varnodes_group.mk_add_metric(
-            "Varnodes matched @ level={}".format(compare_level_str),
+            "Varnodes matched @ level {}".format(compare_level_str),
             lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level))
         )
 
@@ -162,18 +162,18 @@ def make_metrics() -> List[MetricsGroup]:
         metatype_str = MetaType.repr(metatype)
         group = MetricsGroup(
             "varnodes_metatype_{}".format(metatype_str),
-            "VARNODES (metatype = {})".format(metatype_str)
+            "Varnode recovery (metatype = {})".format(metatype_str)
         )
 
         group.mk_add_metric(
-            "Ground truth varnodes (metatype={})".format(metatype_str),
+            "Ground truth varnodes".format(metatype_str),
             lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype))
         )
 
         for compare_level in VarnodeCompareLevel.range():
             compare_level_str = VarnodeCompareLevel.to_string(compare_level)
             group.mk_add_metric(
-                "Decompiler varnodes matched @ level={} (metatype={})".format(compare_level_str, metatype_str),
+                "Decompiler varnodes matched @ level {}".format(compare_level_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([
                     record for record in
                     varnode_compare_records_matched_at_level(cmp, compare_level)
@@ -182,28 +182,28 @@ def make_metrics() -> List[MetricsGroup]:
             )
 
         group.mk_add_metric(
-            "Varnode average compare score [0,1] (metatype={})".format(metatype_str),
+            "Varnode average compare score [0,1]",
             lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype)
         )
         metrics_groups.append(group)
 
     # Primitive Varnode metrics
-    primitive_varnodes_group = MetricsGroup("varnodes_decomposed", "VARNODES (decomposed)")
+    primitive_varnodes_group = MetricsGroup("varnodes_decomposed", "Decomposed varnode recovery")
 
     primitive_varnodes_group.mk_add_metric(
-        "Ground truth varnodes (decomposed)",
+        "Ground truth varnodes",
         lambda cmp: len(varnodes_truth(cmp, primitive=True))
     )
 
     for compare_level in VarnodeCompareLevel.range():
         compare_level_str = VarnodeCompareLevel.to_string(compare_level)
         primitive_varnodes_group.mk_add_metric(
-            "Varnodes matched @ level={} (decomposed)".format(compare_level_str),
+            "Varnodes matched @ level {}".format(compare_level_str),
             lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True))
         )
 
     primitive_varnodes_group.mk_add_metric(
-        "Varnode average comparison score [0,1] (decomposed)",
+        "Varnode average comparison score [0,1]",
         lambda cmp: varnodes_avg_compare_score(cmp, primitive=True)
     )
     metrics_groups.append(primitive_varnodes_group)
@@ -213,18 +213,18 @@ def make_metrics() -> List[MetricsGroup]:
         metatype_str = MetaType.repr(metatype)
         group = MetricsGroup(
             "varnodes_decomposed_metatype_{}".format(metatype_str),
-            "VARNODES (decomposed) (metatype = {})".format(metatype_str)
+            "Decomposed varnode recovery"
         )
 
         group.mk_add_metric(
-            "Ground truth varnodes (decomposed) (metatype={})".format(metatype_str),
+            "Ground truth varnodes",
             lambda cmp, metatype=metatype: len(varnodes_truth_metatype(cmp, metatype, primitive=True))
         )
 
         for compare_level in VarnodeCompareLevel.range():
             compare_level_str = VarnodeCompareLevel.to_string(compare_level)
             group.mk_add_metric(
-                "Varnodes matched @ level={} (decomposed) (metatype={})".format(compare_level_str, metatype_str),
+                "Varnodes matched @ level {}".format(compare_level_str, metatype_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([
                     record for record in
                     varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True)
@@ -233,15 +233,15 @@ def make_metrics() -> List[MetricsGroup]:
             )
 
         group.mk_add_metric(
-            "Varnode average compare score [0,1] (decomposed) (metatype={})".format(metatype_str),
+            "Varnode average compare score [0,1]",
             lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype, primitive=True)
         )
         metrics_groups.append(group)
 
     # Array comparison metrics
-    array_group = MetricsGroup("array_comparisons", "ARRAY COMPARISONS")
+    array_group = MetricsGroup("array_comparisons", "Array recovery")
     array_group.mk_add_metric(
-        "Ground truth varnodes (metatype=ARRAY)",
+        "Ground truth array varnodes",
         lambda cmp: len(array_varnode_compare_records_truth(cmp))
     )
 

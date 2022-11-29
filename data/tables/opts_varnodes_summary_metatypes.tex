@@ -1,6 +1,10 @@
+\begin{table}
+\centering
+\caption{Summary of high-level varnode recovery by compilation case and metatype}
+\label{table:opts-varnodes-summary-metatypes}
 \begin{tabular}{llrrrrrrrr}
 \toprule
-      &       &  Varnodes matched @ level=NO\_MATCH &  Varnodes matched @ level=OVERLAP &  Varnodes matched @ level=SUBSET &  Varnodes matched @ level=ALIGNED &  Varnodes matched @ level=MATCH &  Varnode comparison score [0,1] &  Varnodes fraction partially recovered &  Varnodes fraction exactly recovered \\
+      &       &  Varnodes matched @ level NO\_MATCH &  Varnodes matched @ level OVERLAP &  Varnodes matched @ level SUBSET &  Varnodes matched @ level ALIGNED &  Varnodes matched @ level MATCH &  Varnode comparison score [0,1] &  Varnodes fraction partially recovered &  Varnodes fraction exactly recovered \\
 \midrule
 \multirow{6}{*}{strip} & INT &                                 66 &                                48 &                                0 &                             12204 &                            8681 &                        0.849850 &                               0.996857 &                             0.413401 \\
       & FLOAT &                                  0 &                                56 &                                0 &                               113 &                              22 &                        0.632199 &                               1.000000 &                             0.115183 \\
@@ -24,3 +28,4 @@
       & UNION &                                  0 &                                 0 &                                0 &                                 2 &                              14 &                        0.968750 &                               1.000000 &                             0.875000 \\
 \bottomrule
 \end{tabular}
+\end{table}

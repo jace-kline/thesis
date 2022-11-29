@@ -7,6 +7,12 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+
+% Table stuff
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -447,40 +453,114 @@ In our assessment of the Ghidra decompiler, we observe that Ghidra does not succ
 \end{thebibliography}
 
 \section*{Appendix}
-[Table 1: FUNCTIONS (strip)]
-[Table 2: FUNCTIONS (standard)]
-[Table 3: FUNCTIONS (debug)]
 
-[Table AA: VARNODES (strip)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (strip)]
+\onecolumn
+\small
 
-[Table AA: VARNODES (standard)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (standard)]
+% functions - stripped
+\input{data/tables/functions-O0-strip.tex}
+% functions - standard
+\input{data/tables/functions-O0.tex}
+% functions - debug
+\input{data/tables/functions-O0-debug.tex}
 
-[Table AA: VARNODES (debug)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (metatype=X) (debug)]
 
-[Table AA: VARNODES (decomposed) (strip)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (decomposed) (metatype=X) (strip)]
+% varnodes - stripped
+\input{data/tables/varnodes-O0-strip.tex}
 
-[Table AA: VARNODES (decomposed) (standard)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (decomposed) (metatype=X) (standard)]
+% varnodes - stripped - INT
+\input{data/tables/varnodes-metatype-INT-O0-strip.tex}
+% varnodes - stripped - FLOAT
+\input{data/tables/varnodes-metatype-FLOAT-O0-strip.tex}
+% varnodes - stripped - POINTER
+\input{data/tables/varnodes-metatype-POINTER-O0-strip.tex}
+% varnodes - stripped - ARRAY
+\input{data/tables/varnodes-metatype-ARRAY-O0-strip.tex}
+% varnodes - stripped - STRUCT
+\input{data/tables/varnodes-metatype-STRUCT-O0-strip.tex}
+% varnodes - stripped - UNION
+\input{data/tables/varnodes-metatype-UNION-O0-strip.tex}
 
-[Table AA: VARNODES (decomposed) (debug)]
-For X in INT, FLOAT, POINTER, ARRAY, STRUCT, UNION...
-[Tables XX-YY: VARNODES (decomposed) (metatype=X) (debug)]
 
-[Table YY: BYTES (strip)]
-[Table YY: BYTES (standard)]
-[Table YY: BYTES (debug)]
+% varnodes - standard
+\input{data/tables/varnodes-O0.tex}
 
-[Table ZZ: ARRAY COMPARISONS (strip)]
-[Table ZZ: ARRAY COMPARISONS (standard)]
-[Table ZZ: ARRAY COMPARISONS (debug)]
+% varnodes - standard - INT
+\input{data/tables/varnodes-metatype-INT-O0.tex}
+% varnodes - standard - FLOAT
+\input{data/tables/varnodes-metatype-FLOAT-O0.tex}
+% varnodes - standard - POINTER
+\input{data/tables/varnodes-metatype-POINTER-O0.tex}
+% varnodes - standard - ARRAY
+\input{data/tables/varnodes-metatype-ARRAY-O0.tex}
+% varnodes - standard - STRUCT
+\input{data/tables/varnodes-metatype-STRUCT-O0.tex}
+% varnodes - standard - UNION
+\input{data/tables/varnodes-metatype-UNION-O0.tex}
+
+
+% varnodes - debug
+\input{data/tables/varnodes-O0-debug.tex}
+
+% varnodes - debug - INT
+\input{data/tables/varnodes-metatype-INT-O0-debug.tex}
+% varnodes - debug - FLOAT
+\input{data/tables/varnodes-metatype-FLOAT-O0-debug.tex}
+% varnodes - debug - POINTER
+\input{data/tables/varnodes-metatype-POINTER-O0-debug.tex}
+% varnodes - debug - ARRAY
+\input{data/tables/varnodes-metatype-ARRAY-O0-debug.tex}
+% varnodes - debug - STRUCT
+\input{data/tables/varnodes-metatype-STRUCT-O0-debug.tex}
+% varnodes - debug - UNION
+\input{data/tables/varnodes-metatype-UNION-O0-debug.tex}
+
+
+% decomposed varnodes - stripped
+\input{data/tables/varnodes-decomposed-O0-strip.tex}
+
+% decomposed varnodes - stripped - INT
+\input{data/tables/varnodes-decomposed-metatype-INT-O0-strip.tex}
+% decomposed varnodes - stripped - FLOAT
+\input{data/tables/varnodes-decomposed-metatype-FLOAT-O0-strip.tex}
+% decomposed varnodes - stripped - POINTER
+\input{data/tables/varnodes-decomposed-metatype-POINTER-O0-strip.tex}
+
+
+% decomposed varnodes - standard
+\input{data/tables/varnodes-decomposed-O0.tex}
+
+% decomposed varnodes - standard - INT
+\input{data/tables/varnodes-decomposed-metatype-INT-O0.tex}
+% decomposed varnodes - standard - FLOAT
+\input{data/tables/varnodes-decomposed-metatype-FLOAT-O0.tex}
+% decomposed varnodes - standard - POINTER
+\input{data/tables/varnodes-decomposed-metatype-POINTER-O0.tex}
+
+
+% decomposed varnodes - debug
+\input{data/tables/varnodes-decomposed-O0-debug.tex}
+
+% decomposed varnodes - debug - INT
+\input{data/tables/varnodes-decomposed-metatype-INT-O0-debug.tex}
+% decomposed varnodes - debug - FLOAT
+\input{data/tables/varnodes-decomposed-metatype-FLOAT-O0-debug.tex}
+% decomposed varnodes - debug - POINTER
+\input{data/tables/varnodes-decomposed-metatype-POINTER-O0-debug.tex}
+
+
+% data bytes - stripped
+\input{data/tables/bytes-O0-strip.tex}
+% data bytes - standard
+\input{data/tables/bytes-O0.tex}
+% data bytes - debug
+\input{data/tables/bytes-O0-debug.tex}
+
+% array comparisons - stripped
+\input{data/tables/array-comparisons-O0-strip.tex}
+% array comparisons - standard
+\input{data/tables/array-comparisons-O0.tex}
+% array comparisons - debug
+\input{data/tables/array-comparisons-O0-debug.tex}
 
 \end{document}
