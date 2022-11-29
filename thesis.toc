@@ -34,12 +34,12 @@
 \contentsline {section}{\numberline {4.1}Setup}{26}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Function Recovery}{27}{section.4.2}%
 \contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{28}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{31}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{33}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{33}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{35}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusion}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Summary of Methodology}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Summary of Results}{38}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitations}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Future Work}{41}{section.5.4}%
+\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{30}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{31}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{32}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{33}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusion}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Summary of Methodology}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Summary of Results}{40}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Limitations}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Future Work}{43}{section.5.4}%

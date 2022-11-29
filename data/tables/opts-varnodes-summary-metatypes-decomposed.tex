@@ -1,10 +1,10 @@
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \caption{Summary of decomposed varnode recovery by compilation case and primitive metatype}
-\label{table*:opts-varnodes-summary-metatypes-decomposed}
+\label{table:opts-varnodes-summary-metatypes-decomposed}
 \begin{tabular}{lp{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}p{1.2cm}}
 \toprule
-      &         & \rotatebox{45}{Varnodes matched @ level NO\_MATCH} & \rotatebox{45}{Varnodes matched @ level OVERLAP} & \rotatebox{45}{Varnodes matched @ level SUBSET} & \rotatebox{45}{Varnodes matched @ level ALIGNED} & \rotatebox{45}{Varnodes matched @ level MATCH} & \rotatebox{45}{Varnode comparison score [0,1]} & \rotatebox{45}{Varnodes fraction partially recovered} & \rotatebox{45}{Varnodes fraction exactly recovered} \\
+      &         & \rotatebox{90}{Varnodes matched @ level NO\_MATCH} & \rotatebox{90}{Varnodes matched @ level OVERLAP} & \rotatebox{90}{Varnodes matched @ level SUBSET} & \rotatebox{90}{Varnodes matched @ level ALIGNED} & \rotatebox{90}{Varnodes matched @ level MATCH} & \rotatebox{90}{Varnode comparison score [0,1]} & \rotatebox{90}{Varnodes fraction partially recovered} & \rotatebox{90}{Varnodes fraction exactly recovered} \\
 \midrule
 \multirow{3}{*}{strip} & INT &                                             132910 &                                            28812 &                                               0 &                                           217923 &                                         125159 &                                          0.586 &                                              0.737 &                                              0.248 \\
       & FLOAT &                                                 72 &                                               73 &                                               0 &                                              103 &                                             22 &                                          0.435 &                                              0.733 &                                              0.081 \\
@@ -19,4 +19,4 @@
       & POINTER &                                                 14 &                                                2 &                                               0 &                                                1 &                                          28305 &                                          0.999 &                                              1.000 &                                              0.999 \\
 \bottomrule
 \end{tabular}
-\end{table*}
+\end{table}
