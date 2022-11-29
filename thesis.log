@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  29 NOV 2022 09:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  29 NOV 2022 10:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -894,7 +894,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 \OT1/ptm/m/n/8 ex-actly
  []
 
-) (/home/jacekline/dev/research/thesis/data/tables/opts-bytes-summary.tex
+) [10] (/home/jacekline/dev/research/thesis/data/tables/opts-bytes-summary.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 []\OT1/ptm/m/n/8 Ground
  []
@@ -924,7 +924,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 \OT1/ptm/m/n/8 re-cov-ery
  []
 
-) [10] (/home/jacekline/dev/research/thesis/data/tables/opts-array-comparisons-summary.tex
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ (/home/jacekline/dev/research/thesis/data/tables/opts-array-comparisons-summary.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 []\OT1/ptm/m/n/8 Ground
  []
@@ -1124,10 +1127,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 \OT1/ptm/m/n/8 com-par-i-
  []
 
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11] [12]
+) [11] [12]
 Underfull \hbox (badness 2050) in paragraph at lines 431--432
 \OT1/ptm/m/n/10 that Ghidra is least ef-fec-tive at in-fer-ring floating-point
  []
@@ -13120,15 +13120,15 @@ Before submitting the final camera ready copy, remember to:
 
 [99] (/home/jacekline/dev/research/thesis/thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4326 strings out of 483107
- 71176 string characters out of 5964629
- 391091 words of memory out of 5000000
- 19163 multiletter control sequences out of 15000+600000
+ 4332 strings out of 483107
+ 71286 string characters out of 5964629
+ 391150 words of memory out of 5000000
+ 19169 multiletter control sequences out of 15000+600000
  569306 words of font info for 95 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  30i,11n,37p,2138b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/jacekline/dev/research/thesis/thesis.pdf (99 pages, 270809 bytes).
+Output written on /home/jacekline/dev/research/thesis/thesis.pdf (99 pages, 270794 bytes).
 PDF statistics:
  345 PDF objects out of 1000 (max. 8388607)
  236 compressed objects within 3 object streams

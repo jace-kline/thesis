@@ -42,7 +42,7 @@ In this work, we present a novel framework to quantitatively evaluate the infere
 
 \end{abstract}
 
-\section{Introduction}
+\section{Introduction} \label{sec:introduction}
 
 \subsection{Context and Background}
 
@@ -96,9 +96,9 @@ The three key contributions of this work are as follows:
 
 \subsection{Outline}
 
-The remainder of this paper is outlined as follows: In section 2, we discuss related research and background concepts useful for the understanding of this work. Next, in section 3, we detail our methodology for developing our evaluation framework. In section 4, we present and discuss the results of applying our evaluation framework to the Ghidra decompiler. We conclude in section 5 with a summary of our results, implications of our work, limitations, and future research directions.
+The remainder of this paper is outlined as follows: In Section \ref{sec:background-related-work}, we discuss related research and background concepts useful for the understanding of this work. Next, in Section \ref{sec:methodology}, we detail our methodology for developing our evaluation framework. In Section \ref{sec:evaluation}, we present and discuss the results of applying our evaluation framework to the Ghidra decompiler. We conclude in Section \ref{sec:conclusion} with a summary of our results, implications of our work, limitations, and future research directions.
 
-\section{Background and Related Work}
+\section{Background and Related Work} \label{sec:background-related-work}
 
 \subsection{Software Reverse Engineering, Dissassembly, and Decompilation}
 
@@ -136,7 +136,7 @@ In the 2020 paper \emph{How Far We Have Come: Testing Decompilation Correctness 
 
 The review \emph{Type Inference on Executables} by Caballero and Lin (2016) provides a comprehensive summary of recent literature on techniques used for variable discovery and type inference. In addition, the authors present various software reverse engineering (SRE) tools and frameworks in terms of their inputs, analysis types, output formats, and use cases. In essence, this work surveys the a set of decompiler tools and characterizes them based on their purported capabilities. The purpose of our work, on the contrary, is to objectively determine the correctness of decompiler tools based on their inference accuracy of high-level program constructs.
 
-\section{Methodology}
+\section{Methodology} \label{sec:methodology}
 
 In this section, we discuss the design, construction, and evolution of our decompiler evaluation framework. To achieve this, we identify key objectives that we subsequently address in more detail in the following subsections. These objectives are as follows:
 
@@ -148,7 +148,7 @@ In this section, we discuss the design, construction, and evolution of our decom
     \item Formulate quantitative metrics for evaluating the accuracy of a decompiler.
 \end{enumerate}
 
-\subsubsection{Domain-Specific Language (DSL) for Program Information}
+\subsection{Domain-Specific Language (DSL) for Program Information}
 
 In order to make our framework general and reusable, we devise a common domain-specific language (DSL) to represent program information such as functions, variables, data types, and addresses, as well as the relationships between them. This DSL must act as a bridge linking binary-level address information with the source-level structures such as functions, variables, and data types. Combining the information from these two layers of abstraction is, in essence, a mapping between binary-level and source-level structures. The accuracy of this mapping for a given decompiler is precisely the objective of our analysis.
 
@@ -156,7 +156,7 @@ In order to make our framework general and reusable, we devise a common domain-s
 
 The DSL we devised is entirely decoupled from the source of the program information. This allows any ground truth or decompiler source of program information to be translated into this common language and subsequently analyzed or compared with another source of program information. The core of our language is defined in Python and is compatible with Python (Jython or CPython) versions >= 2.7. We chose Python because the Ghidra framework supports custom Python scripts for querying and manipulating program information obtained from the disassembler and decompiler. In addition, the Python 'pyelftools' open-source library [] allows scraping DWARF debugging information directly from binary programs. This DWARF information can then be utilized to construct a "ground truth" representation of program information. We discuss this further in the next section.
 
-\paragraph{DSL Definitions}
+\subsubsection{DSL Definitions}
 
 In this section, we briefly describe the structure and relationships of the major constructs that comprise our DSL.
 
@@ -170,7 +170,7 @@ The \emph{Address} type represents any absolute or relative location referenced 
 
 The last main construct in our core DSL is \emph{DataType}. This type is represents a source-level data type and is typically associated with a variable or a function return type. \emph{DataType} is the base of a class hierarchy with subclasses representing particular data types. The subclasses include \emph{DataTypeFunctionPrototype}, \emph{DataTypeInt}, \emph{DataTypeFloat}, \emph{DataTypeUndefined}, \emph{DataTypeVoid}, \emph{DataTypePointer}, \emph{DataTypeArray}, \emph{DataTypeStruct}, \emph{DataTypeUnion}. Although these defined types correspond to C-like data types, this language can easily be extended to support other data types present in other high-level programming languages. All data type objects contain a "size" field representing the number of bytes the given data type occupies in memory.
 
-\subsubsection{Capturing Ground Truth Program Information}
+\subsection{Capturing Ground Truth Program Information}
 
 With our DSL defined, we need a reliable method to extract "ground truth" information from a program and translate this information into our DSL. This "ground truth" information is intended to be used in a comparison with the program information obtained from a decompiler. Our framework is meant for evaluation and therefore we assume that we have access to the source code of benchmark programs to be used for the evaluation. With this assumption, we consider two options for extracting program information from a given source program.
 
@@ -178,7 +178,7 @@ The first option for extracting ground truth information is to parse the source 
 
 The second, more favorable, approach to extracting ground truth program information involves leveraging debugging information optionally included in the binary by the compiler. The primary purpose of debugging information is to link binary-level instructions and addresses with source-level structures. This binary-level to source-level association is precisely what is needed to translate program information into our DSL. Since our framework is developed and targeted at Linux, we choose the DWARF debugging standard as the assumed debugging format for our framework. However, defining a translation module from another debugging format into our DSL is certainly possible and is an idea for future work. The DWARF debugging standard is supported by nearly all major Linux compilers and supports any source programming language (with possible extensions). These properties of the DWARF standard allow it to be used as a "ground truth" source of program information, decoupled from the source language or the compiler.
 
-\paragraph{Translating DWARF to the DSL}
+\subsubsection{Translating DWARF to the DSL}
 
 Starting with a source-level program, we must perform the following steps to extract program information represented in our DSL. First, we compile the source program with the option to include debugging symbols. In our particular analysis we use the GCC compiler specifying the "-g" flag. Many other compilers also offer the option for compilation with the inclusion of DWARF debugging symbols. After we compile the program, we then extract the DWARF debugging information from the resulting binary. We utilize the 'pyelftools' Python library [] to perform this extraction. The extraction results in, among other information, a set of debugging information entries (DIEs). Together, these DIE records provide a description of source-level entities such as functions, variables, and data types in relation to low-level binary information such as PC addresses and storage locations. Each DIE contains the following important features:
 
@@ -192,11 +192,11 @@ The translation process from the DIE graph into our DSL is, at its core, a proce
 
 [DWARF parsing figure: DIEs -> IR -> DSL]
 
-\subsubsection{Capturing Decompiler Program Information}
+\subsection{Capturing Decompiler Program Information}
 
 In addition to capturing a ground-truth program representation in our DSL, we must construct a DSL representation of the program information obtained from a decompiler we wish to evaluate. Depending on the decompiler and the structure of its output, this process may take many forms, often involving querying APIs exposed by the decompiler framework. In all cases however, this shall involve defining a translation module from the decompiler output to the structures defined in the DSL. Hence, our framework can be employed on any decompiler assuming a translation module implementation.
 
-\paragraph{Translating Ghidra Decompiler Output to the DSL}
+\subsubsection{Translating Ghidra Decompiler Output to the DSL}
 
 For our analysis of the Ghidra decompiler, we utilize the Ghidra scripting API to programmatically scrape and process information about the decompilation of target binary programs. The Ghidra scripting environment exposes its own collection of data structures and functions from which we obtain our information. Since the Ghidra scripting environment supports Python, we directly import and leverage our "flattened" IR (described in the previous section) and our DSL constructs to carry out the translation.
 
@@ -204,15 +204,15 @@ The strategy employed for the Ghidra translation is similar to that of our DWARF
 
 We use the same IR defined for the DWARF translation to accumulate flattened records corresponding to these program constructs in a database. From here, we run the same resolution algorithm on the IR constructs database to generate the root \emph{ProgramInfo} object in our DSL. The Ghidra-specific translation logic is implemented in roughly 900 lines of Python code.
 
-\subsubsection{Comparison of "Ground Truth" and Decompiler Program Information}
+\subsection{Comparison of "Ground Truth" and Decompiler Program Information}
 
 After converting both the ground-truth and decompiler program information into our DSL representation, we next formulate and implement a strategy to compare the two resulting \emph{ProgramInfo} objects. To achieve this, we create an extension of our DSL that defines data structures and functions for capturing comparison information at different layers.
 
-\paragraph{Data Type Comparison}
+\subsubsection{Data Type Comparison}
 
 Given two \emph{DataType} objects and an offset between their start locations, we devise a method to capture nuanced information about the comparison of the data types.
 
-% \subparagraph{Definitions}
+\paragraph{Definitions}
 
 We define the \emph{metatype} of a data type to be general "class" of the given data type. These metatypes include \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{ARRAY}, \emph{STRUCT}, \emph{UNION}, \emph{UNDEFINED}, \emph{VOID}, and \emph{FUNCTION\_PROTOTYPE}. We consider \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{UNDEFINED}, and \emph{VOID} to be \emph{primitive metatypes} since they cannot be decomposed further. \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION} are considered \emph{complex metatypes} since these types are formed via the composition or aggregation of different members or subtypes. We consider the 'char' data type to be of the \emph{INT} metatype with size equal to one byte.
 
@@ -224,7 +224,7 @@ A \emph{primitive type lattice} [] is used to hierarchially relate primitive dat
 
 We next define a \emph{subset} relationship between two data types. For a given complex data type X and another data type Y with a given offset (possibly 0) between the location of X and Y in memory, Y is considered a \emph{subset} type of X if Y is equivalent to a "portion" of X, consistent with the offset between X and Y. For example, if X is an array, any sub-array or element of X such that elements are aligned and the element types are equivalent to X is considered a subset of X. If X is a struct or union, any sub-struct or member with proper alignment and equal constituent elements is considered a subset of X.
 
-% \subparagraph{Comparison Logic}
+\paragraph{Comparison Logic}
 
 Suppose we have two \emph{DataType} objects X (ground truth) and Y (decompiler) with offset k from the start of X to the start of Y. The goal is to compute the \emph{data type comparison level} for the given comparison. The possible values for the comparison level are as follows, from lowest equality to highest equality:
 
@@ -235,7 +235,7 @@ Suppose we have two \emph{DataType} objects X (ground truth) and Y (decompiler) 
 
 We first check the equality of X and Y. If X and Y are equal, we assign the \emph{MATCH} comparison code. In the case that X and Y are both primitive types, we attempt to compute their shared ancestor in the primitive type lattice. If a common ancestor could be found, we assign \emph{PRIMITIVE\_COMMON\_ANCESTOR}. If X is a complex type, we employ an algorithm to determine whether Y is a subset of X at offset k by recursively descending into constituent portions of X starting at offset k (sub-structs, sub-arrays, elements, members) and checking for equality with Y. If a subset relationship is found, we assign the \emph{SUBSET} compare level. In all other cases, we assign the \emph{NO\_MATCH} compare level.
 
-\paragraph{Variable Comparison}
+\subsubsection{Variable Comparison}
 
 There are two main contexts where variable comparison occurs. The first context is at the top level, where the set of ground-truth global variables is compared to the set of decompiler global variables. The second context for variable comparison is within the context of a function when we compare parameters or local variables between the ground-truth and the decompiler. In either case, comparing sets of variables starts with the decomposition of each \emph{Variable} object from the DSL into a set of \emph{Varnode} objects in our extended DSL.
 
@@ -255,7 +255,7 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
     \item \emph{MATCH}: For some varnode Y from the other source, X and Y share the same location and size in memory, and their data types match exactly.
 \end{itemize}
 
-% \subparagraph{Decomposed Variable Comparison}
+\paragraph{Decomposed Variable Comparison}
 
 The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of complex variable synthesis from more primitive components.
 
@@ -265,17 +265,17 @@ We first implement an approach to recursively strip away the "complex layers" of
 
 We apply this primitive decomposition to each varnode in the sets of ground truth and decompiler varnodes. With the two sets of decomposed varnodes, we leverage the same variable comparison approach described previously to compare the varnodes in these sets. The resulting comparison information is treated as a separate analysis from the unaltered varnode sets.
 
-\paragraph{Function Comparison}
+\subsubsection{Function Comparison}
 
 The first step in function comparison is to determine whether each ground-truth function is found by the decompiler. We first order the functions from each source by the start PC address of the function. Next, we attempt to match the functions from the two sources based on start address. Any functions from the ground-truth that are not matched by a decompiler function are considered "missed". Functions the are found by the decompiler but absent from the ground-truth are considered "extraneous". For any missed functions, we consider its associated parameters, local variables, and data types to also be "missed".
 
 For each "matched" function based on start PC address, we compute and store information including the return type comparison, parameter comparisons, and local variable comparisons. These sub-comparisons leverage the data type and variable comparison techniques described previously.
 
-\subsubsection{Quantitative Evaluation Metrics}
+\subsection{Quantitative Evaluation Metrics}
 
-In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in our evaluation results section.
+In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in Section \ref{sec:evaluation}.
 
-\paragraph{Functions}
+\subsubsection{Functions}
 
 This set of metrics outlines the function identification performance of the decompiler.
 
@@ -286,7 +286,7 @@ This set of metrics outlines the function identification performance of the deco
     \item \emph{Functions recovery fraction}: The fraction of ground truth functions found by the decompiler divided by the number of ground truth functions.
 \end{itemize}
 
-\paragraph{Varnodes}
+\subsubsection{Varnodes}
 
 Recall that a \emph{Varnode} is defined to be a source-level \emph{Variable} tied to a single storage location for a range of PC addresses. In analyses of unoptimized binaries, the mapping of variables to varnodes is one to one. This set of metrics illustrates the decompiler's accuracy in recovering varnodes.
 
@@ -300,7 +300,7 @@ Recall that a \emph{Varnode} is defined to be a source-level \emph{Variable} tie
 
 We repeat this varnode analysis for the decomposed (primitive) set of varnodes resulting from recursively decomposing each of the high-level varnodes into its most primitive set of varnodes. We also repeat our analysis of the original set of varnodes filtered by metatype. The metatypes considered are \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION}. Lastly, we repeat the analysis of the decomposed varnodes when filtered by metatype. For this metatype analysis over the decomposed varnodes, we only consider the primitive metatypes \emph{INT}, \emph{FLOAT}, and \emph{POINTER} since the varnodes are guaranteed to be primitive.
 
-\paragraph{Data Bytes}
+\subsubsection{Data Bytes}
 
 These metrics look at the total number of data bytes from all variables recovered by the decompiler when compared to the ground truth source.
 
@@ -311,7 +311,7 @@ These metrics look at the total number of data bytes from all variables recovere
     \item \emph{Bytes recovery fraction}: The fraction of ground truth data bytes found by the decompiler divided by the total number of ground truth bytes.
 \end{itemize}
 
-\paragraph{Array Comparisons}
+\subsubsection{Array Comparisons}
 
 In this set of metrics, we aim to evaluate the accuracy of the array inference performed by the decompiler. We examine each array comparison made during the comparison of the ground truth with the decompiler and observe the discrepancies in length, size (bytes), dimensions, and element type. The following metrics are presented:
 
@@ -328,7 +328,7 @@ In this set of metrics, we aim to evaluate the accuracy of the array inference p
     \item \emph{Array average element type comparison score}: Each \emph{data type comparison level} is first mapped to an integer as follows: \emph{NO\_MATCH} = 0, \emph{SUBSET} = 1, \emph{PRIMITIVE\_COMMON\_ANCESTOR} = 2, \emph{MATCH} = 3. We then normalize these values such that the range is scaled from 0 to 1. We refer to this as the \emph{data type comparison score}. Then, for each array comparison, we compute the \emph{data type comparison score} and subsequently average the scores across all array comparisons to generate this metric.
 \end{itemize}
 
-\section{Evaluation}
+\section{Evaluation} \label{sec:evaluation}
 
 To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use the GNU Core Utilities programs (version 9.1) as our set of benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
@@ -360,13 +360,13 @@ Tables \ref{table:varnodes-O0-strip}, \ref{table:varnodes-O0}, and \ref{table:va
 
 \input{data/tables/opts-varnodes-summary-metatypes.tex}
 
-In Tables \ref{table:varnodes-metatype-INT-O0-strip} - \ref{table:varnodes-metatype-UNION-O0-strip}, \ref{table:varnodes-metatype-INT-O0} - \ref{table:varnodes-metatype-UNION-O0}, and \ref{table:varnodes-metatype-INT-O0-debug} - \ref{table:varnodes-metatype-UNION-O0-debug}, we show the inference performance of high-level varnodes for each benchmark, broken down by the metatype of the ground truth varnodes, and for all compilation configurations. We summarize this information in Table \ref{table*:opts-varnodes-summary-metatypes}. From the stripped and standard compilation cases, we observe that varnodes with metatype \emph{INT} are most accurately recovered when considering varnode comparison score, fraction partially recovered, and fraction exactly recovered. In the stripped case, the inference of \emph{ARRAY} varnodes shows the worst performance with a varnode comparison score of 0.315. In the standard case, varnodes with metatype \emph{STRUCT} are least accurately recovered with a varnode comparison score of 0.560, followed closely by \emph{ARRAY} and \emph{UNION}. We see that, for both the stripped and standard compilation cases, the complex (aggregate) metatypes, \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION}, show the lowest recovery accuracy with respect to varnode comparison score. Among the primitive metatypes, \emph{FLOAT} shows the worst recovery metrics for these two compilation cases.
+In Tables \ref{table:varnodes-metatype-INT-O0-strip}-\ref{table:varnodes-metatype-UNION-O0-strip}, \ref{table:varnodes-metatype-INT-O0}-\ref{table:varnodes-metatype-UNION-O0}, and \ref{table:varnodes-metatype-INT-O0-debug}-\ref{table:varnodes-metatype-UNION-O0-debug}, we show the inference performance of high-level varnodes for each benchmark, broken down by the metatype of the ground truth varnodes, and for all compilation configurations. We summarize this information in Table \ref{table*:opts-varnodes-summary-metatypes}. From the stripped and standard compilation cases, we observe that varnodes with metatype \emph{INT} are most accurately recovered when considering varnode comparison score, fraction partially recovered, and fraction exactly recovered. In the stripped case, the inference of \emph{ARRAY} varnodes shows the worst performance with a varnode comparison score of 0.315. In the standard case, varnodes with metatype \emph{STRUCT} are least accurately recovered with a varnode comparison score of 0.560, followed closely by \emph{ARRAY} and \emph{UNION}. We see that, for both the stripped and standard compilation cases, the complex (aggregate) metatypes, \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION}, show the lowest recovery accuracy with respect to varnode comparison score. Among the primitive metatypes, \emph{FLOAT} shows the worst recovery metrics for these two compilation cases.
 
 The debug compilation case demonstrates high relative recovery accuracy across varnodes of all metatypes when compared to the stripped and standard cases. Of the primitive metatypes, varnodes of the \emph{FLOAT} metatype are perfectly recovered while varnodes of the \emph{INT} and \emph{POINTER} metatypes show exact recovery percentages of 99.8\% and 99.9\%, respectively. The complex (aggregate) metatypes, on average, display slightly lower recovery metrics than the primitive metatypes in the debug compilation case. The \emph{ARRAY} metatype reveals the worst varnode comparison score at 0.986. The \emph{UNION} metatype demonstrates the lowest exact match percentage at 87.5\%.
 
 \subsection{Decomposed Variable (Varnode) Recovery}
 
-In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see section XX). We perform this analysis over all benchmarks for each of the three compilation cases.
+In this section, we repeat a similar varnode recovery analysis over all varnodes; however, we first recursively decompose each varnode into a set of primitive varnodes (see Section \ref{sec:methodology}). We perform this analysis over all benchmarks for each of the three compilation cases.
 
 \input{data/tables/opts-varnodes-summary-decomposed.tex}
 
@@ -374,7 +374,7 @@ Similar to the high-level varnode analysis, we show the inference of the decompo
 
 \input{data/tables/opts-varnodes-summary-metatypes-decomposed.tex}
 
-We split the decomposed varnodes by metatype and show these results in Tables \ref{table:varnodes-decomposed-metatype-INT-O0-strip} - \ref{table:varnodes-decomposed-metatype-POINTER-O0-strip}, \ref{table:varnodes-decomposed-metatype-INT-O0} - \ref{table:varnodes-decomposed-metatype-POINTER-O0}, and \ref{table:varnodes-decomposed-metatype-INT-O0-debug} - \ref{table:varnodes-decomposed-metatype-POINTER-O0-debug}. We present the summary of these results over each compilation case in Table \ref{table*:opts-varnodes-summary-metatypes-decomposed}. The table shows that the stripped and standard compilation cases demostrate the poorest inference performance in terms of varnode comparison score for varnodes of metatype \emph{FLOAT}. However, we find that the percentage of "missed" \emph{INT} varnodes is worse than that of \emph{FLOAT} in the standard and debug compilation cases, and is nearly the same in the stripped case. This may be explained by the prevalence of integer (or character) arrays in the Coreutils benchmark programs when compared to other array types. Recovery accuracy of the \emph{POINTER} metatype is comparable to the \emph{INT} metatype across the three compilation cases.
+We split the decomposed varnodes by metatype and show these results in Tables \ref{table:varnodes-decomposed-metatype-INT-O0-strip}-\ref{table:varnodes-decomposed-metatype-POINTER-O0-strip}, \ref{table:varnodes-decomposed-metatype-INT-O0}-\ref{table:varnodes-decomposed-metatype-POINTER-O0}, and \ref{table:varnodes-decomposed-metatype-INT-O0-debug}-\ref{table:varnodes-decomposed-metatype-POINTER-O0-debug}. We present the summary of these results over each compilation case in Table \ref{table*:opts-varnodes-summary-metatypes-decomposed}. The table shows that the stripped and standard compilation cases demostrate the poorest inference performance in terms of varnode comparison score for varnodes of metatype \emph{FLOAT}. However, we find that the percentage of "missed" \emph{INT} varnodes is worse than that of \emph{FLOAT} in the standard and debug compilation cases, and is nearly the same in the stripped case. This may be explained by the prevalence of integer (or character) arrays in the Coreutils benchmark programs when compared to other array types. Recovery accuracy of the \emph{POINTER} metatype is comparable to the \emph{INT} metatype across the three compilation cases.
 
 \subsection{Data Bytes Recovery}
 
@@ -404,7 +404,7 @@ Upon examination of our results thus far, the reader may wonder why the debug co
 
 We manually investigate this phenomenon over our benchmark programs and find that the cause of these recovery inaccuracies stems from the Ghidra decompiler's inflexibility in expressing local variables tied to lexical scopes. We find that the Ghidra decompiler output only lists variable declarations at the top level of the function and does not support declarations of local variables within lexical scopes. Instead, Ghidra attempts to move the declaration of these scope-specific variables to the top level of the function. Often, this behavior does not negatively influence the variable recovery of the given function. However, there are cases where multiple exclusive (not overlapping or nested) lexical scopes contain variable declarations. In many of these cases, the compiler recognizes the exclusivity of the lexical scopes and assigns the scope-specific variables to shared space on the stack since the variables shall never be instantiated simultaneously. The size of the shared region allocated by the decompiler is equivalent to the size of the largest variable in the set of scope-specific variables that share the region. In essence, this is equivalent to an implicit union formed by the compiler. The DWARF debugging standard and our DSL both possess the ability to express these overlapping scope-specific variables, but the Ghidra decompiler does not. From our observations, we find that Ghidra greedily captures and declares scope-specific variables at the top level of the function based on the order in which it recovers the variables. In the debug compilation case (utilizing DWARF information), Ghidra appears to only consider the first scope-specific variable mapped to a given address on the stack based on the order of the variables in the list of debugging information entries (DIEs) parsed from DWARF. The subsequent scope-specific variables associated with the given address are simply ignored, causing Ghidra to potentially miss several varnodes and data bytes. We consider this to be a shortcoming and an area of future improvement for the Ghidra decompiler.
 
-\section{Conclusion}
+\section{Conclusion} \label{sec:conclusion}
 
 \subsection{Summary of Methodology}
 
@@ -468,7 +468,7 @@ In our assessment of the Ghidra decompiler, we observe that Ghidra does not succ
 
 \onecolumn
 
-\section*{Appendix}
+\section*{Appendix} \label{sec:appendix}
 \small
 
 % functions - stripped
