@@ -160,6 +160,10 @@ INPUT /home/jacekline/dev/research/thesis/data/tables/opts-varnodes-summary-deco
 INPUT /home/jacekline/dev/research/thesis/data/tables/opts-varnodes-summary-decomposed.tex
 INPUT /home/jacekline/dev/research/thesis/data/tables/opts-varnodes-summary-metatypes-decomposed.tex
 INPUT /home/jacekline/dev/research/thesis/data/tables/opts-varnodes-summary-metatypes-decomposed.tex
+INPUT /home/jacekline/dev/research/thesis/data/tables/opts-bytes-summary.tex
+INPUT /home/jacekline/dev/research/thesis/data/tables/opts-bytes-summary.tex
+INPUT /home/jacekline/dev/research/thesis/data/tables/opts-array-comparisons-summary.tex
+INPUT /home/jacekline/dev/research/thesis/data/tables/opts-array-comparisons-summary.tex
 INPUT /home/jacekline/dev/research/thesis/data/tables/functions-O0-strip.tex
 INPUT /home/jacekline/dev/research/thesis/data/tables/functions-O0-strip.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
