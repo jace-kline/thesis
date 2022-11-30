@@ -12,6 +12,9 @@
 \usepackage{multirow}
 \usepackage{longtable}
 
+% Figure stuff
+\usepackage{tikz}
+
 \begin{document}
 
 \begin{abstract}
@@ -142,11 +145,28 @@ In this section, we discuss the design, construction, and evolution of our decom
 
 In order to make our framework general and reusable, we devise a common domain-specific language (DSL) to represent program information such as functions, variables, data types, and addresses, as well as the relationships between them. This DSL must act as a bridge linking binary-level address information with the source-level structures such as functions, variables, and data types. Combining the information from these two layers of abstraction is, in essence, a mapping between binary-level and source-level structures. The accuracy of this mapping for a given decompiler is precisely the objective of our analysis.
 
-[Figure representing how DSL can be constructed from many sources (DWARF, Ghidra, IDA Pro, etc.)]
+% [Figure representing how DSL can be constructed from many sources (DWARF, Ghidra, IDA Pro, etc.)]
+\begin{figure}[ht]
+    \centering
+    \scalebox{0.8}{
+        \input{./figures/proginfo-sources.latex}
+    }
+    \caption{DSL \emph{ProgramInfo} extraction from multiple sources}
+    \label{fig:proginfo-sources}
+\end{figure}
 
 The DSL we devised is entirely decoupled from the source of the program information. This allows any ground truth or decompiler source of program information to be translated into this common language and subsequently analyzed or compared with another source of program information. The core of our language is defined in Python and is compatible with Python (Jython or CPython) versions >= 2.7. We chose Python because the Ghidra framework supports custom Python scripts for querying and manipulating program information obtained from the disassembler and decompiler. In addition, the Python 'pyelftools' open-source library [] allows scraping DWARF debugging information directly from binary programs. This DWARF information can then be utilized to construct a "ground truth" representation of program information. We discuss this further in the next section.
 
 \subsection{DSL Definitions}
+
+\begin{figure}[ht]
+    \centering
+    \scalebox{0.4}{
+        \input{./figures/dsl.latex}
+    }
+    \caption{Simplified DSL class relationships}
+    \label{fig:dsl}
+\end{figure}
 
 In this section, we briefly describe the structure and relationships of the major constructs that comprise our DSL.
 
@@ -323,6 +343,15 @@ In this set of metrics, we aim to evaluate the accuracy of the array inference p
 To demonstrate our evaluation framework, we target the Ghidra decompiler (version 10.2). We use the GNU Core Utilities programs (version 9.1) as our set of benchmarks. For each of the benchmark programs, we evaluate the accuracy of Ghidra decompilation with the program compiled in three ways: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. We use the results from each of these cases to discern how the amount of information included in the binary affects the Ghidra decompiler's inference accuracy. To limit the scope of our analysis, we only consider unoptimized binaries. We use the GCC compiler (version 11.1.0) to compile the benchmark programs. The architecture and operating system of the testing machine are x86-64 and Ubuntu Linux (version 20.04), respectively.
 
 \section{Setup}
+
+\begin{figure}[ht]
+    \centering
+    \scalebox{0.5}{
+        \input{./figures/evaluation-process.latex}
+    }
+    \caption{Evaluation workflow}
+    \label{fig:evaluation-process}
+\end{figure}
 
 Prior to evaluation, we compile the 105 Coreutils benchmark programs with three compilation configurations: (1) stripped, (2) standard (not stripped, no debugging symbols), and (3) DWARF debug symbols included. For each program, we first extract the ground truth information from the binary with DWARF symbols included via our DWARF translation module. We then use our Ghidra translation module to extract the Ghidra decompilation information from the binaries compiled under each of the compilation configurations. At this point, all program information from the DWARF and Ghidra sources are represented as \emph{ProgramInfo} objects in our DSL.
 

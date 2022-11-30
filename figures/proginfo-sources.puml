@@ -1,6 +1,6 @@
 @startuml proginfo-sources
 
-node "Binary Program" as prog
+file "Binary Program" as prog
 
 node "DSL //ProgramInfo//" as dsl
 

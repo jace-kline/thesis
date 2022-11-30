@@ -1,0 +1,40 @@
+@startuml evaluation-process
+
+file "Source Code (C)" as src
+(gcc) as gcc
+src --> gcc
+
+file "Binary Program (debug)" as bin_debug
+file "Binary Program (stripped)" as bin_stripped
+file "Binary Program (standard)" as bin_standard
+
+gcc --> "gcc -O0 -g" bin_debug
+gcc --> "gcc -O0" bin_standard
+gcc --> "gcc -O0 -s" bin_stripped
+
+(DWARF Translation Module) as dwarf_translator
+(Ghidra) as ghidra
+(Ghidra Translation Module) as ghidra_translator
+
+bin_debug --> "DWARF information" dwarf_translator
+bin_debug --> ghidra
+bin_standard --> ghidra
+bin_stripped --> ghidra
+ghidra --> "decompiler output" ghidra_translator
+
+node "DSL //ProgramInfo// (ground truth)" as proginfo_truth
+node "DSL //ProgramInfo// (decompiled)" as proginfo_decompiled
+
+dwarf_translator --> proginfo_truth
+ghidra_translator --> proginfo_decompiled
+
+(Comparison) as comparison
+
+proginfo_truth --> comparison
+proginfo_decompiled --> comparison
+
+database "Evaluation Metrics" as metrics
+comparison -> metrics
+
+
+@enduml

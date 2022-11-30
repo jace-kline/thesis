@@ -4,25 +4,25 @@ class Address {
     AddressType addrtype
 }
 
-class AbsoluteAddress {
-    int addr
-}
-class StackAddress {
-    int offset
-}
-class RegisterAddress {
-    int register
-    int byte_offset
-}
-class RegisterOffsetAddress {
-    int register
-    int offset
-}
+' class AbsoluteAddress {
+'     int addr
+' }
+' class StackAddress {
+'     int offset
+' }
+' class RegisterAddress {
+'     int register
+'     int byte_offset
+' }
+' class RegisterOffsetAddress {
+'     int register
+'     int offset
+' }
 
-Address <|-- AbsoluteAddress
-Address <|-- StackAddress
-Address <|-- RegisterAddress
-Address <|-- RegisterOffsetAddress
+' Address <|-- AbsoluteAddress
+' Address <|-- StackAddress
+' Address <|-- RegisterAddress
+' Address <|-- RegisterOffsetAddress
 
 class AddressLiveRange {
     Address addr
@@ -37,40 +37,40 @@ class DataType {
     int size
 }
 
-class DataTypeFloat {}
-class DataTypeFunctionPrototype {
-    DataType rettype
-    list paramtypes
-    bool variadic
-}
-class DataTypeInt {
-    bool signed
-}
-class DataTypePointer {
-    DataType basetype
-}
-class DataTypeStruct {
-    DataType[] membertypes
-}
-class DataTypeUndefined {}
-class DataTypeUnion {
-    DataType[] membertypes
-}
-class DataTypeVoid {}
-class DataTypeArray {
-    DataType basetype
-    tuple dimensions
-}
+' class DataTypeFloat {}
+' class DataTypeFunctionPrototype {
+'     DataType rettype
+'     list paramtypes
+'     bool variadic
+' }
+' class DataTypeInt {
+'     bool signed
+' }
+' class DataTypePointer {
+'     DataType basetype
+' }
+' class DataTypeStruct {
+'     DataType[] membertypes
+' }
+' class DataTypeUndefined {}
+' class DataTypeUnion {
+'     DataType[] membertypes
+' }
+' class DataTypeVoid {}
+' class DataTypeArray {
+'     DataType basetype
+'     tuple dimensions
+' }
 
-DataType <|-- DataTypeFloat
-DataType <|-- DataTypeFunctionPrototype
-DataType <|-- DataTypeInt
-DataType <|-- DataTypePointer
-DataType <|-- DataTypeStruct
-DataType <|-- DataTypeUndefined
-DataType <|-- DataTypeUnion
-DataType <|-- DataTypeVoid
-DataType <|-- DataTypeArray
+' DataType <|-- DataTypeFloat
+' DataType <|-- DataTypeFunctionPrototype
+' DataType <|-- DataTypeInt
+' DataType <|-- DataTypePointer
+' DataType <|-- DataTypeStruct
+' DataType <|-- DataTypeUndefined
+' DataType <|-- DataTypeUnion
+' DataType <|-- DataTypeVoid
+' DataType <|-- DataTypeArray
 
 class Variable {
     String name

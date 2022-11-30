@@ -14,32 +14,32 @@
 \contentsline {chapter}{\numberline {3}Methodology}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Domain-Specific Language (DSL) for Program Information}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}DSL Definitions}{12}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Capturing Ground Truth Program Information}{13}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Translating DWARF to the DSL}{14}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Capturing Decompiler Program Information}{16}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Translating Ghidra Decompiler Output to the DSL}{16}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Comparison of "Ground Truth" and Decompiler Program Information}{17}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Data Type Comparison}{17}{subsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.1}Definitions}{17}{subsubsection.3.4.1.1}%
-\contentsline {subsubsection}{\numberline {3.4.1.2}Comparison Logic}{18}{subsubsection.3.4.1.2}%
-\contentsline {subsection}{\numberline {3.4.2}Variable Comparison}{19}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{20}{subsubsection.3.4.2.1}%
-\contentsline {subsection}{\numberline {3.4.3}Function Comparison}{21}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{21}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Functions}{21}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Varnodes}{22}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Data Bytes}{23}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{24}{subsection.3.5.4}%
-\contentsline {chapter}{\numberline {4}Evaluation}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Setup}{26}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Function Recovery}{27}{section.4.2}%
-\contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{28}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{30}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{31}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{31}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{33}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusion}{38}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Summary of Methodology}{38}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Summary of Results}{39}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitations}{40}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Future Work}{42}{section.5.4}%
+\contentsline {section}{\numberline {3.2}Capturing Ground Truth Program Information}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Translating DWARF to the DSL}{15}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Capturing Decompiler Program Information}{17}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Translating Ghidra Decompiler Output to the DSL}{17}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Comparison of "Ground Truth" and Decompiler Program Information}{18}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Data Type Comparison}{18}{subsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.1}Definitions}{18}{subsubsection.3.4.1.1}%
+\contentsline {subsubsection}{\numberline {3.4.1.2}Comparison Logic}{19}{subsubsection.3.4.1.2}%
+\contentsline {subsection}{\numberline {3.4.2}Variable Comparison}{20}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{21}{subsubsection.3.4.2.1}%
+\contentsline {subsection}{\numberline {3.4.3}Function Comparison}{22}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{22}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Functions}{22}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Varnodes}{23}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Data Bytes}{24}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{25}{subsection.3.5.4}%
+\contentsline {chapter}{\numberline {4}Evaluation}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Setup}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Function Recovery}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{32}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{33}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{33}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{35}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusion}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Summary of Methodology}{40}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Summary of Results}{41}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Limitations}{42}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Future Work}{44}{section.5.4}%
