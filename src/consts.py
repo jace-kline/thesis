@@ -28,7 +28,7 @@ COREUTILS_PROG_NAMES = [
 ]
 
 # the path to the Coreutils benchmarks repository
-COREUTILS_PATH = REPO_DIR.joinpath("programs/coreutils-9.1")
+COREUTILS_PATH = REPO_DIR.parent.joinpath("programs/coreutils-9.1")
 # the path to the toy/test programs directory
 TOY_PROGS_PATH = REPO_DIR.joinpath("programs/toy")
 
