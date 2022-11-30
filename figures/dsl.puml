@@ -1,0 +1,105 @@
+@startuml dsl
+
+class Address {
+    AddressType addrtype
+}
+
+class AbsoluteAddress {
+    int addr
+}
+class StackAddress {
+    int offset
+}
+class RegisterAddress {
+    int register
+    int byte_offset
+}
+class RegisterOffsetAddress {
+    int register
+    int offset
+}
+
+Address <|-- AbsoluteAddress
+Address <|-- StackAddress
+Address <|-- RegisterAddress
+Address <|-- RegisterOffsetAddress
+
+class AddressLiveRange {
+    Address addr
+    Address startpc
+    Address endpc
+}
+
+AddressLiveRange o-- Address
+
+class DataType {
+    MetaType metatype
+    int size
+}
+
+class DataTypeFloat {}
+class DataTypeFunctionPrototype {
+    DataType rettype
+    list paramtypes
+    bool variadic
+}
+class DataTypeInt {
+    bool signed
+}
+class DataTypePointer {
+    DataType basetype
+}
+class DataTypeStruct {
+    DataType[] membertypes
+}
+class DataTypeUndefined {}
+class DataTypeUnion {
+    DataType[] membertypes
+}
+class DataTypeVoid {}
+class DataTypeArray {
+    DataType basetype
+    tuple dimensions
+}
+
+DataType <|-- DataTypeFloat
+DataType <|-- DataTypeFunctionPrototype
+DataType <|-- DataTypeInt
+DataType <|-- DataTypePointer
+DataType <|-- DataTypeStruct
+DataType <|-- DataTypeUndefined
+DataType <|-- DataTypeUnion
+DataType <|-- DataTypeVoid
+DataType <|-- DataTypeArray
+
+class Variable {
+    String name
+    AddressLiveRange[] liveranges
+    DataType dtype
+}
+
+Variable o-- AddressLiveRange
+Variable o-- DataType
+
+class Function {
+    String name
+    Address startaddr
+    Address endaddr
+    Variable[] vars
+    Variable[] params
+    DataType rettype
+}
+
+Function o-- Address
+Function o-- Variable
+Function o-- DataType
+
+class ProgramInfo {
+    Variable[] globals
+    Function[] functions
+}
+
+ProgramInfo o-- Variable
+ProgramInfo o-- Function
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml proginfo-sources
+
+node "Binary Program" as prog
+
+node "DSL //ProgramInfo//" as dsl
+
+node "DWARF" as dwarf
+
+(extract) as extract
+(decompile) as decompile
+
+node "Ghidra" as ghidra
+node "IDA Pro" as ida
+node "JEB3" as jeb3
+
+prog --> dwarf
+prog --> ghidra
+prog --> ida
+prog --> jeb3
+
+dwarf --> extract
+
+ghidra --> decompile
+ida --> decompile
+jeb3 --> decompile
+
+extract --> dsl
+decompile --> dsl
+
+@enduml

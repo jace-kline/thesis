@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="371px" preserveAspectRatio="none" style="width:476px;height:371px;background:#FFFFFF;" version="1.1" viewBox="0 0 476 371" width="476px" zoomAndPan="magnify"><defs/><g><!--MD5=[21e4fe75c4f9fb41a8c90b1a65630895]
+entity prog--><g id="elem_prog"><polygon fill="#F1F1F1" points="173.5,16,183.5,6,317.5,6,317.5,42.2969,307.5,52.2969,173.5,52.2969,173.5,16" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="307.5" x2="317.5" y1="16" y2="6"/><line style="stroke:#181818;stroke-width:0.5;" x1="173.5" x2="307.5" y1="16" y2="16"/><line style="stroke:#181818;stroke-width:0.5;" x1="307.5" x2="307.5" y1="16" y2="52.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="188.5" y="38.9951">Binary Program</text></g><!--MD5=[521e00f23c2f1607d7613f8401caca41]
+entity dsl--><g id="elem_dsl"><polygon fill="#F1F1F1" points="106.5,318,116.5,308,260.5,308,260.5,344.2969,250.5,354.2969,106.5,354.2969,106.5,318" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="250.5" x2="260.5" y1="318" y2="308"/><line style="stroke:#181818;stroke-width:0.5;" x1="106.5" x2="250.5" y1="318" y2="318"/><line style="stroke:#181818;stroke-width:0.5;" x1="250.5" x2="250.5" y1="318" y2="354.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="121.5" y="340.9951">DSL</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="83" x="152.5" y="340.9951">ProgramInfo</text></g><!--MD5=[9914442dba5ca3d732a8ee1702b1eb17]
+entity dwarf--><g id="elem_dwarf"><polygon fill="#F1F1F1" points="16,122,26,112,107,112,107,148.2969,97,158.2969,16,158.2969,16,122" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="97" x2="107" y1="122" y2="112"/><line style="stroke:#181818;stroke-width:0.5;" x1="16" x2="97" y1="122" y2="122"/><line style="stroke:#181818;stroke-width:0.5;" x1="97" x2="97" y1="122" y2="158.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="31" y="144.9951">DWARF</text></g><g id="elem_extract"><ellipse cx="112.6374" cy="233.1391" fill="#F1F1F1" rx="45.1374" ry="14.6391" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="86.1374" y="236.8867">extract</text></g><g id="elem_decompile"><ellipse cx="281.7349" cy="232.947" fill="#F1F1F1" rx="62.7349" ry="14.947" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="242.7349" y="236.6945">decompile</text></g><!--MD5=[abcb3cda892c3e3ea15899b9aec91f4b]
+entity ghidra--><g id="elem_ghidra"><polygon fill="#F1F1F1" points="142,122,152,112,227,112,227,148.2969,217,158.2969,142,158.2969,142,122" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="217" x2="227" y1="122" y2="112"/><line style="stroke:#181818;stroke-width:0.5;" x1="142" x2="217" y1="122" y2="122"/><line style="stroke:#181818;stroke-width:0.5;" x1="217" x2="217" y1="122" y2="158.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="157" y="144.9951">Ghidra</text></g><!--MD5=[a13e862dbcce5be535820d63e7e4f4c9]
+entity ida--><g id="elem_ida"><polygon fill="#F1F1F1" points="262.5,122,272.5,112,352.5,112,352.5,148.2969,342.5,158.2969,262.5,158.2969,262.5,122" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="342.5" x2="352.5" y1="122" y2="112"/><line style="stroke:#181818;stroke-width:0.5;" x1="262.5" x2="342.5" y1="122" y2="122"/><line style="stroke:#181818;stroke-width:0.5;" x1="342.5" x2="342.5" y1="122" y2="158.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="277.5" y="144.9951">IDA Pro</text></g><!--MD5=[f87a6cbc2a61203dadd4d12ffc03ece0]
+entity jeb3--><g id="elem_jeb3"><polygon fill="#F1F1F1" points="388,122,398,112,459,112,459,148.2969,449,158.2969,388,158.2969,388,122" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="449" x2="459" y1="122" y2="112"/><line style="stroke:#181818;stroke-width:0.5;" x1="388" x2="449" y1="122" y2="122"/><line style="stroke:#181818;stroke-width:0.5;" x1="449" x2="449" y1="122" y2="158.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="403" y="144.9951">JEB3</text></g><!--MD5=[d5a5dc5cf4a2198627c457c9224ea1a7]
+link prog to dwarf--><g id="link_prog_dwarf"><path d="M206.48,52.06 C176.72,68.88 135.73,92.04 104.93,109.45 " fill="none" id="prog-to-dwarf" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="100.47,111.98,110.2742,111.0433,104.8252,109.5239,106.3445,104.0749,100.47,111.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a71f8b37bc0c5eec6301b18ba42721fa]
+link prog to ghidra--><g id="link_prog_ghidra"><path d="M232.56,52.06 C223.1,68.19 210.22,90.15 200.17,107.28 " fill="none" id="prog-to-ghidra" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="197.42,111.98,205.4218,106.2379,199.9482,107.6663,198.5199,102.1927,197.42,111.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e72ce6b3657ec55110147ee0d3ca9f80]
+link prog to ida--><g id="link_prog_ida"><path d="M258.65,52.06 C268.27,68.19 281.36,90.15 291.57,107.28 " fill="none" id="prog-to-ida" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="294.37,111.98,293.1935,102.2017,291.8081,107.6862,286.3235,106.3008,294.37,111.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[565c9c35d3de5aed257e413e7fcd200b]
+link prog to jeb3--><g id="link_prog_jeb3"><path d="M283.25,52.06 C312.72,69.28 353.57,93.14 383.58,110.68 " fill="none" id="prog-to-jeb3" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="387.93,113.22,382.1682,105.2324,383.6101,110.7024,378.1401,112.1443,387.93,113.22" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[20895ae83c1d91ff55348583c12183da]
+link dwarf to extract--><g id="link_dwarf_extract"><path d="M73.33,158.27 C82.29,175.13 94.45,198.02 102.83,213.79 " fill="none" id="dwarf-to-extract" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="105.3,218.45,104.6139,208.6251,102.956,214.0335,97.5475,212.3755,105.3,218.45" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e8b0310d2b9352b982723e0750756eed]
+link ghidra to decompile--><g id="link_ghidra_decompile"><path d="M207,158.27 C224.23,175.32 247.68,198.53 263.64,214.32 " fill="none" id="ghidra-to-decompile" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="267.52,218.17,263.9288,208.9992,263.9631,214.656,258.3064,214.6902,267.52,218.17" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5bd79ba30295045a07ebf95587581ec9]
+link ida to decompile--><g id="link_ida_decompile"><path d="M301.47,158.27 C297,174.79 290.96,197.08 286.69,212.82 " fill="none" id="ida-to-decompile" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="285.32,217.89,291.5433,210.2565,286.6332,213.0655,283.8241,208.1554,285.32,217.89" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c564e1998b5666caa022548ab752c285]
+link jeb3 to decompile--><g id="link_jeb3_decompile"><path d="M390.92,158.02 C364.87,175.64 328.94,199.93 305.47,215.8 " fill="none" id="jeb3-to-decompile" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="301.23,218.66,310.9265,216.9344,305.3726,215.8602,306.4468,210.3063,301.23,218.66" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[85766f8cca3ce3b5aec11d449ebee3c5]
+link extract to dsl--><g id="link_extract_dsl"><path d="M122.37,247.35 C133.14,261.91 150.65,285.58 164.17,303.87 " fill="none" id="extract-to-dsl" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="167.17,307.92,165.0084,298.3113,164.186,303.908,158.5893,303.0857,167.17,307.92" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[eb5944c3cab679f0dfd585e12d3a14b9]
+link decompile to dsl--><g id="link_decompile_dsl"><path d="M267.46,247.75 C252.47,262.43 228.39,286.03 209.85,304.19 " fill="none" id="decompile-to-dsl" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="206.22,307.74,215.4545,304.3159,209.798,304.2475,209.8665,298.591,206.22,307.74" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0a1973f8374f56e2cf40466c9f3f7502]
+@startuml proginfo-sources
+
+node "Binary Program" as prog
+
+node "DSL //ProgramInfo//" as dsl
+
+node "DWARF" as dwarf
+
+(extract) as extract
+(decompile) as decompile
+
+node "Ghidra" as ghidra
+node "IDA Pro" as ida
+node "JEB3" as jeb3
+
+prog - -> dwarf
+prog - -> ghidra
+prog - -> ida
+prog - -> jeb3
+
+dwarf - -> extract
+
+ghidra - -> decompile
+ida - -> decompile
+jeb3 - -> decompile
+
+extract - -> dsl
+decompile - -> dsl
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 12:01:30 CDT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
