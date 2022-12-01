@@ -1,0 +1,175 @@
+@article{bib:type-inference-executables,
+    author = {Caballero, Juan and Lin, Zhiqiang},
+    title = {Type Inference on Executables},
+    year = {2016},
+    issue_date = {May 2016},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {48},
+    number = {4},
+    issn = {0360-0300},
+    url = {https://doi.org/10.1145/2896499},
+    doi = {10.1145/2896499},
+    abstract = {In many applications, source code and debugging symbols of a target program are not available, and the only thing that we can access is the program executable. A fundamental challenge with executables is that, during compilation, critical information such as variables and types is lost. Given that typed variables provide fundamental semantics of a program, for the last 16 years, a large amount of research has been carried out on binary code type inference, a challenging task that aims to infer typed variables from executables (also referred to as binary code). In this article, we systematize the area of binary code type inference according to its most important dimensions: the applications that motivate its importance, the approaches used, the types that those approaches infer, the implementation of those approaches, and how the inference results are evaluated. We also discuss limitations, underdeveloped problems and open challenges, and propose further applications.},
+    journal = {ACM Comput. Surv.},
+    month = {may},
+    articleno = {65},
+    numpages = {35},
+    keywords = {program executables, binary code analysis, Type inference}
+}
+
+@inproceedings{bib:stateformer,
+    author = {Pei, Kexin and Guan, Jonas and Broughton, Matthew and Chen, Zhongtian and Yao, Songchen and Williams-King, David and Ummadisetty, Vikas and Yang, Junfeng and Ray, Baishakhi and Jana, Suman},
+    title = {StateFormer: Fine-Grained Type Recovery from Binaries Using Generative State Modeling},
+    year = {2021},
+    isbn = {9781450385626},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3468264.3468607},
+    doi = {10.1145/3468264.3468607},
+    abstract = {Binary type inference is a critical reverse engineering task supporting many security applications, including vulnerability analysis, binary hardening, forensics, and decompilation. It is a difficult task because source-level type information is often stripped during compilation, leaving only binaries with untyped memory and register accesses. Existing approaches rely on hand-coded type inference rules defined by domain experts, which are brittle and require nontrivial effort to maintain and update. Even though machine learning approaches have shown promise at automatically learning the inference rules, their accuracy is still low, especially for optimized binaries. We present StateFormer, a new neural architecture that is adept at accurate and robust type inference. StateFormer follows a two-step transfer learning paradigm. In the pretraining step, the model is trained with Generative State Modeling (GSM), a novel task that we design to teach the model to statically approximate execution effects of assembly instructions in both forward and backward directions. In the finetuning step, the pretrained model learns to use its knowledge of operational semantics to infer types. We evaluate StateFormer's performance on a corpus of 33 popular open-source software projects containing over 1.67 billion variables of different types. The programs are compiled with GCC and LLVM over 4 optimization levels O0-O3, and 3 obfuscation passes based on LLVM. Our model significantly outperforms state-of-the-art ML-based tools by 14.6% in recovering types for both function arguments and variables. Our ablation studies show that GSM improves type inference accuracy by 33%.},
+    booktitle = {Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+    pages = {690–702},
+    numpages = {13},
+    keywords = {Machine Learning for Program Analysis, Reverse Engineering, Transfer Learning, Type Inference},
+    location = {Athens, Greece},
+    series = {ESEC/FSE 2021}
+}
+
+@inproceedings{bib:divine,
+    author = {Balakrishnan, Gogul and Reps, Thomas},
+    title = {DIVINE: Discovering Variables in Executables},
+    year = {2007},
+    isbn = {9783540697350},
+    publisher = {Springer-Verlag},
+    address = {Berlin, Heidelberg},
+    abstract = {This paper addresses the problem of recovering variable-like entities when analyzing executables in the absence of debugging information. We show that variable-like entities can be recovered by iterating Value-Set Analysis (VSA), a combined numeric-analysis and pointer-analysis algorithm, and Aggregate Structure Identification, an algorithm to identify the structure of aggregates. Our initial experiments show that the technique is successful in correctly identifying 88% of the local variables and 89% of the fields of heap-allocated objects. Previous techniques recovered 83% of the local variables, but 0% of the fields of heap-allocated objects. Moreover, the values computed by VSA using the variables recovered by our algorithm would allow any subsequent analysis to do a better job of interpreting instructions that use indirect addressing to access arrays and heap-allocated data objects: indirect operands can be resolved better at 4% to 39% of the sites of writes and up to 8% of the sites of reads. (These are the memory-access operations for which it is the most difficult for an analyzer to obtain useful results.).},
+    booktitle = {Proceedings of the 8th International Conference on Verification, Model Checking, and Abstract Interpretation},
+    pages = {1–28},
+    numpages = {28},
+    location = {Nice, France},
+    series = {VMCAI'07}
+}
+
+@article{bib:type-learning-binaries-applications,
+    author = {Xu, Zhiwu and Wen, Cheng and Qin, Shengchao},
+    year = {2018},
+    month = {12},
+    pages = {1-20},
+    title = {Type Learning for Binaries and Its Applications},
+    volume = {PP},
+    journal = {IEEE Transactions on Reliability},
+    doi = {10.1109/TR.2018.2884143}
+}
+
+@inproceedings{bib:malware-obfuscation-techniques,
+    author = {You, Ilsun and Yim, Kangbin},
+    year = {2010},
+    month = {11},
+    pages = {297-300},
+    title = {Malware Obfuscation Techniques: A Brief Survey},
+    journal = {Proceedings - 2010 International Conference on Broadband, Wireless Computing Communication and Applications, BWCCA 2010},
+    doi = {10.1109/BWCCA.2010.85}
+}
+
+@article{bib:practical-analysis-stripped-binary-code,
+    author = {Harris, Laune and Miller, Barton},
+    year = {2005},
+    month = {12},
+    pages = {63-68},
+    title = {Practical analysis of stripped binary code},
+    volume = {33},
+    journal = {SIGARCH Computer Architecture News},
+    doi = {10.1145/1127577.1127590}
+}
+
+@inproceedings{bib:how-far-weve-come,
+    author = {Liu, Zhibo and Wang, Shuai},
+    title = {How Far We Have Come: Testing Decompilation Correctness of C Decompilers},
+    year = {2020},
+    isbn = {9781450380089},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3395363.3397370},
+    doi = {10.1145/3395363.3397370},
+    abstract = {A C decompiler converts an executable (the output from a C compiler) into source code. The recovered C source code, once recompiled, will produce an executable with the same functionality as the original executable. With over twenty years of development, C decompilers have been widely used in production to support reverse engineering applications, including legacy software migration, security retrofitting, software comprehension, and to act as the first step in launching adversarial software exploitations. As the paramount component and the trust base in numerous cybersecurity tasks, C decompilers have enabled the analysis of malware, ransomware, and promoted cybersecurity professionals’ understanding of vulnerabilities in real-world systems. In contrast to this flourishing market, our observation is that in academia, outputs of C decompilers (i.e., recovered C source code) are still not extensively used. Instead, the intermediate representations are often more desired for usage when developing applications such as binary security retrofitting. We acknowledge that such conservative approaches in academia are a result of widespread and pessimistic views on the decompilation correctness. However, in conventional software engineering and security research, how much of a problem is, for instance, reusing a piece of simple legacy code by taking the output of modern C decompilers? In this work, we test decompilation correctness to present an up-to-date understanding regarding modern C decompilers. We detected a total of 1,423 inputs that can trigger decompilation errors from four popular decompilers, and with extensive manual effort, we identified 13 bugs in two open-source decompilers. Our findings show that the overly pessimistic view of decompilation correctness leads researchers to underestimate the potential of modern decompilers; the state-of-the-art decompilers certainly care about the functional correctness, and they are making promising progress. However, some tasks that have been studied for years in academia, such as type inference and optimization, still impede C decompilers from generating quality outputs more than is reflected in the literature. These issues rarely receive enough attention and can lead to great confusion that misleads users.},
+    booktitle = {Proceedings of the 29th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+    pages = {475–487},
+    numpages = {13},
+    keywords = {Reverse Engineering, Software Testing, Decompiler},
+    location = {Virtual Event, USA},
+    series = {ISSTA 2020}
+}
+
+@inbook{bib:sre,
+    author="Cipresso, Teodoro
+    and Stamp, Mark",
+    editor="Stavroulakis, Peter
+    and Stamp, Mark",
+    title="Software Reverse Engineering",
+    bookTitle="Handbook of Information and Communication Security",
+    year="2010",
+    publisher="Springer Berlin Heidelberg",
+    address="Berlin, Heidelberg",
+    pages="659--696",
+    abstract="Software reverse engineering (SRE) is the practice of analyzing a software system, either in whole or in part, to extract design and implementation information. A typical SRE scenario would involve a software module that has worked for years and carries several rules of a business in its lines of code; unfortunately the source code of the application has been lost -- what remains is ``native'' or ``binary'' code. Reverse engineering skills are also used to detect and neutralize viruses and malware, and to protect intellectual property. Computer programmers proficient in SRE will be needed should software components like these need to be maintained, enhanced, or reused. It became frightfully apparent during the Y2K crisis that reverse engineering skills were not commonly held amongst programmers. Since that time, much research has been under way to formalize just what types of activities fall into the category of reverse engineering, so that these skills could be taught to computer programmers and testers. To help address the lack of SRE education, several peer-reviewed articles on SRE, software re-engineering, software reuse, software maintenance, software evolution, and software security were gathered with the objective of developing relevant, practical exercises for instructional purposes. The research revealed that SRE is fairly well described and all related activities mostly fall into one of two categories: software-development-related and software-security-related. Hands-on reversing exercises were developed in the spirit of these two categories with the goal of providing a baseline education in reversing both Wintel machine code and Java bytecode.",
+    isbn="978-3-642-04117-4",
+    doi="10.1007/978-3-642-04117-4_31",
+    url="https://doi.org/10.1007/978-3-642-04117-4_31"
+}
+
+@inproceedings{bib:disassembly-challenges,
+    author = {Prasad, Manish and Chiueh, tzi-cker},
+    year = {2003},
+    month = {01},
+    pages = {211-224},
+    title = {A Binary Rewriting Defense Against Stack based Buffer Overflow Attacks.}
+}
+
+@misc{bib:technique-for-decompiling-binary-code-for-assurance,
+    author="W. Klieber",
+    title="A Technique for Decompiling Binary Code for Software Assurance and Localized Repair",
+    month="Oct. 11,",
+    year="2021. [Online]",
+    howpublished="Carnegie Mellon University's Software Engineering Institute Blog",
+    url="http://insights.sei.cmu.edu/blog/a-technique-for-decompiling-binary-code-for-software-assurance-and-localized-repair/"
+}
+
+@online{bib:dwarf,
+    author = {DWARF Standards Committee},
+    title = {The DWARF Debugging Standard},
+    url = {https://dwarfstd.org/}
+}
+
+@online{bib:ghidra,
+    author = {National Security Agency (NSA)},
+    title = {Ghidra},
+    url = {https://ghidra-sre.org/}
+}
+
+@inproceedings{bib:sok-x86-disassembly,
+    author={Pang, Chengbin and Yu, Ruotong and Chen, Yaohui and Koskinen, Eric and Portokalidis, Georgios and Mao, Bing and Xu, Jun},
+    booktitle={2021 IEEE Symposium on Security and Privacy (SP)}, 
+    title={SoK: All You Ever Wanted to Know About x86/x64 Binary Disassembly But Were Afraid to Ask}, 
+    year={2021},
+    pages={833-851},
+    doi={10.1109/SP40001.2021.00012}
+}
+
+@misc{bib:pyelftools,
+  author = {Bendersky, Eli},
+  title = {pyelftools},
+  year = {2022},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/eliben/pyelftools},
+  commit = {8a74c8f9ca466de0738b1e94394aac494ff3db39}
+}
+
+@misc{bib:issues-debugging-inspecting-optimized-binaries,
+    author = {Cohen, William},
+    title = {Possible issues with debugging and inspecting compiler-optimized binaries},
+    year = {2020. [Online]},
+    publisher = {Red Hat, Inc.},
+    url = {https://developers.redhat.com/blog/2020/03/13/possible-issues-with-debugging-and-inspecting-compiler-optimized-binaries#debugging_is_hard}
+}
