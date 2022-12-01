@@ -1,0 +1,125 @@
+@startuml decompose
+
+skinparam rectangleFontSize 9
+skinparam arrowFontSize 9
+
+' rectangle src as "
+' typedef struct {
+'     int day;
+'     int month;
+'     int year;
+' } Date;
+
+' typedef struct {
+'     char* name;
+'     int ssn;
+'     float height;
+'     float weight;
+'     Date dob;
+' } Person;
+
+' Person people[2];
+' "
+
+rectangle lev0 as "
+//[0-64]// Person people[2]
+"
+
+' src -[hidden]> lev0
+
+rectangle lev1_0 as "
+//[0-31]// Person
+"
+
+rectangle lev1_1 as "
+//[32-64]// Person
+"
+
+lev0 --> "people[0]" lev1_0
+lev0 --> "people[1]" lev1_1
+
+rectangle lev2_name0 as "
+//[0-7]// char*
+"
+
+rectangle lev2_ssn0 as "
+//[8-11]// int
+"
+
+rectangle lev2_height0 as "
+//[12-15]// float
+"
+
+rectangle lev2_weight0 as "
+//[16-19]// float
+"
+
+rectangle lev2_dob0 as "
+//[20-31]// Date
+"
+
+rectangle lev2_name1 as "
+//[32-39]// char*
+"
+
+rectangle lev2_ssn1 as "
+//[40-43]// int
+"
+
+rectangle lev2_height1 as "
+//[44-47]// float
+"
+
+rectangle lev2_weight1 as "
+//[48-51]// float
+"
+
+rectangle lev2_dob1 as "
+//[52-63]// Date
+"
+
+lev1_0 ---> "name" lev2_name0
+lev1_0 ---> "ssn" lev2_ssn0
+lev1_0 ---> "height" lev2_height0
+lev1_0 ---> "weight" lev2_weight0
+lev1_0 ---> "dob" lev2_dob0
+
+lev1_1 --> "name" lev2_name1
+lev1_1 --> "ssn" lev2_ssn1
+lev1_1 --> "height" lev2_height1
+lev1_1 --> "weight" lev2_weight1
+lev1_1 --> "dob" lev2_dob1
+
+rectangle lev3_day0 as "
+//[20-23]// int
+"
+
+rectangle lev3_month0 as "
+//[24-27]// int
+"
+
+rectangle lev3_year0 as "
+//[28-31]// int
+"
+
+rectangle lev3_day1 as "
+//[52-55]// int
+"
+
+rectangle lev3_month1 as "
+//[56-59]// int
+"
+
+rectangle lev3_year1 as "
+//[60-63]// int
+"
+
+lev2_dob0 --> "day" lev3_day0
+lev2_dob0 --> "month" lev3_month0
+lev2_dob0 --> "year" lev3_year0
+
+lev2_dob1 --> "day" lev3_day1
+lev2_dob1 --> "month" lev3_month1
+lev2_dob1 --> "year" lev3_year1
+
+@enduml

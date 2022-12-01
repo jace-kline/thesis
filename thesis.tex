@@ -14,6 +14,7 @@
 
 % Figure stuff
 \usepackage{tikz}
+\usepackage{fancyvrb}
 
 \begin{document}
 
@@ -269,7 +270,39 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
 
 The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of complex variable synthesis from more primitive components.
 
-[Figure: Example of "decomposing" complex varnode]
+% [Figure: Example of "decomposing" complex varnode]
+\begin{figure}[ht]
+    \begin{subfigure}[ht]{0.25\textwidth}
+        \centering
+        \begin{Verbatim}[frame=single]
+typedef struct {
+    int day;
+    int month;
+    int year;
+} Date;
+
+typedef struct {
+    char* name;
+    int ssn;
+    float height;
+    float weight;
+    Date dob;
+} Person;
+
+Person people[2];
+        \end{Verbatim}
+        \caption{Definition of a high-level variable}
+        \label{fig:decompose-src}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[hb]{0.75\textwidth}
+        \scalebox{0.35}[0.4]{\input{./figures/decompose.latex}}
+        \caption{Decomposition of a high-level varnode into primitive components}
+        \label{fig:decompose-tree}
+    \end{subfigure}
+    \caption{Example of high-level varnode decomposition}
+    \label{fig:decompose}
+\end{figure}
 
 We first implement an approach to recursively strip away the "complex layers" of a varnode to its most primitive decomposition. This primitive decomposition produces a set of one or more primitive varnodes. For example, an array of elements is broken down into a set of its elements (decomposed recursively). A struct is broken down into a set of varnodes associated with each of its members (decomposed recursively). Unions present a special case since the members share a common, overlapping region of memory. Hence, to decompose a union, we transform it into an \emph{UNDEFINED} primitive type with the same size as the union.
 

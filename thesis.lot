@@ -3,13 +3,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of function recovery by compilation case\relax }}{29}{table.caption.7}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of high-level varnode recovery by compilation case\relax }}{30}{table.caption.8}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of high-level varnode recovery by compilation case and metatype\relax }}{37}{table.caption.9}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Summary of decomposed varnode recovery by compilation case\relax }}{38}{table.caption.10}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Summary of decomposed varnode recovery by compilation case and primitive metatype\relax }}{38}{table.caption.11}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Summary of data bytes recovery by compilation case\relax }}{39}{table.caption.12}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Summary of array recovery by compilation case\relax }}{39}{table.caption.13}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of function recovery by compilation case\relax }}{29}{table.caption.8}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Summary of high-level varnode recovery by compilation case\relax }}{30}{table.caption.9}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of high-level varnode recovery by compilation case and metatype\relax }}{37}{table.caption.10}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Summary of decomposed varnode recovery by compilation case\relax }}{38}{table.caption.11}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Summary of decomposed varnode recovery by compilation case and primitive metatype\relax }}{38}{table.caption.12}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Summary of data bytes recovery by compilation case\relax }}{39}{table.caption.13}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Summary of array recovery by compilation case\relax }}{39}{table.caption.14}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1}{\ignorespaces Function recovery (compilation = stripped)\relax }}{47}{table.Alph0.1}%
 \contentsline {table}{\numberline {2}{\ignorespaces Function recovery (compilation = standard)\relax }}{52}{table.Alph0.2}%
