@@ -1,5 +1,6 @@
 \input{thesis_header.tex}
 
+\usepackage[numbers]{natbib}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -15,6 +16,10 @@
 % Figure stuff
 \usepackage{tikz}
 \usepackage{fancyvrb}
+
+% Bibliography
+\bibliographystyle{IEEEtran}
+% \addbibresource{references.bib}
 
 \begin{document}
 
@@ -515,9 +520,10 @@ In our function recovery analysis, recall that the Ghidra decompiler fails to de
 In our assessment of the Ghidra decompiler, we observe that Ghidra does not successfully capture all ground truth variables and data bytes even in the case the DWARF debugging information is present. Upon further investigation, we discover this shortcoming is due to Ghidra's inability to express local variable declarations at the lexical scope level. Instead, Ghidra forces all local variables to be declared at the top level of the given function. This causes Ghidra to partially miss cases where the same stack address region is used by the compiler to store local variables declared in non-overlapping, non-nested lexical scopes within the same function. An area of future work shall be to modify the Ghidra decompiler to support the expression of more flexible local variable constructs that are not required to be declared at the top level of a function.
 
 % Bibliography, default style from former template.
+\nocite{*}
 \global\long\def\bibname{References}
-\bibliographystyle{IEEEtranN}
 \bibliography{references}
+% \printbibliography
 
 % \begin{thebibliography}{00}
 % \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
