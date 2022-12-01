@@ -11,6 +11,6 @@ thesis:
 	$(TEX) $(DOCNAME).tex
 
 clean:
-	rm -rf *.toc *.out *.lof *.pdf *.log *.lot *.aux
+	rm -rf *.toc *.out *.lof *.pdf *.log *.lot *.aux *.bbl *.blg
 
 .PHONY: thesis clean
