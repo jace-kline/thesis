@@ -1,14 +1,14 @@
-\begin{table}[t]
+\begin{table}
 \centering
 \caption{Summary of decomposed varnode recovery by compilation case}
 \label{table:opts-varnodes-summary-decomposed}
 \begin{tabular}{lp{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}}
 \toprule
-{} & \rotatebox{70}{Varnodes matched @ level NO\_MATCH} & \rotatebox{70}{Varnodes matched @ level OVERLAP} & \rotatebox{70}{Varnodes matched @ level SUBSET} & \rotatebox{70}{Varnodes matched @ level ALIGNED} & \rotatebox{70}{Varnodes matched @ level MATCH} & \rotatebox{70}{Varnode comparison score [0,1]} & \rotatebox{70}{Varnodes fraction partially recovered} & \rotatebox{70}{Varnodes fraction exactly recovered} \\
+{} & \rotatebox{70}{Varnodes matched @ level NO\_MATCH} & \rotatebox{70}{Varnodes matched @ level OVERLAP} & \rotatebox{70}{Varnodes matched @ level SUBSET} & \rotatebox{70}{Varnodes matched @ level ALIGNED} & \rotatebox{70}{Varnodes matched @ level MATCH} & \rotatebox{70}{Varnode comparison score} & \rotatebox{70}{Varnodes fraction partially recovered} & \rotatebox{70}{Varnodes fraction exactly recovered} \\
 \midrule
-strip    &                                               1000 &                                             1662 &                                            1001 &                                            18570 &                                          12550 &                                          0.788 &                                              0.971 &                                              0.361 \\
-standard &                                                249 &                                             1450 &                                             613 &                                            19029 &                                          13442 &                                          0.816 &                                              0.993 &                                              0.386 \\
-debug    &                                                 23 &                                               52 &                                              24 &                                                7 &                                          34677 &                                          0.998 &                                              0.999 &                                              0.997 \\
+strip    &                                             139776 &                                            31280 &                                               0 &                                           231267 &                                         131593 &                                    0.586 &                                              0.738 &                                              0.246 \\
+standard &                                              40187 &                                            56605 &                                               0 &                                           303527 &                                         133597 &                                    0.703 &                                              0.925 &                                              0.250 \\
+debug    &                                              10547 &                                              128 &                                               0 &                                                5 &                                         523236 &                                    0.980 &                                              0.980 &                                              0.980 \\
 \bottomrule
 \end{tabular}
 \end{table}

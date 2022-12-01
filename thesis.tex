@@ -227,11 +227,17 @@ Given two \emph{DataType} objects and an offset between their start locations, w
 
 We define the \emph{metatype} of a data type to be general "class" of the given data type. These metatypes include \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{ARRAY}, \emph{STRUCT}, \emph{UNION}, \emph{UNDEFINED}, \emph{VOID}, and \emph{FUNCTION\_PROTOTYPE}. We consider \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{UNDEFINED}, and \emph{VOID} to be \emph{primitive metatypes} since they cannot be decomposed further. \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION} are considered \emph{complex metatypes} since these types are formed via the composition or aggregation of different members or subtypes. We consider the 'char' data type to be of the \emph{INT} metatype with size equal to one byte.
 
-[Figure: Ariste type lattice]
+% [Figure: Ariste type lattice]
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{./figures/ariste-type-lattice.png}
+    \caption{Ariste type lattice [][]}
+    \label{fig:ariste-type-lattice}
+\end{figure}
 
 A \emph{primitive type lattice} [] is used to hierarchially relate primitive data types based on their metatype, size, and signedness (if applicable). More general types are located higher in the lattice while more specific types are located closer to the leaves. A type lattice may be used to determine whether two primitive data types are equivalent or share a common parent type.
 
-[Figure: Subset relationship example(s)]
+% [Figure: Subset relationship example(s)]
 
 We next define a \emph{subset} relationship between two data types. For a given complex data type X and another data type Y with a given offset (possibly 0) between the location of X and Y in memory, Y is considered a \emph{subset} type of X if Y is equivalent to a "portion" of X, consistent with the offset between X and Y. For example, if X is an array, any sub-array or element of X such that elements are aligned and the element types are equivalent to X is considered a subset of X. If X is a struct or union, any sub-struct or member with proper alignment and equal constituent elements is considered a subset of X.
 

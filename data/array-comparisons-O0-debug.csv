@@ -1,4 +1,4 @@
-,Ground truth array varnodes,Array comparisons,Array varnodes inferred as array,Array varnodes inferred as array fraction,Array length (elements) average error,Array length (elements) average error ratio,Array size (bytes) average error,Array size (bytes) average error ratio,"Array dimension match score [0,1]","Array average element type comparison score [0,1]"
+,Ground truth array varnodes,Array comparisons,Array varnodes inferred as array,Array varnodes inferred as array fraction,Array length (elements) average error,Array length (elements) average error ratio,Array size (bytes) average error,Array size (bytes) average error ratio,Array dimension match score,Array average element type comparison score
 [,15,16,15,1.0,0.0,0.0,0.0,0.0,1.0,1.0
 b2sum,24,25,24,1.0,0.0,0.0,0.0,0.0,1.0,1.0
 base32,12,13,12,1.0,0.0,0.0,0.0,0.0,1.0,1.0

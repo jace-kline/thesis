@@ -1,4 +1,4 @@
-,Ground truth varnodes,Varnodes matched @ level NO_MATCH,Varnodes matched @ level OVERLAP,Varnodes matched @ level SUBSET,Varnodes matched @ level ALIGNED,Varnodes matched @ level MATCH,"Varnode average compare score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
+,Ground truth varnodes,Varnodes matched @ level NO_MATCH,Varnodes matched @ level OVERLAP,Varnodes matched @ level SUBSET,Varnodes matched @ level ALIGNED,Varnodes matched @ level MATCH,Varnode average compare score,Varnodes fraction partially recovered,Varnodes fraction exactly recovered
 [,1010,379,116,0,171,344,0.4962871287128713,0.6247524752475248,0.3405940594059406
 b2sum,1813,567,169,0,719,358,0.5182018753447325,0.6872586872586872,0.19746276889134032
 base32,1061,623,77,0,56,305,0.3451932139491046,0.412818096135721,0.2874646559849199

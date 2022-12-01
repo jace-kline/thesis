@@ -152,7 +152,7 @@ def make_metrics() -> List[MetricsGroup]:
         )
 
     varnodes_group.mk_add_metric(
-        "Varnode average comparison score [0,1]",
+        "Varnode average comparison score",
         varnodes_avg_compare_score
     )
     metrics_groups.append(varnodes_group)
@@ -182,7 +182,7 @@ def make_metrics() -> List[MetricsGroup]:
             )
 
         group.mk_add_metric(
-            "Varnode average compare score [0,1]",
+            "Varnode average compare score",
             lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype)
         )
         metrics_groups.append(group)
@@ -203,7 +203,7 @@ def make_metrics() -> List[MetricsGroup]:
         )
 
     primitive_varnodes_group.mk_add_metric(
-        "Varnode average comparison score [0,1]",
+        "Varnode average comparison score",
         lambda cmp: varnodes_avg_compare_score(cmp, primitive=True)
     )
     metrics_groups.append(primitive_varnodes_group)
@@ -233,7 +233,7 @@ def make_metrics() -> List[MetricsGroup]:
             )
 
         group.mk_add_metric(
-            "Varnode average compare score [0,1]",
+            "Varnode average compare score",
             lambda cmp, metatype=metatype: varnodes_avg_compare_score_metatype(cmp, metatype, primitive=True)
         )
         metrics_groups.append(group)
@@ -281,12 +281,12 @@ def make_metrics() -> List[MetricsGroup]:
     )
 
     array_group.mk_add_metric(
-        "Array dimension match score [0,1]",
+        "Array dimension match score",
         array_dimension_match_ratio
     )
 
     array_group.mk_add_metric(
-        "Array average element type comparison score [0,1]",
+        "Array average element type comparison score",
         array_subtype_avg_compare_score
     )
     metrics_groups.append(array_group)

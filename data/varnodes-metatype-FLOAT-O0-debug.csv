@@ -1,4 +1,4 @@
-,Ground truth varnodes,Decompiler varnodes matched @ level NO_MATCH,Decompiler varnodes matched @ level OVERLAP,Decompiler varnodes matched @ level SUBSET,Decompiler varnodes matched @ level ALIGNED,Decompiler varnodes matched @ level MATCH,"Varnode average compare score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
+,Ground truth varnodes,Decompiler varnodes matched @ level NO_MATCH,Decompiler varnodes matched @ level OVERLAP,Decompiler varnodes matched @ level SUBSET,Decompiler varnodes matched @ level ALIGNED,Decompiler varnodes matched @ level MATCH,Varnode average compare score,Varnodes fraction partially recovered,Varnodes fraction exactly recovered
 [,2,0,0,0,0,2,1.0,1.0,1.0
 b2sum,0,0,0,0,0,0,,,
 base32,0,0,0,0,0,0,,,

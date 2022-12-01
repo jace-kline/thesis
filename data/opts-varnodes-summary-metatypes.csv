@@ -1,4 +1,4 @@
-,,Varnodes matched @ level NO_MATCH,Varnodes matched @ level OVERLAP,Varnodes matched @ level SUBSET,Varnodes matched @ level ALIGNED,Varnodes matched @ level MATCH,"Varnode comparison score [0,1]",Varnodes fraction partially recovered,Varnodes fraction exactly recovered
+,,Varnodes matched @ level NO_MATCH,Varnodes matched @ level OVERLAP,Varnodes matched @ level SUBSET,Varnodes matched @ level ALIGNED,Varnodes matched @ level MATCH,Varnode comparison score,Varnodes fraction partially recovered,Varnodes fraction exactly recovered
 strip,INT,66,48,0,12204,8681,0.8498499928568027,0.996856993190152,0.413400638125625
 strip,FLOAT,0,56,0,113,22,0.6321989528795812,1.0,0.1151832460732984
 strip,POINTER,53,4,0,5834,3513,0.8389515099957465,0.994364100382816,0.3735644406635474
