@@ -98,6 +98,43 @@ D.~S. Committee. The dwarf debugging standard. [Online]. Available:
   \url{https://dwarfstd.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:divine}
+G.~Balakrishnan and T.~Reps, ``Divine: Discovering variables in executables,''
+  in \emph{Proceedings of the 8th International Conference on Verification,
+  Model Checking, and Abstract Interpretation}, ser. VMCAI'07.\hskip 1em plus
+  0.5em minus 0.4em\relax Berlin, Heidelberg: Springer-Verlag, 2007, pp. 1--28.
+
+\bibitem{bib:tie}
+J.~Lee, T.~Avgerinos, and D.~Brumley, ``Tie: Principled reverse engineering of
+  types in binary programs,'' in \emph{Network and Distributed System Security
+  Symposium}, 2011.
+
+\bibitem{bib:rewards}
+Z.~Lin, X.~Zhang, and D.~Xu, ``Automatic reverse engineering of data structures
+  from binary execution,'' in \emph{Proceedings of the 11th Annual Information
+  Security Symposium}, ser. CERIAS '10.\hskip 1em plus 0.5em minus 0.4em\relax
+  West Lafayette, IN: CERIAS - Purdue University, 2010.
+
+\bibitem{bib:scalable-variable-datatype-detection}
+\BIBentryALTinterwordspacing
+K.~ElWazeer, K.~Anand, A.~Kotha, M.~Smithson, and R.~Barua, ``Scalable variable
+  and data type detection in a binary rewriter,'' in \emph{Proceedings of the
+  34th ACM SIGPLAN Conference on Programming Language Design and
+  Implementation}, ser. PLDI '13.\hskip 1em plus 0.5em minus 0.4em\relax New
+  York, NY, USA: Association for Computing Machinery, 2013, pp. 51--60.
+  [Online]. Available: \url{https://doi.org/10.1145/2491956.2462165}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:retypd}
+\BIBentryALTinterwordspacing
+M.~Noonan, A.~Loginov, and D.~Cok, ``Polymorphic type inference for machine
+  code,'' in \emph{Proceedings of the 37th ACM SIGPLAN Conference on
+  Programming Language Design and Implementation}, ser. PLDI '16.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing
+  Machinery, 2016, pp. 27--41. [Online]. Available:
+  \url{https://doi.org/10.1145/2908080.2908119}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:pyelftools}
 \BIBentryALTinterwordspacing
 E.~Bendersky, ``pyelftools,'' 2022. [Online]. Available:
@@ -115,12 +152,6 @@ K.~Pei, J.~Guan, M.~Broughton, Z.~Chen, S.~Yao, D.~Williams-King,
   York, NY, USA: Association for Computing Machinery, 2021, p. 690–702.
   [Online]. Available: \url{https://doi.org/10.1145/3468264.3468607}
 \BIBentrySTDinterwordspacing
-
-\bibitem{bib:divine}
-G.~Balakrishnan and T.~Reps, ``Divine: Discovering variables in executables,''
-  in \emph{Proceedings of the 8th International Conference on Verification,
-  Model Checking, and Abstract Interpretation}, ser. VMCAI'07.\hskip 1em plus
-  0.5em minus 0.4em\relax Berlin, Heidelberg: Springer-Verlag, 2007, pp. 1--28.
 
 \bibitem{bib:type-learning-binaries-applications}
 Z.~Xu, C.~Wen, and S.~Qin, ``Type learning for binaries and its applications,''
@@ -145,37 +176,6 @@ C.~Pang, R.~Yu, Y.~Chen, E.~Koskinen, G.~Portokalidis, B.~Mao, and J.~Xu,
 W.~Cohen, ``Possible issues with debugging and inspecting compiler-optimized
   binaries,'' 2020. [Online]. [Online]. Available:
   \url{https://developers.redhat.com/blog/2020/03/13/possible-issues-with-debugging-and-inspecting-compiler-optimized-binaries#debugging_is_hard}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:tie}
-J.~Lee, T.~Avgerinos, and D.~Brumley, ``Tie: Principled reverse engineering of
-  types in binary programs,'' in \emph{Network and Distributed System Security
-  Symposium}, 2011.
-
-\bibitem{bib:automatic-re-data-structures-binary-execution}
-Z.~Lin, X.~Zhang, and D.~Xu, ``Automatic reverse engineering of data structures
-  from binary execution,'' in \emph{Proceedings of the 11th Annual Information
-  Security Symposium}, ser. CERIAS '10.\hskip 1em plus 0.5em minus 0.4em\relax
-  West Lafayette, IN: CERIAS - Purdue University, 2010.
-
-\bibitem{bib:scalable-variable-datatype-detection}
-\BIBentryALTinterwordspacing
-K.~ElWazeer, K.~Anand, A.~Kotha, M.~Smithson, and R.~Barua, ``Scalable variable
-  and data type detection in a binary rewriter,'' in \emph{Proceedings of the
-  34th ACM SIGPLAN Conference on Programming Language Design and
-  Implementation}, ser. PLDI '13.\hskip 1em plus 0.5em minus 0.4em\relax New
-  York, NY, USA: Association for Computing Machinery, 2013, pp. 51--60.
-  [Online]. Available: \url{https://doi.org/10.1145/2491956.2462165}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:polymorphic-type-inference-machine-code}
-\BIBentryALTinterwordspacing
-M.~Noonan, A.~Loginov, and D.~Cok, ``Polymorphic type inference for machine
-  code,'' in \emph{Proceedings of the 37th ACM SIGPLAN Conference on
-  Programming Language Design and Implementation}, ser. PLDI '16.\hskip 1em
-  plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing
-  Machinery, 2016, pp. 27--41. [Online]. Available:
-  \url{https://doi.org/10.1145/2908080.2908119}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:cati}

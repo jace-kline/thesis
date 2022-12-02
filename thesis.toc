@@ -23,13 +23,13 @@
 \contentsline {subsubsection}{\numberline {3.4.1.1}Definitions}{18}{subsubsection.3.4.1.1}%
 \contentsline {subsubsection}{\numberline {3.4.1.2}Comparison Logic}{19}{subsubsection.3.4.1.2}%
 \contentsline {subsection}{\numberline {3.4.2}Variable Comparison}{20}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{21}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{22}{subsubsection.3.4.2.1}%
 \contentsline {subsection}{\numberline {3.4.3}Function Comparison}{23}{subsection.3.4.3}%
 \contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{23}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Functions}{23}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Varnodes}{24}{subsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.5.3}Data Bytes}{25}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{25}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{26}{subsection.3.5.4}%
 \contentsline {chapter}{\numberline {4}Evaluation}{28}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Setup}{28}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Function Recovery}{30}{section.4.2}%
