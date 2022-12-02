@@ -68,7 +68,7 @@
     month = {11},
     pages = {297-300},
     title = {Malware Obfuscation Techniques: A Brief Survey},
-    journal = {Proceedings - 2010 International Conference on Broadband, Wireless Computing Communication and Applications, BWCCA 2010},
+    booktitle = {Proceedings - 2010 International Conference on Broadband, Wireless Computing Communication and Applications, BWCCA 2010},
     doi = {10.1109/BWCCA.2010.85}
 }
 
@@ -119,11 +119,10 @@
 }
 
 @inproceedings{bib:disassembly-challenges,
-    author = {Prasad, Manish and Chiueh, tzi-cker},
-    year = {2003},
-    month = {01},
-    pages = {211-224},
-    title = {A Binary Rewriting Defense Against Stack based Buffer Overflow Attacks.}
+    title={A Binary Rewriting Defense Against Stack based Buffer Overflow Attacks},
+    author={Manish Prasad and Tzi-cker Chiueh},
+    booktitle={USENIX Annual Technical Conference, General Track},
+    year={2003}
 }
 
 @misc{bib:technique-for-decompiling-binary-code-for-assurance,
@@ -157,13 +156,13 @@
 }
 
 @misc{bib:pyelftools,
-  author = {Bendersky, Eli},
-  title = {pyelftools},
-  year = {2022},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  url = {https://github.com/eliben/pyelftools},
-  commit = {8a74c8f9ca466de0738b1e94394aac494ff3db39}
+    author = {Bendersky, Eli},
+    title = {pyelftools},
+    year = {2022},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    url = {https://github.com/eliben/pyelftools},
+    commit = {8a74c8f9ca466de0738b1e94394aac494ff3db39}
 }
 
 @misc{bib:issues-debugging-inspecting-optimized-binaries,
@@ -172,4 +171,107 @@
     year = {2020. [Online]},
     publisher = {Red Hat, Inc.},
     url = {https://developers.redhat.com/blog/2020/03/13/possible-issues-with-debugging-and-inspecting-compiler-optimized-binaries#debugging_is_hard}
+}
+
+@inproceedings{bib:tie,
+    title={TIE: Principled Reverse Engineering of Types in Binary Programs},
+    author={Jonghyup Lee and Thanassis Avgerinos and David Brumley},
+    booktitle={Network and Distributed System Security Symposium},
+    year={2011}
+}
+
+@inproceedings{bib:automatic-re-data-structures-binary-execution,
+    author = {Lin, Zhiqiang and Zhang, Xiangyu and Xu, Dongyan},
+    title = {Automatic Reverse Engineering of Data Structures from Binary Execution},
+    year = {2010},
+    publisher = {CERIAS - Purdue University},
+    address = {West Lafayette, IN},
+    abstract = {With only the binary executable of a program, it is useful to discover the program's data structures and infer their syntactic and semantic definitions. Such knowledge is highly valuable in a variety of security and forensic applications. Although there exist efforts in program data structure inference, the existing solutions are not suitable for our targeted application scenarios. In this paper, we propose a reverse engineering technique to automatically reveal program data structures from binaries. Our technique, called REWARDS, is based on dynamic analysis. More specifically, each memory location accessed by the program is tagged with a timestamped type attribute. Following the program's runtime data flow, this attribute is propagated to other memory locations and registers that share the same type. During the propagation, a variable's type gets resolved if it is involved in a type-revealing execution point or type sink. More importantly, besides the forward type propagation, REWARDS involves a backward type resolution procedure where the types of some previously accessed variables get recursively resolved starting from a type sink. This procedure is constrained by the timestamps of relevant memory locations to disambiguate variables re-using the same memory location. In addition, REWARDS is able to reconstruct in-memory data structure layout based on the type information derived. We demonstrate that REWARDS provides unique benefits to two applications: memory image forensics and binary fuzzing for vulnerability discovery.},
+    booktitle = {Proceedings of the 11th Annual Information Security Symposium},
+    articleno = {5},
+    numpages = {1},
+    location = {West Lafayette, Indiana},
+    series = {CERIAS '10}
+}
+
+@inproceedings{bib:scalable-variable-datatype-detection,
+    author = {ElWazeer, Khaled and Anand, Kapil and Kotha, Aparna and Smithson, Matthew and Barua, Rajeev},
+    title = {Scalable Variable and Data Type Detection in a Binary Rewriter},
+    year = {2013},
+    isbn = {9781450320146},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2491956.2462165},
+    doi = {10.1145/2491956.2462165},
+    abstract = {We present scalable static analyses to recover variables, data types, and function prototypes from stripped x86 executables (without symbol or debug information) and obtain a functional intermediate representation (IR) for analysis and rewriting purposes. Our techniques on average run 352X faster than current techniques and still have the same precision. This enables analyzing executables as large as millions of instructions in minutes which is not possible using existing techniques. Our techniques can recover variables allocated to the floating point stack unlike current techniques. We have integrated our techniques to obtain a compiler level IR that works correctly if recompiled and produces the same output as the input executable. We demonstrate scalability, precision and correctness of our proposed techniques by evaluating them on the complete SPEC2006 benchmarks suite.},
+    booktitle = {Proceedings of the 34th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+    pages = {51-60},
+    numpages = {10},
+    keywords = {binary rewriting, type recovery, variable recovery, reverse engineering},
+    location = {Seattle, Washington, USA},
+    series = {PLDI '13}
+}
+
+@inproceedings{bib:polymorphic-type-inference-machine-code,
+    author = {Noonan, Matt and Loginov, Alexey and Cok, David},
+    title = {Polymorphic Type Inference for Machine Code},
+    year = {2016},
+    isbn = {9781450342612},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2908080.2908119},
+    doi = {10.1145/2908080.2908119},
+    abstract = {For many compiled languages, source-level types are erased very early in the compilation process. As a result, further compiler passes may convert type-safe source into type-unsafe machine code. Type-unsafe idioms in the original source and type-unsafe optimizations mean that type information in a stripped binary is essentially nonexistent. The problem of recovering high-level types by performing type inference over stripped machine code is called type reconstruction, and offers a useful capability in support of reverse engineering and decompilation. In this paper, we motivate and develop a novel type system and algorithm for machine-code type inference. The features of this type system were developed by surveying a wide collection of common source- and machine-code idioms, building a catalog of challenging cases for type reconstruction. We found that these idioms place a sophisticated set of requirements on the type system, inducing features such as recursively-constrained polymorphic types. Many of the features we identify are often seen only in expressive and powerful type systems used by high-level functional languages. Using these type-system features as a guideline, we have developed Retypd: a novel static type-inference algorithm for machine code that supports recursive types, polymorphism, and subtyping. Retypd yields more accurate inferred types than existing algorithms, while also enabling new capabilities such as reconstruction of pointer const annotations with 98% recall. Retypd can operate on weaker program representations than the current state of the art, removing the need for high-quality points-to information that may be impractical to compute.},
+    booktitle = {Proceedings of the 37th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+    pages = {27-41},
+    numpages = {15},
+    keywords = {Polymorphism, Pushdown Automata, Static Analyiss, Binary Analysis, Reverse Engineering, Type Systems},
+    location = {Santa Barbara, CA, USA},
+    series = {PLDI '16}
+}
+
+@online{bib:ida,
+    author = {Hex-Rays},
+    title = {IDA Pro},
+    url = {https://www.hex-rays.com/ida-pro/}
+}
+
+@online{bib:artiste,
+    publisher={IMDEA Software Institute},
+    title={ARTISTE: Automatic Generation of Hybrid Data Structure Signatures from Binary Code Executions},
+    author={Juan Caballero and Gustavo Grieco and Mark Marron and Zhiqiang Lin and David I. Urbina},
+    year={2012},
+    address={Madrid, Spain}
+}
+
+@online{bib:jeb,
+    author = {PNF Software},
+    title = {JEB},
+    url = {https://www.pnfsoftware.com/jeb/}
+}
+
+@inproceedings{bib:cati,
+    author={Chen, Ligeng and He, Zhongling and Mao, Bing},
+    booktitle={2020 50th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)},
+    title={CATI: Context-Assisted Type Inference from Stripped Binaries},
+    year={2020},
+    pages={88-98},
+    doi={10.1109/DSN48063.2020.00028}
+}
+
+@INPROCEEDINGS{bib:metrics-effectiveness-decompilers,
+    author={Naeem, Nomair A. and Batchelder, Michael and Hendren, Laurie},
+    booktitle={15th IEEE International Conference on Program Comprehension (ICPC '07)},
+    title={Metrics for Measuring the Effectiveness of Decompilers and Obfuscators},
+    year={2007},
+    pages={253-258},
+    doi={10.1109/ICPC.2007.27}
+}
+
+@online{bib:retdec,
+    author = {Avast},
+    title = {RetDec},
+    url = {https://github.com/avast/retdec},
+    publisher = {GitHub},
+    year = {2022}
 }

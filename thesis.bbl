@@ -21,11 +21,87 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bib:artiste}
+J.~Caballero, G.~Grieco, M.~Marron, Z.~Lin, and D.~I. Urbina. (2012) Artiste:
+  Automatic generation of hybrid data structure signatures from binary code
+  executions. Madrid, Spain.
+
 \bibitem{bib:type-inference-executables}
 \BIBentryALTinterwordspacing
 J.~Caballero and Z.~Lin, ``Type inference on executables,'' \emph{ACM Comput.
   Surv.}, vol.~48, no.~4, may 2016. [Online]. Available:
   \url{https://doi.org/10.1145/2896499}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:malware-obfuscation-techniques}
+I.~You and K.~Yim, ``Malware obfuscation techniques: A brief survey,'' in
+  \emph{Proceedings - 2010 International Conference on Broadband, Wireless
+  Computing Communication and Applications, BWCCA 2010}, 11 2010, pp. 297--300.
+
+\bibitem{bib:practical-analysis-stripped-binary-code}
+L.~Harris and B.~Miller, ``Practical analysis of stripped binary code,''
+  \emph{SIGARCH Computer Architecture News}, vol.~33, pp. 63--68, 12 2005.
+
+\bibitem{bib:disassembly-challenges}
+M.~Prasad and T.~cker Chiueh, ``A binary rewriting defense against stack based
+  buffer overflow attacks,'' in \emph{USENIX Annual Technical Conference,
+  General Track}, 2003.
+
+\bibitem{bib:ida}
+\BIBentryALTinterwordspacing
+Hex-Rays. Ida pro. [Online]. Available: \url{https://www.hex-rays.com/ida-pro/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:jeb}
+\BIBentryALTinterwordspacing
+P.~Software. Jeb. [Online]. Available: \url{https://www.pnfsoftware.com/jeb/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:ghidra}
+\BIBentryALTinterwordspacing
+N.~S.~A. (NSA). Ghidra. [Online]. Available: \url{https://ghidra-sre.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:retdec}
+\BIBentryALTinterwordspacing
+Avast. (2022) Retdec. [Online]. Available:
+  \url{https://github.com/avast/retdec}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:how-far-weve-come}
+\BIBentryALTinterwordspacing
+Z.~Liu and S.~Wang, ``How far we have come: Testing decompilation correctness
+  of c decompilers,'' in \emph{Proceedings of the 29th ACM SIGSOFT
+  International Symposium on Software Testing and Analysis}, ser. ISSTA
+  2020.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: Association
+  for Computing Machinery, 2020, pp. 475--487. [Online]. Available:
+  \url{https://doi.org/10.1145/3395363.3397370}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:metrics-effectiveness-decompilers}
+N.~A. Naeem, M.~Batchelder, and L.~Hendren, ``Metrics for measuring the
+  effectiveness of decompilers and obfuscators,'' in \emph{15th IEEE
+  International Conference on Program Comprehension (ICPC '07)}, 2007, pp.
+  253--258.
+
+\bibitem{bib:sre}
+\BIBentryALTinterwordspacing
+T.~Cipresso and M.~Stamp, \emph{Software Reverse Engineering}.\hskip 1em plus
+  0.5em minus 0.4em\relax Berlin, Heidelberg: Springer Berlin Heidelberg, 2010,
+  pp. 659--696. [Online]. Available:
+  \url{https://doi.org/10.1007/978-3-642-04117-4_31}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:dwarf}
+\BIBentryALTinterwordspacing
+D.~S. Committee. The dwarf debugging standard. [Online]. Available:
+  \url{https://dwarfstd.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:pyelftools}
+\BIBentryALTinterwordspacing
+E.~Bendersky, ``pyelftools,'' 2022. [Online]. Available:
+  \url{https://github.com/eliben/pyelftools}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:stateformer}
@@ -50,36 +126,6 @@ G.~Balakrishnan and T.~Reps, ``Divine: Discovering variables in executables,''
 Z.~Xu, C.~Wen, and S.~Qin, ``Type learning for binaries and its applications,''
   \emph{IEEE Transactions on Reliability}, vol.~PP, pp. 1--20, 12 2018.
 
-\bibitem{bib:malware-obfuscation-techniques}
-I.~You and K.~Yim, ``Malware obfuscation techniques: A brief survey,'' 11 2010,
-  pp. 297--300.
-
-\bibitem{bib:practical-analysis-stripped-binary-code}
-L.~Harris and B.~Miller, ``Practical analysis of stripped binary code,''
-  \emph{SIGARCH Computer Architecture News}, vol.~33, pp. 63--68, 12 2005.
-
-\bibitem{bib:how-far-weve-come}
-\BIBentryALTinterwordspacing
-Z.~Liu and S.~Wang, ``How far we have come: Testing decompilation correctness
-  of c decompilers,'' in \emph{Proceedings of the 29th ACM SIGSOFT
-  International Symposium on Software Testing and Analysis}, ser. ISSTA
-  2020.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: Association
-  for Computing Machinery, 2020, pp. 475--487. [Online]. Available:
-  \url{https://doi.org/10.1145/3395363.3397370}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:sre}
-\BIBentryALTinterwordspacing
-T.~Cipresso and M.~Stamp, \emph{Software Reverse Engineering}.\hskip 1em plus
-  0.5em minus 0.4em\relax Berlin, Heidelberg: Springer Berlin Heidelberg, 2010,
-  pp. 659--696. [Online]. Available:
-  \url{https://doi.org/10.1007/978-3-642-04117-4_31}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:disassembly-challenges}
-M.~Prasad and t.-c. Chiueh, ``A binary rewriting defense against stack based
-  buffer overflow attacks.'' 01 2003, pp. 211--224.
-
 \bibitem{bib:technique-for-decompiling-binary-code-for-assurance}
 \BIBentryALTinterwordspacing
 W.~Klieber, ``A technique for decompiling binary code for software assurance
@@ -88,28 +134,11 @@ W.~Klieber, ``A technique for decompiling binary code for software assurance
   \url{http://insights.sei.cmu.edu/blog/a-technique-for-decompiling-binary-code-for-software-assurance-and-localized-repair/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{bib:dwarf}
-\BIBentryALTinterwordspacing
-D.~S. Committee. The dwarf debugging standard. [Online]. Available:
-  \url{https://dwarfstd.org/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:ghidra}
-\BIBentryALTinterwordspacing
-N.~S.~A. (NSA). Ghidra. [Online]. Available: \url{https://ghidra-sre.org/}
-\BIBentrySTDinterwordspacing
-
 \bibitem{bib:sok-x86-disassembly}
 C.~Pang, R.~Yu, Y.~Chen, E.~Koskinen, G.~Portokalidis, B.~Mao, and J.~Xu,
   ``Sok: All you ever wanted to know about x86/x64 binary disassembly but were
   afraid to ask,'' in \emph{2021 IEEE Symposium on Security and Privacy (SP)},
   2021, pp. 833--851.
-
-\bibitem{bib:pyelftools}
-\BIBentryALTinterwordspacing
-E.~Bendersky, ``pyelftools,'' 2022. [Online]. Available:
-  \url{https://github.com/eliben/pyelftools}
-\BIBentrySTDinterwordspacing
 
 \bibitem{bib:issues-debugging-inspecting-optimized-binaries}
 \BIBentryALTinterwordspacing
@@ -117,5 +146,41 @@ W.~Cohen, ``Possible issues with debugging and inspecting compiler-optimized
   binaries,'' 2020. [Online]. [Online]. Available:
   \url{https://developers.redhat.com/blog/2020/03/13/possible-issues-with-debugging-and-inspecting-compiler-optimized-binaries#debugging_is_hard}
 \BIBentrySTDinterwordspacing
+
+\bibitem{bib:tie}
+J.~Lee, T.~Avgerinos, and D.~Brumley, ``Tie: Principled reverse engineering of
+  types in binary programs,'' in \emph{Network and Distributed System Security
+  Symposium}, 2011.
+
+\bibitem{bib:automatic-re-data-structures-binary-execution}
+Z.~Lin, X.~Zhang, and D.~Xu, ``Automatic reverse engineering of data structures
+  from binary execution,'' in \emph{Proceedings of the 11th Annual Information
+  Security Symposium}, ser. CERIAS '10.\hskip 1em plus 0.5em minus 0.4em\relax
+  West Lafayette, IN: CERIAS - Purdue University, 2010.
+
+\bibitem{bib:scalable-variable-datatype-detection}
+\BIBentryALTinterwordspacing
+K.~ElWazeer, K.~Anand, A.~Kotha, M.~Smithson, and R.~Barua, ``Scalable variable
+  and data type detection in a binary rewriter,'' in \emph{Proceedings of the
+  34th ACM SIGPLAN Conference on Programming Language Design and
+  Implementation}, ser. PLDI '13.\hskip 1em plus 0.5em minus 0.4em\relax New
+  York, NY, USA: Association for Computing Machinery, 2013, pp. 51--60.
+  [Online]. Available: \url{https://doi.org/10.1145/2491956.2462165}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:polymorphic-type-inference-machine-code}
+\BIBentryALTinterwordspacing
+M.~Noonan, A.~Loginov, and D.~Cok, ``Polymorphic type inference for machine
+  code,'' in \emph{Proceedings of the 37th ACM SIGPLAN Conference on
+  Programming Language Design and Implementation}, ser. PLDI '16.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York, NY, USA: Association for Computing
+  Machinery, 2016, pp. 27--41. [Online]. Available:
+  \url{https://doi.org/10.1145/2908080.2908119}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:cati}
+L.~Chen, Z.~He, and B.~Mao, ``Cati: Context-assisted type inference from
+  stripped binaries,'' in \emph{2020 50th Annual IEEE/IFIP International
+  Conference on Dependable Systems and Networks (DSN)}, 2020, pp. 88--98.
 
 \end{thebibliography}
