@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  4 DEC 2022 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  4 DEC 2022 16:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,14 +1009,14 @@ Overfull \hbox (33.42245pt too wide) in paragraph at lines 205--206
 ing tag-specific prop-er-ties of the DIE. Ex-am-ples in-clude "DW_AT_name",
  []
 
-<./figures/parse-dwarf.drawio.png, id=513, 1526.70375pt x 1871.99374pt>
+<./figures/parse-dwarf.drawio.png, id=516, 1526.70375pt x 1871.99374pt>
 File: ./figures/parse-dwarf.drawio.png Graphic file (type png)
 <use ./figures/parse-dwarf.drawio.png>
 Package pdftex.def Info: ./figures/parse-dwarf.drawio.png  used on input line 2
 13.
 (pdftex.def)             Requested size: 469.75502pt x 575.99887pt.
 [16] [17]
-<./figures/ariste-type-lattice.png, id=524, 331.2375pt x 140.02313pt>
+<./figures/ariste-type-lattice.png, id=527, 331.2375pt x 140.02313pt>
 File: ./figures/ariste-type-lattice.png Graphic file (type png)
 <use ./figures/ariste-type-lattice.png>
 Package pdftex.def Info: ./figures/ariste-type-lattice.png  used on input line 
@@ -1039,7 +1039,7 @@ Overfull \hbox (2.28001pt too wide) in paragraph at lines 295--323
  []
 
 [21]
-<./figures/stack-comparison.drawio.png, id=548, 894.34125pt x 800.9925pt>
+<./figures/stack-comparison.drawio.png, id=551, 894.34125pt x 800.9925pt>
 File: ./figures/stack-comparison.drawio.png Graphic file (type png)
 <use ./figures/stack-comparison.drawio.png>
 Package pdftex.def Info: ./figures/stack-comparison.drawio.png  used on input l
@@ -1413,12 +1413,19 @@ Overfull \hbox (13.03453pt too wide) in paragraph at lines 5--14
  [][] 
  []
 
-) [39] [40] [41] [42]
+) [39] [40]
+<./figures/ghidra-miss-scopes.drawio.png, id=674, 880.28876pt x 783.92876pt>
+File: ./figures/ghidra-miss-scopes.drawio.png Graphic file (type png)
+<use ./figures/ghidra-miss-scopes.drawio.png>
+Package pdftex.def Info: ./figures/ghidra-miss-scopes.drawio.png  used on input
+ line 492.
+(pdftex.def)             Requested size: 469.75502pt x 418.32716pt.
+ [41] [42 <./figures/ghidra-miss-scopes.drawio.png>]
 Chapter 5.
 [43
 
 ]
-Overfull \hbox (1.27467pt too wide) in paragraph at lines 511--512
+Overfull \hbox (1.27467pt too wide) in paragraph at lines 519--520
 []\T1/ptm/m/n/12 In our high-level varn-ode anal-y-sis, we find that the re-cov
 -ery ac-cu-racy of prim-i-tive (\T1/ptm/m/it/12 INT\T1/ptm/m/n/12 , \T1/ptm/m/i
 t/12 FLOAT\T1/ptm/m/n/12 ,
@@ -6940,20 +6947,20 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 120--125
  []
 
 [323] [324]) [325]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 664.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 664.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 656.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 656.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 664.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 664.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DEED8B18874BEE311B543D652983ECBD;7797.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 656.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 664.
  ) 
 Here is how much of TeX's memory you used:
- 25909 strings out of 483107
- 449506 string characters out of 5964629
- 744052 words of memory out of 5000000
- 39811 multiletter control sequences out of 15000+600000
+ 25917 strings out of 483107
+ 449790 string characters out of 5964629
+ 744272 words of memory out of 5000000
+ 39817 multiletter control sequences out of 15000+600000
  564767 words of font info for 68 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,12n,60p,2102b,859s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -6962,10 +6969,10 @@ Here is how much of TeX's memory you used:
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (334 pages, 725999 bytes).
+Output written on thesis.pdf (334 pages, 758069 bytes).
 PDF statistics:
- 2034 PDF objects out of 2073 (max. 8388607)
- 1669 compressed objects within 17 object streams
- 484 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2039 PDF objects out of 2073 (max. 8388607)
+ 1672 compressed objects within 17 object streams
+ 485 named destinations out of 1000 (max. 500000)
+ 385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
