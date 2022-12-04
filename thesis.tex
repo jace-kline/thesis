@@ -320,6 +320,14 @@ We first implement an approach to recursively strip away the "complex layers" of
 
 We apply this primitive decomposition to each varnode in the sets of ground truth and decompiler varnodes. With the two sets of decomposed varnodes, we leverage the same variable comparison approach described previously to compare the varnodes in these sets. The resulting comparison information is treated as a separate analysis from the unaltered varnode sets.
 
+% [Figure: An example of varnode comparisons on the stack]
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{./figures/stack-comparison.drawio.png}
+    \caption{An example of varnode comparisons between ground truth and decompiler varnodes for a given stack frame}
+    \label{fig:stack-comparison}
+\end{figure}
+
 \subsection{Function Comparison}
 
 The first step in function comparison is to determine whether each ground-truth function is found by the decompiler. We first order the functions from each source by the start PC address of the function. Next, we attempt to match the functions from the two sources based on start address. Any functions from the ground-truth that are not matched by a decompiler function are considered "missed". Functions the are found by the decompiler but absent from the ground-truth are considered "extraneous". For any missed functions, we consider its associated parameters, local variables, and data types to also be "missed".
@@ -354,6 +362,8 @@ Recall that a \emph{Varnode} is defined to be a source-level \emph{Variable} tie
 \end{itemize}
 
 We repeat this varnode analysis for the decomposed (primitive) set of varnodes resulting from recursively decomposing each of the high-level varnodes into its most primitive set of varnodes. We also repeat our analysis of the original set of varnodes filtered by metatype. The metatypes considered are \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION}. Lastly, we repeat the analysis of the decomposed varnodes when filtered by metatype. For this metatype analysis over the decomposed varnodes, we only consider the primitive metatypes \emph{INT}, \emph{FLOAT}, and \emph{POINTER} since the varnodes are guaranteed to be primitive.
+
+
 
 \subsection{Data Bytes}
 
