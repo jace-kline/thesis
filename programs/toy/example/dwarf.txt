@@ -1,0 +1,88 @@
+
+<0x40> DW_TAG_base_type
+    DW_AT_name: int
+    DW_AT_encoding: 5 (signed)
+    DW_AT_byte_size: 4
+
+<0x47> DW_TAG_base_type
+    DW_AT_name: unsigned int
+    DW_AT_encoding: 7 (unsigned)
+    DW_AT_byte_size: 4
+
+<0xa9> DW_TAG_structure_type
+    DW_AT_name: node_t
+    DW_AT_byte_size: 16
+
+    <0xb6> DW_TAG_member
+        DW_AT_name: val
+        DW_AT_type: <0x47>
+        DW_AT_data_member_location: 0
+
+    <0xb6> DW_TAG_member
+        DW_AT_name: prev
+        DW_AT_type: <0xd1>
+        DW_AT_data_member_location: 8
+
+<0xd1> DW_TAG_pointer_type
+    DW_AT_byte_size: 8
+    DW_AT_type: <0xa9>
+
+<0x93> DW_TAG_variable
+    DW_AT_name: myglobal
+    DW_AT_type: <0x47>
+    DW_AT_location: (DW_OP_addr: 4014)
+
+<0x119> DW_TAG_subprogram
+    DW_AT_name: main
+    DW_AT_low_pc: 0x124a
+    DW_AT_high_pc: 0x80
+    DW_AT_type: <0x40>
+
+    <0x13b> DW_TAG_variable
+        DW_AT_name: i
+        DW_AT_type: <0x47>
+        DW_AT_location: (DW_OP_fbreg: -36)
+
+    <0x148> DW_TAG_variable
+        DW_AT_name: end_list
+        DW_AT_type: <0xd1>
+        DW_AT_location: (DW_OP_fbreg: -24)
+
+    <0x157> DW_TAG_variable
+        DW_AT_name: iter
+        DW_AT_type: <0xd1>
+        DW_AT_location: (DW_OP_fbreg: -32)
+
+<0x167> DW_TAG_subprogram
+    DW_AT_name: free_fib_list
+    DW_AT_low_pc: 0x1214
+    DW_AT_high_pc: 0x36
+
+    <0x185> DW_TAG_formal_parameter
+        DW_AT_name: node
+        DW_AT_type: <0xd1>
+        DW_AT_location: (DW_OP_fbreg: -24)
+
+<0x195> DW_TAG_subprogram
+    DW_AT_name: make_fib_list
+    DW_AT_low_pc: 0x1189
+    DW_AT_high_pc: 0x8b
+
+    <0x1b3> DW_TAG_formal_parameter
+        DW_AT_name: n
+        DW_AT_type: <0x47>
+        DW_AT_location: (DW_OP_fbreg: -36)
+
+    <0x1c0> DW_TAG_variable
+        DW_AT_name: node
+        DW_AT_type: <0xd1>
+        DW_AT_location: (DW_OP_fbreg: -32)
+
+    <0x1cf> DW_TAG_lexical_block
+        DW_AT_low_pc: 0x11c4
+        DW_AT_high_pc: 0x4a
+
+        <0x1e0> DW_TAG_variable
+            DW_AT_name: prev
+            DW_AT_type: <0xd1>
+            DW_AT_location: (DW_OP_fbreg: -24)

@@ -1,0 +1,140 @@
+
+0: DataTypeIntStub {
+    size = 4,
+    signed = True
+}
+
+1: DataTypeIntStub {
+    size = 4,
+    signed = False
+}
+
+2: DataTypeStructStub {
+    size = 16,
+    membertypes = [1,3]
+}
+
+3: DataTypePointerStub {
+    size = 8,
+    basetype = 2
+}
+
+4: VariableStub {
+    name = "myglobal",
+    liveranges = [
+        AddressLiveRange { 
+            addr = AbsoluteAddress { addr = 4014 }, 
+            ...
+        }
+    ],
+    dtype = 1
+}
+
+5: FunctionStub {
+    name = "main",
+    params = [],
+    vars = [6,7,8],
+    rettype = 0
+}
+
+6: VariableStub {
+    name = "i",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -36 }, 
+            ...
+        }
+    ],
+    dtype = 0
+}
+
+7: VariableStub {
+    name = "end_list",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -24 }, 
+            ...
+        }
+    ],
+    dtype = 3
+}
+
+8: VariableStub {
+    name = "iter",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -32 }, 
+            ...
+        }
+    ],
+    dtype = 3
+}
+
+9: FunctionStub {
+    name = "free_fib_list",
+    params = [10],
+    vars = [],
+    rettype = 11
+}
+
+10: VariableStub {
+    name = "node",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -24 }, 
+            ...
+        }
+    ],
+    dtype = 3,
+    param = True
+}
+
+11: DataTypeVoidStub {
+    size = 0
+}
+
+12: FunctionStub {
+    name = "make_fib_list",
+    params = [13],
+    vars = [14,15],
+    rettype = 3
+}
+
+13: VariableStub {
+    name = "n",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -36 }, 
+            ...
+        }
+    ],
+    dtype = 1,
+    param = True
+}
+
+14: VariableStub {
+    name = "node",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -32 }, 
+            ...
+        }
+    ],
+    dtype = 3
+}
+
+15: VariableStub {
+    name = "prev",
+    liveranges = [
+        AddressLiveRange { 
+            addr = StackAddress { offset = -24 }, 
+            ...
+        }
+    ],
+    dtype = 3
+}
+
+16: ProgramInfoStub {
+    globals = [4],
+    functions = [5,9,12]
+}

@@ -1,10 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-unsigned int myglobal;
-
 struct node_t {
-    unsigned int val;
+    int val;
     struct node_t *prev;
 };
 
@@ -30,8 +28,7 @@ void free_fib_list(struct node_t *node) {
 }
 
 int main() {
-    myglobal = 5;
-    unsigned int i = myglobal;
+    unsigned int i = 5;
     struct node_t *end_list = make_fib_list(i);
     struct node_t *iter = end_list;
 

@@ -23,23 +23,23 @@
 \contentsline {subsubsection}{\numberline {3.4.1.1}Definitions}{18}{subsubsection.3.4.1.1}%
 \contentsline {subsubsection}{\numberline {3.4.1.2}Comparison Logic}{19}{subsubsection.3.4.1.2}%
 \contentsline {subsection}{\numberline {3.4.2}Variable Comparison}{20}{subsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{22}{subsubsection.3.4.2.1}%
-\contentsline {subsection}{\numberline {3.4.3}Function Comparison}{24}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{24}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Functions}{24}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Varnodes}{25}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Data Bytes}{26}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{26}{subsection.3.5.4}%
-\contentsline {chapter}{\numberline {4}Evaluation}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Setup}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Function Recovery}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{32}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{33}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{37}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{38}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{40}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusion}{42}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Summary of Methodology}{42}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Summary of Results}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitations}{44}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Future Work}{46}{section.5.4}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}Decomposed Variable Comparison}{21}{subsubsection.3.4.2.1}%
+\contentsline {subsection}{\numberline {3.4.3}Function Comparison}{22}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Quantitative Evaluation Metrics}{22}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Functions}{23}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Varnodes}{23}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Data Bytes}{24}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Array Comparisons}{25}{subsection.3.5.4}%
+\contentsline {chapter}{\numberline {4}Evaluation}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Setup}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Function Recovery}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}High-Level Variable (Varnode) Recovery}{33}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Decomposed Variable (Varnode) Recovery}{34}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Data Bytes Recovery}{38}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Array Inference Accuracy}{39}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Debug Compilation Case Discussion}{41}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusion}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Summary of Methodology}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Summary of Results}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Limitations}{45}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Future Work}{47}{section.5.4}%

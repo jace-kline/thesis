@@ -1,0 +1,131 @@
+@startuml example-dsl
+
+object "ProgramInfo" as proginfo {
+    globals
+    functions
+}
+
+object "DataTypeInt" as dtype_signed_int {
+    size = 4
+    signed = True
+}
+
+object "DataTypeInt" as dtype_unsigned_int {
+    size = 4
+    signed = False
+}
+
+object "DataTypeStruct" as dtype_struct_node_t {
+    name = "node_t"
+    size = 16
+    membertypes
+}
+dtype_struct_node_t::membertypes --> dtype_unsigned_int
+dtype_struct_node_t::membertypes --> DataTypePointer
+
+object DataTypePointer {
+    size = 8
+    basetype
+}
+
+DataTypePointer::basetype --> dtype_struct_node_t
+
+object "Variable" as var_myglobal {
+    name = "myglobal"
+    liveranges = [<absolute:4014>]
+    dtype
+}
+var_myglobal::dtype --> dtype_unsigned_int
+
+object "Function" as fn_main {
+    name = "main"
+    params
+    vars
+    rettype
+}
+fn_main::rettype --> dtype_signed_int
+
+object "Variable" as var_main_i {
+    name = "i"
+    liveranges = [<stack:-36>]
+    dtype
+}
+
+object "Variable" as var_main_end_list {
+    name = "end_list"
+    liveranges = [<stack:-24>]
+    dtype
+}
+
+object "Variable" as var_main_iter {
+    name = "iter"
+    liveranges = [<stack:-32>]
+    dtype
+}
+
+fn_main::vars --> var_main_i
+fn_main::vars --> var_main_end_list
+fn_main::vars --> var_main_iter
+
+object "Function" as fn_free_fib_list {
+    name = "free_fib_list"
+    params
+    vars
+    rettype
+}
+
+object "DataTypeVoid" as dtype_void {
+    size = 0
+}
+fn_free_fib_list::rettype --> dtype_void
+
+object "Variable" as var_free_fib_list_node {
+    name = "node"
+    liveranges = [<stack:-24>]
+    dtype
+    param = True
+}
+fn_free_fib_list::params --> var_free_fib_list_node
+var_free_fib_list_node::dtype --> DataTypePointer
+
+object "Function" as fn_make_fib_list {
+    name = "make_fib_list"
+    params
+    vars
+    rettype
+}
+fn_make_fib_list::rettype --> DataTypePointer
+
+object "Variable" as var_make_fib_list_n {
+    name = "n"
+    liveranges = [<stack:-36>]
+    dtype
+    param = True
+}
+fn_make_fib_list::params --> var_make_fib_list_n
+var_make_fib_list_n::dtype --> dtype_unsigned_int
+
+object "Variable" as var_make_fib_list_node {
+    name = "node"
+    liveranges = [<stack:-32>]
+    dtype
+}
+fn_make_fib_list::vars --> var_make_fib_list_node
+var_make_fib_list_node::dtype --> DataTypePointer
+
+object "Variable" as var_make_fib_list_prev {
+    name = "prev"
+    liveranges = [<stack:-24>]
+    dtype
+}
+fn_make_fib_list::vars --> var_make_fib_list_prev
+var_make_fib_list_prev::dtype --> DataTypePointer
+
+proginfo::globals --> var_myglobal
+proginfo::functions --> fn_main
+proginfo::functions --> fn_free_fib_list
+proginfo::functions --> fn_make_fib_list
+
+
+
+@enduml
