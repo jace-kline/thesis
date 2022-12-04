@@ -42,6 +42,8 @@ object "Function" as fn_main {
     params
     vars
     rettype
+    startaddr = <absolute:0x124a>
+    endaddr = <absolute:0x12ca>
 }
 fn_main::rettype --> dtype_signed_int
 
@@ -72,6 +74,8 @@ object "Function" as fn_free_fib_list {
     params
     vars
     rettype
+    startaddr = <absolute:0x1214>
+    endaddr = <absolute:124a>
 }
 
 object "DataTypeVoid" as dtype_void {
@@ -93,6 +97,8 @@ object "Function" as fn_make_fib_list {
     params
     vars
     rettype
+    startaddr = <absolute:0x1189>
+    endaddr = <absolute:0x1214>
 }
 fn_make_fib_list::rettype --> DataTypePointer
 
