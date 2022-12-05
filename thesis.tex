@@ -247,7 +247,7 @@ We define the \emph{metatype} of a data type to be general "class" of the given 
     \label{fig:artiste-type-lattice}
 \end{figure}
 
-A \emph{primitive type lattice} \cite{bib:type-inference-executables} is used to hierarchially relate primitive data types based on their metatype, size, and signedness (if applicable). More general types are located higher in the lattice while more specific types are located closer to the leaves. A type lattice may be used to determine whether two primitive data types are equivalent or share a common parent type. Our framework leverages the ARTISTE primitive type lattice defined in Caballero et. al \cite{bib:artiste} and shown in Figure \ref{fig:artiste-type-lattice}.
+A \emph{primitive type lattice} \cite{bib:type-inference-executables} is used to hierarchically relate primitive data types based on their metatype, size, and signedness (if applicable). More general types are located higher in the lattice while more specific types are located closer to the leaves. A type lattice may be used to determine whether two primitive data types are equivalent or share a common parent type. Our framework leverages the ARTISTE primitive type lattice defined in Caballero et. al \cite{bib:artiste} and shown in Figure \ref{fig:artiste-type-lattice}.
 
 % [Figure: Subset relationship example(s)]
 
@@ -352,7 +352,7 @@ For each "matched" function based on start PC address, we compute and store info
 
 \section{Quantitative Evaluation Metrics}
 
-In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in Section \ref{sec:evaluation}.
+In this section, we define quantitative metrics for evaluating the accuracy of the a given decompiler when compared to a ground-truth source. We rely on the function, variable, and data type comparison information discussed previously to extract these metrics. In the following sub-sections, we define sets of metrics that associated with tables seen in Chapter \ref{sec:evaluation}.
 
 \subsection{Functions}
 

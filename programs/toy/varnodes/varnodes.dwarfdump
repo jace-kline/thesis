@@ -1,0 +1,846 @@
+
+varnodes:     file format elf64-x86-64
+
+Contents of the .eh_frame section (loaded from varnodes):
+
+
+00000000 0000000000000014 00000000 CIE
+  Version:               1
+  Augmentation:          "zR"
+  Code alignment factor: 1
+  Data alignment factor: -8
+  Return address column: 16
+  Augmentation data:     1b
+  DW_CFA_def_cfa: r7 (rsp) ofs 8
+  DW_CFA_offset: r16 (rip) at cfa-8
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000018 0000000000000014 0000001c FDE cie=00000000 pc=00000000000010a0..00000000000010cf
+  DW_CFA_advance_loc: 4 to 00000000000010a4
+  DW_CFA_undefined: r16 (rip)
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000030 0000000000000024 00000034 FDE cie=00000000 pc=0000000000001020..0000000000001060
+  DW_CFA_def_cfa_offset: 16
+  DW_CFA_advance_loc: 6 to 0000000000001026
+  DW_CFA_def_cfa_offset: 24
+  DW_CFA_advance_loc: 10 to 0000000000001030
+  DW_CFA_def_cfa_expression (DW_OP_breg7 (rsp): 8; DW_OP_breg16 (rip): 0; DW_OP_lit15; DW_OP_and; DW_OP_lit10; DW_OP_ge; DW_OP_lit3; DW_OP_shl; DW_OP_plus)
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000058 0000000000000014 0000005c FDE cie=00000000 pc=0000000000001060..0000000000001070
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000070 0000000000000014 00000074 FDE cie=00000000 pc=0000000000001070..00000000000010a0
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000088 000000000000001c 0000008c FDE cie=00000000 pc=0000000000001189..0000000000001208
+  DW_CFA_advance_loc: 8 to 0000000000001191
+  DW_CFA_def_cfa_offset: 32
+  DW_CFA_advance_loc1: 113 to 0000000000001202
+  DW_CFA_remember_state
+  DW_CFA_def_cfa_offset: 8
+  DW_CFA_advance_loc: 1 to 0000000000001203
+  DW_CFA_restore_state
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+000000a8 0000000000000044 000000ac FDE cie=00000000 pc=0000000000001210..0000000000001275
+  DW_CFA_advance_loc: 6 to 0000000000001216
+  DW_CFA_def_cfa_offset: 16
+  DW_CFA_offset: r15 (r15) at cfa-16
+  DW_CFA_advance_loc: 9 to 000000000000121f
+  DW_CFA_def_cfa_offset: 24
+  DW_CFA_offset: r14 (r14) at cfa-24
+  DW_CFA_advance_loc: 5 to 0000000000001224
+  DW_CFA_def_cfa_offset: 32
+  DW_CFA_offset: r13 (r13) at cfa-32
+  DW_CFA_advance_loc: 5 to 0000000000001229
+  DW_CFA_def_cfa_offset: 40
+  DW_CFA_offset: r12 (r12) at cfa-40
+  DW_CFA_advance_loc: 4 to 000000000000122d
+  DW_CFA_def_cfa_offset: 48
+  DW_CFA_offset: r6 (rbp) at cfa-48
+  DW_CFA_advance_loc: 8 to 0000000000001235
+  DW_CFA_def_cfa_offset: 56
+  DW_CFA_offset: r3 (rbx) at cfa-56
+  DW_CFA_advance_loc: 7 to 000000000000123c
+  DW_CFA_def_cfa_offset: 64
+  DW_CFA_advance_loc: 46 to 000000000000126a
+  DW_CFA_def_cfa_offset: 56
+  DW_CFA_advance_loc: 1 to 000000000000126b
+  DW_CFA_def_cfa_offset: 48
+  DW_CFA_advance_loc: 1 to 000000000000126c
+  DW_CFA_def_cfa_offset: 40
+  DW_CFA_advance_loc: 2 to 000000000000126e
+  DW_CFA_def_cfa_offset: 32
+  DW_CFA_advance_loc: 2 to 0000000000001270
+  DW_CFA_def_cfa_offset: 24
+  DW_CFA_advance_loc: 2 to 0000000000001272
+  DW_CFA_def_cfa_offset: 16
+  DW_CFA_advance_loc: 2 to 0000000000001274
+  DW_CFA_def_cfa_offset: 8
+  DW_CFA_nop
+
+000000f0 0000000000000010 000000f4 FDE cie=00000000 pc=0000000000001280..0000000000001285
+  DW_CFA_nop
+  DW_CFA_nop
+  DW_CFA_nop
+
+00000104 ZERO terminator
+
+
+Contents of the .debug_aranges section (loaded from varnodes):
+
+  Length:                   44
+  Version:                  2
+  Offset into .debug_info:  0x0
+  Pointer Size:             8
+  Segment Size:             0
+
+    Address            Length
+    0000000000001189 000000000000007f 
+    0000000000000000 0000000000000000 
+
+Contents of the .debug_info section (loaded from varnodes):
+
+  Compilation Unit @ offset 0x0:
+   Length:        0x2cc (32-bit)
+   Version:       4
+   Abbrev Offset: 0x0
+   Pointer Size:  8
+ <0><b>: Abbrev Number: 1 (DW_TAG_compile_unit)
+    <c>   DW_AT_producer    : (indirect string, offset: 0x70): GNU C17 11.1.0 -mtune=generic -march=x86-64 -g -O1 -fasynchronous-unwind-tables -fstack-protector-strong -fstack-clash-protection -fcf-protection
+    <10>   DW_AT_language    : 12	(ANSI C99)
+    <11>   DW_AT_name        : (indirect string, offset: 0x65): varnodes.c
+    <15>   DW_AT_comp_dir    : (indirect string, offset: 0x2b): /home/jacekline/dev/research/thesis/programs/toy/varnodes
+    <19>   DW_AT_low_pc      : 0x1189
+    <21>   DW_AT_high_pc     : 0x7f
+    <29>   DW_AT_stmt_list   : 0x0
+ <1><2d>: Abbrev Number: 2 (DW_TAG_base_type)
+    <2e>   DW_AT_byte_size   : 8
+    <2f>   DW_AT_encoding    : 7	(unsigned)
+    <30>   DW_AT_name        : (indirect string, offset: 0x139): long unsigned int
+ <1><34>: Abbrev Number: 2 (DW_TAG_base_type)
+    <35>   DW_AT_byte_size   : 4
+    <36>   DW_AT_encoding    : 7	(unsigned)
+    <37>   DW_AT_name        : (indirect string, offset: 0x13e): unsigned int
+ <1><3b>: Abbrev Number: 2 (DW_TAG_base_type)
+    <3c>   DW_AT_byte_size   : 1
+    <3d>   DW_AT_encoding    : 8	(unsigned char)
+    <3e>   DW_AT_name        : (indirect string, offset: 0x112): unsigned char
+ <1><42>: Abbrev Number: 2 (DW_TAG_base_type)
+    <43>   DW_AT_byte_size   : 2
+    <44>   DW_AT_encoding    : 7	(unsigned)
+    <45>   DW_AT_name        : (indirect string, offset: 0x120): short unsigned int
+ <1><49>: Abbrev Number: 2 (DW_TAG_base_type)
+    <4a>   DW_AT_byte_size   : 1
+    <4b>   DW_AT_encoding    : 6	(signed char)
+    <4c>   DW_AT_name        : (indirect string, offset: 0x114): signed char
+ <1><50>: Abbrev Number: 2 (DW_TAG_base_type)
+    <51>   DW_AT_byte_size   : 2
+    <52>   DW_AT_encoding    : 5	(signed)
+    <53>   DW_AT_name        : (indirect string, offset: 0xd): short int
+ <1><57>: Abbrev Number: 3 (DW_TAG_base_type)
+    <58>   DW_AT_byte_size   : 4
+    <59>   DW_AT_encoding    : 5	(signed)
+    <5a>   DW_AT_name        : int
+ <1><5e>: Abbrev Number: 2 (DW_TAG_base_type)
+    <5f>   DW_AT_byte_size   : 8
+    <60>   DW_AT_encoding    : 5	(signed)
+    <61>   DW_AT_name        : (indirect string, offset: 0x102): long int
+ <1><65>: Abbrev Number: 2 (DW_TAG_base_type)
+    <66>   DW_AT_byte_size   : 1
+    <67>   DW_AT_encoding    : 6	(signed char)
+    <68>   DW_AT_name        : (indirect string, offset: 0x11b): char
+ <1><6c>: Abbrev Number: 4 (DW_TAG_const_type)
+    <6d>   DW_AT_type        : <0x65>
+ <1><71>: Abbrev Number: 5 (DW_TAG_pointer_type)
+    <72>   DW_AT_byte_size   : 8
+    <73>   DW_AT_type        : <0x6c>
+ <1><77>: Abbrev Number: 6 (DW_TAG_restrict_type)
+    <78>   DW_AT_type        : <0x71>
+ <1><7c>: Abbrev Number: 7 (DW_TAG_subprogram)
+    <7d>   DW_AT_external    : 1
+    <7d>   DW_AT_name        : (indirect string, offset: 0x0): __printf_chk
+    <81>   DW_AT_decl_file   : 2
+    <82>   DW_AT_decl_line   : 90
+    <83>   DW_AT_decl_column : 12
+    <84>   DW_AT_prototyped  : 1
+    <84>   DW_AT_type        : <0x57>
+    <88>   DW_AT_declaration : 1
+    <88>   DW_AT_sibling     : <0x98>
+ <2><8c>: Abbrev Number: 8 (DW_TAG_formal_parameter)
+    <8d>   DW_AT_type        : <0x57>
+ <2><91>: Abbrev Number: 8 (DW_TAG_formal_parameter)
+    <92>   DW_AT_type        : <0x71>
+ <2><96>: Abbrev Number: 9 (DW_TAG_unspecified_parameters)
+ <2><97>: Abbrev Number: 0
+ <1><98>: Abbrev Number: 10 (DW_TAG_subprogram)
+    <99>   DW_AT_external    : 1
+    <99>   DW_AT_name        : (indirect string, offset: 0x20): scanf
+    <9d>   DW_AT_decl_file   : 3
+    <9e>   DW_AT_decl_line   : 410
+    <a0>   DW_AT_decl_column : 12
+    <a1>   DW_AT_linkage_name: (indirect string, offset: 0x17): __isoc99_scanf
+    <a5>   DW_AT_prototyped  : 1
+    <a5>   DW_AT_type        : <0x57>
+    <a9>   DW_AT_declaration : 1
+    <a9>   DW_AT_sibling     : <0xb4>
+ <2><ad>: Abbrev Number: 8 (DW_TAG_formal_parameter)
+    <ae>   DW_AT_type        : <0x71>
+ <2><b2>: Abbrev Number: 9 (DW_TAG_unspecified_parameters)
+ <2><b3>: Abbrev Number: 0
+ <1><b4>: Abbrev Number: 11 (DW_TAG_subprogram)
+    <b5>   DW_AT_external    : 1
+    <b5>   DW_AT_name        : (indirect string, offset: 0x26): main
+    <b9>   DW_AT_decl_file   : 1
+    <ba>   DW_AT_decl_line   : 4
+    <bb>   DW_AT_decl_column : 5
+    <bc>   DW_AT_type        : <0x57>
+    <c0>   DW_AT_low_pc      : 0x1189
+    <c8>   DW_AT_high_pc     : 0x7f
+    <d0>   DW_AT_frame_base  : 1 byte block: 9c 	(DW_OP_call_frame_cfa)
+    <d2>   DW_AT_GNU_all_call_sites: 1
+    <d2>   DW_AT_sibling     : <0x2a7>
+ <2><d6>: Abbrev Number: 12 (DW_TAG_variable)
+    <d7>   DW_AT_name        : a
+    <d9>   DW_AT_decl_file   : 1
+    <da>   DW_AT_decl_line   : 5
+    <db>   DW_AT_decl_column : 9
+    <dc>   DW_AT_type        : <0x57>
+    <e0>   DW_AT_location    : 2 byte block: 91 64 	(DW_OP_fbreg: -28)
+ <2><e3>: Abbrev Number: 13 (DW_TAG_variable)
+    <e4>   DW_AT_name        : b
+    <e6>   DW_AT_decl_file   : 1
+    <e7>   DW_AT_decl_line   : 5
+    <e8>   DW_AT_decl_column : 12
+    <e9>   DW_AT_type        : <0x57>
+    <ed>   DW_AT_location    : 0x6 (location list)
+    <f1>   DW_AT_GNU_locviews: 0x0
+ <2><f5>: Abbrev Number: 13 (DW_TAG_variable)
+    <f6>   DW_AT_name        : c
+    <f8>   DW_AT_decl_file   : 1
+    <f9>   DW_AT_decl_line   : 5
+    <fa>   DW_AT_decl_column : 15
+    <fb>   DW_AT_type        : <0x57>
+    <ff>   DW_AT_location    : 0x69 (location list)
+    <103>   DW_AT_GNU_locviews: 0x67
+ <2><107>: Abbrev Number: 13 (DW_TAG_variable)
+    <108>   DW_AT_name        : d
+    <10a>   DW_AT_decl_file   : 1
+    <10b>   DW_AT_decl_line   : 5
+    <10c>   DW_AT_decl_column : 18
+    <10d>   DW_AT_type        : <0x57>
+    <111>   DW_AT_location    : 0x94 (location list)
+    <115>   DW_AT_GNU_locviews: 0x92
+ <2><119>: Abbrev Number: 13 (DW_TAG_variable)
+    <11a>   DW_AT_name        : e
+    <11c>   DW_AT_decl_file   : 1
+    <11d>   DW_AT_decl_line   : 5
+    <11e>   DW_AT_decl_column : 21
+    <11f>   DW_AT_type        : <0x57>
+    <123>   DW_AT_location    : 0xbf (location list)
+    <127>   DW_AT_GNU_locviews: 0xbd
+ <2><12b>: Abbrev Number: 13 (DW_TAG_variable)
+    <12c>   DW_AT_name        : f
+    <12e>   DW_AT_decl_file   : 1
+    <12f>   DW_AT_decl_line   : 5
+    <130>   DW_AT_decl_column : 24
+    <131>   DW_AT_type        : <0x57>
+    <135>   DW_AT_location    : 0xea (location list)
+    <139>   DW_AT_GNU_locviews: 0xe8
+ <2><13d>: Abbrev Number: 13 (DW_TAG_variable)
+    <13e>   DW_AT_name        : g
+    <140>   DW_AT_decl_file   : 1
+    <141>   DW_AT_decl_line   : 5
+    <142>   DW_AT_decl_column : 27
+    <143>   DW_AT_type        : <0x57>
+    <147>   DW_AT_location    : 0x115 (location list)
+    <14b>   DW_AT_GNU_locviews: 0x113
+ <2><14f>: Abbrev Number: 13 (DW_TAG_variable)
+    <150>   DW_AT_name        : h
+    <152>   DW_AT_decl_file   : 1
+    <153>   DW_AT_decl_line   : 5
+    <154>   DW_AT_decl_column : 30
+    <155>   DW_AT_type        : <0x57>
+    <159>   DW_AT_location    : 0x140 (location list)
+    <15d>   DW_AT_GNU_locviews: 0x13e
+ <2><161>: Abbrev Number: 13 (DW_TAG_variable)
+    <162>   DW_AT_name        : i
+    <164>   DW_AT_decl_file   : 1
+    <165>   DW_AT_decl_line   : 5
+    <166>   DW_AT_decl_column : 33
+    <167>   DW_AT_type        : <0x57>
+    <16b>   DW_AT_location    : 0x16b (location list)
+    <16f>   DW_AT_GNU_locviews: 0x169
+ <2><173>: Abbrev Number: 13 (DW_TAG_variable)
+    <174>   DW_AT_name        : j
+    <176>   DW_AT_decl_file   : 1
+    <177>   DW_AT_decl_line   : 5
+    <178>   DW_AT_decl_column : 36
+    <179>   DW_AT_type        : <0x57>
+    <17d>   DW_AT_location    : 0x196 (location list)
+    <181>   DW_AT_GNU_locviews: 0x194
+ <2><185>: Abbrev Number: 13 (DW_TAG_variable)
+    <186>   DW_AT_name        : k
+    <188>   DW_AT_decl_file   : 1
+    <189>   DW_AT_decl_line   : 5
+    <18a>   DW_AT_decl_column : 39
+    <18b>   DW_AT_type        : <0x57>
+    <18f>   DW_AT_location    : 0x1c1 (location list)
+    <193>   DW_AT_GNU_locviews: 0x1bf
+ <2><197>: Abbrev Number: 13 (DW_TAG_variable)
+    <198>   DW_AT_name        : l
+    <19a>   DW_AT_decl_file   : 1
+    <19b>   DW_AT_decl_line   : 5
+    <19c>   DW_AT_decl_column : 42
+    <19d>   DW_AT_type        : <0x57>
+    <1a1>   DW_AT_location    : 0x1ec (location list)
+    <1a5>   DW_AT_GNU_locviews: 0x1ea
+ <2><1a9>: Abbrev Number: 13 (DW_TAG_variable)
+    <1aa>   DW_AT_name        : m
+    <1ac>   DW_AT_decl_file   : 1
+    <1ad>   DW_AT_decl_line   : 5
+    <1ae>   DW_AT_decl_column : 45
+    <1af>   DW_AT_type        : <0x57>
+    <1b3>   DW_AT_location    : 0x217 (location list)
+    <1b7>   DW_AT_GNU_locviews: 0x215
+ <2><1bb>: Abbrev Number: 14 (DW_TAG_variable)
+    <1bc>   DW_AT_name        : n
+    <1be>   DW_AT_decl_file   : 1
+    <1bf>   DW_AT_decl_line   : 5
+    <1c0>   DW_AT_decl_column : 48
+    <1c1>   DW_AT_type        : <0x57>
+ <2><1c5>: Abbrev Number: 14 (DW_TAG_variable)
+    <1c6>   DW_AT_name        : o
+    <1c8>   DW_AT_decl_file   : 1
+    <1c9>   DW_AT_decl_line   : 5
+    <1ca>   DW_AT_decl_column : 51
+    <1cb>   DW_AT_type        : <0x57>
+ <2><1cf>: Abbrev Number: 15 (DW_TAG_variable)
+    <1d0>   DW_AT_name        : p
+    <1d2>   DW_AT_decl_file   : 1
+    <1d3>   DW_AT_decl_line   : 5
+    <1d4>   DW_AT_decl_column : 54
+    <1d5>   DW_AT_type        : <0x57>
+    <1d9>   DW_AT_const_value : 0
+ <2><1da>: Abbrev Number: 16 (DW_TAG_inlined_subroutine)
+    <1db>   DW_AT_abstract_origin: <0x2a7>
+    <1df>   DW_AT_entry_pc    : 0x11a1
+    <1e7>   DW_AT_GNU_entry_view: 2
+    <1e8>   DW_AT_low_pc      : 0x11a1
+    <1f0>   DW_AT_high_pc     : 0x11
+    <1f8>   DW_AT_call_file   : 1
+    <1f9>   DW_AT_call_line   : 7
+    <1fa>   DW_AT_call_column : 5
+    <1fb>   DW_AT_sibling     : <0x22d>
+ <3><1ff>: Abbrev Number: 17 (DW_TAG_formal_parameter)
+    <200>   DW_AT_abstract_origin: <0x2b8>
+    <204>   DW_AT_location    : 0x242 (location list)
+    <208>   DW_AT_GNU_locviews: 0x240
+ <3><20c>: Abbrev Number: 18 (DW_TAG_GNU_call_site)
+    <20d>   DW_AT_low_pc      : 0x11b2
+    <215>   DW_AT_abstract_origin: <0x7c>
+ <4><219>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <21a>   DW_AT_location    : 1 byte block: 55 	(DW_OP_reg5 (rdi))
+    <21c>   DW_AT_GNU_call_site_value: 1 byte block: 31 	(DW_OP_lit1)
+ <4><21e>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <21f>   DW_AT_location    : 1 byte block: 54 	(DW_OP_reg4 (rsi))
+    <221>   DW_AT_GNU_call_site_value: 9 byte block: 3 4 20 0 0 0 0 0 0 	(DW_OP_addr: 2004)
+ <4><22b>: Abbrev Number: 0
+ <3><22c>: Abbrev Number: 0
+ <2><22d>: Abbrev Number: 20 (DW_TAG_inlined_subroutine)
+    <22e>   DW_AT_abstract_origin: <0x2a7>
+    <232>   DW_AT_entry_pc    : 0x11c8
+    <23a>   DW_AT_GNU_entry_view: 15
+    <23b>   DW_AT_ranges      : 0x0
+    <23f>   DW_AT_call_file   : 1
+    <240>   DW_AT_call_line   : 26
+    <241>   DW_AT_call_column : 5
+    <242>   DW_AT_sibling     : <0x274>
+ <3><246>: Abbrev Number: 17 (DW_TAG_formal_parameter)
+    <247>   DW_AT_abstract_origin: <0x2b8>
+    <24b>   DW_AT_location    : 0x270 (location list)
+    <24f>   DW_AT_GNU_locviews: 0x26e
+ <3><253>: Abbrev Number: 18 (DW_TAG_GNU_call_site)
+    <254>   DW_AT_low_pc      : 0x11e9
+    <25c>   DW_AT_abstract_origin: <0x7c>
+ <4><260>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <261>   DW_AT_location    : 1 byte block: 55 	(DW_OP_reg5 (rdi))
+    <263>   DW_AT_GNU_call_site_value: 1 byte block: 31 	(DW_OP_lit1)
+ <4><265>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <266>   DW_AT_location    : 1 byte block: 54 	(DW_OP_reg4 (rsi))
+    <268>   DW_AT_GNU_call_site_value: 9 byte block: 3 17 20 0 0 0 0 0 0 	(DW_OP_addr: 2017)
+ <4><272>: Abbrev Number: 0
+ <3><273>: Abbrev Number: 0
+ <2><274>: Abbrev Number: 21 (DW_TAG_GNU_call_site)
+    <275>   DW_AT_low_pc      : 0x11c8
+    <27d>   DW_AT_abstract_origin: <0x98>
+    <281>   DW_AT_sibling     : <0x299>
+ <3><285>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <286>   DW_AT_location    : 1 byte block: 55 	(DW_OP_reg5 (rdi))
+    <288>   DW_AT_GNU_call_site_value: 9 byte block: 3 1b 20 0 0 0 0 0 0 	(DW_OP_addr: 201b)
+ <3><292>: Abbrev Number: 19 (DW_TAG_GNU_call_site_parameter)
+    <293>   DW_AT_location    : 1 byte block: 54 	(DW_OP_reg4 (rsi))
+    <295>   DW_AT_GNU_call_site_value: 2 byte block: 91 64 	(DW_OP_fbreg: -28)
+ <3><298>: Abbrev Number: 0
+ <2><299>: Abbrev Number: 22 (DW_TAG_GNU_call_site)
+    <29a>   DW_AT_low_pc      : 0x1208
+    <2a2>   DW_AT_abstract_origin: <0x2c6>
+ <2><2a6>: Abbrev Number: 0
+ <1><2a7>: Abbrev Number: 23 (DW_TAG_subprogram)
+    <2a8>   DW_AT_external    : 1
+    <2a8>   DW_AT_name        : (indirect string, offset: 0x10b): printf
+    <2ac>   DW_AT_decl_file   : 2
+    <2ad>   DW_AT_decl_line   : 105
+    <2ae>   DW_AT_decl_column : 1
+    <2af>   DW_AT_prototyped  : 1
+    <2af>   DW_AT_type        : <0x57>
+    <2b3>   DW_AT_inline      : 3	(declared as inline and inlined)
+    <2b4>   DW_AT_artificial  : 1
+    <2b4>   DW_AT_sibling     : <0x2c6>
+ <2><2b8>: Abbrev Number: 24 (DW_TAG_formal_parameter)
+    <2b9>   DW_AT_name        : (indirect string, offset: 0x133): __fmt
+    <2bd>   DW_AT_decl_file   : 2
+    <2be>   DW_AT_decl_line   : 105
+    <2bf>   DW_AT_decl_column : 32
+    <2c0>   DW_AT_type        : <0x77>
+ <2><2c4>: Abbrev Number: 9 (DW_TAG_unspecified_parameters)
+ <2><2c5>: Abbrev Number: 0
+ <1><2c6>: Abbrev Number: 25 (DW_TAG_subprogram)
+    <2c7>   DW_AT_external    : 1
+    <2c7>   DW_AT_declaration : 1
+    <2c7>   DW_AT_linkage_name: (indirect string, offset: 0x14b): __stack_chk_fail
+    <2cb>   DW_AT_name        : (indirect string, offset: 0x14b): __stack_chk_fail
+ <1><2cf>: Abbrev Number: 0
+
+Contents of the .debug_abbrev section (loaded from varnodes):
+
+  Number TAG (0x0)
+   1      DW_TAG_compile_unit    [has children]
+    DW_AT_producer     DW_FORM_strp
+    DW_AT_language     DW_FORM_data1
+    DW_AT_name         DW_FORM_strp
+    DW_AT_comp_dir     DW_FORM_strp
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_high_pc      DW_FORM_data8
+    DW_AT_stmt_list    DW_FORM_sec_offset
+    DW_AT value: 0     DW_FORM value: 0
+   2      DW_TAG_base_type    [no children]
+    DW_AT_byte_size    DW_FORM_data1
+    DW_AT_encoding     DW_FORM_data1
+    DW_AT_name         DW_FORM_strp
+    DW_AT value: 0     DW_FORM value: 0
+   3      DW_TAG_base_type    [no children]
+    DW_AT_byte_size    DW_FORM_data1
+    DW_AT_encoding     DW_FORM_data1
+    DW_AT_name         DW_FORM_string
+    DW_AT value: 0     DW_FORM value: 0
+   4      DW_TAG_const_type    [no children]
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   5      DW_TAG_pointer_type    [no children]
+    DW_AT_byte_size    DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   6      DW_TAG_restrict_type    [no children]
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   7      DW_TAG_subprogram    [has children]
+    DW_AT_external     DW_FORM_flag_present
+    DW_AT_name         DW_FORM_strp
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_prototyped   DW_FORM_flag_present
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_declaration  DW_FORM_flag_present
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   8      DW_TAG_formal_parameter    [no children]
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   9      DW_TAG_unspecified_parameters    [no children]
+    DW_AT value: 0     DW_FORM value: 0
+   10      DW_TAG_subprogram    [has children]
+    DW_AT_external     DW_FORM_flag_present
+    DW_AT_name         DW_FORM_strp
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data2
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_linkage_name DW_FORM_strp
+    DW_AT_prototyped   DW_FORM_flag_present
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_declaration  DW_FORM_flag_present
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   11      DW_TAG_subprogram    [has children]
+    DW_AT_external     DW_FORM_flag_present
+    DW_AT_name         DW_FORM_strp
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_high_pc      DW_FORM_data8
+    DW_AT_frame_base   DW_FORM_exprloc
+    DW_AT_GNU_all_call_sites DW_FORM_flag_present
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   12      DW_TAG_variable    [no children]
+    DW_AT_name         DW_FORM_string
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_location     DW_FORM_exprloc
+    DW_AT value: 0     DW_FORM value: 0
+   13      DW_TAG_variable    [no children]
+    DW_AT_name         DW_FORM_string
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_location     DW_FORM_sec_offset
+    DW_AT_GNU_locviews DW_FORM_sec_offset
+    DW_AT value: 0     DW_FORM value: 0
+   14      DW_TAG_variable    [no children]
+    DW_AT_name         DW_FORM_string
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   15      DW_TAG_variable    [no children]
+    DW_AT_name         DW_FORM_string
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_const_value  DW_FORM_data1
+    DW_AT value: 0     DW_FORM value: 0
+   16      DW_TAG_inlined_subroutine    [has children]
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT_entry_pc     DW_FORM_addr
+    DW_AT_GNU_entry_view DW_FORM_data1
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_high_pc      DW_FORM_data8
+    DW_AT_call_file    DW_FORM_data1
+    DW_AT_call_line    DW_FORM_data1
+    DW_AT_call_column  DW_FORM_data1
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   17      DW_TAG_formal_parameter    [no children]
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT_location     DW_FORM_sec_offset
+    DW_AT_GNU_locviews DW_FORM_sec_offset
+    DW_AT value: 0     DW_FORM value: 0
+   18      DW_TAG_GNU_call_site    [has children]
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   19      DW_TAG_GNU_call_site_parameter    [no children]
+    DW_AT_location     DW_FORM_exprloc
+    DW_AT_GNU_call_site_value DW_FORM_exprloc
+    DW_AT value: 0     DW_FORM value: 0
+   20      DW_TAG_inlined_subroutine    [has children]
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT_entry_pc     DW_FORM_addr
+    DW_AT_GNU_entry_view DW_FORM_data1
+    DW_AT_ranges       DW_FORM_sec_offset
+    DW_AT_call_file    DW_FORM_data1
+    DW_AT_call_line    DW_FORM_data1
+    DW_AT_call_column  DW_FORM_data1
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   21      DW_TAG_GNU_call_site    [has children]
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   22      DW_TAG_GNU_call_site    [no children]
+    DW_AT_low_pc       DW_FORM_addr
+    DW_AT_abstract_origin DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   23      DW_TAG_subprogram    [has children]
+    DW_AT_external     DW_FORM_flag_present
+    DW_AT_name         DW_FORM_strp
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_prototyped   DW_FORM_flag_present
+    DW_AT_type         DW_FORM_ref4
+    DW_AT_inline       DW_FORM_data1
+    DW_AT_artificial   DW_FORM_flag_present
+    DW_AT_sibling      DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   24      DW_TAG_formal_parameter    [no children]
+    DW_AT_name         DW_FORM_strp
+    DW_AT_decl_file    DW_FORM_data1
+    DW_AT_decl_line    DW_FORM_data1
+    DW_AT_decl_column  DW_FORM_data1
+    DW_AT_type         DW_FORM_ref4
+    DW_AT value: 0     DW_FORM value: 0
+   25      DW_TAG_subprogram    [no children]
+    DW_AT_external     DW_FORM_flag_present
+    DW_AT_declaration  DW_FORM_flag_present
+    DW_AT_linkage_name DW_FORM_strp
+    DW_AT_name         DW_FORM_strp
+    DW_AT value: 0     DW_FORM value: 0
+
+Raw dump of debug contents of section .debug_line (loaded from varnodes):
+
+  Offset:                      0x0
+  Length:                      221
+  DWARF Version:               3
+  Prologue Length:             104
+  Minimum Instruction Length:  1
+  Initial value of 'is_stmt':  1
+  Line Base:                   -5
+  Line Range:                  14
+  Opcode Base:                 13
+
+ Opcodes:
+  Opcode 1 has 0 args
+  Opcode 2 has 1 arg
+  Opcode 3 has 1 arg
+  Opcode 4 has 1 arg
+  Opcode 5 has 1 arg
+  Opcode 6 has 0 args
+  Opcode 7 has 0 args
+  Opcode 8 has 0 args
+  Opcode 9 has 1 arg
+  Opcode 10 has 0 args
+  Opcode 11 has 0 args
+  Opcode 12 has 1 arg
+
+ The Directory Table (offset 0x1b):
+  1	/usr/include/x86_64-linux-gnu/bits
+  2	/usr/include
+
+ The File Name Table (offset 0x4c):
+  Entry	Dir	Time	Size	Name
+  1	0	0	0	varnodes.c
+  2	1	0	0	stdio2.h
+  3	2	0	0	stdio.h
+
+ Line Number Statements:
+  [0x00000072]  Set column to 12
+  [0x00000074]  Extended opcode 2: set Address to 0x1189
+  [0x0000007f]  Special opcode 8: advance Address by 0 to 0x1189 and Line by 3 to 4
+  [0x00000080]  Set is_stmt to 0
+  [0x00000081]  Special opcode 117: advance Address by 8 to 0x1191 and Line by 0 to 4
+  [0x00000082]  Set column to 5
+  [0x00000084]  Set is_stmt to 1
+  [0x00000085]  Special opcode 230: advance Address by 16 to 0x11a1 and Line by 1 to 5
+  [0x00000086]  Special opcode 7: advance Address by 0 to 0x11a1 and Line by 2 to 7 (view 1)
+  [0x00000087]  Set File Name to entry 2 in the File Name Table
+  [0x00000089]  Set column to 1
+  [0x0000008b]  Advance Line by 98 to 105
+  [0x0000008e]  Copy (view 2)
+  [0x0000008f]  Set column to 3
+  [0x00000091]  Special opcode 7: advance Address by 0 to 0x11a1 and Line by 2 to 107 (view 3)
+  [0x00000092]  Set column to 10
+  [0x00000094]  Set is_stmt to 0
+  [0x00000095]  Copy (view 4)
+  [0x00000096]  Advance PC by constant 17 to 0x11b2
+  [0x00000097]  Special opcode 5: advance Address by 0 to 0x11b2 and Line by 0 to 107
+  [0x00000098]  Set File Name to entry 1 in the File Name Table
+  [0x0000009a]  Set column to 5
+  [0x0000009c]  Set is_stmt to 1
+  [0x0000009d]  Advance Line by -99 to 8
+  [0x000000a0]  Copy (view 1)
+  [0x000000a1]  Advance PC by constant 17 to 0x11c3
+  [0x000000a2]  Special opcode 76: advance Address by 5 to 0x11c8 and Line by 1 to 9
+  [0x000000a3]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 10 (view 1)
+  [0x000000a4]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 11 (view 2)
+  [0x000000a5]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 12 (view 3)
+  [0x000000a6]  Special opcode 7: advance Address by 0 to 0x11c8 and Line by 2 to 14 (view 4)
+  [0x000000a7]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 15 (view 5)
+  [0x000000a8]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 16 (view 6)
+  [0x000000a9]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 17 (view 7)
+  [0x000000aa]  Special opcode 7: advance Address by 0 to 0x11c8 and Line by 2 to 19 (view 8)
+  [0x000000ab]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 20 (view 9)
+  [0x000000ac]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 21 (view 10)
+  [0x000000ad]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 22 (view 11)
+  [0x000000ae]  Special opcode 7: advance Address by 0 to 0x11c8 and Line by 2 to 24 (view 12)
+  [0x000000af]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 25 (view 13)
+  [0x000000b0]  Special opcode 6: advance Address by 0 to 0x11c8 and Line by 1 to 26 (view 14)
+  [0x000000b1]  Set File Name to entry 2 in the File Name Table
+  [0x000000b3]  Set column to 1
+  [0x000000b5]  Advance Line by 79 to 105
+  [0x000000b8]  Copy (view 15)
+  [0x000000b9]  Set column to 3
+  [0x000000bb]  Special opcode 7: advance Address by 0 to 0x11c8 and Line by 2 to 107 (view 16)
+  [0x000000bc]  Set File Name to entry 1 in the File Name Table
+  [0x000000be]  Set column to 7
+  [0x000000c0]  Set is_stmt to 0
+  [0x000000c1]  Advance Line by -82 to 25
+  [0x000000c4]  Copy (view 17)
+  [0x000000c5]  Set File Name to entry 2 in the File Name Table
+  [0x000000c7]  Set column to 10
+  [0x000000c9]  Advance Line by 82 to 107
+  [0x000000cc]  Special opcode 159: advance Address by 11 to 0x11d3 and Line by 0 to 107
+  [0x000000cd]  Advance PC by constant 17 to 0x11e4
+  [0x000000ce]  Special opcode 75: advance Address by 5 to 0x11e9 and Line by 0 to 107
+  [0x000000cf]  Set File Name to entry 1 in the File Name Table
+  [0x000000d1]  Set column to 5
+  [0x000000d3]  Set is_stmt to 1
+  [0x000000d4]  Advance Line by -80 to 27
+  [0x000000d7]  Copy (view 1)
+  [0x000000d8]  Set column to 1
+  [0x000000da]  Set is_stmt to 0
+  [0x000000db]  Special opcode 6: advance Address by 0 to 0x11e9 and Line by 1 to 28 (view 2)
+  [0x000000dc]  Advance PC by 31 to 0x1208
+  [0x000000de]  Extended opcode 1: End of Sequence
+
+
+Contents of the .debug_str section (loaded from varnodes):
+
+  0x00000000 5f5f7072 696e7466 5f63686b 0073686f __printf_chk.sho
+  0x00000010 72742069 6e74005f 5f69736f 6339395f rt int.__isoc99_
+  0x00000020 7363616e 66006d61 696e002f 686f6d65 scanf.main./home
+  0x00000030 2f6a6163 656b6c69 6e652f64 65762f72 /jacekline/dev/r
+  0x00000040 65736561 7263682f 74686573 69732f70 esearch/thesis/p
+  0x00000050 726f6772 616d732f 746f792f 7661726e rograms/toy/varn
+  0x00000060 6f646573 00766172 6e6f6465 732e6300 odes.varnodes.c.
+  0x00000070 474e5520 43313720 31312e31 2e30202d GNU C17 11.1.0 -
+  0x00000080 6d74756e 653d6765 6e657269 63202d6d mtune=generic -m
+  0x00000090 61726368 3d783836 2d363420 2d67202d arch=x86-64 -g -
+  0x000000a0 4f31202d 66617379 6e636872 6f6e6f75 O1 -fasynchronou
+  0x000000b0 732d756e 77696e64 2d746162 6c657320 s-unwind-tables 
+  0x000000c0 2d667374 61636b2d 70726f74 6563746f -fstack-protecto
+  0x000000d0 722d7374 726f6e67 202d6673 7461636b r-strong -fstack
+  0x000000e0 2d636c61 73682d70 726f7465 6374696f -clash-protectio
+  0x000000f0 6e202d66 63662d70 726f7465 6374696f n -fcf-protectio
+  0x00000100 6e006c6f 6e672069 6e740070 72696e74 n.long int.print
+  0x00000110 6600756e 7369676e 65642063 68617200 f.unsigned char.
+  0x00000120 73686f72 7420756e 7369676e 65642069 short unsigned i
+  0x00000130 6e74005f 5f666d74 006c6f6e 6720756e nt.__fmt.long un
+  0x00000140 7369676e 65642069 6e74005f 5f737461 signed int.__sta
+  0x00000150 636b5f63 686b5f66 61696c00          ck_chk_fail.
+
+Contents of the .debug_loc section (loaded from varnodes):
+
+    Offset   Begin            End              Expression
+
+    00000000 v000000000000001 v00000000000000d location view pair
+    00000002 v00000000000000d v00000000000000e location view pair
+    00000004 v00000000000000e v000000000000000 location view pair
+
+    00000006 v000000000000001 v00000000000000d views at 00000000 for:
+             00000000000011c8 00000000000011c8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 1; DW_OP_stack_value)
+    0000001f v00000000000000d v00000000000000e views at 00000002 for:
+             00000000000011c8 00000000000011c8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_lit1; DW_OP_shl; DW_OP_plus_uconst: 11; DW_OP_stack_value)
+    0000003a v00000000000000e v000000000000000 views at 00000004 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_lit1; DW_OP_shl; DW_OP_plus_uconst: 11; DW_OP_lit1; DW_OP_shl; DW_OP_stack_value)
+    00000057 <End of list>
+
+    00000067 v000000000000002 v000000000000000 location view pair
+
+    00000069 v000000000000002 v000000000000000 views at 00000067 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 2; DW_OP_stack_value)
+    00000082 <End of list>
+
+    00000092 v000000000000003 v000000000000000 location view pair
+
+    00000094 v000000000000003 v000000000000000 views at 00000092 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 3; DW_OP_stack_value)
+    000000ad <End of list>
+
+    000000bd v000000000000004 v000000000000000 location view pair
+
+    000000bf v000000000000004 v000000000000000 views at 000000bd for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 4; DW_OP_stack_value)
+    000000d8 <End of list>
+
+    000000e8 v000000000000005 v000000000000000 location view pair
+
+    000000ea v000000000000005 v000000000000000 views at 000000e8 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 2; DW_OP_stack_value)
+    00000103 <End of list>
+
+    00000113 v000000000000006 v000000000000000 location view pair
+
+    00000115 v000000000000006 v000000000000000 views at 00000113 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 3; DW_OP_stack_value)
+    0000012e <End of list>
+
+    0000013e v000000000000007 v000000000000000 location view pair
+
+    00000140 v000000000000007 v000000000000000 views at 0000013e for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 4; DW_OP_stack_value)
+    00000159 <End of list>
+
+    00000169 v000000000000008 v000000000000000 location view pair
+
+    0000016b v000000000000008 v000000000000000 views at 00000169 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 5; DW_OP_stack_value)
+    00000184 <End of list>
+
+    00000194 v000000000000009 v000000000000000 location view pair
+
+    00000196 v000000000000009 v000000000000000 views at 00000194 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 3; DW_OP_stack_value)
+    000001af <End of list>
+
+    000001bf v00000000000000a v000000000000000 location view pair
+
+    000001c1 v00000000000000a v000000000000000 views at 000001bf for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 4; DW_OP_stack_value)
+    000001da <End of list>
+
+    000001ea v00000000000000b v000000000000000 location view pair
+
+    000001ec v00000000000000b v000000000000000 views at 000001ea for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 5; DW_OP_stack_value)
+    00000205 <End of list>
+
+    00000215 v00000000000000c v000000000000000 location view pair
+
+    00000217 v00000000000000c v000000000000000 views at 00000215 for:
+             00000000000011c8 00000000000011e8 (DW_OP_fbreg: -28; DW_OP_deref_size: 4; DW_OP_plus_uconst: 6; DW_OP_stack_value)
+    00000230 <End of list>
+
+    00000240 v000000000000002 v000000000000000 location view pair
+
+    00000242 v000000000000002 v000000000000000 views at 00000240 for:
+             00000000000011a1 00000000000011b2 (DW_OP_addr: 2004; DW_OP_stack_value)
+    0000025e <End of list>
+
+    0000026e v00000000000000f v000000000000000 location view pair
+
+    00000270 v00000000000000f v000000000000000 views at 0000026e for:
+             00000000000011c8 00000000000011e9 (DW_OP_addr: 2017; DW_OP_stack_value)
+    0000028c <End of list>
+
+Contents of the .debug_ranges section (loaded from varnodes):
+
+    Offset   Begin    End
+    00000000 00000000000011c8 00000000000011c8 (start == end)
+    00000000 00000000000011d3 00000000000011e9 
+    00000000 <End of list>
+
