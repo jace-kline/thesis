@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  4 DEC 2022 17:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  4 DEC 2022 20:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,53 +1009,60 @@ Overfull \hbox (33.42245pt too wide) in paragraph at lines 205--206
 ing tag-specific prop-er-ties of the DIE. Ex-am-ples in-clude "DW_AT_name",
  []
 
-<./figures/parse-dwarf.drawio.png, id=516, 1526.70375pt x 1966.34625pt>
+<./figures/parse-dwarf.drawio.png, id=519, 1526.70375pt x 1966.34625pt>
 File: ./figures/parse-dwarf.drawio.png Graphic file (type png)
 <use ./figures/parse-dwarf.drawio.png>
 Package pdftex.def Info: ./figures/parse-dwarf.drawio.png  used on input line 2
 13.
 (pdftex.def)             Requested size: 469.75502pt x 605.03044pt.
 [16] [17]
-<./figures/ariste-type-lattice.png, id=527, 331.2375pt x 140.02313pt>
+<./figures/ariste-type-lattice.png, id=530, 331.2375pt x 140.02313pt>
 File: ./figures/ariste-type-lattice.png Graphic file (type png)
 <use ./figures/ariste-type-lattice.png>
 Package pdftex.def Info: ./figures/ariste-type-lattice.png  used on input line 
 245.
 (pdftex.def)             Requested size: 469.75502pt x 198.58852pt.
  [18] [19] [20]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-97.
+<./figures/varnode-levels.drawio.png, id=550, 578.16pt x 273.02pt>
+File: ./figures/varnode-levels.drawio.png Graphic file (type png)
+<use ./figures/varnode-levels.drawio.png>
+Package pdftex.def Info: ./figures/varnode-levels.drawio.png  used on input lin
+e 292.
+(pdftex.def)             Requested size: 469.75502pt x 221.8282pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+05.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (./figures/decompose.latex)
-Overfull \hbox (53.1958pt too wide) in paragraph at lines 319--320
+Overfull \hbox (53.1958pt too wide) in paragraph at lines 327--328
 [][] 
  []
 
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 295--323
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 303--331
 []$[]$  $[]$ 
  []
 
 [21]
-<./figures/stack-comparison.drawio.png, id=551, 894.34125pt x 800.9925pt>
+<./figures/stack-comparison.drawio.png, id=555, 894.34125pt x 800.9925pt>
 File: ./figures/stack-comparison.drawio.png Graphic file (type png)
 <use ./figures/stack-comparison.drawio.png>
 Package pdftex.def Info: ./figures/stack-comparison.drawio.png  used on input l
-ine 334.
+ine 342.
 (pdftex.def)             Requested size: 469.75502pt x 420.73514pt.
  [22] [23] [24] [25]
-Overfull \hbox (49.50299pt too wide) in paragraph at lines 401--402
+Overfull \hbox (49.50299pt too wide) in paragraph at lines 409--410
 \T1/ptm/m/n/12 mapped to an in-te-ger as fol-lows: \T1/ptm/m/it/12 NO_MATCH \T1
 /ptm/m/n/12 = 0, \T1/ptm/m/it/12 SUB-SET \T1/ptm/m/n/12 = 1, \T1/ptm/m/it/12 PR
 IM-I-TIVE_COMMON_ANCESTOR
  []
 
 [26] [27 <./figures/parse-dwarf.drawio.png>] [28 <./figures/ariste-type-lattice
-.png>] [29 <./figures/stack-comparison.drawio.png>]
+.png> <./figures/varnode-levels.drawio.png>] [29] [30 <./figures/stack-comparis
+on.drawio.png>]
 Chapter 4.
-(./figures/evaluation-process.latex) [30
+(./figures/evaluation-process.latex) [31
 
 ]
 (./data/tables/opts-functions-summary.tex
@@ -1083,7 +1090,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 \T1/ptm/m/n/12 re-cov-ery
  []
 
-) [31] [32] (./data/tables/opts-varnodes-summary.tex
+) [32] [33] (./data/tables/opts-varnodes-summary.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1123,7 +1130,7 @@ Overfull \hbox (31.20352pt too wide) in paragraph at lines 7--8
 []|[]| 
  []
 
-) [33] (./data/tables/opts-varnodes-summary-metatypes.tex
+) [34] (./data/tables/opts-varnodes-summary-metatypes.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1268,7 +1275,7 @@ Overfull \hbox (31.20352pt too wide) in paragraph at lines 7--8
 []|[]| 
  []
 
-) [34] [35] (./data/tables/opts-varnodes-summary-metatypes-decomposed.tex
+) [35] [36] (./data/tables/opts-varnodes-summary-metatypes-decomposed.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1328,7 +1335,7 @@ Overfull \hbox (31.48044pt too wide) in paragraph at lines 5--22
  [][] 
  []
 
-) [36] [37] (./data/tables/opts-bytes-summary.tex
+) [37] [38] (./data/tables/opts-bytes-summary.tex
 Underfull \hbox (badness 3623) in paragraph at lines 7--7
 []|\T1/ptm/m/n/12 Ground truth
  []
@@ -1338,7 +1345,7 @@ Underfull \hbox (badness 7168) in paragraph at lines 7--8
 []|\T1/ptm/m/n/12 Bytes re-cov-
  []
 
-) [38] (./data/tables/opts-array-comparisons-summary.tex
+) [39] (./data/tables/opts-array-comparisons-summary.tex
 Overfull \hbox (25.58466pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1413,33 +1420,33 @@ Overfull \hbox (13.03453pt too wide) in paragraph at lines 5--14
  [][] 
  []
 
-) [39] [40]
-<./figures/ghidra-miss-scopes.drawio.png, id=674, 880.28876pt x 783.92876pt>
+) [40] [41]
+<./figures/ghidra-miss-scopes.drawio.png, id=683, 880.28876pt x 783.92876pt>
 File: ./figures/ghidra-miss-scopes.drawio.png Graphic file (type png)
 <use ./figures/ghidra-miss-scopes.drawio.png>
 Package pdftex.def Info: ./figures/ghidra-miss-scopes.drawio.png  used on input
- line 492.
+ line 500.
 (pdftex.def)             Requested size: 469.75502pt x 418.32716pt.
- [41] [42 <./figures/ghidra-miss-scopes.drawio.png>]
+ [42] [43 <./figures/ghidra-miss-scopes.drawio.png>]
 Chapter 5.
-[43
+[44
 
 ]
-Overfull \hbox (1.27467pt too wide) in paragraph at lines 519--520
+Overfull \hbox (1.27467pt too wide) in paragraph at lines 527--528
 []\T1/ptm/m/n/12 In our high-level varn-ode anal-y-sis, we find that the re-cov
 -ery ac-cu-racy of prim-i-tive (\T1/ptm/m/it/12 INT\T1/ptm/m/n/12 , \T1/ptm/m/i
 t/12 FLOAT\T1/ptm/m/n/12 ,
  []
 
-[44] [45] [46] (./thesis.bbl [47] [48] [49
+[45] [46] [47] (./thesis.bbl [48] [49] [50
 
-] [50]
+] [51]
 Underfull \hbox (badness 10000) in paragraph at lines 176--180
 \T1/ptm/m/n/12 possible-[]issues-[]with-[]debugging-[]and-[]inspecting-[]compil
 er-[]optimized-[]binaries # debugging _
  []
 
-) [51] (./data/tables/functions-O0-strip.tex
+) [52] (./data/tables/functions-O0-strip.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -1479,9 +1486,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 []|\T1/ptm/m/n/10.95 Functions re-
  []
 
-[52
+[53
 
-] [53] [54] [55]) (./data/tables/functions-O0.tex
+] [54] [55] [56]) (./data/tables/functions-O0.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -1521,7 +1528,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 []|\T1/ptm/m/n/10.95 Functions re-
  []
 
-[56] [57] [58] [59] [60]) (./data/tables/functions-O0-debug.tex
+[57] [58] [59] [60] [61]) (./data/tables/functions-O0-debug.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -1561,7 +1568,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 []|\T1/ptm/m/n/10.95 Functions re-
  []
 
-[61] [62] [63] [64] [65]) (./data/tables/varnodes-O0-strip.tex
+[62] [63] [64] [65] [66]) (./data/tables/varnodes-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -1678,30 +1685,30 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[66]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [67]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [68]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[69]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[69] [70]
+[70] [71]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[71]) (./data/tables/varnodes-metatype-INT-O0-strip.tex
+[72]) (./data/tables/varnodes-metatype-INT-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -1813,35 +1820,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[72]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [73]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [74]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [75]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[76]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[76] [77]
+[77] [78]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[78]) (./data/tables/varnodes-metatype-FLOAT-O0-strip.tex
+[79]) (./data/tables/varnodes-metatype-FLOAT-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -1953,35 +1960,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[79]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [80]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [81]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [82]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[83]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[83] [84]
+[84] [85]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[85]) (./data/tables/varnodes-metatype-POINTER-O0-strip.tex
+[86]) (./data/tables/varnodes-metatype-POINTER-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2093,35 +2100,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[86]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [87]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [88]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [89]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[90]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[90] [91]
+[91] [92]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[92]) (./data/tables/varnodes-metatype-ARRAY-O0-strip.tex
+[93]) (./data/tables/varnodes-metatype-ARRAY-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2233,35 +2240,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[93]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [94]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [95]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [96]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[97]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[97] [98]
+[98] [99]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[99]) (./data/tables/varnodes-metatype-STRUCT-O0-strip.tex
+[100]) (./data/tables/varnodes-metatype-STRUCT-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2373,35 +2380,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[100]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [101]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [102]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [103]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[104]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[104] [105]
+[105] [106]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[106]) (./data/tables/varnodes-metatype-UNION-O0-strip.tex
+[107]) (./data/tables/varnodes-metatype-UNION-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2513,35 +2520,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[107]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [108]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [109]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [110]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[111]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[111] [112]
+[112] [113]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[113]) (./data/tables/varnodes-O0.tex
+[114]) (./data/tables/varnodes-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2653,35 +2660,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[114]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [115]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [116]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [117]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [118]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[119]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[119] [120]) (./data/tables/varnodes-metatype-INT-O0.tex
+[120] [121]) (./data/tables/varnodes-metatype-INT-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2801,27 +2808,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[121] [122]
+[122] [123]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[123]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [124]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[125]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[125] [126]
+[126] [127]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[127]) (./data/tables/varnodes-metatype-FLOAT-O0.tex
+[128]) (./data/tables/varnodes-metatype-FLOAT-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -2933,35 +2940,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[128]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [129]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [130]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [131]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[132]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[132] [133]
+[133] [134]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[134]) (./data/tables/varnodes-metatype-POINTER-O0.tex
+[135]) (./data/tables/varnodes-metatype-POINTER-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3073,35 +3080,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[135]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [136]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [137]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [138]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[139]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[139] [140]
+[140] [141]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[141]) (./data/tables/varnodes-metatype-ARRAY-O0.tex
+[142]) (./data/tables/varnodes-metatype-ARRAY-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3213,35 +3220,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[142]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [143]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [144]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [145]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[146]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[146] [147]
+[147] [148]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[148]) (./data/tables/varnodes-metatype-STRUCT-O0.tex
+[149]) (./data/tables/varnodes-metatype-STRUCT-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3353,35 +3360,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[149]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [150]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [151]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [152]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[153]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[153] [154]
+[154] [155]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[155]) (./data/tables/varnodes-metatype-UNION-O0.tex
+[156]) (./data/tables/varnodes-metatype-UNION-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3493,35 +3500,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[156]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [157]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [158]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [159]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[160]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[160] [161]
+[161] [162]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[162]) (./data/tables/varnodes-O0-debug.tex
+[163]) (./data/tables/varnodes-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3633,35 +3640,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[163]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [164]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [165]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [166]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [167]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[168]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[168] [169]) (./data/tables/varnodes-metatype-INT-O0-debug.tex
+[169] [170]) (./data/tables/varnodes-metatype-INT-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3781,27 +3788,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[170] [171]
+[171] [172]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[172]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [173]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[174]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[174] [175]
+[175] [176]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[176]) (./data/tables/varnodes-metatype-FLOAT-O0-debug.tex
+[177]) (./data/tables/varnodes-metatype-FLOAT-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -3913,35 +3920,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[177]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [178]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [179]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [180]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[181]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[181] [182]
+[182] [183]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[183]) (./data/tables/varnodes-metatype-POINTER-O0-debug.tex
+[184]) (./data/tables/varnodes-metatype-POINTER-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4053,35 +4060,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[184]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [185]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [186]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [187]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[188]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[188] [189]
+[189] [190]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[190]) (./data/tables/varnodes-metatype-ARRAY-O0-debug.tex
+[191]) (./data/tables/varnodes-metatype-ARRAY-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4193,35 +4200,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[191]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [192]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [193]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [194]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[195]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[195] [196]
+[196] [197]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[197]) (./data/tables/varnodes-metatype-STRUCT-O0-debug.tex
+[198]) (./data/tables/varnodes-metatype-STRUCT-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4333,35 +4340,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[198]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [199]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [200]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [201]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[202]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[202] [203]
+[203] [204]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[204]) (./data/tables/varnodes-metatype-UNION-O0-debug.tex
+[205]) (./data/tables/varnodes-metatype-UNION-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4476,32 +4483,32 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[205]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
 [206]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [207]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [208]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[209]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[209] [210]
+[210] [211]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[211]) (./data/tables/varnodes-decomposed-O0-strip.tex
+[212]) (./data/tables/varnodes-decomposed-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4613,35 +4620,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[212]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [213]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [214]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [215]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [216]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[217]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[217] [218]) (./data/tables/varnodes-decomposed-metatype-INT-O0-strip.tex
+[218] [219]) (./data/tables/varnodes-decomposed-metatype-INT-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4761,27 +4768,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[219]
+[220]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[220] [221]
+[221] [222]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[222]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [223]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[224]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[224]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0-strip.tex
+[225]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -4893,35 +4900,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[225]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [226]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [227]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [228]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [229]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[230]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[230] [231]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0-strip.tex
+[231] [232]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0-strip.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5041,27 +5048,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[232]
+[233]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[233] [234]
+[234] [235]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[235]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [236]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[237]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[237]) (./data/tables/varnodes-decomposed-O0.tex
+[238]) (./data/tables/varnodes-decomposed-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5173,35 +5180,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[238]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [239]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [240]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [241]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [242]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[243]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[243] [244]) (./data/tables/varnodes-decomposed-metatype-INT-O0.tex
+[244] [245]) (./data/tables/varnodes-decomposed-metatype-INT-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5321,27 +5328,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[245]
+[246]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[246] [247]
+[247] [248]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[248]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [249]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[250]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[250]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0.tex
+[251]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5453,35 +5460,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[251]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [252]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [253]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [254]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [255]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[256]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[256] [257]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0.tex
+[257] [258]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5601,27 +5608,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[258]
+[259]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[259] [260]
+[260] [261]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[261]
+[262]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[262]
+[263]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[263]) (./data/tables/varnodes-decomposed-O0-debug.tex
+[264]) (./data/tables/varnodes-decomposed-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5736,32 +5743,32 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[264]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
 [265]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [266]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [267]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [268]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[269]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[269] [270]) (./data/tables/varnodes-decomposed-metatype-INT-O0-debug.tex
+[270] [271]) (./data/tables/varnodes-decomposed-metatype-INT-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -5881,27 +5888,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[271]
+[272]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[272] [273]
+[273] [274]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[274]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [275]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[276]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[276]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0-debug.tex
+[277]) (./data/tables/varnodes-decomposed-metatype-FLOAT-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -6013,35 +6020,35 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 16--19
 
 
 Overfull \hbox (6.80849pt too wide) in alignment at lines 19--40
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[277]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [278]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
+Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [279]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
+Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [280]
-Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
 [281]
+Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
+ [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[282]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[282] [283]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0-debug.tex
+[283] [284]) (./data/tables/varnodes-decomposed-metatype-POINTER-O0-debug.tex
 Overfull \hbox (6.74922pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -6161,27 +6168,27 @@ Overfull \hbox (6.80849pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[284]
+[285]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[285] [286]
+[286] [287]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[287]
+[288]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[288]
+[289]
 Overfull \hbox (6.80849pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[289]) (./data/tables/bytes-O0-strip.tex
+[290]) (./data/tables/bytes-O0-strip.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -6191,7 +6198,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/ptm/m/n/10.95 Ground truth
  []
 
-[290] [291] [292] [293] [294]) (./data/tables/bytes-O0.tex
+[291] [292] [293] [294] [295]) (./data/tables/bytes-O0.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -6201,7 +6208,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/ptm/m/n/10.95 Ground truth
  []
 
-[295] [296] [297] [298] [299]) (./data/tables/bytes-O0-debug.tex
+[296] [297] [298] [299] [300]) (./data/tables/bytes-O0-debug.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--5
 []|\T1/ptm/m/n/10.95 Ground truth
  []
@@ -6211,7 +6218,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--10
 []|\T1/ptm/m/n/10.95 Ground truth
  []
 
-[300] [301] [302] [303] [304]) (./data/tables/array-comparisons-O0-strip.tex
+[301] [302] [303] [304] [305]) (./data/tables/array-comparisons-O0-strip.tex
 Overfull \hbox (20.63225pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -6401,7 +6408,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[305]
+[306]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 61--61
 []|\T1/ptm/m/n/10.95 156.688| 
  []
@@ -6436,7 +6443,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[306]
+[307]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 80--80
 []|\T1/ptm/m/n/10.95 141.300| 
  []
@@ -6461,7 +6468,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[307]
+[308]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 103--103
 []|\T1/ptm/m/n/10.95 148.579| 
  []
@@ -6486,7 +6493,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[308]
+[309]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 120--120
 []|\T1/ptm/m/n/10.95 156.688| 
  []
@@ -6511,7 +6518,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[309] [310]) (./data/tables/array-comparisons-O0.tex
+[310] [311]) (./data/tables/array-comparisons-O0.tex
 Overfull \hbox (20.63225pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -6671,7 +6678,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 19--40
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[311]
+[312]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 40--40
 []|\T1/ptm/m/n/10.95 135.951| 
  []
@@ -6716,7 +6723,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[312]
+[313]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 61--61
 []|\T1/ptm/m/n/10.95 135.951| 
  []
@@ -6741,7 +6748,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[313]
+[314]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 80--80
 []|\T1/ptm/m/n/10.95 119.806| 
  []
@@ -6756,7 +6763,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[314]
+[315]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 100--100
 []|\T1/ptm/m/n/10.95 311.143| 
  []
@@ -6776,7 +6783,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[315]
+[316]
 Overfull \hbox (4.57404pt too wide) in paragraph at lines 120--120
 []|\T1/ptm/m/n/10.95 135.951| 
  []
@@ -6796,7 +6803,7 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[316] [317]) (./data/tables/array-comparisons-O0-debug.tex
+[317] [318]) (./data/tables/array-comparisons-O0-debug.tex
 Overfull \hbox (20.63225pt too wide) in paragraph at lines 5--5
 []|[]| 
  []
@@ -6921,46 +6928,46 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 19--40
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[318]
+[319]
 Overfull \hbox (21.65349pt too wide) in alignment at lines 40--60
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[319]
+[320]
 Overfull \hbox (21.65349pt too wide) in alignment at lines 60--80
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[320]
+[321]
 Overfull \hbox (21.65349pt too wide) in alignment at lines 80--100
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[321]
+[322]
 Overfull \hbox (21.65349pt too wide) in alignment at lines 100--120
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[322]
+[323]
 Overfull \hbox (21.65349pt too wide) in alignment at lines 120--125
  [] [] [] [] [] [] [] [] [] [] [] [] 
  []
 
-[323] [324]) [325]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 664.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 664.
+[324] [325]) [326]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 664.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 664.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 672.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DEED8B18874BEE311B543D652983ECBD;7797.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 664.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
  ) 
 Here is how much of TeX's memory you used:
- 25917 strings out of 483107
- 449790 string characters out of 5964629
- 744272 words of memory out of 5000000
- 39817 multiletter control sequences out of 15000+600000
+ 25926 strings out of 483107
+ 450054 string characters out of 5964629
+ 744987 words of memory out of 5000000
+ 39823 multiletter control sequences out of 15000+600000
  564767 words of font info for 68 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,12n,60p,2102b,859s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -6969,10 +6976,10 @@ Here is how much of TeX's memory you used:
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (334 pages, 781243 bytes).
+Output written on thesis.pdf (335 pages, 793375 bytes).
 PDF statistics:
- 2039 PDF objects out of 2073 (max. 8388607)
- 1672 compressed objects within 17 object streams
- 485 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2049 PDF objects out of 2073 (max. 8388607)
+ 1679 compressed objects within 17 object streams
+ 487 named destinations out of 1000 (max. 500000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
 

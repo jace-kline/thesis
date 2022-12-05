@@ -286,6 +286,14 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
     \item \emph{MATCH}: For some varnode Y from the other source, X and Y share the same location and size in memory, and their data types match exactly.
 \end{itemize}
 
+% [Figure: Varnode comparison levels derived from varnode recovery and data type comparison]
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{./figures/varnode-levels.drawio.png}
+    \caption{Derivation of varnode comparison level from varnode recovery status and data type comparison}
+    \label{fig:varnode-levels}
+\end{figure}
+
 \subsubsection{Decomposed Variable Comparison}
 
 The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of complex variable synthesis from more primitive components.
