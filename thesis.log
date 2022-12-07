@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  4 DEC 2022 21:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  6 DEC 2022 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1015,20 +1015,21 @@ File: ./figures/parse-dwarf.drawio.png Graphic file (type png)
 Package pdftex.def Info: ./figures/parse-dwarf.drawio.png  used on input line 2
 13.
 (pdftex.def)             Requested size: 469.75502pt x 605.03044pt.
-[16] [17]
-<./figures/ariste-type-lattice.png, id=530, 331.2375pt x 140.02313pt>
+[16] [17 <./figures/parse-dwarf.drawio.png>] [18]
+<./figures/ariste-type-lattice.png, id=535, 331.2375pt x 140.02313pt>
 File: ./figures/ariste-type-lattice.png Graphic file (type png)
 <use ./figures/ariste-type-lattice.png>
 Package pdftex.def Info: ./figures/ariste-type-lattice.png  used on input line 
 245.
 (pdftex.def)             Requested size: 469.75502pt x 198.58852pt.
- [18] [19] [20]
-<./figures/varnode-levels.drawio.png, id=550, 578.16pt x 273.02pt>
+ [19] [20 <./figures/ariste-type-lattice.png>] [21]
+<./figures/varnode-levels.drawio.png, id=556, 578.16pt x 273.02pt>
 File: ./figures/varnode-levels.drawio.png Graphic file (type png)
 <use ./figures/varnode-levels.drawio.png>
 Package pdftex.def Info: ./figures/varnode-levels.drawio.png  used on input lin
 e 292.
 (pdftex.def)             Requested size: 469.75502pt x 221.8282pt.
+ [22]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 05.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
@@ -1044,27 +1045,25 @@ Overfull \hbox (2.28001pt too wide) in paragraph at lines 303--331
 []$[]$  $[]$ 
  []
 
-[21]
-<./figures/stack-comparison.drawio.png, id=555, 894.34125pt x 800.9925pt>
+[23 <./figures/varnode-levels.drawio.png>]
+<./figures/stack-comparison.drawio.png, id=567, 894.34125pt x 800.9925pt>
 File: ./figures/stack-comparison.drawio.png Graphic file (type png)
 <use ./figures/stack-comparison.drawio.png>
 Package pdftex.def Info: ./figures/stack-comparison.drawio.png  used on input l
 ine 342.
 (pdftex.def)             Requested size: 469.75502pt x 420.73514pt.
- [22] [23] [24] [25]
+ [24] [25 <./figures/stack-comparison.drawio.png>] [26] [27] [28]
 Overfull \hbox (49.50299pt too wide) in paragraph at lines 409--410
 \T1/ptm/m/n/12 mapped to an in-te-ger as fol-lows: \T1/ptm/m/it/12 NO_MATCH \T1
 /ptm/m/n/12 = 0, \T1/ptm/m/it/12 SUB-SET \T1/ptm/m/n/12 = 1, \T1/ptm/m/it/12 PR
 IM-I-TIVE_COMMON_ANCESTOR
  []
 
-[26] [27 <./figures/parse-dwarf.drawio.png>] [28 <./figures/ariste-type-lattice
-.png> <./figures/varnode-levels.drawio.png>] [29] [30 <./figures/stack-comparis
-on.drawio.png>]
+[29]
 Chapter 4.
-(./figures/evaluation-process.latex) [31
+(./figures/evaluation-process.latex) [30
 
-]
+] [31]
 (./data/tables/opts-functions-summary.tex
 Underfull \hbox (badness 3623) in paragraph at lines 7--7
 []|\T1/ptm/m/n/12 Ground truth
@@ -1090,7 +1089,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 \T1/ptm/m/n/12 re-cov-ery
  []
 
-) [32] [33] (./data/tables/opts-varnodes-summary.tex
+) [32] (./data/tables/opts-varnodes-summary.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1130,7 +1129,7 @@ Overfull \hbox (31.20352pt too wide) in paragraph at lines 7--8
 []|[]| 
  []
 
-) [34] (./data/tables/opts-varnodes-summary-metatypes.tex
+) (./data/tables/opts-varnodes-summary-metatypes.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1235,7 +1234,7 @@ Overfull \hbox (31.48044pt too wide) in paragraph at lines 5--31
  [][] 
  []
 
-) (./data/tables/opts-varnodes-summary-decomposed.tex
+) [33] [34] [35] (./data/tables/opts-varnodes-summary-decomposed.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1275,7 +1274,7 @@ Overfull \hbox (31.20352pt too wide) in paragraph at lines 7--8
 []|[]| 
  []
 
-) [35] [36] (./data/tables/opts-varnodes-summary-metatypes-decomposed.tex
+) [36] (./data/tables/opts-varnodes-summary-metatypes-decomposed.tex
 Overfull \hbox (38.35596pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1335,7 +1334,7 @@ Overfull \hbox (31.48044pt too wide) in paragraph at lines 5--22
  [][] 
  []
 
-) [37] [38] (./data/tables/opts-bytes-summary.tex
+) [37] (./data/tables/opts-bytes-summary.tex
 Underfull \hbox (badness 3623) in paragraph at lines 7--7
 []|\T1/ptm/m/n/12 Ground truth
  []
@@ -1345,7 +1344,7 @@ Underfull \hbox (badness 7168) in paragraph at lines 7--8
 []|\T1/ptm/m/n/12 Bytes re-cov-
  []
 
-) [39] (./data/tables/opts-array-comparisons-summary.tex
+) [38] (./data/tables/opts-array-comparisons-summary.tex
 Overfull \hbox (25.58466pt too wide) in paragraph at lines 7--7
 []|[]| 
  []
@@ -1420,14 +1419,14 @@ Overfull \hbox (13.03453pt too wide) in paragraph at lines 5--14
  [][] 
  []
 
-) [40] [41]
-<./figures/ghidra-miss-scopes.drawio.png, id=683, 880.28876pt x 783.92876pt>
+) [39] [40]
+<./figures/ghidra-miss-scopes.drawio.png, id=679, 880.28876pt x 783.92876pt>
 File: ./figures/ghidra-miss-scopes.drawio.png Graphic file (type png)
 <use ./figures/ghidra-miss-scopes.drawio.png>
 Package pdftex.def Info: ./figures/ghidra-miss-scopes.drawio.png  used on input
  line 500.
 (pdftex.def)             Requested size: 469.75502pt x 418.32716pt.
- [42] [43 <./figures/ghidra-miss-scopes.drawio.png>]
+ [41] [42] [43 <./figures/ghidra-miss-scopes.drawio.png>]
 Chapter 5.
 [44
 
@@ -6966,7 +6965,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
 Here is how much of TeX's memory you used:
  25926 strings out of 483107
  450054 string characters out of 5964629
- 744987 words of memory out of 5000000
+ 743318 words of memory out of 5000000
  39823 multiletter control sequences out of 15000+600000
  564767 words of font info for 68 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -6976,7 +6975,7 @@ Here is how much of TeX's memory you used:
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (335 pages, 793626 bytes).
+Output written on thesis.pdf (335 pages, 793879 bytes).
 PDF statistics:
  2049 PDF objects out of 2073 (max. 8388607)
  1679 compressed objects within 17 object streams

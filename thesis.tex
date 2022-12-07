@@ -153,7 +153,7 @@ In this section, we discuss the design, construction, and evolution of our decom
 In order to make our framework general and reusable, we devise a common domain-specific language (DSL) to represent program information such as functions, variables, data types, and addresses, as well as the relationships between them. This DSL must act as a bridge linking binary-level address information with the source-level structures such as functions, variables, and data types. Combining the information from these two layers of abstraction is, in essence, a mapping between binary-level and source-level structures. The accuracy of this mapping for a given decompiler is precisely the objective of our analysis.
 
 % [Figure representing how DSL can be constructed from many sources (DWARF, Ghidra, IDA Pro, etc.)]
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \scalebox{0.8}{
         \input{./figures/proginfo-sources.latex}
@@ -166,7 +166,7 @@ The DSL we devised is entirely decoupled from the source of the program informat
 
 \subsection{DSL Definitions}
 
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \scalebox{0.4}{
         \input{./figures/dsl.latex}
@@ -208,7 +208,7 @@ Starting with a source-level program, we must perform the following steps to ext
 The translation process from the DIE graph into our DSL is, at its core, a process of forming a nested data structure (our DSL's \emph{ProgramInfo} type) from a flattened one (a collection of DWARF DIEs). To tackle this translation, we first define an intermediate representation (IR) language that acts as a "flattened" analog to the constructs present in our DSL. Instead of each IR construct directly containing the fields of other constructs, they instead contain fields that reference the IDs of other constructs through a shared database. The responsibility of the database is to map unique IDs to the flattened constructs. When all the IR constructs have been inserted into the database, the database then recursively resolves the flattened IR structures into their associated DSL structures, starting from the root \emph{ProgramInfoStub} object, the IR analog to the \emph{ProgramInfo} DSL type. This process is complicated by the fact that some data types, particularly \emph{struct} types, may be recursive or mutually recursive, ultimately creating a cycle in the reference resolver. To address this, we implement a mechanism whereby each IR node is marked when it is visited. Future attempts to resolve the same IR construct return with the existing object being resolved instead of attempting to resolve the same reference again. With the IR defined and the resolution logic in place, we map the DWARF DIE objects into our "flattened" IR and construct the IR object database. When all the DIEs are processed and translated, we specify the \emph{ProgramInfoStub} node as the root reference and then execute our resolver algorithm to recursively generate the \emph{ProgramInfo} object and subobjects defined in our DSL. Our DWARF translation module consists of about 1000 lines of Python code. The IR and resolver logic adds an additional 600 lines of code.
 
 % [Figure: C -> DWARF -> IR -> DSL]
-\begin{figure}[hb]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figures/parse-dwarf.drawio.png}
     \caption{An example of translating DWARF information into the DSL}
@@ -240,7 +240,7 @@ Given two \emph{DataType} objects and an offset between their start locations, w
 We define the \emph{metatype} of a data type to be general "class" of the given data type. These metatypes include \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{ARRAY}, \emph{STRUCT}, \emph{UNION}, \emph{UNDEFINED}, \emph{VOID}, and \emph{FUNCTION\_PROTOTYPE}. We consider \emph{INT}, \emph{FLOAT}, \emph{POINTER}, \emph{UNDEFINED}, and \emph{VOID} to be \emph{primitive metatypes} since they cannot be decomposed further. \emph{ARRAY}, \emph{STRUCT}, and \emph{UNION} are considered \emph{complex metatypes} since these types are formed via the composition or aggregation of different members or subtypes. We consider the 'char' data type to be of the \emph{INT} metatype with size equal to one byte.
 
 % [Figure: Ariste type lattice]
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figures/ariste-type-lattice.png}
     \caption{ARTISTE type lattice \cite{bib:artiste,bib:type-inference-executables}}
@@ -287,7 +287,7 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
 \end{itemize}
 
 % [Figure: Varnode comparison levels derived from varnode recovery and data type comparison]
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figures/varnode-levels.drawio.png}
     \caption{Derivation of varnode comparison level from varnode recovery status and data type comparison}
@@ -299,7 +299,7 @@ Based on the overlap status and data type comparison of a ground-truth varnode X
 The inference of variables with complex data types including structs, arrays, and unions proves to be a major challenge for decompilers. Recognizing this, we develop an approach to compare the sets of ground truth and decompiler variables (varnodes) in their most "decomposed" forms. An analysis of this sort helps to recognize how well a decompiler infers the primitive constituent components of complex variables. Furthermore, this allows us to recognize the aggressiveness and accuracy of complex variable synthesis from more primitive components.
 
 % [Figure: Example of "decomposing" complex varnode]
-\begin{figure}[ht]
+\begin{figure}
     \begin{subfigure}[ht]{0.25\textwidth}
         \centering
         \begin{Verbatim}[frame=single]
@@ -337,7 +337,7 @@ We first implement an approach to recursively strip away the "complex layers" of
 We apply this primitive decomposition to each varnode in the sets of ground truth and decompiler varnodes. With the two sets of decomposed varnodes, we leverage the same variable comparison approach described previously to compare the varnodes in these sets. The resulting comparison information is treated as a separate analysis from the unaltered varnode sets.
 
 % [Figure: An example of varnode comparisons on the stack]
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figures/stack-comparison.drawio.png}
     \caption{An example of varnode comparisons between ground truth and decompiler varnodes for a given stack frame}
@@ -415,7 +415,7 @@ To demonstrate our evaluation framework, we target the Ghidra decompiler (versio
 
 \section{Setup}
 
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \scalebox{0.5}{
         \input{./figures/evaluation-process.latex}
@@ -495,7 +495,7 @@ Upon examination of our results thus far, the reader may wonder why the debug co
 We manually investigate this phenomenon over our benchmark programs and find that the cause of these recovery inaccuracies stems from the Ghidra decompiler's inflexibility in expressing local variables tied to lexical scopes. We find that the Ghidra decompiler output only lists variable declarations at the top level of the function and does not support declarations of local variables within lexical scopes. Instead, Ghidra attempts to move the declaration of these scope-specific variables to the top level of the function. Often, this behavior does not negatively influence the variable recovery of the given function. However, there are cases where multiple exclusive (not overlapping or nested) lexical scopes contain variable declarations. In many of these cases, the compiler recognizes the exclusivity of the lexical scopes and assigns the scope-specific variables to shared space on the stack since the variables shall never be instantiated simultaneously. The size of the shared region allocated by the decompiler is equivalent to the size of the largest variable in the set of scope-specific variables that share the region. In essence, this is equivalent to an implicit union formed by the compiler. The DWARF debugging standard and our DSL both possess the ability to express these overlapping scope-specific variables, but the Ghidra decompiler does not. From our observations, we find that Ghidra greedily captures and declares scope-specific variables at the top level of the function based on the order in which it recovers the variables. In the debug compilation case (utilizing DWARF information), Ghidra appears to only consider the first scope-specific variable mapped to a given address on the stack based on the order of the variables in the list of debugging information entries (DIEs) parsed from DWARF. The subsequent scope-specific variables associated with the given address are simply ignored, causing Ghidra to potentially miss several varnodes and data bytes. We consider this to be a shortcoming and an area of future improvement for the Ghidra decompiler.
 
 % [Figure: Ghidra missing variable in 2nd scope]
-\begin{figure}[ht]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{./figures/ghidra-miss-scopes.drawio.png}
     \caption{An example of the Ghidra decompiler missing the second of two scope-specific variables that share stack space}
