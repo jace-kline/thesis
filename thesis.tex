@@ -260,7 +260,7 @@ Suppose we have two \emph{DataType} objects X (ground truth) and Y (decompiler) 
 \begin{itemize}
     \item \emph{NO\_MATCH}: No relationship could be found between X and Y.
     \item \emph{SUBSET}: Y is a subset type of the complex type X.
-    \item \emph{PRIMITIVE\_COMMON\_ANCESTOR}: In the primitive type lattice, Y is an ancestor of X. This indicates that the inferred type X is a conservative (more general) form of the ground truth type Y.
+    \item \emph{PRIMITIVE\_COMMON\_ANCESTOR}: In the primitive type lattice, Y is an ancestor of X. This indicates that the inferred type Y is a conservative (more general) form of the ground truth type X.
     \item \emph{MATCH}: All properties of X and Y match including metatype, size, and possibly subtypes (applicable to pointers, arrays, structs, and unions).
 \end{itemize}
 

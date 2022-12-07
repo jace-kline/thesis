@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  7 DEC 2022 09:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  7 DEC 2022 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6975,7 +6975,7 @@ Here is how much of TeX's memory you used:
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (334 pages, 792932 bytes).
+Output written on thesis.pdf (334 pages, 792927 bytes).
 PDF statistics:
  2045 PDF objects out of 2073 (max. 8388607)
  1676 compressed objects within 17 object streams
