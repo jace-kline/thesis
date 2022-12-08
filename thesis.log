@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  7 DEC 2022 16:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  8 DEC 2022 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,26 +970,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 
 [2] [3
 
-] (./thesis.toc [4
+] [4
+
+] (./thesis.toc [5
 
 ])
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [5] (./thesis.lof)
+ [6] (./thesis.lof)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
- [6
+ [7
 
-] (./thesis.lot [7
+] (./thesis.lot [8
 
 ])
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
- [8]
-[9]
+
+[9] [10]
 Chapter 1.
 [1
 
@@ -1004,56 +1006,56 @@ Chapter 3.
 
 ] (./figures/dsl.latex) [12] [13]
 [14] [15]
-Overfull \hbox (33.42245pt too wide) in paragraph at lines 205--206
+Overfull \hbox (33.42245pt too wide) in paragraph at lines 210--211
 []\T1/ptm/m/n/12 A set of \T1/ptm/m/it/12 at-tributes \T1/ptm/m/n/12 spec-i-fy-
 ing tag-specific prop-er-ties of the DIE. Ex-am-ples in-clude "DW_AT_name",
  []
 
-<./figures/parse-dwarf.drawio.png, id=519, 1526.70375pt x 1966.34625pt>
+<./figures/parse-dwarf.drawio.png, id=524, 1526.70375pt x 1966.34625pt>
 File: ./figures/parse-dwarf.drawio.png Graphic file (type png)
 <use ./figures/parse-dwarf.drawio.png>
 Package pdftex.def Info: ./figures/parse-dwarf.drawio.png  used on input line 2
-13.
+18.
 (pdftex.def)             Requested size: 469.75502pt x 605.03044pt.
 [16] [17 <./figures/parse-dwarf.drawio.png>] [18]
-<./figures/ariste-type-lattice.png, id=535, 331.2375pt x 140.02313pt>
+<./figures/ariste-type-lattice.png, id=539, 331.2375pt x 140.02313pt>
 File: ./figures/ariste-type-lattice.png Graphic file (type png)
 <use ./figures/ariste-type-lattice.png>
 Package pdftex.def Info: ./figures/ariste-type-lattice.png  used on input line 
-245.
+250.
 (pdftex.def)             Requested size: 469.75502pt x 198.58852pt.
  [19] [20 <./figures/ariste-type-lattice.png>] [21]
-<./figures/varnode-levels.drawio.png, id=556, 578.16pt x 273.02pt>
+<./figures/varnode-levels.drawio.png, id=561, 578.16pt x 273.02pt>
 File: ./figures/varnode-levels.drawio.png Graphic file (type png)
 <use ./figures/varnode-levels.drawio.png>
 Package pdftex.def Info: ./figures/varnode-levels.drawio.png  used on input lin
-e 292.
+e 297.
 (pdftex.def)             Requested size: 469.75502pt x 221.8282pt.
  [22]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-05.
+10.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (./figures/decompose.latex)
-Overfull \hbox (53.1958pt too wide) in paragraph at lines 327--328
+Overfull \hbox (53.1958pt too wide) in paragraph at lines 332--333
 [][] 
  []
 
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 303--331
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 308--336
 []$[]$  $[]$ 
  []
 
 [23 <./figures/varnode-levels.drawio.png>]
-<./figures/stack-comparison.drawio.png, id=567, 894.34125pt x 800.9925pt>
+<./figures/stack-comparison.drawio.png, id=571, 894.34125pt x 800.9925pt>
 File: ./figures/stack-comparison.drawio.png Graphic file (type png)
 <use ./figures/stack-comparison.drawio.png>
 Package pdftex.def Info: ./figures/stack-comparison.drawio.png  used on input l
-ine 342.
+ine 347.
 (pdftex.def)             Requested size: 469.75502pt x 420.73514pt.
  [24] [25 <./figures/stack-comparison.drawio.png>] [26] [27] [28]
-Overfull \hbox (49.50299pt too wide) in paragraph at lines 409--410
+Overfull \hbox (49.50299pt too wide) in paragraph at lines 414--415
 \T1/ptm/m/n/12 mapped to an in-te-ger as fol-lows: \T1/ptm/m/it/12 NO_MATCH \T1
 /ptm/m/n/12 = 0, \T1/ptm/m/it/12 SUB-SET \T1/ptm/m/n/12 = 1, \T1/ptm/m/it/12 PR
 IM-I-TIVE_COMMON_ANCESTOR
@@ -1420,18 +1422,18 @@ Overfull \hbox (13.03453pt too wide) in paragraph at lines 5--14
  []
 
 ) [39] [40]
-<./figures/ghidra-miss-scopes.drawio.png, id=680, 880.28876pt x 783.92876pt>
+<./figures/ghidra-miss-scopes.drawio.png, id=684, 880.28876pt x 783.92876pt>
 File: ./figures/ghidra-miss-scopes.drawio.png Graphic file (type png)
 <use ./figures/ghidra-miss-scopes.drawio.png>
 Package pdftex.def Info: ./figures/ghidra-miss-scopes.drawio.png  used on input
- line 500.
+ line 505.
 (pdftex.def)             Requested size: 469.75502pt x 418.32716pt.
  [41] [42] [43 <./figures/ghidra-miss-scopes.drawio.png>]
 Chapter 5.
 [44
 
 ]
-Overfull \hbox (1.27467pt too wide) in paragraph at lines 527--528
+Overfull \hbox (1.27467pt too wide) in paragraph at lines 532--533
 []\T1/ptm/m/n/12 In our high-level varn-ode anal-y-sis, we find that the re-cov
 -ery ac-cu-racy of prim-i-tive (\T1/ptm/m/it/12 INT\T1/ptm/m/n/12 , \T1/ptm/m/i
 t/12 FLOAT\T1/ptm/m/n/12 ,
@@ -6953,19 +6955,19 @@ Overfull \hbox (21.65349pt too wide) in alignment at lines 120--125
  []
 
 [323] [324]) [325]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 672.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 672.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 677.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 677.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 672.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 672.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 677.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 677.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DEED8B18874BEE311B543D652983ECBD;7797.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 672.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 677.
  ) 
 Here is how much of TeX's memory you used:
- 25925 strings out of 483107
- 450046 string characters out of 5964629
- 743318 words of memory out of 5000000
+ 25926 strings out of 483107
+ 450052 string characters out of 5964629
+ 743319 words of memory out of 5000000
  39823 multiletter control sequences out of 15000+600000
  564767 words of font info for 68 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -6975,10 +6977,10 @@ Here is how much of TeX's memory you used:
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (334 pages, 792927 bytes).
+Output written on thesis.pdf (335 pages, 793958 bytes).
 PDF statistics:
- 2045 PDF objects out of 2073 (max. 8388607)
- 1676 compressed objects within 17 object streams
- 486 named destinations out of 1000 (max. 500000)
+ 2050 PDF objects out of 2073 (max. 8388607)
+ 1680 compressed objects within 17 object streams
+ 487 named destinations out of 1000 (max. 500000)
  390 words of extra memory for PDF output out of 10000 (max. 10000000)
 
