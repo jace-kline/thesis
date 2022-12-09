@@ -1,0 +1,149 @@
+\begin{thebibliography}{}
+
+\bibitem[Avast, 2022]{bib:retdec}
+Avast (2022).
+\newblock Retdec.
+
+\bibitem[Balakrishnan and Reps, 2007]{bib:divine}
+Balakrishnan, G. and Reps, T. (2007).
+\newblock Divine: Discovering variables in executables.
+\newblock In {\em Proceedings of the 8th International Conference on
+  Verification, Model Checking, and Abstract Interpretation}, VMCAI'07, pages
+  1--28, Berlin, Heidelberg. Springer-Verlag.
+
+\bibitem[Bendersky, 2022]{bib:pyelftools}
+Bendersky, E. (2022).
+\newblock pyelftools.
+
+\bibitem[Caballero et~al., 2012]{bib:artiste}
+Caballero, J., Grieco, G., Marron, M., Lin, Z., and Urbina, D.~I. (2012).
+\newblock Artiste: Automatic generation of hybrid data structure signatures
+  from binary code executions.
+
+\bibitem[Caballero and Lin, 2016]{bib:type-inference-executables}
+Caballero, J. and Lin, Z. (2016).
+\newblock Type inference on executables.
+\newblock {\em ACM Comput. Surv.}, 48(4).
+
+\bibitem[Chen et~al., 2020]{bib:cati}
+Chen, L., He, Z., and Mao, B. (2020).
+\newblock Cati: Context-assisted type inference from stripped binaries.
+\newblock In {\em 2020 50th Annual IEEE/IFIP International Conference on
+  Dependable Systems and Networks (DSN)}, pages 88--98.
+
+\bibitem[Cipresso and Stamp, 2010]{bib:sre}
+Cipresso, T. and Stamp, M. (2010).
+\newblock {\em Software Reverse Engineering}, pages 659--696.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg.
+
+\bibitem[Cohen, line]{bib:issues-debugging-inspecting-optimized-binaries}
+Cohen, W. (2020. [Online]).
+\newblock Possible issues with debugging and inspecting compiler-optimized
+  binaries.
+
+\bibitem[Committee, ]{bib:dwarf}
+Committee, D.~S.
+\newblock The dwarf debugging standard.
+
+\bibitem[ElWazeer et~al., 2013]{bib:scalable-variable-datatype-detection}
+ElWazeer, K., Anand, K., Kotha, A., Smithson, M., and Barua, R. (2013).
+\newblock Scalable variable and data type detection in a binary rewriter.
+\newblock In {\em Proceedings of the 34th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI '13, pages 51--60, New York, NY,
+  USA. Association for Computing Machinery.
+
+\bibitem[Harris and Miller, 2005]{bib:practical-analysis-stripped-binary-code}
+Harris, L. and Miller, B. (2005).
+\newblock Practical analysis of stripped binary code.
+\newblock {\em SIGARCH Computer Architecture News}, 33:63--68.
+
+\bibitem[Hex-Rays, ]{bib:ida}
+Hex-Rays.
+\newblock Ida pro.
+
+\bibitem[Klieber,
+  line]{bib:technique-for-decompiling-binary-code-for-assurance}
+Klieber, W. (2021. [Online]).
+\newblock A technique for decompiling binary code for software assurance and
+  localized repair.
+\newblock Carnegie Mellon University's Software Engineering Institute Blog.
+
+\bibitem[Lee et~al., 2011]{bib:tie}
+Lee, J., Avgerinos, T., and Brumley, D. (2011).
+\newblock Tie: Principled reverse engineering of types in binary programs.
+\newblock In {\em Network and Distributed System Security Symposium}.
+
+\bibitem[Lin et~al., 2010]{bib:rewards}
+Lin, Z., Zhang, X., and Xu, D. (2010).
+\newblock Automatic reverse engineering of data structures from binary
+  execution.
+\newblock In {\em Proceedings of the 11th Annual Information Security
+  Symposium}, CERIAS '10, West Lafayette, IN. CERIAS - Purdue University.
+
+\bibitem[Liu and Wang, 2020]{bib:how-far-weve-come}
+Liu, Z. and Wang, S. (2020).
+\newblock How far we have come: Testing decompilation correctness of c
+  decompilers.
+\newblock In {\em Proceedings of the 29th ACM SIGSOFT International Symposium
+  on Software Testing and Analysis}, ISSTA 2020, pages 475--487, New York, NY,
+  USA. Association for Computing Machinery.
+
+\bibitem[Naeem et~al., 2007]{bib:metrics-effectiveness-decompilers}
+Naeem, N.~A., Batchelder, M., and Hendren, L. (2007).
+\newblock Metrics for measuring the effectiveness of decompilers and
+  obfuscators.
+\newblock In {\em 15th IEEE International Conference on Program Comprehension
+  (ICPC '07)}, pages 253--258.
+
+\bibitem[Noonan et~al., 2016]{bib:retypd}
+Noonan, M., Loginov, A., and Cok, D. (2016).
+\newblock Polymorphic type inference for machine code.
+\newblock In {\em Proceedings of the 37th ACM SIGPLAN Conference on Programming
+  Language Design and Implementation}, PLDI '16, pages 27--41, New York, NY,
+  USA. Association for Computing Machinery.
+
+\bibitem[(NSA), ]{bib:ghidra}
+(NSA), N. S.~A.
+\newblock Ghidra.
+
+\bibitem[Pang et~al., 2021]{bib:sok-x86-disassembly}
+Pang, C., Yu, R., Chen, Y., Koskinen, E., Portokalidis, G., Mao, B., and Xu, J.
+  (2021).
+\newblock Sok: All you ever wanted to know about x86/x64 binary disassembly but
+  were afraid to ask.
+\newblock In {\em 2021 IEEE Symposium on Security and Privacy (SP)}, pages
+  833--851.
+
+\bibitem[Pei et~al., 2021]{bib:stateformer}
+Pei, K., Guan, J., Broughton, M., Chen, Z., Yao, S., Williams-King, D.,
+  Ummadisetty, V., Yang, J., Ray, B., and Jana, S. (2021).
+\newblock Stateformer: Fine-grained type recovery from binaries using
+  generative state modeling.
+\newblock In {\em Proceedings of the 29th ACM Joint Meeting on European
+  Software Engineering Conference and Symposium on the Foundations of Software
+  Engineering}, ESEC/FSE 2021, pages 690--702, New York, NY, USA. Association
+  for Computing Machinery.
+
+\bibitem[Prasad and cker Chiueh, 2003]{bib:disassembly-challenges}
+Prasad, M. and cker Chiueh, T. (2003).
+\newblock A binary rewriting defense against stack based buffer overflow
+  attacks.
+\newblock In {\em USENIX Annual Technical Conference, General Track}.
+
+\bibitem[Software, ]{bib:jeb}
+Software, P.
+\newblock Jeb.
+
+\bibitem[Xu et~al., 2018]{bib:type-learning-binaries-applications}
+Xu, Z., Wen, C., and Qin, S. (2018).
+\newblock Type learning for binaries and its applications.
+\newblock {\em IEEE Transactions on Reliability}, PP:1--20.
+
+\bibitem[You and Yim, 2010]{bib:malware-obfuscation-techniques}
+You, I. and Yim, K. (2010).
+\newblock Malware obfuscation techniques: A brief survey.
+\newblock In {\em Proceedings - 2010 International Conference on Broadband,
+  Wireless Computing Communication and Applications, BWCCA 2010}, pages
+  297--300.
+
+\end{thebibliography}

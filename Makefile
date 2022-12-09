@@ -1,8 +1,15 @@
 
 TEX=pdflatex
 DOCNAME=thesis
+DOCNAME_SCITEPRESS=thesis-scitepress
 
-all: thesis
+all: thesis thesis-scitepress
+
+thesis-scitepress:
+	$(TEX) $(DOCNAME_SCITEPRESS).tex
+	bibtex $(DOCNAME_SCITEPRESS).aux
+	$(TEX) $(DOCNAME_SCITEPRESS).tex
+	$(TEX) $(DOCNAME_SCITEPRESS).tex
 
 thesis:
 	$(TEX) $(DOCNAME).tex

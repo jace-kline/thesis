@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis-scitepress.aux
+The style file: apalike.bst
+Database file #1: references.bib
+Warning--entry type for "bib:dwarf" isn't style-file defined
+--line 137 of file references.bib
+Warning--entry type for "bib:ghidra" isn't style-file defined
+--line 143 of file references.bib
+Warning--entry type for "bib:ida" isn't style-file defined
+--line 233 of file references.bib
+Warning--entry type for "bib:artiste" isn't style-file defined
+--line 239 of file references.bib
+Warning--entry type for "bib:jeb" isn't style-file defined
+--line 247 of file references.bib
+Warning--entry type for "bib:retdec" isn't style-file defined
+--line 271 of file references.bib
+Warning--can't use both author and editor fields in bib:sre
+Warning--empty year in bib:dwarf
+Warning--empty year in bib:ida
+Warning--empty year in bib:ghidra
+Warning--empty year in bib:jeb
+You've used 25 entries,
+            1935 wiz_defined-function locations,
+            611 strings with 8268 characters,
+and the built_in function-call counts, 10040 in all, are:
+= -- 999
+> -- 402
+< -- 25
++ -- 140
+- -- 134
+* -- 746
+:= -- 1700
+add.period$ -- 73
+call.type$ -- 25
+change.case$ -- 191
+chr.to.int$ -- 25
+cite$ -- 30
+duplicate$ -- 442
+empty$ -- 700
+format.name$ -- 173
+if$ -- 2068
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 17
+newline$ -- 120
+num.names$ -- 75
+pop$ -- 199
+preamble$ -- 1
+purify$ -- 192
+quote$ -- 0
+skip$ -- 335
+stack$ -- 0
+substring$ -- 580
+swap$ -- 97
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 5
+while$ -- 73
+width$ -- 0
+write$ -- 314
+(There were 11 warnings)
