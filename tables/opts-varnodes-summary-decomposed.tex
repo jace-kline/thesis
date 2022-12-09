@@ -1,0 +1,14 @@
+\begin{table*}[tb]
+\centering
+\caption{A summary of decomposed varnode recovery by compilation case.}
+\label{table:opts-varnodes-summary-decomposed}
+\begin{tabular}{lp{1.50cm}p{1.33cm}p{1.33cm}p{1.33cm}p{1.33cm}p{1.33cm}p{1.33cm}p{1.33cm}p{1.33cm}}
+\toprule
+{} & {Varnodes matched @ level NO\_MATCH} & {Varnodes matched @ level OVERLAP} & {Varnodes matched @ level SUBSET} & {Varnodes matched @ level ALIGNED} & {Varnodes matched @ level MATCH} & {Varnode comparison score} & {Varnodes fraction partially recovered} & {Varnodes fraction exactly recovered} \\
+\midrule
+strip    &                                             139776 &                                            31280 &                                               0 &                                           231267 &                                         131593 &                                    0.586 &                                              0.738 &                                              0.246 \\
+standard &                                              40187 &                                            56605 &                                               0 &                                           303527 &                                         133597 &                                    0.703 &                                              0.925 &                                              0.250 \\
+debug    &                                              10547 &                                              128 &                                               0 &                                                5 &                                         523236 &                                    0.980 &                                              0.980 &                                              0.980 \\
+\bottomrule
+\end{tabular}
+\end{table*}

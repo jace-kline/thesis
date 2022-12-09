@@ -36,13 +36,13 @@ Cipresso, T. and Stamp, M. (2010).
 \newblock {\em Software Reverse Engineering}, pages 659--696.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg.
 
-\bibitem[Cohen, line]{bib:issues-debugging-inspecting-optimized-binaries}
-Cohen, W. (2020. [Online]).
+\bibitem[Cohen, 2020]{bib:issues-debugging-inspecting-optimized-binaries}
+Cohen, W. (2020).
 \newblock Possible issues with debugging and inspecting compiler-optimized
   binaries.
 
-\bibitem[Committee, ]{bib:dwarf}
-Committee, D.~S.
+\bibitem[{DWARF Standards Committee}, 2022]{bib:dwarf}
+{DWARF Standards Committee} (2022).
 \newblock The dwarf debugging standard.
 
 \bibitem[ElWazeer et~al., 2013]{bib:scalable-variable-datatype-detection}
@@ -57,13 +57,13 @@ Harris, L. and Miller, B. (2005).
 \newblock Practical analysis of stripped binary code.
 \newblock {\em SIGARCH Computer Architecture News}, 33:63--68.
 
-\bibitem[Hex-Rays, ]{bib:ida}
-Hex-Rays.
+\bibitem[{Hex-Rays}, 2022]{bib:ida}
+{Hex-Rays} (2022).
 \newblock Ida pro.
 
 \bibitem[Klieber,
-  line]{bib:technique-for-decompiling-binary-code-for-assurance}
-Klieber, W. (2021. [Online]).
+  2021]{bib:technique-for-decompiling-binary-code-for-assurance}
+Klieber, W. (2021).
 \newblock A technique for decompiling binary code for software assurance and
   localized repair.
 \newblock Carnegie Mellon University's Software Engineering Institute Blog.
@@ -95,16 +95,16 @@ Naeem, N.~A., Batchelder, M., and Hendren, L. (2007).
 \newblock In {\em 15th IEEE International Conference on Program Comprehension
   (ICPC '07)}, pages 253--258.
 
+\bibitem[{National Security Agency (NSA)}, 2022]{bib:ghidra}
+{National Security Agency (NSA)} (2022).
+\newblock Ghidra.
+
 \bibitem[Noonan et~al., 2016]{bib:retypd}
 Noonan, M., Loginov, A., and Cok, D. (2016).
 \newblock Polymorphic type inference for machine code.
 \newblock In {\em Proceedings of the 37th ACM SIGPLAN Conference on Programming
   Language Design and Implementation}, PLDI '16, pages 27--41, New York, NY,
   USA. Association for Computing Machinery.
-
-\bibitem[(NSA), ]{bib:ghidra}
-(NSA), N. S.~A.
-\newblock Ghidra.
 
 \bibitem[Pang et~al., 2021]{bib:sok-x86-disassembly}
 Pang, C., Yu, R., Chen, Y., Koskinen, E., Portokalidis, G., Mao, B., and Xu, J.
@@ -124,15 +124,15 @@ Pei, K., Guan, J., Broughton, M., Chen, Z., Yao, S., Williams-King, D.,
   Engineering}, ESEC/FSE 2021, pages 690--702, New York, NY, USA. Association
   for Computing Machinery.
 
+\bibitem[{PNF Software}, 2022]{bib:jeb}
+{PNF Software} (2022).
+\newblock Jeb.
+
 \bibitem[Prasad and cker Chiueh, 2003]{bib:disassembly-challenges}
 Prasad, M. and cker Chiueh, T. (2003).
 \newblock A binary rewriting defense against stack based buffer overflow
   attacks.
 \newblock In {\em USENIX Annual Technical Conference, General Track}.
-
-\bibitem[Software, ]{bib:jeb}
-Software, P.
-\newblock Jeb.
 
 \bibitem[Xu et~al., 2018]{bib:type-learning-binaries-applications}
 Xu, Z., Wen, C., and Qin, S. (2018).
