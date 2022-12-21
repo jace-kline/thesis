@@ -145,7 +145,7 @@ def make_metrics() -> List[MetricsGroup]:
     )
 
     for compare_level in VarnodeCompareLevel.range():
-        compare_level_str = VarnodeCompareLevel.to_string(compare_level)
+        compare_level_str = VarnodeCompareLevel.to_string(compare_level) if compare_level != VarnodeCompareLevel.NO_MATCH else "NO MATCH"
         varnodes_group.mk_add_metric(
             "Varnodes matched @ level {}".format(compare_level_str),
             lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level))
@@ -171,9 +171,9 @@ def make_metrics() -> List[MetricsGroup]:
         )
 
         for compare_level in VarnodeCompareLevel.range():
-            compare_level_str = VarnodeCompareLevel.to_string(compare_level)
+            compare_level_str = VarnodeCompareLevel.to_string(compare_level) if compare_level != VarnodeCompareLevel.NO_MATCH else "NO MATCH"
             group.mk_add_metric(
-                "Decompiler varnodes matched @ level {}".format(compare_level_str),
+                "Varnodes matched @ level {}".format(compare_level_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([
                     record for record in
                     varnode_compare_records_matched_at_level(cmp, compare_level)
@@ -196,7 +196,7 @@ def make_metrics() -> List[MetricsGroup]:
     )
 
     for compare_level in VarnodeCompareLevel.range():
-        compare_level_str = VarnodeCompareLevel.to_string(compare_level)
+        compare_level_str = VarnodeCompareLevel.to_string(compare_level) if compare_level != VarnodeCompareLevel.NO_MATCH else "NO MATCH"
         primitive_varnodes_group.mk_add_metric(
             "Varnodes matched @ level {}".format(compare_level_str),
             lambda cmp, compare_level=compare_level: len(varnode_compare_records_matched_at_level(cmp, compare_level, primitive=True))
@@ -222,7 +222,7 @@ def make_metrics() -> List[MetricsGroup]:
         )
 
         for compare_level in VarnodeCompareLevel.range():
-            compare_level_str = VarnodeCompareLevel.to_string(compare_level)
+            compare_level_str = VarnodeCompareLevel.to_string(compare_level) if compare_level != VarnodeCompareLevel.NO_MATCH else "NO MATCH"
             group.mk_add_metric(
                 "Varnodes matched @ level {}".format(compare_level_str, metatype_str),
                 lambda cmp, metatype=metatype, compare_level=compare_level: len([

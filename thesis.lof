@@ -1,0 +1,15 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces DSL \emph {ProgramInfo} extraction from multiple sources\relax }}{12}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Simplified DSL class relationships\relax }}{13}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces An example of translating DWARF information into the DSL\relax }}{17}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces ARTISTE type lattice \cite {bib:artiste,bib:type-inference-executables}\relax }}{20}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Derivation of varnode comparison level from varnode recovery status and data type comparison\relax }}{23}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Example of high-level varnode decomposition\relax }}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces An example of varnode comparisons between ground truth and decompiler varnodes for a given stack frame\relax }}{25}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Evaluation workflow\relax }}{31}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of the Ghidra decompiler missing the second of two scope-specific variables that share stack space\relax }}{41}{figure.caption.19}%
+\addvspace {10\p@ }

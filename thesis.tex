@@ -329,7 +329,7 @@ Person people[2];
     \end{subfigure}
     \hfill
     \begin{subfigure}[hb]{0.75\textwidth}
-        \scalebox{0.35}[0.4]{\input{./figures/decompose.latex}}
+        \scalebox{0.3}[0.4]{\input{./figures/decompose.latex}}
         \caption{Decomposition of a high-level varnode into primitive components}
         \label{fig:decompose-tree}
     \end{subfigure}
@@ -500,7 +500,7 @@ Upon examination of our results thus far, the reader may wonder why the debug co
 We manually investigate this phenomenon over our benchmark programs and find that the cause of these recovery inaccuracies stems from the Ghidra decompiler's inflexibility in expressing local variables tied to lexical scopes. We find that the Ghidra decompiler output only lists variable declarations at the top level of the function and does not support declarations of local variables within lexical scopes. Instead, Ghidra attempts to move the declaration of these scope-specific variables to the top level of the function. Often, this behavior does not negatively influence the variable recovery of the given function. However, there are cases where multiple exclusive (not overlapping or nested) lexical scopes contain variable declarations. In many of these cases, the compiler recognizes the exclusivity of the lexical scopes and assigns the scope-specific variables to shared space on the stack since the variables shall never be instantiated simultaneously. The size of the shared region allocated by the decompiler is equivalent to the size of the largest variable in the set of scope-specific variables that share the region. In essence, this is equivalent to an implicit union formed by the compiler. The DWARF debugging standard and our DSL both possess the ability to express these overlapping scope-specific variables, but the Ghidra decompiler does not. From our observations, we find that Ghidra greedily captures and declares scope-specific variables at the top level of the function based on the order in which it recovers the variables. In the debug compilation case (utilizing DWARF information), Ghidra appears to only consider the first scope-specific variable mapped to a given address on the stack based on the order of the variables in the list of debugging information entries (DIEs) parsed from DWARF. The subsequent scope-specific variables associated with the given address are simply ignored, causing Ghidra to potentially miss several varnodes and data bytes. We consider this to be a shortcoming and an area of future improvement for the Ghidra decompiler.
 
 % [Figure: Ghidra missing variable in 2nd scope]
-\begin{figure}
+\begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{./figures/ghidra-miss-scopes.drawio.png}
     \caption{An example of the Ghidra decompiler missing the second of two scope-specific variables that share stack space}
